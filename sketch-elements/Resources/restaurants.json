@@ -1,0 +1,64 @@
+[
+    {
+        "id": "fba5eede-058a-4383-875a-ffe56a91a104",
+        "title": "Hiltl",
+        "subtitle": "Vegetarian",
+        "ratings": 4.5,
+        "reviews": 210,
+        "picture": {
+            "uri":
+                "https://firebasestorage.googleapis.com/v0/b/react-native-e.appspot.com/o/restaurants%2Fhiltl.jpg?alt=media&token=72ac4083-951c-467a-90b8-e6c11d87aac8",
+            "preview":
+                "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCMRXhpZgAATU0AKgAAAAgABQESAAMAAAABAAEAAAEaAAUAAAABAAAASgEbAAUAAAABAAAAUgEoAAMAAAABAAIAAIdpAAQAAAABAAAAWgAAAAAAAABIAAAAAQAAAEgAAAABAAOgAQADAAAAAQABAACgAgAEAAAAAQAAAAqgAwAEAAAAAQAAAAcAAAAA/+0AOFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAAOEJJTQQlAAAAAAAQ1B2M2Y8AsgTpgAmY7PhCfv/CABEIAAcACgMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAADAgQBBQAGBwgJCgv/xADDEAABAwMCBAMEBgQHBgQIBnMBAgADEQQSIQUxEyIQBkFRMhRhcSMHgSCRQhWhUjOxJGIwFsFy0UOSNIII4VNAJWMXNfCTc6JQRLKD8SZUNmSUdMJg0oSjGHDiJ0U3ZbNVdaSVw4Xy00Z2gONHVma0CQoZGigpKjg5OkhJSldYWVpnaGlqd3h5eoaHiImKkJaXmJmaoKWmp6ipqrC1tre4ubrAxMXGx8jJytDU1dbX2Nna4OTl5ufo6erz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAECAAMEBQYHCAkKC//EAMMRAAICAQMDAwIDBQIFAgQEhwEAAhEDEBIhBCAxQRMFMCIyURRABjMjYUIVcVI0gVAkkaFDsRYHYjVT8NElYMFE4XLxF4JjNnAmRVSSJ6LSCAkKGBkaKCkqNzg5OkZHSElKVVZXWFlaZGVmZ2hpanN0dXZ3eHl6gIOEhYaHiImKkJOUlZaXmJmaoKOkpaanqKmqsLKztLW2t7i5usDCw8TFxsfIycrQ09TV1tfY2drg4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAFBQUFBQUFBgYFCAgHCAgLCgkJCgsRDA0MDQwRGhATEBATEBoXGxYVFhsXKSAcHCApLyclJy85MzM5R0RHXV19/9sAQwEFBQUFBQUFBgYFCAgHCAgLCgkJCgsRDA0MDQwRGhATEBATEBoXGxYVFhsXKSAcHCApLyclJy85MzM5R0RHXV19/9oADAMBAAIRAxEAAAHqaOy8Z4t//9oACAEBAAEFApuTap/SW2v/2gAIAQMRAT8BnLYaoP8A/9oACAECEQE/AcEfcxiRJs/k/wD/2gAIAQEABj8C0ijp/ZeqBX+x/oP/xAAzEAEAAwACAgICAgMBAQAAAgsBEQAhMUFRYXGBkaGxwfDREOHxIDBAUGBwgJCgsMDQ4P/aAAgBAQABPyGIerJ1+ipqeQxzX//aAAwDAQACEQMRAAAQ9//EADMRAQEBAAMAAQIFBQEBAAEBCQEAESExEEFRYSBx8JGBobHRweHxMEBQYHCAkKCwwNDg/9oACAEDEQE/EFwMfcv/2gAIAQIRAT8QwvabrPnL/9oACAEBAAE/ENrCCA37T/ysyBRzY511f//Z"
+        },
+        "coordinate": {
+            "longitude": 8.535712,
+            "latitude": 47.377682
+        },
+        "address": "Europaallee 1a",
+        "city": "Zürich",
+        "country": "Switzerland",
+        "description":
+            "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+        "price": {
+            "from": 21,
+            "to": 40,
+            "expensive": 2
+        },
+        "openings": {
+            "from": "06:00",
+            "to": "04:00"
+        }
+    },
+    {
+        "id": "4ab21f1d-e3cb-47fd-a546-3c5502bfbf8c",
+        "title": "Più ",
+        "subtitle": "Italian",
+        "ratings": 3.5,
+        "reviews": 12,
+        "picture": {
+            "uri":
+                "https://firebasestorage.googleapis.com/v0/b/react-native-e.appspot.com/o/restaurants%2Fpiu.jpg?alt=media&token=a022b528-0dba-465f-a8b7-30621b4fe64e",
+            "preview":
+                "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCMRXhpZgAATU0AKgAAAAgABQESAAMAAAABAAEAAAEaAAUAAAABAAAASgEbAAUAAAABAAAAUgEoAAMAAAABAAIAAIdpAAQAAAABAAAAWgAAAAAAAABIAAAAAQAAAEgAAAABAAOgAQADAAAAAQABAACgAgAEAAAAAQAAAAqgAwAEAAAAAQAAAA0AAAAA/+0AOFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAAOEJJTQQlAAAAAAAQ1B2M2Y8AsgTpgAmY7PhCfv/CABEIAA0ACgMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAADAgQBBQAGBwgJCgv/xADDEAABAwMCBAMEBgQHBgQIBnMBAgADEQQSIQUxEyIQBkFRMhRhcSMHgSCRQhWhUjOxJGIwFsFy0UOSNIII4VNAJWMXNfCTc6JQRLKD8SZUNmSUdMJg0oSjGHDiJ0U3ZbNVdaSVw4Xy00Z2gONHVma0CQoZGigpKjg5OkhJSldYWVpnaGlqd3h5eoaHiImKkJaXmJmaoKWmp6ipqrC1tre4ubrAxMXGx8jJytDU1dbX2Nna4OTl5ufo6erz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAECAAMEBQYHCAkKC//EAMMRAAICAQMDAwIDBQIFAgQEhwEAAhEDEBIhBCAxQRMFMCIyURRABjMjYUIVcVI0gVAkkaFDsRYHYjVT8NElYMFE4XLxF4JjNnAmRVSSJ6LSCAkKGBkaKCkqNzg5OkZHSElKVVZXWFlaZGVmZ2hpanN0dXZ3eHl6gIOEhYaHiImKkJOUlZaXmJmaoKOkpaanqKmqsLKztLW2t7i5usDCw8TFxsfIycrQ09TV1tfY2drg4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAGBgYGBwYHCAgHCgsKCwoPDgwMDg8WEBEQERAWIhUZFRUZFSIeJB4cHiQeNiomJio2PjQyND5MRERMX1pffHyn/9sAQwEGBgYGBwYHCAgHCgsKCwoPDgwMDg8WEBEQERAWIhUZFRUZFSIeJB4cHiQeNiomJio2PjQyND5MRERMX1pffHyn/9oADAMBAAIRAxEAAAGqtalLD//aAAgBAQABBQIxyJUCugiXKkxrB//aAAgBAxEBPwE5gH//2gAIAQIRAT8BHTk+r//aAAgBAQAGPwKnMSx9O1ZSqol0Ck/h/ov/xAAzEAEAAwACAgICAgMBAQAAAgsBEQAhMUFRYXGBkaGxwfDREOHxIDBAUGBwgJCgsMDQ4P/aAAgBAQABPyHUzs8hc8Qjw0x4UEH8lVQAwS5r/9oADAMBAAIRAxEAABDD/8QAMxEBAQEAAwABAgUFAQEAAQEJAQARITEQQVFhIHHwkYGhsdHB4fEwQFBgcICQoLDA0OD/2gAIAQMRAT8QyxP73//aAAgBAhEBPxDlv6ML/9oACAEBAAE/EGEHLAIDdl35vCSYCMI4qJXA1PKAc2Wb0jgYSglv/9k="
+        },
+        "coordinate": {
+            "longitude": 8.535267,
+            "latitude": 47.377305
+        },
+        "address": "Kasernenstrasse 45",
+        "city": "Zürich",
+        "country": "Switzerland",
+        "description":
+            "Mehr pizza. mehr dolci. mehr napoli. in zürich.",
+        "price": {
+            "from": 21,
+            "to": 40,
+            "expensive": 2
+        },
+        "openings": {
+            "from": "08:00",
+            "to": "24:00"
+        }
+    }
+]
