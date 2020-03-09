@@ -29,10 +29,27 @@ struct FoodView: View {
     }
 }
 
+extension View {
+    func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
+        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor))
+    }
+    
+    func tabBarOpaque() -> some View {
+        self.modifier(TabBarModifier())
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        FoodView().environmentObject(UserData())
+    }
+}
+
 struct NavigationBarModifier: ViewModifier {
         
     init( backgroundColor: UIColor?) {
         let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithTransparentBackground()
         coloredAppearance.backgroundColor = backgroundColor ?? .clear
         coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
@@ -41,6 +58,7 @@ struct NavigationBarModifier: ViewModifier {
         UINavigationBar.appearance().compactAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
         UINavigationBar.appearance().tintColor = .white
+
     }
     
     func body(content: Content) -> some View {
@@ -57,21 +75,5 @@ struct TabBarModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-    }
-}
-
-extension View {
-    func navigationBarColor(backgroundColor: UIColor?) -> some View {
-        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor))
-    }
-    
-    func tabBarOpaque() -> some View {
-        self.modifier(TabBarModifier())
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodView().environmentObject(UserData())
     }
 }

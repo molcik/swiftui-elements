@@ -32,31 +32,33 @@ struct RecipeDetailView: View {
         VStack(spacing: 0){
             Header(
                 image: recipe.picture.uri,
-                title: recipe.title,
-                leftItem: AnyView(BackButton(title: category, action: navigateBack)),
-                rightItem: AnyView(Image(systemName: "bookmark"))
+                title: recipe.title
+                // leftItem: AnyView(BackButton(title: category, action: navigateBack)),
+                // rightItem: AnyView(Image(systemName: "bookmark"))
             )
             TabBar(recipe: recipe)
             ScrollView(.vertical, showsIndicators: false) {
                 ButtonPrimary(title: "See Ingredients", action: navigateBack)
                     .padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {
-                    Divider().opacity(0)
                     ForEach(0 ..< recipe.instructions.count) {
-                        TableRow(left: "\($0+1)", middle: self.recipe.instructions[$0])
+                        TableRow(
+                            left: "\($0+1)",
+                            divider: $0 + 1 < self.recipe.instructions.count,
+                            middle: self.recipe.instructions[$0]
+                        )
                     }
-                }
-                .frame(maxWidth: .infinity)
-                .background(Color("Default"))
-                .cornerRadius(8)
-                .padding([.leading, .bottom, .trailing])
+                }.padding([.top, .bottom])
+                    .frame(maxWidth: .infinity)
+                    .background(Color("Default"))
+                    .cornerRadius(8)
+                    .padding([.leading, .bottom, .trailing])
                 Spacer()
             }
             .frame(maxWidth: .infinity)
         }
         .background(Color("Gray"))
-        .edgesIgnoringSafeArea(.top)
-        .navigationBarHidden(true)
+        .edgesIgnoringSafeArea([.top])
         .navigationBarTitle("", displayMode: .large)
     }
     
@@ -65,6 +67,7 @@ struct RecipeDetailView: View {
 struct TableRow: View {
     
     var left: String
+    var divider: Bool
     var middle: String?
     var right: String?
     
@@ -74,7 +77,7 @@ struct TableRow: View {
                 Text("\(left)").foregroundColor(.gray).padding(.leading)
                 Text(middle ?? "(empty)").padding(.horizontal)
             }.padding(.horizontal)
-            Divider()
+            divider ? Divider() : nil
         }
     }
 }

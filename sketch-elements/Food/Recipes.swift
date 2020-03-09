@@ -13,22 +13,26 @@ struct RecipesView: View {
     var categories: [Category]
     
     var body: some View {
+        
         NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                ForEach(categories) { category in
-                    NavigationLink(
-                        destination: RecipesListView(category: category)
-                    ) {
-                        Card(title: category.title, subTitle: category.subtitle, height: 300.0, pictureUrl: category.picture.uri, description: nil)
+            ZStack{
+                Color("BrandPrimary")
+                    .edgesIgnoringSafeArea(.all)
+                ScrollView(.vertical, showsIndicators: false) {
+                    ForEach(categories) { category in
+                        NavigationLink(
+                            destination: RecipesListView(category: category)
+                        ) {
+                            Card(title: category.title, subTitle: category.subtitle, height: 300.0, pictureUrl: category.picture.uri, description: nil)
+                        }
                     }
                 }
-                
+                .background(Color("Gray"))
             }
-            .navigationBarColor(backgroundColor: UIColor(named: "BrandPrimary"))
+            .navigationBarColor(.clear)
             .navigationBarTitle("Recipes", displayMode: .large)
             .navigationBarItems(trailing: Image(systemName: "magnifyingglass").foregroundColor(.white))
         }
-
     }
 }
 
