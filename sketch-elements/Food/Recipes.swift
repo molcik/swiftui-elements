@@ -11,35 +11,30 @@ import SwiftUI
 struct RecipesView: View {
     
     var categories: [Category]
-    
     var body: some View {
         
         NavigationView {
-            ZStack{
-                Color("BrandPrimary")
-                    .edgesIgnoringSafeArea(.all)
-                ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(categories) { category in
-                        NavigationLink(
-                            destination: RecipesListView(category: category)
-                        ) {
-                            Card(title: category.title, subTitle: category.subtitle, height: 300.0, pictureUrl: category.picture.uri, description: nil)
-                        }
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach(categories) { category in
+                    NavigationLink(
+                        destination: RecipesListView(category: category)
+                    ) {
+                        Card(title: category.title, subTitle: category.subtitle, height: 300.0, pictureUrl: category.picture.uri, description: nil)
                     }
                 }
-                .background(Color("Gray"))
             }
-            .navigationBarColor(.clear)
-            .navigationBarTitle("Recipes", displayMode: .large)
+            .background(Color("Gray"))
+            .navigationBarColor(UIColor(named:"BrandPrimary"))
+            .navigationBarTitle(Text("Recipes"), displayMode: .large)
             .navigationBarItems(trailing: Image(systemName: "magnifyingglass").foregroundColor(.white))
         }
     }
 }
 
-
 struct Recipes_Previews: PreviewProvider {
     static var previews: some View {
         RecipesView(categories: recipeCategoriesData)
             .environmentObject(UserData())
+            .environment(\.colorScheme, .light)
     }
 }

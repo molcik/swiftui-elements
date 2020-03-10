@@ -108,7 +108,6 @@ struct TabBar: View {
         .background(Color("Default"))
         .foregroundColor(Color("BrandPrimary"))
     }
-    
 }
 
 

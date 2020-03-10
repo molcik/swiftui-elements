@@ -23,6 +23,7 @@ struct RecipesListView: View {
                 }
             }
         }
+        .navigationBarColor(UIColor(named: "BrandPrimary"))
         .background(Color("Gray"))
         .navigationBarTitle(Text(category.title), displayMode: .inline)
     }
@@ -33,5 +34,6 @@ struct RecipesList_Previews: PreviewProvider {
     static var previews: some View {
         RecipesListView(category: recipeCategoriesData[0])
             .environmentObject(UserData())
+            .environment(\.colorScheme, .light)
     }
 }
