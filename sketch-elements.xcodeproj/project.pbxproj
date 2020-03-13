@@ -23,6 +23,12 @@
 		3445A798240A80AF0020561B /* ColorPalette.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3445A797240A80AF0020561B /* ColorPalette.xcassets */; };
 		3445A79D240B043E0020561B /* RecipesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445A79C240B043E0020561B /* RecipesList.swift */; };
 		3445A79F240B0C3F0020561B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445A79E240B0C3F0020561B /* Card.swift */; };
+		345AE3AB241A7A8E004EBE8C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A7241A7A8E004EBE8C /* Modal.swift */; };
+		345AE3AC241A7A8E004EBE8C /* ModalModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A8241A7A8E004EBE8C /* ModalModifiers.swift */; };
+		345AE3AD241A7A8E004EBE8C /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A9241A7A8E004EBE8C /* ModalView.swift */; };
+		345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3AA241A7A8E004EBE8C /* ModalManager.swift */; };
+		345AE3B0241A7ABD004EBE8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3AF241A7ABD004EBE8C /* ContentView.swift */; };
+		346186F42418EEC30041B94B /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346186F32418EEC30041B94B /* Sheet.swift */; };
 		349E4BD8241522990079BF04 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD7241522990079BF04 /* Button.swift */; };
 		349E4BDA241523A60079BF04 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD9241523A60079BF04 /* Header.swift */; };
 		34AD61DD240BD093005943F9 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD61DC240BD093005943F9 /* RecipeDetailView.swift */; };
@@ -48,6 +54,12 @@
 		3445A797240A80AF0020561B /* ColorPalette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorPalette.xcassets; sourceTree = "<group>"; };
 		3445A79C240B043E0020561B /* RecipesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesList.swift; sourceTree = "<group>"; };
 		3445A79E240B0C3F0020561B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		345AE3A7241A7A8E004EBE8C /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		345AE3A8241A7A8E004EBE8C /* ModalModifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalModifiers.swift; sourceTree = "<group>"; };
+		345AE3A9241A7A8E004EBE8C /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		345AE3AA241A7A8E004EBE8C /* ModalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalManager.swift; sourceTree = "<group>"; };
+		345AE3AF241A7ABD004EBE8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		346186F32418EEC30041B94B /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		349E4BD7241522990079BF04 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		349E4BD9241523A60079BF04 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		34AD61DC240BD093005943F9 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
@@ -91,6 +103,7 @@
 				3403A31B240809CC00D7B040 /* Models */,
 				3403A3012406B70F00D7B040 /* AppDelegate.swift */,
 				3403A3032406B70F00D7B040 /* SceneDelegate.swift */,
+				345AE3AF241A7ABD004EBE8C /* ContentView.swift */,
 				349E4BD62415227E0079BF04 /* Elements */,
 				3445A79B240B03D70020561B /* Food */,
 				3403A3072406B71100D7B040 /* Assets.xcassets */,
@@ -142,12 +155,25 @@
 			path = Food;
 			sourceTree = "<group>";
 		};
+		345AE3A6241A7A8E004EBE8C /* Modal View */ = {
+			isa = PBXGroup;
+			children = (
+				345AE3A7241A7A8E004EBE8C /* Modal.swift */,
+				345AE3A8241A7A8E004EBE8C /* ModalModifiers.swift */,
+				345AE3A9241A7A8E004EBE8C /* ModalView.swift */,
+				345AE3AA241A7A8E004EBE8C /* ModalManager.swift */,
+			);
+			path = "Modal View";
+			sourceTree = "<group>";
+		};
 		349E4BD62415227E0079BF04 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				345AE3A6241A7A8E004EBE8C /* Modal View */,
 				3445A79E240B0C3F0020561B /* Card.swift */,
 				349E4BD7241522990079BF04 /* Button.swift */,
 				349E4BD9241523A60079BF04 /* Header.swift */,
+				346186F32418EEC30041B94B /* Sheet.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -241,16 +267,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345AE3AC241A7A8E004EBE8C /* ModalModifiers.swift in Sources */,
 				3403A3022406B70F00D7B040 /* AppDelegate.swift in Sources */,
+				345AE3AD241A7A8E004EBE8C /* ModalView.swift in Sources */,
 				34AD61DD240BD093005943F9 /* RecipeDetailView.swift in Sources */,
 				3445A79D240B043E0020561B /* RecipesList.swift in Sources */,
 				3403A32624080D4400D7B040 /* Data.swift in Sources */,
 				349E4BDA241523A60079BF04 /* Header.swift in Sources */,
 				3445A79F240B0C3F0020561B /* Card.swift in Sources */,
 				34DCE8C1240817CD00C4EE89 /* Food.swift in Sources */,
+				345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */,
 				3403A32824080DBC00D7B040 /* Recipe.swift in Sources */,
 				3403A3042406B70F00D7B040 /* SceneDelegate.swift in Sources */,
 				3403A31D240809E700D7B040 /* UserData.swift in Sources */,
+				346186F42418EEC30041B94B /* Sheet.swift in Sources */,
+				345AE3B0241A7ABD004EBE8C /* ContentView.swift in Sources */,
+				345AE3AB241A7A8E004EBE8C /* Modal.swift in Sources */,
 				3403A31A2408099500D7B040 /* Recipes.swift in Sources */,
 				349E4BD8241522990079BF04 /* Button.swift in Sources */,
 			);

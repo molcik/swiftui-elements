@@ -22,11 +22,7 @@ struct RecipeDetailView: View {
     
     var recipe: Recipe
     var category: String
-    @Environment(\.presentationMode) var presentation
-    
-    func navigateBack() {
-        self.presentation.wrappedValue.dismiss()
-    }
+    @EnvironmentObject var modalManager: ModalManager
     
     var body: some View {
         VStack(spacing: 0){
@@ -38,7 +34,10 @@ struct RecipeDetailView: View {
             )
             TabBar(recipe: recipe)
             ScrollView(.vertical, showsIndicators: false) {
-                ButtonPrimary(title: "See Ingredients", action: navigateBack)
+                ButtonPrimary(
+                    title: "See Ingredients",
+                    action: {self.modalManager.revealModal()}
+                )
                     .padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {
                     ForEach(0 ..< recipe.instructions.count) {
@@ -60,6 +59,7 @@ struct RecipeDetailView: View {
         .background(Color("Gray"))
         .edgesIgnoringSafeArea([.top])
         .navigationBarTitle("", displayMode: .large)
+        .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
     }
     
 }
