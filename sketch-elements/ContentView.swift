@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         return ZStack {
             FoodView(categories: recipeCategoriesData)
-            ModalView(currentModal: $modalManager.modal).environmentObject(self.modalManager)
+            ModalAnchorView(currentModal: $modalManager.modal)
         }
     }
 }

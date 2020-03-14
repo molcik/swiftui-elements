@@ -22,7 +22,7 @@ struct RecipeDetailView: View {
     
     var recipe: Recipe
     var category: String
-    @EnvironmentObject var modalManager: ModalManager
+    @State var ingredientsPresented: Bool = true
     
     var body: some View {
         VStack(spacing: 0){
@@ -34,9 +34,10 @@ struct RecipeDetailView: View {
             )
             TabBar(recipe: recipe)
             ScrollView(.vertical, showsIndicators: false) {
+                ModalView()
                 ButtonPrimary(
                     title: "See Ingredients",
-                    action: {self.modalManager.revealModal()}
+                    action: {self.ingredientsPresented.toggle()}
                 )
                     .padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {

@@ -10,35 +10,23 @@ import SwiftUI
 
 struct ModalModifier: ViewModifier {
     
-    var isActive: Bool
-    
     // Modal State
     @GestureState var dragState: DragState = .inactive
     @Binding var position: ModalState
     @Binding var offset: CGSize
-    @State var isFullscreenEnabled = false
     
-    var modalID: UUID
+    var isActive: Bool
     var animation: Animation {
         Animation.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0)
-            .delay(self.position == .fullscreen ? 3:0)
-    }
-    
-    var timer: Timer? {
-        return Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
-            if self.position == .open && self.dragState.translation.height == 0 && self.isFullscreenEnabled {
-                self.position = .fullscreen
-            } else {
-                timer.invalidate()
-            }
-        }
+            .delay(0)
     }
     
     func body(content: Content) -> some View {
+        
         let drag = DragGesture()
-            .updating($dragState) { drag, state, transaction in state = .dragging(translation: (self.position != .fullscreen) ? drag.translation:.zero) }
+            .updating($dragState) { drag, state, transaction in state = .dragging(translation:  drag.translation) }
             .onChanged {
-                self.offset = (self.position != .fullscreen) ? $0.translation: .zero
+                self.offset = $0.translation
         }
         .onEnded(onDragEnded)
     
@@ -46,20 +34,18 @@ struct ModalModifier: ViewModifier {
             Color.black
                 .opacity(position != .closed ? 0.5 : 0)
             ZStack {
+                Color("Default").mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
                 content
-                    .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
             }
-            .edgesIgnoringSafeArea(.vertical)
             .offset(y: isActive ? max(0, self.position.offsetFromTop() + self.dragState.translation.height) : 0)
             .animation(isActive ? (self.dragState.isDragging ? nil : animation) : animation)
             .gesture(isActive ? drag:nil)
         }
+        .edgesIgnoringSafeArea(.vertical)
+        
     }
     
     private func onDragEnded(drag: DragGesture.Value) {
-        if position == .fullscreen {
-            return
-        }
         
         // Setting stops
         let higherStop: ModalState
@@ -96,8 +82,9 @@ struct ModalModifier: ViewModifier {
         } else {
             position = nearestPosition
         }
-        _ = timer
+        
     }
+    
 }
 
 enum DragState {

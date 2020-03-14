@@ -10,7 +10,7 @@ import SwiftUI
 
 enum ModalState: CGFloat {
     
-    case closed , partiallyRevealed, open, fullscreen
+    case closed , partiallyRevealed, open
     case base, backgrounded, occluded
     
     func offsetFromTop() -> CGFloat {
@@ -21,7 +21,7 @@ enum ModalState: CGFloat {
             return UIScreen.main.bounds.height * 1/3
         case .open:
             return 20
-        case .fullscreen, .base, .backgrounded:
+        case .base, .backgrounded:
             return 0
         case .occluded:
             return 30
@@ -29,11 +29,8 @@ enum ModalState: CGFloat {
     }
 }
 
-struct Modal: Identifiable {
-    let id = UUID()
-    var content: AnyView
+struct Modal {
     var position: ModalState  = .base
-    
-    var isFullscreenEnabled: Bool = false
     var dragOffset: CGSize = .zero
+    var content: AnyView
 }
