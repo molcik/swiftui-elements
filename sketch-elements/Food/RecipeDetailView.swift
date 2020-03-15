@@ -34,7 +34,6 @@ struct RecipeDetailView: View {
             )
             TabBar(recipe: recipe)
             ScrollView(.vertical, showsIndicators: false) {
-                ModalView()
                 ButtonPrimary(
                     title: "See Ingredients",
                     action: {self.ingredientsPresented.toggle()}
@@ -61,6 +60,9 @@ struct RecipeDetailView: View {
         .edgesIgnoringSafeArea([.top])
         .navigationBarTitle("", displayMode: .large)
         .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
+        .halfSheet(isPresented: self.$ingredientsPresented) {
+            Text("hola")
+        }
     }
     
 }

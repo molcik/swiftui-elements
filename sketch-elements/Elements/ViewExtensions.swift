@@ -19,22 +19,9 @@ extension View {
     }
     
     func halfSheet<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, @ViewBuilder content: @escaping () -> Content) -> some View where Content : View {
-        print("halfSheet")
-        return self.modifier(HalfSheetModifier(isPresented: isPresented, content: AnyView(content())))
+        // return self.modifier(ModalView(isPresented: isPresented))
+        return self
     }
     
 }
 
-struct HalfSheetModifier: ViewModifier {
-    
-    // @EnvironmentObject var modalManager: ModalManager
-    
-    init(isPresented: Binding<Bool>, content: AnyView) {
-        print("init")
-        // modalManager.setModal(isPresented: isPresented, content: content)
-    }
-        
-    func body(content: Content) -> some View {
-        content
-    }
-}

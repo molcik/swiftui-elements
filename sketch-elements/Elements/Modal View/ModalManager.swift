@@ -13,6 +13,7 @@ class ModalManager: ObservableObject {
     @Published var modal: Modal = Modal(position: .partiallyRevealed, content: AnyView(Text("test")))
     
     func newModal<Content: View>(isPresented: Binding<Bool>, @ViewBuilder content: () -> Content ) {
+        print("test")
         modal = Modal(position: .partiallyRevealed, content: AnyView(content()))
     }
     
