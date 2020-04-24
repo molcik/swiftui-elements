@@ -41,15 +41,25 @@ struct RecipeDetailView: View {
                     title: "See Ingredients",
                     action: {
                         self.modalManager.newModal() {
-                            
-                            Color.pink
-                            Text("Wocaaap")
-                            ButtonPrimary(
-                                title: "Close",
-                                action: {
-                                    self.modalManager.closeModal()
+                            VStack(){
+                                ModalHeader(action: self.modalManager.closeModal, title: "Ingredients")
+                                ScrollView(.vertical){
+                                    ForEach(0 ..< self.recipe.instructions.count) {
+                                        TableRow(
+                                            left: "\($0+1)",
+                                            divider: $0 + 1 < self.recipe.instructions.count,
+                                            middle: self.recipe.instructions[$0]
+                                        )
+                                    }
+                                }
+                                Divider()
+                                ButtonPrimary(
+                                    title: "Close",
+                                    action: {
+                                        self.modalManager.closeModal()
+                                }
+                                )
                             }
-                            )
                         }
                     }
                 )

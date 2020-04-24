@@ -38,6 +38,7 @@ struct ModalView: View {
             ZStack(alignment: .top) {
                 Color("Default")
                 self.modal.content
+                    .frame(height: UIScreen.main.bounds.height - self.modal.position.offsetFromTop())
             }
             .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .offset(y: isActive() ? max(20, self.modal.position.offsetFromTop() + self.dragState.translation.height) : 0)

@@ -15,7 +15,7 @@ enum ModalState: CGFloat {
     func offsetFromTop() -> CGFloat {
         switch self {
         case .closed:
-            return UIScreen.main.bounds.height + 42
+            return UIScreen.main.bounds.height
         case .partiallyRevealed:
             return UIScreen.main.bounds.height * 1/3
         case .open:
@@ -27,5 +27,5 @@ enum ModalState: CGFloat {
 struct Modal {
     var position: ModalState  = .closed
     var dragOffset: CGSize = .zero
-    var content: AnyView
+    var content: AnyView?
 }

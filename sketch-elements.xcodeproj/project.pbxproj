@@ -18,6 +18,7 @@
 		3403A32424080C7700D7B040 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 3403A32224080C7700D7B040 /* recipes.json */; };
 		3403A32624080D4400D7B040 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3403A32524080D4400D7B040 /* Data.swift */; };
 		3403A32824080DBC00D7B040 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3403A32724080DBC00D7B040 /* Recipe.swift */; };
+		34041A8E245313F800722D9A /* ModalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34041A8D245313F800722D9A /* ModalHeader.swift */; };
 		341D20DA241CDDCB00C706A2 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D20D9241CDDCB00C706A2 /* ViewExtensions.swift */; };
 		341D20DC241CDE0B00C706A2 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D20DB241CDE0B00C706A2 /* NavigationBarModifier.swift */; };
 		341D20DE241CDE2E00C706A2 /* TabBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */; };
@@ -31,7 +32,6 @@
 		345AE3AD241A7A8E004EBE8C /* ModalAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */; };
 		345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3AA241A7A8E004EBE8C /* ModalManager.swift */; };
 		345AE3B0241A7ABD004EBE8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3AF241A7ABD004EBE8C /* ContentView.swift */; };
-		346186F42418EEC30041B94B /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346186F32418EEC30041B94B /* Sheet.swift */; };
 		349E4BD8241522990079BF04 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD7241522990079BF04 /* Button.swift */; };
 		349E4BDA241523A60079BF04 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD9241523A60079BF04 /* Header.swift */; };
 		34AD61DD240BD093005943F9 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD61DC240BD093005943F9 /* RecipeDetailView.swift */; };
@@ -53,6 +53,7 @@
 		3403A32224080C7700D7B040 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		3403A32524080D4400D7B040 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		3403A32724080DBC00D7B040 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		34041A8D245313F800722D9A /* ModalHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalHeader.swift; sourceTree = "<group>"; };
 		341D20D9241CDDCB00C706A2 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		341D20DB241CDE0B00C706A2 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModifier.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalAnchorView.swift; sourceTree = "<group>"; };
 		345AE3AA241A7A8E004EBE8C /* ModalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalManager.swift; sourceTree = "<group>"; };
 		345AE3AF241A7ABD004EBE8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		346186F32418EEC30041B94B /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		349E4BD7241522990079BF04 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		349E4BD9241523A60079BF04 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		34AD61DC240BD093005943F9 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
@@ -179,10 +179,10 @@
 				3445A79E240B0C3F0020561B /* Card.swift */,
 				349E4BD7241522990079BF04 /* Button.swift */,
 				349E4BD9241523A60079BF04 /* Header.swift */,
-				346186F32418EEC30041B94B /* Sheet.swift */,
 				341D20D9241CDDCB00C706A2 /* ViewExtensions.swift */,
 				341D20DB241CDE0B00C706A2 /* NavigationBarModifier.swift */,
 				341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */,
+				34041A8D245313F800722D9A /* ModalHeader.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -284,6 +284,7 @@
 				3445A79D240B043E0020561B /* RecipesList.swift in Sources */,
 				3403A32624080D4400D7B040 /* Data.swift in Sources */,
 				349E4BDA241523A60079BF04 /* Header.swift in Sources */,
+				34041A8E245313F800722D9A /* ModalHeader.swift in Sources */,
 				3445A79F240B0C3F0020561B /* Card.swift in Sources */,
 				34DCE8C1240817CD00C4EE89 /* Food.swift in Sources */,
 				345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */,
@@ -292,7 +293,6 @@
 				341D20DA241CDDCB00C706A2 /* ViewExtensions.swift in Sources */,
 				3403A3042406B70F00D7B040 /* SceneDelegate.swift in Sources */,
 				3403A31D240809E700D7B040 /* UserData.swift in Sources */,
-				346186F42418EEC30041B94B /* Sheet.swift in Sources */,
 				345AE3B0241A7ABD004EBE8C /* ContentView.swift in Sources */,
 				345AE3AB241A7A8E004EBE8C /* Modal.swift in Sources */,
 				3403A31A2408099500D7B040 /* Recipes.swift in Sources */,
