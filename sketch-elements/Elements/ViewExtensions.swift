@@ -18,10 +18,5 @@ extension View {
         self.modifier(TabBarModifier())
     }
     
-    func halfSheet<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, @ViewBuilder content: @escaping () -> Content) -> some View where Content : View {
-        // return self.modifier(ModalView(isPresented: isPresented))
-        return self
-    }
-    
 }
 

@@ -22,21 +22,36 @@ struct RecipeDetailView: View {
     
     var recipe: Recipe
     var category: String
-    @State var ingredientsPresented: Bool = true
+    @EnvironmentObject var modalManager: ModalManager
+    
+    init(recipe: Recipe, category: String) {
+        self.recipe = recipe
+        self.category = category
+    }
     
     var body: some View {
-        VStack(spacing: 0){
+        return VStack(spacing: 0){
             Header(
                 image: recipe.picture.uri,
                 title: recipe.title
-                // leftItem: AnyView(BackButton(title: category, action: navigateBack)),
-                // rightItem: AnyView(Image(systemName: "bookmark"))
             )
             TabBar(recipe: recipe)
             ScrollView(.vertical, showsIndicators: false) {
                 ButtonPrimary(
                     title: "See Ingredients",
-                    action: {self.ingredientsPresented.toggle()}
+                    action: {
+                        self.modalManager.newModal() {
+                            
+                            Color.pink
+                            Text("Wocaaap")
+                            ButtonPrimary(
+                                title: "Close",
+                                action: {
+                                    self.modalManager.closeModal()
+                            }
+                            )
+                        }
+                    }
                 )
                     .padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {
@@ -60,9 +75,6 @@ struct RecipeDetailView: View {
         .edgesIgnoringSafeArea([.top])
         .navigationBarTitle("", displayMode: .large)
         .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
-        .halfSheet(isPresented: self.$ingredientsPresented) {
-            Text("hola")
-        }
     }
     
 }
