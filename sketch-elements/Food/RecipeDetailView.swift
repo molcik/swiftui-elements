@@ -53,15 +53,18 @@ struct RecipeDetailView: View {
                                     }
                                 }
                                 Divider()
-                                ButtonPrimary(
-                                    title: "Close",
-                                    action: {
-                                        self.modalManager.closeModal()
-                                }
-                                )
+                                HStack(){
+                                    ButtonPrimary(
+                                        title: "Add to Reminders",
+                                        action: {
+                                            self.modalManager.closeModal()
+                                    }
+                                        
+                                    )
+                                }.padding([.horizontal, .bottom], 24)
                             }
                         }
-                    }
+                }
                 )
                     .padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {

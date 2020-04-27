@@ -19,34 +19,35 @@ struct ModalView: View {
             .delay(0)
     }
     
-    func isActive() -> Bool {
-        return [.open, .partiallyRevealed, .closed].contains(modal.position)
-    }
-    
     var body: some View {
         
-        let drag = DragGesture()
-        .updating($dragState) { drag, state, transaction in state = .dragging(translation:  drag.translation) }
-        .onChanged {
-            self.modal.dragOffset = $0.translation
-        }
-        .onEnded(onDragEnded)
-    
-        return ZStack(alignment: .top) {
-            Color.black
-                .opacity(modal.position != .closed ? 0.5 : 0)
-            ZStack(alignment: .top) {
-                Color("Default")
-                self.modal.content
-                    .frame(height: UIScreen.main.bounds.height - self.modal.position.offsetFromTop())
+        let drag = DragGesture(minimumDistance: 30)
+            .updating($dragState) { drag, state, transaction in
+                state = .dragging(translation:  drag.translation)
             }
-            .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .offset(y: isActive() ? max(20, self.modal.position.offsetFromTop() + self.dragState.translation.height) : 0)
-            .animation(isActive() ? (self.dragState.isDragging ? nil : animation) : animation)
-            .gesture(isActive() ? drag:nil)
-        }
-        .edgesIgnoringSafeArea(.vertical)
+            .onChanged {
+                self.modal.dragOffset = $0.translation
+            }
+            .onEnded(onDragEnded)
         
+        return ZStack(alignment: .top) {
+            GeometryReader(){ geometry in
+                Color.black
+                    .opacity(self.modal.position != .closed ? 0.5 : 0)
+                ZStack(alignment: .top) {
+                    Color("Default")
+                    self.modal.content
+                        .frame(height: UIScreen.main.bounds.height - (self.modal.position.offsetFromTop() + geometry.safeAreaInsets.top + self.dragState.translation.height))
+                        .animation(nil)
+                }
+                .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .offset(y: max(0, self.modal.position.offsetFromTop() + self.dragState.translation.height + geometry.safeAreaInsets.top))
+                .animation(self.dragState.isDragging ? nil : self.animation)
+                .gesture(drag)
+            }
+        }
+        .edgesIgnoringSafeArea(.top)
+
     }
     
     private func onDragEnded(drag: DragGesture.Value) {

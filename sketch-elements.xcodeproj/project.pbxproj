@@ -161,7 +161,7 @@
 			path = Food;
 			sourceTree = "<group>";
 		};
-		345AE3A6241A7A8E004EBE8C /* Modal View */ = {
+		345AE3A6241A7A8E004EBE8C /* Modal */ = {
 			isa = PBXGroup;
 			children = (
 				345AE3A7241A7A8E004EBE8C /* Modal.swift */,
@@ -169,20 +169,20 @@
 				345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */,
 				345AE3AA241A7A8E004EBE8C /* ModalManager.swift */,
 			);
-			path = "Modal View";
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		349E4BD62415227E0079BF04 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				345AE3A6241A7A8E004EBE8C /* Modal View */,
+				345AE3A6241A7A8E004EBE8C /* Modal */,
 				3445A79E240B0C3F0020561B /* Card.swift */,
 				349E4BD7241522990079BF04 /* Button.swift */,
 				349E4BD9241523A60079BF04 /* Header.swift */,
 				341D20D9241CDDCB00C706A2 /* ViewExtensions.swift */,
 				341D20DB241CDE0B00C706A2 /* NavigationBarModifier.swift */,
-				341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */,
 				34041A8D245313F800722D9A /* ModalHeader.swift */,
+				341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
