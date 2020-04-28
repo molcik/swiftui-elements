@@ -32,6 +32,9 @@
 		345AE3AD241A7A8E004EBE8C /* ModalAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */; };
 		345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3AA241A7A8E004EBE8C /* ModalManager.swift */; };
 		345AE3B0241A7ABD004EBE8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3AF241A7ABD004EBE8C /* ContentView.swift */; };
+		345D2E1E2458413B00201DD0 /* TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2E1D2458413B00201DD0 /* TableRow.swift */; };
+		345D2E202458473000201DD0 /* TextTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2E1F2458473000201DD0 /* TextTableRow.swift */; };
+		345D2E24245857F700201DD0 /* CheckBoxTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2E23245857F700201DD0 /* CheckBoxTableRow.swift */; };
 		349E4BD8241522990079BF04 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD7241522990079BF04 /* Button.swift */; };
 		349E4BDA241523A60079BF04 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD9241523A60079BF04 /* Header.swift */; };
 		34AD61DD240BD093005943F9 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD61DC240BD093005943F9 /* RecipeDetailView.swift */; };
@@ -66,6 +69,9 @@
 		345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalAnchorView.swift; sourceTree = "<group>"; };
 		345AE3AA241A7A8E004EBE8C /* ModalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalManager.swift; sourceTree = "<group>"; };
 		345AE3AF241A7ABD004EBE8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		345D2E1D2458413B00201DD0 /* TableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRow.swift; sourceTree = "<group>"; };
+		345D2E1F2458473000201DD0 /* TextTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableRow.swift; sourceTree = "<group>"; };
+		345D2E23245857F700201DD0 /* CheckBoxTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxTableRow.swift; sourceTree = "<group>"; };
 		349E4BD7241522990079BF04 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		349E4BD9241523A60079BF04 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		34AD61DC240BD093005943F9 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
@@ -183,6 +189,9 @@
 				341D20DB241CDE0B00C706A2 /* NavigationBarModifier.swift */,
 				34041A8D245313F800722D9A /* ModalHeader.swift */,
 				341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */,
+				345D2E1D2458413B00201DD0 /* TableRow.swift */,
+				345D2E1F2458473000201DD0 /* TextTableRow.swift */,
+				345D2E23245857F700201DD0 /* CheckBoxTableRow.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -276,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345D2E24245857F700201DD0 /* CheckBoxTableRow.swift in Sources */,
 				345AE3AC241A7A8E004EBE8C /* ModalView.swift in Sources */,
 				3403A3022406B70F00D7B040 /* AppDelegate.swift in Sources */,
 				345AE3AD241A7A8E004EBE8C /* ModalAnchorView.swift in Sources */,
@@ -287,6 +297,7 @@
 				34041A8E245313F800722D9A /* ModalHeader.swift in Sources */,
 				3445A79F240B0C3F0020561B /* Card.swift in Sources */,
 				34DCE8C1240817CD00C4EE89 /* Food.swift in Sources */,
+				345D2E202458473000201DD0 /* TextTableRow.swift in Sources */,
 				345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */,
 				341D20DC241CDE0B00C706A2 /* NavigationBarModifier.swift in Sources */,
 				3403A32824080DBC00D7B040 /* Recipe.swift in Sources */,
@@ -295,6 +306,7 @@
 				3403A31D240809E700D7B040 /* UserData.swift in Sources */,
 				345AE3B0241A7ABD004EBE8C /* ContentView.swift in Sources */,
 				345AE3AB241A7A8E004EBE8C /* Modal.swift in Sources */,
+				345D2E1E2458413B00201DD0 /* TableRow.swift in Sources */,
 				3403A31A2408099500D7B040 /* Recipes.swift in Sources */,
 				349E4BD8241522990079BF04 /* Button.swift in Sources */,
 			);

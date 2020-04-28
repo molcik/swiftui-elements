@@ -44,11 +44,12 @@ struct RecipeDetailView: View {
                             VStack(){
                                 ModalHeader(action: self.modalManager.closeModal, title: "Ingredients")
                                 ScrollView(.vertical){
-                                    ForEach(0 ..< self.recipe.instructions.count) {
-                                        TableRow(
-                                            left: "\($0+1)",
-                                            divider: $0 + 1 < self.recipe.instructions.count,
-                                            middle: self.recipe.instructions[$0]
+                                    ForEach(0 ..< self.recipe.ingredients.count) {
+                                        CheckBoxTableRow(
+                                            checked: Binding.constant(self.recipe.ingredients[$0].checked),
+                                            divider: ($0 + 1) < self.recipe.ingredients.count,
+                                            content: self.recipe.ingredients[$0].name,
+                                            description: self.recipe.ingredients[$0].quantity
                                         )
                                     }
                                 }
@@ -58,10 +59,9 @@ struct RecipeDetailView: View {
                                         title: "Add to Reminders",
                                         action: {
                                             self.modalManager.closeModal()
-                                    }
-                                        
-                                    )
-                                }.padding([.horizontal, .bottom], 24)
+                                    })
+                                }
+                                .padding([.horizontal, .bottom], 24)
                             }
                         }
                 }
@@ -69,10 +69,10 @@ struct RecipeDetailView: View {
                     .padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {
                     ForEach(0 ..< recipe.instructions.count) {
-                        TableRow(
-                            left: "\($0+1)",
-                            divider: $0 + 1 < self.recipe.instructions.count,
-                            middle: self.recipe.instructions[$0]
+                        TextTableRow(
+                            left: "\($0 + 1)",
+                            divider: ($0 + 1) < self.recipe.instructions.count,
+                            content: self.recipe.instructions[$0]
                         )
                     }
                 }.padding([.top, .bottom])
@@ -90,24 +90,6 @@ struct RecipeDetailView: View {
         .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
     }
     
-}
-
-struct TableRow: View {
-    
-    var left: String
-    var divider: Bool
-    var middle: String?
-    var right: String?
-    
-    var body: some View {
-        Group {
-            HStack(alignment: .top) {
-                Text("\(left)").foregroundColor(.gray).padding(.leading)
-                Text(middle ?? "(empty)").padding(.horizontal)
-            }.padding(.horizontal)
-            divider ? Divider() : nil
-        }
-    }
 }
 
 struct TabBar: View {
