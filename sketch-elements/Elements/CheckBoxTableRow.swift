@@ -24,7 +24,7 @@ struct CheckBoxTableRow: View {
                         .opacity(checked ? 1 : 0)
                     .overlay(
                         Circle()
-                            .stroke(Color("BrandPrimary"), lineWidth: 3)
+                            .stroke(Color("BrandPrimary"), lineWidth: 2)
                             .opacity(checked ? 0 : 1)
                     )
                     .frame(width: 24, height: 24)

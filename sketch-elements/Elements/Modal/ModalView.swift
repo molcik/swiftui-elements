@@ -40,7 +40,7 @@ struct ModalView: View {
                         .frame(height: UIScreen.main.bounds.height - (self.modal.position.offsetFromTop() + geometry.safeAreaInsets.top + self.dragState.translation.height))
                         .animation(nil)
                 }
-                .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .mask(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 .offset(y: max(0, self.modal.position.offsetFromTop() + self.dragState.translation.height + geometry.safeAreaInsets.top))
                 .animation(self.dragState.isDragging ? nil : self.animation)
                 .gesture(drag)
