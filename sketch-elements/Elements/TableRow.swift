@@ -17,7 +17,7 @@ struct TableRow: View {
     var right: AnyView
     
     var body: some View {
-        Group {
+        VStack(alignment: .leading) {
             HStack() {
                 left.padding(.leading)
                 VStack(alignment: .leading){
@@ -34,7 +34,6 @@ struct TableRow: View {
 
 struct TableRow_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(alignment: .leading) {
             TableRow(
                 left: AnyView(Text("left")),
                 divider: true,
@@ -42,6 +41,5 @@ struct TableRow_Previews: PreviewProvider {
                 bottom: AnyView(Text("bottom")),
                 right: AnyView(Text("right"))
             )
-        }
     }
 }

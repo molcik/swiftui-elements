@@ -46,7 +46,7 @@ struct RecipeDetailView: View {
                                 ScrollView(.vertical){
                                     ForEach(0 ..< self.recipe.ingredients.count) {
                                         CheckBoxTableRow(
-                                            checked: Binding.constant(self.recipe.ingredients[$0].checked),
+                                            checked: self.recipe.ingredients[$0].checked,
                                             divider: ($0 + 1) < self.recipe.ingredients.count,
                                             content: self.recipe.ingredients[$0].name,
                                             description: self.recipe.ingredients[$0].quantity

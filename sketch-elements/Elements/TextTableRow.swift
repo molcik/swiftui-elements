@@ -32,13 +32,11 @@ struct TextTableRow: View {
 
 struct TextTableRow_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(alignment: .leading) {
             TextTableRow(
                 left: "left",
                 divider: true,
                 content: "content",
                 description: "description"
             )
-        }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CheckBoxTableRow: View {
     
-    @Binding var checked: Bool
+    @State var checked: Bool
     var divider: Bool
     var content: String
     var description: String?
@@ -36,19 +36,23 @@ struct CheckBoxTableRow: View {
                 AnyView(Text(description ?? "").foregroundColor(Color.gray)):
                 AnyView(EmptyView()) ,
             right: AnyView(EmptyView())
-        ).opacity(checked ? 0.5 : 1)
+        )
+            .onTapGesture {
+                print("touch")
+                self.checked.toggle()
+            }
+        .opacity(checked ? 0.5 : 1)
+
     }
 }
 
 struct CheckBoxTableRow_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(alignment: .leading) {
             CheckBoxTableRow(
-                checked: Binding.constant(false),
+                checked: true,
                 divider: true,
                 content: "content",
                 description: "description"
             )
-        }
     }
 }
