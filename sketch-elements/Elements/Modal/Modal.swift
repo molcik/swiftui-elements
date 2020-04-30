@@ -10,16 +10,16 @@ import SwiftUI
 
 enum ModalState: CGFloat {
     
-    case closed ,partiallyRevealed, open, hidden
+    case closed ,partiallyRevealed, open
     
     func offsetFromTop() -> CGFloat {
         switch self {
+        case .closed:
+            return UIScreen.main.bounds.height
         case .partiallyRevealed:
             return UIScreen.main.bounds.height * 1/3
         case .open:
             return 0
-        default:
-            return UIScreen.main.bounds.height
         }
     }
 }

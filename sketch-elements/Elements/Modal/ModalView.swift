@@ -35,6 +35,9 @@ struct ModalView: View {
             ZStack(alignment: .top) {
                 Color.black
                     .opacity(self.modal.position != .closed ? 0.5 : 0)
+                    .onTapGesture {
+                        self.modal.position = .closed
+                }
                 ZStack(alignment: .top) {
                     Color("Default")
                     self.modal.content
