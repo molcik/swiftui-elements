@@ -10,13 +10,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var modalManager: ModalManager
     @EnvironmentObject var userData: UserData
     
     var body: some View {
         return ZStack {
             FoodView(categories: recipeCategoriesData)
-            ModalAnchorView(currentModal: $modalManager.modal)
+            ModalAnchorView()
         }
     }
 }

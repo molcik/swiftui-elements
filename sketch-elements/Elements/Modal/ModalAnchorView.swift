@@ -10,9 +10,9 @@ import SwiftUI
 
 struct ModalAnchorView: View {
     
-    @Binding var currentModal: Modal
+    @EnvironmentObject var modalManager: ModalManager
     
     var body: some View {
-        ModalView(modal: $currentModal)
+        ModalView(modal: $modalManager.modal)
     }
 }

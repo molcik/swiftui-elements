@@ -37,42 +37,14 @@ struct RecipeDetailView: View {
             )
             TabBar(recipe: recipe)
             ScrollView(.vertical, showsIndicators: false) {
-                ButtonPrimary(
-                    title: "See Ingredients",
-                    action: {
-                        self.modalManager.newModal() {
-                            VStack(){
-                                ModalHeader(action: self.modalManager.closeModal, title: "Ingredients")
-                                ScrollView(.vertical){
-                                    ForEach(0 ..< self.recipe.ingredients.count) {
-                                        CheckBoxTableRow(
-                                            checked: self.recipe.ingredients[$0].checked,
-                                            divider: ($0 + 1) < self.recipe.ingredients.count,
-                                            content: self.recipe.ingredients[$0].name,
-                                            description: self.recipe.ingredients[$0].quantity
-                                        )
-                                    }
-                                }
-                                Divider()
-                                HStack(){
-                                    ButtonPrimary(
-                                        title: "Add to Reminders",
-                                        action: {
-                                            self.modalManager.closeModal()
-                                    })
-                                }
-                                .padding([.horizontal, .bottom], 24)
-                            }
-                        }
-                }
-                )
+                ButtonPrimary( title: "See Ingredients",action: self.modalManager.openModal)
                     .padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {
-                    ForEach(0 ..< recipe.instructions.count) {
+                    ForEach(recipe.instructions) { instruction in
                         TextTableRow(
-                            left: "\($0 + 1)",
-                            divider: ($0 + 1) < self.recipe.instructions.count,
-                            content: self.recipe.instructions[$0]
+                            left: "\(self.recipe.instructions.firstIndex(of: instruction)! + 1)",
+                            divider: self.recipe.instructions.firstIndex(of: instruction)! < self.recipe.instructions.count,
+                            content: instruction
                         )
                     }
                 }.padding([.top, .bottom])
@@ -88,8 +60,43 @@ struct RecipeDetailView: View {
         .edgesIgnoringSafeArea([.top])
         .navigationBarTitle("", displayMode: .large)
         .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
+        .onAppear {
+            self.modalManager.newModal(position: .closed) {
+                IngredientsModal(recipe: self.recipe, action: self.modalManager.closeModal)
+            }
+        }
     }
+}
+
+struct IngredientsModal: View {
     
+    var recipe: Recipe
+    var action: () -> Void
+    
+    var body: some View {
+        VStack(){
+            ModalHeader(action: self.action, title: "Ingredients")
+            ScrollView(.vertical){
+                ForEach(self.recipe.ingredients) {ingredient in
+                    CheckBoxTableRow(
+                        divider: true,
+                        content: ingredient.name,
+                        description: ingredient.quantity,
+                        checked: ingredient.checked
+                    )
+                }
+            }
+            Divider()
+            HStack(){
+                ButtonPrimary(
+                    title: "Add to Reminders",
+                    action: {
+                        self.action()
+                })
+            }
+            .padding([.horizontal, .bottom], 24)
+        }
+    }
 }
 
 struct TabBar: View {

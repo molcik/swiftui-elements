@@ -12,12 +12,16 @@ class ModalManager: ObservableObject {
     
     @Published var modal: Modal = Modal(position: .closed, content: nil)
     
-    func newModal<Content: View>(@ViewBuilder content: () -> Content ) {
-        modal = Modal(position: .partiallyRevealed, content: AnyView(content()))
+    func newModal<Content: View>(position: ModalState, @ViewBuilder content: () -> Content ) {
+        modal = Modal(position: position, content: AnyView(content()))
+    }
+    
+    func openModal() {
+        modal.position = .partiallyRevealed
     }
     
     func closeModal() {
-        modal = Modal(position: .closed, content: nil)
+        modal.position = .closed
     }
     
 }

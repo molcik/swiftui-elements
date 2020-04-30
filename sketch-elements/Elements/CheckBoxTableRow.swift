@@ -10,10 +10,10 @@ import SwiftUI
 
 struct CheckBoxTableRow: View {
     
-    @State var checked: Bool
     var divider: Bool
     var content: String
     var description: String?
+    @State var checked: Bool
     
     var body: some View {
         TableRow(
@@ -22,12 +22,12 @@ struct CheckBoxTableRow: View {
                     Circle()
                         .fill(Color("BrandPrimary"))
                         .opacity(checked ? 1 : 0)
-                    .overlay(
-                        Circle()
-                            .stroke(Color("BrandPrimary"), lineWidth: 2)
-                            .opacity(checked ? 0 : 1)
+                        .overlay(
+                            Circle()
+                                .stroke(Color("BrandPrimary"), lineWidth: 2)
+                                .opacity(checked ? 0 : 1)
                     )
-                    .frame(width: 24, height: 24)
+                        .frame(width: 24, height: 24)
                 }
             ),
             divider: divider,
@@ -37,22 +37,21 @@ struct CheckBoxTableRow: View {
                 AnyView(EmptyView()) ,
             right: AnyView(EmptyView())
         )
+            .opacity(checked ? 0.5 : 1)
             .onTapGesture {
-                print("touch")
                 self.checked.toggle()
-            }
-        .opacity(checked ? 0.5 : 1)
-
+        }
+        
     }
 }
 
 struct CheckBoxTableRow_Previews: PreviewProvider {
     static var previews: some View {
-            CheckBoxTableRow(
-                checked: true,
-                divider: true,
-                content: "content",
-                description: "description"
-            )
+        CheckBoxTableRow(
+            divider: true,
+            content: "content",
+            description: "description",
+            checked: true
+        )
     }
 }
