@@ -17,7 +17,7 @@ struct RecipesListView: View {
         ScrollView(.vertical, showsIndicators: false) {
             ForEach(userData.recipes) {recipe in
                 NavigationLink(
-                    destination: RecipeDetailView(recipe: recipe, category: self.category.title)
+                    destination: RecipeDetail(recipe: recipe, category: self.category.title)
                 ) {
                     Card(title: recipe.title, subTitle: nil, height: 160.0, pictureUrl: recipe.picture.uri, description: "\(recipe.people) people · \(recipe.minutes) minutes")
                 }

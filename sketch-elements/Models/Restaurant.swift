@@ -16,18 +16,25 @@ struct Restaurant: Hashable, Codable, Identifiable {
     var ratings: Float
     var reviews: Int
     var picture: Picture
-    var coordinate: Coordinate
+    var coordinates: Coordinates
     var address: String
     var city: String
     var country: String
     var description: String
     var price: Price
     var openings: Openings
+    var locationCoordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude)
+    }
 }
 
-struct Coordinate: Hashable, Codable {
-    var longitude: Float
-    var latitude: Float
+
+
+struct Coordinates: Hashable, Codable {
+    var longitude: Double
+    var latitude: Double
 }
 
 struct Price: Hashable, Codable {

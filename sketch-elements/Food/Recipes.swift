@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct RecipesView: View {
+struct Recipes: View {
     
     var categories: [Category]
     var body: some View {
@@ -33,7 +33,7 @@ struct RecipesView: View {
 
 struct Recipes_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesView(categories: recipeCategoriesData)
+        Recipes(categories: recipeCategoriesData)
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }

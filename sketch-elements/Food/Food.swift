@@ -8,17 +8,18 @@
 
 import SwiftUI
 
-struct FoodView: View {
+struct Food: View {
     
     var categories:[Category] = recipeCategoriesData
+    var restaurants:[Restaurant] = restaurantsData
     
     var body: some View {
         TabView() {
-            RecipesView(categories: categories).tabItem {
+            Recipes(categories: categories).tabItem {
                 Text("Recipes")
                 Image(systemName: "doc")
             }
-            Text("Tab Content 2").tabItem {
+            Restaurants(restaurants: restaurants).tabItem {
                 Text("Restaurants")
                 Image(systemName: "person.crop.circle")
             }
@@ -30,7 +31,7 @@ struct FoodView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodView().environmentObject(UserData())
+        Food().environmentObject(UserData())
     }
 }
 

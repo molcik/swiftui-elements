@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 import URLImage
 
-struct RecipeDetailView: View {
+struct RecipeDetail: View {
     
     var recipe: Recipe
     var category: String
@@ -145,7 +145,7 @@ struct BackButton: View {
 
 struct RecipeDetail_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeDetailView(recipe: recipesData[4], category: recipeCategoriesData[0].title)
+        RecipeDetail(recipe: recipesData[4], category: recipeCategoriesData[0].title)
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }
