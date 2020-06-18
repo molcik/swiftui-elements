@@ -44,8 +44,4 @@ struct Picture: Hashable, Codable {
     // var preview: NSData
 }
 
-extension String: Identifiable {
-    public var id: String {
-        return self
-    }
-}
+

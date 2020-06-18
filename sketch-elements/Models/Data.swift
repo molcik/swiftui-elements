@@ -13,6 +13,7 @@ import SwiftUI
 
 let recipesData: [Recipe] = load("recipes.json")
 let recipeCategoriesData: [Category] = load("recipeCategories.json")
+let restaurantsData: [Restaurant] = load("restaurants.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
@@ -69,3 +70,9 @@ final class ImageStore {
     }
 }
 
+
+struct Data_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}

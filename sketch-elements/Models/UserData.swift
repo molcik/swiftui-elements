@@ -13,4 +13,5 @@ final class UserData: ObservableObject {
     @Published var showFavoritesOnly = false
     @Published var recipes = recipesData
     @Published var recipeCategories = recipeCategoriesData
+    @Published var restaurants = restaurantsData
 }

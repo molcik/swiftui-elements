@@ -24,7 +24,6 @@ struct FoodView: View {
             }
         }
         .tabBarOpaque()
-        .edgesIgnoringSafeArea(.top)
         .accentColor(Color("BrandPrimary"))
     }
 }
