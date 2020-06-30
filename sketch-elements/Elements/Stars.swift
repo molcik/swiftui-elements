@@ -1,0 +1,43 @@
+//
+//  RecipeRow.swift
+//  sketch-elements
+//
+//  Created by Filip Molcik on 29/02/2020.
+//  Copyright © 2020 Filip Molcik. All rights reserved.
+//
+
+import SwiftUI
+import URLImage
+
+struct Stars: View {
+    
+    var rating: Int
+    var label = ""
+    var maximumRating = 5
+    var star = Image(systemName: "star.fill")
+    var color = Color("BrandPrimary")
+    
+    var body: some View {
+        HStack(spacing: 4) {
+            ForEach(1..<maximumRating + 1) { number in
+                self.star
+                    .resizable()
+                    .frame(width: 14, height: 14)
+                    .foregroundColor(number > self.rating ? self.color.opacity(0.3) : self.color)
+            }
+            if label.isEmpty == false {
+                Text(label)
+                    .font(.footnote)
+                    .opacity(0.6)
+                    .padding(2)
+            }
+        }
+    }
+}
+
+struct Stars_Previews: PreviewProvider {
+    static var previews: some View {
+        Stars(rating: 4, label: "167 reviews")
+    }
+}
+

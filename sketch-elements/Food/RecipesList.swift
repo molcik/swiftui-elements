@@ -19,7 +19,7 @@ struct RecipesListView: View {
                 NavigationLink(
                     destination: RecipeDetail(recipe: recipe, category: self.category.title)
                 ) {
-                    Card(title: recipe.title, subTitle: nil, height: 160.0, pictureUrl: recipe.picture.uri, description: "\(recipe.people) people · \(recipe.minutes) minutes")
+                    CardWithBackground(title: recipe.title, subTitle: nil, height: 160.0, pictureUrl: recipe.picture.uri, description: "\(recipe.people) people · \(recipe.minutes) minutes")
                 }
             }
         }

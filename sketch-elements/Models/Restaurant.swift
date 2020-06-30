@@ -13,7 +13,7 @@ struct Restaurant: Hashable, Codable, Identifiable {
     var id: String
     var title: String
     var subtitle: String
-    var ratings: Float
+    var ratings: Int
     var reviews: Int
     var picture: Picture
     var coordinates: Coordinates

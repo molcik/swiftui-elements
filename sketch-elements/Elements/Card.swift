@@ -9,62 +9,34 @@
 import SwiftUI
 import URLImage
 
-struct Card: View {
+struct Card<Content: View>: View {
     
-    var title: String
-    var subTitle: String?
-    var height: CGFloat
-    var pictureUrl: URL
-    var description: String?
+    let content: Content
+    
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
     
     var body: some View {
-        VStack(){
-            HStack() {
-                VStack(alignment: .leading) {
-                    if (subTitle != nil ){
-                        Text((subTitle!).uppercased())
-                             .font(.subheadline)
-                             .fontWeight(.semibold)
-                             .opacity(0.6)
-                    }
-                    Text(title)
-                        .fontWeight(.bold)
-                        .font(.title)
-                }
-                Spacer()
-            }
-            Spacer()
-            HStack() {
-                Text(description ?? "")
-                Spacer()
-            }
-            
-        }
-        .padding(.all)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.3), Color.black.opacity(0), Color.black.opacity(0), Color.black.opacity(description != nil ? 0.3 : 0)]), startPoint: .top, endPoint: .bottom))
+        content
         .frame(maxWidth: .infinity)
-        .frame(height: height)
-        .foregroundColor(Color.white)
-        .background(
-            URLImage(pictureUrl, content:  {
-                $0.image
-                    .renderingMode(.original)
-                    .resizable()
-            })
-        )
-            .cornerRadius(8)
-            .padding([.top, .leading, .trailing])
+        .background(Color("Default"))
+        .cornerRadius(8)
+        .shadow(radius: 8)
+        .padding([.top, .leading, .trailing])
     }
 }
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(
-            title: recipesData[0].title,
-            subTitle: recipeCategoriesData[0].subtitle,
-            height: 300.0,
-            pictureUrl: recipesData[0].picture.uri,
-            description: "\(recipesData[0].minutes) minutes")
-            .environmentObject(UserData())
+        Card{
+            VStack() {
+                Text("Content")
+            }.frame(
+                maxWidth: .infinity
+            )
+            .padding()
+        }
     }
 }
+
