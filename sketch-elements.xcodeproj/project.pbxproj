@@ -33,6 +33,8 @@
 		344723BD24ABA9CD003B9F50 /* RestaurantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344723BC24ABA9CD003B9F50 /* RestaurantDetail.swift */; };
 		344723BF24ABAC67003B9F50 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344723BE24ABAC67003B9F50 /* TabBar.swift */; };
 		344723C124ABB098003B9F50 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344723C024ABB098003B9F50 /* TabItem.swift */; };
+		344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344723C524ABC37D003B9F50 /* ReservationModal.swift */; };
+		344723C824ABC64A003B9F50 /* ApplePayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344723C724ABC64A003B9F50 /* ApplePayButton.swift */; };
 		345AE3AB241A7A8E004EBE8C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A7241A7A8E004EBE8C /* Modal.swift */; };
 		345AE3AC241A7A8E004EBE8C /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A8241A7A8E004EBE8C /* ModalView.swift */; };
 		345AE3AD241A7A8E004EBE8C /* ModalAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */; };
@@ -44,7 +46,7 @@
 		3461D3D6245C2036009D389E /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461D3D5245C2036009D389E /* Restaurants.swift */; };
 		3461D3D8245C20D0009D389E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461D3D7245C20D0009D389E /* Restaurant.swift */; };
 		3461D3DB245C219B009D389E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461D3DA245C219B009D389E /* Extensions.swift */; };
-		349E4BD8241522990079BF04 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD7241522990079BF04 /* Button.swift */; };
+		349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD7241522990079BF04 /* ButtonPrimary.swift */; };
 		349E4BDA241523A60079BF04 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD9241523A60079BF04 /* Header.swift */; };
 		34AD61DD240BD093005943F9 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD61DC240BD093005943F9 /* RecipeDetail.swift */; };
 		34B255AA24081B3500599A4C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B255A924081B3500599A4C /* SwiftUI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -82,6 +84,8 @@
 		344723BC24ABA9CD003B9F50 /* RestaurantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetail.swift; sourceTree = "<group>"; };
 		344723BE24ABAC67003B9F50 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		344723C024ABB098003B9F50 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		344723C524ABC37D003B9F50 /* ReservationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationModal.swift; sourceTree = "<group>"; };
+		344723C724ABC64A003B9F50 /* ApplePayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayButton.swift; sourceTree = "<group>"; };
 		345AE3A7241A7A8E004EBE8C /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		345AE3A8241A7A8E004EBE8C /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalAnchorView.swift; sourceTree = "<group>"; };
@@ -93,7 +97,7 @@
 		3461D3D5245C2036009D389E /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
 		3461D3D7245C20D0009D389E /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		3461D3DA245C219B009D389E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		349E4BD7241522990079BF04 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		349E4BD7241522990079BF04 /* ButtonPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPrimary.swift; sourceTree = "<group>"; };
 		349E4BD9241523A60079BF04 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		34AD61DC240BD093005943F9 /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 		34B255A924081B3500599A4C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -193,13 +197,44 @@
 				3461D3D5245C2036009D389E /* Restaurants.swift */,
 				344723BA24ABA93C003B9F50 /* IngredientsModal.swift */,
 				344723BC24ABA9CD003B9F50 /* RestaurantDetail.swift */,
+				344723C524ABC37D003B9F50 /* ReservationModal.swift */,
 			);
 			path = Food;
+			sourceTree = "<group>";
+		};
+		344723C224ABC040003B9F50 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				3445A79E240B0C3F0020561B /* CardWithBackground.swift */,
+				34B4B12424AB668100B092A8 /* Card.swift */,
+				34B4B12624AB6B0500B092A8 /* CardWithAttachment.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		344723C324ABC078003B9F50 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				341D20DB241CDE0B00C706A2 /* NavigationBarModifier.swift */,
+				341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		344723C424ABC098003B9F50 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				345D2E1D2458413B00201DD0 /* TableRow.swift */,
+				345D2E1F2458473000201DD0 /* TextTableRow.swift */,
+				345D2E23245857F700201DD0 /* CheckBoxTableRow.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		345AE3A6241A7A8E004EBE8C /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				34041A8D245313F800722D9A /* ModalHeader.swift */,
 				345AE3A7241A7A8E004EBE8C /* Modal.swift */,
 				345AE3A8241A7A8E004EBE8C /* ModalView.swift */,
 				345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */,
@@ -212,22 +247,17 @@
 			isa = PBXGroup;
 			children = (
 				345AE3A6241A7A8E004EBE8C /* Modal */,
-				3445A79E240B0C3F0020561B /* CardWithBackground.swift */,
-				34B4B12424AB668100B092A8 /* Card.swift */,
-				349E4BD7241522990079BF04 /* Button.swift */,
+				344723C224ABC040003B9F50 /* Card */,
+				349E4BD7241522990079BF04 /* ButtonPrimary.swift */,
 				349E4BD9241523A60079BF04 /* Header.swift */,
 				341D20D9241CDDCB00C706A2 /* ViewExtensions.swift */,
-				341D20DB241CDE0B00C706A2 /* NavigationBarModifier.swift */,
-				34041A8D245313F800722D9A /* ModalHeader.swift */,
-				341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */,
-				345D2E1D2458413B00201DD0 /* TableRow.swift */,
-				345D2E1F2458473000201DD0 /* TextTableRow.swift */,
-				345D2E23245857F700201DD0 /* CheckBoxTableRow.swift */,
+				344723C324ABC078003B9F50 /* Modifiers */,
+				344723C424ABC098003B9F50 /* Table */,
 				340A1980249BB0C900D49461 /* MapView.swift */,
-				34B4B12624AB6B0500B092A8 /* CardWithAttachment.swift */,
 				34B4B12824AB72B500B092A8 /* Stars.swift */,
 				344723B824ABA89E003B9F50 /* BackButton.swift */,
 				344723BE24ABAC67003B9F50 /* TabBar.swift */,
+				344723C724ABC64A003B9F50 /* ApplePayButton.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -340,6 +370,8 @@
 				3445A79F240B0C3F0020561B /* CardWithBackground.swift in Sources */,
 				34DCE8C1240817CD00C4EE89 /* Food.swift in Sources */,
 				345D2E202458473000201DD0 /* TextTableRow.swift in Sources */,
+				344723C824ABC64A003B9F50 /* ApplePayButton.swift in Sources */,
+				344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */,
 				345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */,
 				341D20DC241CDE0B00C706A2 /* NavigationBarModifier.swift in Sources */,
 				3403A32824080DBC00D7B040 /* Recipe.swift in Sources */,
@@ -355,7 +387,7 @@
 				345AE3AB241A7A8E004EBE8C /* Modal.swift in Sources */,
 				345D2E1E2458413B00201DD0 /* TableRow.swift in Sources */,
 				3403A31A2408099500D7B040 /* Recipes.swift in Sources */,
-				349E4BD8241522990079BF04 /* Button.swift in Sources */,
+				349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */,
 				344723BF24ABAC67003B9F50 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

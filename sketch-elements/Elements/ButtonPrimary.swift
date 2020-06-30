@@ -22,7 +22,7 @@ struct ButtonPrimary: View {
             Text(title)
         }
         .frame(minWidth: 100, maxWidth: .infinity, minHeight: 44)
-        .background(Color("BrandPrimary"))
+        .background(color ?? Color("BrandPrimary"))
         .foregroundColor(.white)
         .cornerRadius(8)
     }

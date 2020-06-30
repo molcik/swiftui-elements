@@ -36,8 +36,8 @@ struct CardWithAttachment: View {
                             .renderingMode(.original)
                             .resizable()
                     })
-                        .cornerRadius(4)
                         .frame(width: 110, height: 70)
+                        .cornerRadius(4)
                 }
             }
             .frame(height:70)

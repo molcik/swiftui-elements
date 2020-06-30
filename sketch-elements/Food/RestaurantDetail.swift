@@ -65,7 +65,7 @@ struct RestaurantDetail: View {
         .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
         .onAppear {
             self.modalManager.newModal(position: .closed) {
-                Text("Hello from the modal side")
+                ReservationModal(restaurant: self.restaurant, action: self.modalManager.closeModal)
             }
         }
     }
