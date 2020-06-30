@@ -11,7 +11,8 @@ import URLImage
 
 struct RestaurantDetail: View {
     
-    var restaurant: Restaurant
+    let restaurant: Restaurant
+    let gradient = LinearGradient(gradient: Gradient(colors: [.white, .clear]), startPoint: .top, endPoint: .bottom)
     @EnvironmentObject var modalManager: ModalManager
     
     init(restaurant: Restaurant) {
@@ -25,14 +26,36 @@ struct RestaurantDetail: View {
                 title: restaurant.title
             )
             TabBar([
-                TabItem(name: "$$", icon: "dollarsign.circle"),
-                TabItem(name: "129 reviews", icon: "star.fill"),
-                TabItem(name: "$18:00 - 22:00", icon: "clock.fill")
+                TabItem(
+                    name: String(repeating: "$",
+                                 count: restaurant.price.expensive), icon: "creditcard"),
+                TabItem(
+                    name: "\(restaurant.reviews) reviews",
+                    customView: AnyView(Stars(restaurant.ratings))),
+                TabItem(
+                    name: "\(restaurant.openings.from) - \(restaurant.openings.to)",
+                    icon: "clock.fill")
             ])
-            ScrollView(.vertical, showsIndicators: false) {
-                ButtonPrimary( title: "See Ingredients",action: self.modalManager.openModal)
-                    .padding([.top, .leading, .trailing])
-                Spacer()
+            
+            ZStack(alignment: .top) {
+                MapView(coordinate: restaurant.locationCoordinate)
+                    .frame(height: 180)
+                    .mask(
+                        gradient
+                )
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing:0) {
+                        Rectangle()
+                            .opacity(0)
+                            .frame(height: 100)
+                        ButtonPrimary( title: "Make reservation",action: self.modalManager.openModal)
+                            .padding([.top, .leading, .trailing])
+                        Card{
+                            Text(restaurant.description)
+                            .padding()
+                        }
+                    }
+                }
             }
             .frame(maxWidth: .infinity)
         }
@@ -42,8 +65,7 @@ struct RestaurantDetail: View {
         .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
         .onAppear {
             self.modalManager.newModal(position: .closed) {
-                EmptyView()
-                // IngredientsModal(restaurant: self.restaurant, action: self.modalManager.closeModal)
+                Text("Hello from the modal side")
             }
         }
     }
