@@ -12,10 +12,15 @@ import URLImage
 struct Stars: View {
     
     var rating: Int
-    var label = ""
+    var label: String
     var maximumRating = 5
     var star = Image(systemName: "star.fill")
     var color = Color("BrandPrimary")
+    
+    init(_ rating: Int, label: String = "") {
+        self.rating = rating
+        self.label = label
+    }
     
     var body: some View {
         HStack(spacing: 4) {
@@ -37,7 +42,7 @@ struct Stars: View {
 
 struct Stars_Previews: PreviewProvider {
     static var previews: some View {
-        Stars(rating: 4, label: "167 reviews")
+        Stars(4, label: "167 reviews")
     }
 }
 

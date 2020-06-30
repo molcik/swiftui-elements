@@ -6,10 +6,12 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import SwiftUI
 
-struct TabItem: Hashable, Codable, Identifiable {
+struct TabItem: Identifiable {
     var id: String {name}
     var name: String
-    var icon: String
+    var icon: String?
+    var customView: AnyView?
 }
 

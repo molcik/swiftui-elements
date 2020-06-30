@@ -21,10 +21,15 @@ struct TabBar: View {
             ForEach(content) {tab in
                 Spacer()
                 VStack() {
-                    Image(systemName: tab.icon)
+                    if (tab.customView != nil) {
+                        tab.customView
+                    } else {
+                        Image(systemName: tab.icon ?? "circle")
+                    }
                     Text(tab.name)
                         .font(.caption)
                 }
+                .frame(maxWidth:.infinity)
                 Spacer()
             }
         }
@@ -35,3 +40,12 @@ struct TabBar: View {
     }
 }
 
+
+struct TabBar_Previews: PreviewProvider {
+    static var previews: some View {
+        TabBar([
+            TabItem(name: "$$", icon: "creditcard"),
+            TabItem(name: "129 reviews", customView: AnyView(Stars(3))),
+            TabItem(name: "$18:00 - 22:00", icon: "clock.fill")
+        ])    }
+}

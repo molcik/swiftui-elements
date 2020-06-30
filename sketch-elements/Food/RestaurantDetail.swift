@@ -24,7 +24,11 @@ struct RestaurantDetail: View {
                 image: restaurant.picture.uri,
                 title: restaurant.title
             )
-            // TabBar(restaurant: restaurant)
+            TabBar([
+                TabItem(name: "$$", icon: "dollarsign.circle"),
+                TabItem(name: "129 reviews", icon: "star.fill"),
+                TabItem(name: "$18:00 - 22:00", icon: "clock.fill")
+            ])
             ScrollView(.vertical, showsIndicators: false) {
                 ButtonPrimary( title: "See Ingredients",action: self.modalManager.openModal)
                     .padding([.top, .leading, .trailing])

@@ -167,8 +167,8 @@
 				3403A32524080D4400D7B040 /* Data.swift */,
 				3403A32724080DBC00D7B040 /* Recipe.swift */,
 				3403A31C240809E700D7B040 /* UserData.swift */,
-				3461D3D7245C20D0009D389E /* Restaurant.swift */,
 				344723C024ABB098003B9F50 /* TabItem.swift */,
+				3461D3D7245C20D0009D389E /* Restaurant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

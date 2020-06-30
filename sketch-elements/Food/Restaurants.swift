@@ -35,7 +35,7 @@ struct Restaurants: View {
                                     title: restaurant.title,
                                     subTitle: restaurant.subtitle,
                                     pictureUrl: restaurant.picture.uri,
-                                    attachment: AnyView(Stars(rating: restaurant.ratings, label: "\(restaurant.reviews) reviews"))
+                                    attachment: AnyView(Stars(restaurant.ratings, label: "\(restaurant.reviews) reviews"))
                                 )
                             }
                         }

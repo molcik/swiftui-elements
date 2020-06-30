@@ -52,7 +52,7 @@ struct CardWithAttachment_Previews: PreviewProvider {
             title: recipesData[0].title,
             subTitle: recipeCategoriesData[0].subtitle,
             pictureUrl: recipesData[0].picture.uri,
-            attachment: AnyView(Stars(rating:3, label: "\(120) reviews")))
+            attachment: AnyView(Stars(3, label: "\(120) reviews")))
             .environmentObject(UserData())
     }
 }
