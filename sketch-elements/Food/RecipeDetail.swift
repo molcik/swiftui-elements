@@ -1,17 +1,8 @@
 //
-//  RecipeDetailView.swift
+//  RecipeDetail.swift
 //  sketch-elements
 //
 //  Created by Filip Molcik on 01/03/2020.
-//  Copyright © 2020 Filip Molcik. All rights reserved.
-//
-
-import Foundation
-//
-//  RecipesList.swift
-//  sketch-elements
-//
-//  Created by Filip Molcik on 29/02/2020.
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
@@ -35,7 +26,10 @@ struct RecipeDetail: View {
                 image: recipe.picture.uri,
                 title: recipe.title
             )
-            TabBar(recipe: recipe)
+            TabBar(
+                [TabItem(name: "\(recipe.people) people", icon: "person.2.fill"),
+                 TabItem(name: "\(recipe.minutes) minutes", icon: "clock.fill")]
+            )
             ScrollView(.vertical, showsIndicators: false) {
                 ButtonPrimary( title: "See Ingredients",action: self.modalManager.openModal)
                     .padding([.top, .leading, .trailing])
@@ -65,81 +59,6 @@ struct RecipeDetail: View {
                 IngredientsModal(recipe: self.recipe, action: self.modalManager.closeModal)
             }
         }
-    }
-}
-
-struct IngredientsModal: View {
-    
-    var recipe: Recipe
-    var action: () -> Void
-    
-    var body: some View {
-        VStack(){
-            ModalHeader(action: self.action, title: "Ingredients")
-            ScrollView(.vertical){
-                ForEach(self.recipe.ingredients) {ingredient in
-                    CheckBoxTableRow(
-                        divider: true,
-                        content: ingredient.name,
-                        description: ingredient.quantity,
-                        checked: ingredient.checked
-                    )
-                }
-            }
-            Divider()
-            HStack(){
-                ButtonPrimary(
-                    title: "Add to Reminders",
-                    action: {
-                        self.action()
-                })
-            }
-            .padding([.horizontal, .bottom], 24)
-        }
-    }
-}
-
-struct TabBar: View {
-    
-    var recipe: Recipe
-    
-    var body: some View {
-        HStack () {
-            Spacer()
-            VStack() {
-                Image(systemName: "person.2.fill")
-                Text("\(recipe.people) people")
-                    .font(.caption)
-            }
-            Spacer()
-            Spacer()
-            VStack() {
-                Image(systemName: "clock.fill")
-                Text("\(recipe.minutes) minutes")
-                    .font(.caption)
-            }
-            Spacer()
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: 64.0)
-        .background(Color("Default"))
-        .foregroundColor(Color("BrandPrimary"))
-    }
-}
-
-
-struct BackButton: View {
-    var title: String
-    var action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: "chevron.left")
-                .font(.system(size: 24.0, weight: .medium))
-            Text(title)
-                .offset(x: -4)
-        }.offset(x: -5)
-        
     }
 }
 

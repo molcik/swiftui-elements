@@ -21,19 +21,23 @@ struct Restaurants: View {
                     .frame(height: 180)
                     .mask(
                         gradient
-                    )
+                )
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing:0) {
                         Rectangle()
                             .opacity(0)
                             .frame(height: 120)
                         ForEach(restaurants) { restaurant in
-                            CardWithAttachment(
-                                title: restaurant.title,
-                                subTitle: restaurant.subtitle,
-                                pictureUrl: restaurant.picture.uri,
-                                attachment: AnyView(Stars(rating: restaurant.ratings, label: "\(restaurant.reviews) reviews"))
+                            NavigationLink(
+                                destination: RestaurantDetail(restaurant: restaurant)
+                            ) {
+                                CardWithAttachment(
+                                    title: restaurant.title,
+                                    subTitle: restaurant.subtitle,
+                                    pictureUrl: restaurant.picture.uri,
+                                    attachment: AnyView(Stars(rating: restaurant.ratings, label: "\(restaurant.reviews) reviews"))
                                 )
+                            }
                         }
                     }
                 }
