@@ -10,7 +10,7 @@ import SwiftUI
 import UIKit
 import PassKit
 
-struct ApplePayButton: UIViewRepresentable {
+struct ButtonApplePay: UIViewRepresentable {
 
 
     func makeUIView(context: Context) -> PKPaymentButton {
@@ -18,6 +18,6 @@ struct ApplePayButton: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: PKPaymentButton,
-        context: UIViewRepresentableContext<ApplePayButton>) {
+        context: UIViewRepresentableContext<ButtonApplePay>) {
     }
 }

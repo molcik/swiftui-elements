@@ -40,7 +40,7 @@ struct ReservationModal: View {
             .padding([.leading, .trailing])
             Divider()
             Spacer()
-            ApplePayButton().frame(height: 44)
+            ButtonApplePay().frame(height: 44)
                 .padding([.horizontal, .bottom])
         }
     }
