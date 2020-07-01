@@ -13,17 +13,19 @@ struct ButtonPrimary: View {
     
     var title: String
     var action: () -> Void
-    var color: Color?
+    var backgroundColor: Color?
+    var foregroundColor: Color?
     var iconName: String?
     
     var body: some View {
         Button(action: action){
             Image(systemName: iconName ?? "")
             Text(title)
+                .font(.headline)
         }
         .frame(minWidth: 100, maxWidth: .infinity, minHeight: 44)
-        .background(color ?? Color("BrandPrimary"))
-        .foregroundColor(.white)
+        .background(backgroundColor ?? Color("BrandPrimary"))
+        .foregroundColor(foregroundColor ?? .white)
         .cornerRadius(8)
     }
     
@@ -31,6 +33,6 @@ struct ButtonPrimary: View {
 
 struct ButtonPrimary_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonPrimary(title: "Test", action: {}).environmentObject(UserData())
+        ButtonPrimary(title: "Test", action: {})
     }
 }

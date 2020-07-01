@@ -36,6 +36,7 @@
 		344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344723C524ABC37D003B9F50 /* ReservationModal.swift */; };
 		344723C824ABC64A003B9F50 /* ButtonApplePay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344723C724ABC64A003B9F50 /* ButtonApplePay.swift */; };
 		344723CB24AC7B80003B9F50 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344723CA24AC7B80003B9F50 /* SegmentedPicker.swift */; };
+		344723CD24AC9613003B9F50 /* CollapsablePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344723CC24AC9613003B9F50 /* CollapsablePicker.swift */; };
 		345AE3AB241A7A8E004EBE8C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A7241A7A8E004EBE8C /* Modal.swift */; };
 		345AE3AC241A7A8E004EBE8C /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A8241A7A8E004EBE8C /* ModalView.swift */; };
 		345AE3AD241A7A8E004EBE8C /* ModalAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */; };
@@ -88,6 +89,7 @@
 		344723C524ABC37D003B9F50 /* ReservationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationModal.swift; sourceTree = "<group>"; };
 		344723C724ABC64A003B9F50 /* ButtonApplePay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonApplePay.swift; sourceTree = "<group>"; };
 		344723CA24AC7B80003B9F50 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
+		344723CC24AC9613003B9F50 /* CollapsablePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsablePicker.swift; sourceTree = "<group>"; };
 		345AE3A7241A7A8E004EBE8C /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		345AE3A8241A7A8E004EBE8C /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		345AE3A9241A7A8E004EBE8C /* ModalAnchorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalAnchorView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				344723B824ABA89E003B9F50 /* BackButton.swift */,
 				344723BE24ABAC67003B9F50 /* TabBar.swift */,
 				344723CA24AC7B80003B9F50 /* SegmentedPicker.swift */,
+				344723CC24AC9613003B9F50 /* CollapsablePicker.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				344723CB24AC7B80003B9F50 /* SegmentedPicker.swift in Sources */,
 				341D20DE241CDE2E00C706A2 /* TabBarModifier.swift in Sources */,
 				3445A79D240B043E0020561B /* RecipesList.swift in Sources */,
+				344723CD24AC9613003B9F50 /* CollapsablePicker.swift in Sources */,
 				3403A32624080D4400D7B040 /* Data.swift in Sources */,
 				344723BB24ABA93C003B9F50 /* IngredientsModal.swift in Sources */,
 				349E4BDA241523A60079BF04 /* Header.swift in Sources */,

@@ -41,6 +41,7 @@ struct CardWithAttachment: View {
                 }
             }
             .frame(height:70)
+            .foregroundColor(Color("Contrast"))
             .padding()
         }
     }

@@ -31,7 +31,7 @@ struct RestaurantDetail: View {
                                  count: restaurant.price.expensive), icon: "creditcard"),
                 TabItem(
                     name: "\(restaurant.reviews) reviews",
-                    customView: AnyView(Stars(restaurant.ratings))),
+                    customView: Stars(restaurant.ratings).eraseToAnyView()),
                 TabItem(
                     name: "\(restaurant.openings.from) - \(restaurant.openings.to)",
                     icon: "clock.fill")

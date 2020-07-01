@@ -36,7 +36,7 @@ struct Stars: View {
                     .opacity(0.6)
                     .padding(2)
             }
-        }
+        }.eraseToAnyView()
     }
 }
 

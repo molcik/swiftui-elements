@@ -45,7 +45,7 @@ struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar([
             TabItem(name: "$$", icon: "creditcard"),
-            TabItem(name: "129 reviews", customView: AnyView(Stars(3))),
+            TabItem(name: "129 reviews", customView: Stars(3).eraseToAnyView()),
             TabItem(name: "$18:00 - 22:00", icon: "clock.fill")
         ])        
     }

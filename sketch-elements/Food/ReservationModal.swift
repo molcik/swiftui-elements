@@ -18,42 +18,48 @@ struct ReservationModal: View {
     var body: some View {
         VStack(){
             ModalHeader(action: self.action, title: "Reservation")
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(restaurant.title)
-                        .font(.largeTitle)
-                    Text(restaurant.address)
-                        .opacity(0.6)
-                    Text("\(restaurant.city), \(restaurant.country)")
-                        .opacity(0.6)
+            ScrollView(.vertical){
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(restaurant.title)
+                            .font(.largeTitle)
+                        Text(restaurant.address)
+                            .opacity(0.6)
+                        Text("\(restaurant.city), \(restaurant.country)")
+                            .opacity(0.6)
+                    }
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        URLImage(restaurant.picture.uri, content:  {
+                            $0.image
+                                .renderingMode(.original)
+                                .resizable()
+                        })
+                            .frame(width: 140, height: 100)
+                            .cornerRadius(6)
+                    }
                 }
-                Spacer()
-                VStack(alignment: .trailing) {
-                    URLImage(restaurant.picture.uri, content:  {
-                        $0.image
-                            .renderingMode(.original)
-                            .resizable()
-                    })
-                        .frame(width: 140, height: 100)
-                        .cornerRadius(6)
-                }
+                .padding([.leading, .trailing])
+                Divider()
+                VStack {
+                    CollapsablePicker()
+                    SegmentedPicker(items: ["19:00", "19:30", "20:00", "20:30"], selection: self.$selection)
+                    Spacer()
+                }.padding()
             }
-            .padding([.leading, .trailing])
-            Divider()
-            SegmentedPicker(items: ["19:00", "19:30", "20:00", "20:30"], selection: self.$selection)
-                .padding()
-            Spacer()
-            ButtonApplePay().frame(height: 44)
-                .padding([.horizontal, .bottom])
+            HStack {
+                ButtonApplePay().frame(height: 44)
+            }.padding()
         }
     }
 }
+
 
 struct ReservationModal_Previews: PreviewProvider {
     static var previews: some View {
         ReservationModal(
             restaurant: restaurantsData[0],
             action: {}).environmentObject(UserData())
-
+        
     }
 }
