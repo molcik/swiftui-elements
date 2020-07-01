@@ -17,6 +17,11 @@ extension View {
     func tabBarOpaque() -> some View {
         self.modifier(TabBarModifier())
     }
-    
+
+    func eraseToAnyView() -> AnyView {
+            AnyView(self)
+    }
+
+
 }
 

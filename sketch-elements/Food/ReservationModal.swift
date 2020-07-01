@@ -11,6 +11,7 @@ import URLImage
 
 struct ReservationModal: View {
     
+    @State var selection: Int = 0
     var restaurant: Restaurant
     var action: () -> Void
     
@@ -39,6 +40,8 @@ struct ReservationModal: View {
             }
             .padding([.leading, .trailing])
             Divider()
+            SegmentedPicker(items: ["19:00", "19:30", "20:00", "20:30"], selection: self.$selection)
+                .padding()
             Spacer()
             ButtonApplePay().frame(height: 44)
                 .padding([.horizontal, .bottom])
