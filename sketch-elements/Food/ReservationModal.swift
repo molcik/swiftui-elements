@@ -41,14 +41,16 @@ struct ReservationModal: View {
                 }
                 .padding([.leading, .trailing])
                 Divider()
-                VStack {
+                VStack(spacing: 8) {
                     CollapsablePicker()
+                    CountPicker(label: "people")
                     SegmentedPicker(items: ["19:00", "19:30", "20:00", "20:30"], selection: self.$selection)
                     Spacer()
-                }.padding()
+                }.padding([.leading, .trailing])
             }
             HStack {
                 ButtonApplePay().frame(height: 44)
+                    .padding(.bottom)
             }.padding()
         }
     }

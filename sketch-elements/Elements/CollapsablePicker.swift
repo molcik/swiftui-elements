@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct CollapsablePicker: View {
-    @State private var colours = ["red", "orange"]
-    @State private var selection = 4
     @State private var pickerVisible = false
     @State private var date = Date()
     @State private var pickerReset = UUID()
@@ -30,7 +28,7 @@ struct CollapsablePicker: View {
                     action: {
                         self.pickerVisible.toggle()
                     },
-                    backgroundColor: Color("BrandPrimary").opacity(0.25),
+                    backgroundColor: Color("BrandPrimary").opacity(0.2),
                     foregroundColor: Color("BrandPrimary"),
                     iconName: pickerVisible ? "chevron.up" : "chevron.down"
                 )
