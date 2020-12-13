@@ -39,9 +39,5 @@ struct Instruction: Hashable, Codable, Identifiable {
     var id: String {description}
 }
 
-struct Picture: Hashable, Codable {
-    let uri: URL
-    // var preview: NSData
-}
 
 

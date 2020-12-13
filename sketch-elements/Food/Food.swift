@@ -17,15 +17,15 @@ struct Food: View {
         TabView() {
             Recipes(categories: categories).tabItem {
                 Text("Recipes")
-                Image(systemName: "doc")
+                Image(systemName: Constant.icon.doc)
             }
             Restaurants(restaurants: restaurants).tabItem {
                 Text("Restaurants")
-                Image(systemName: "person.crop.circle")
+                Image(systemName: Constant.icon.house)
             }
         }
         .tabBarOpaque()
-        .accentColor(Color("BrandPrimary"))
+        .accentColor(Constant.color.foodPrimary)
     }
 }
 

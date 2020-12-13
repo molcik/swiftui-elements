@@ -14,7 +14,8 @@ struct ContentView: View {
     
     var body: some View {
         return ZStack {
-            Food(categories: recipeCategoriesData)
+            // Food(categories: recipeCategoriesData)
+            Social(stories: storiesData, users: usersData)
             ModalAnchorView()
         }
     }

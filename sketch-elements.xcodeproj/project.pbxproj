@@ -48,10 +48,23 @@
 		3461D3D6245C2036009D389E /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461D3D5245C2036009D389E /* Restaurants.swift */; };
 		3461D3D8245C20D0009D389E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461D3D7245C20D0009D389E /* Restaurant.swift */; };
 		3461D3DB245C219B009D389E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461D3DA245C219B009D389E /* Extensions.swift */; };
+		346DFE0A2584F98C00449492 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DFE092584F98C00449492 /* Story.swift */; };
+		346DFE0E2584FADA00449492 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 346DFE0D2584FADA00449492 /* messages.json */; };
+		346DFE112584FAFC00449492 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 346DFE102584FAFC00449492 /* posts.json */; };
+		346DFE142584FB3800449492 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 346DFE132584FB3800449492 /* users.json */; };
+		346DFE1C2585038900449492 /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 346DFE082584F94B00449492 /* stories.json */; };
+		346DFE1F258503F600449492 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DFE1E258503F600449492 /* Picture.swift */; };
 		349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD7241522990079BF04 /* ButtonPrimary.swift */; };
 		349E4BDA241523A60079BF04 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD9241523A60079BF04 /* Header.swift */; };
+		34AA9DA925850D180087798C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AA9DA825850D180087798C /* User.swift */; };
 		34AD61DD240BD093005943F9 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD61DC240BD093005943F9 /* RecipeDetail.swift */; };
+		34ADED272584B2F400A504F5 /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADED262584B2F400A504F5 /* Social.swift */; };
+		34ADED2C2584B48100A504F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADED2B2584B48100A504F5 /* Constants.swift */; };
+		34ADED2F2584B5B100A504F5 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADED2E2584B5B100A504F5 /* Timeline.swift */; };
+		34ADED322584BB1300A504F5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADED312584BB1300A504F5 /* Profile.swift */; };
 		34B255AA24081B3500599A4C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B255A924081B3500599A4C /* SwiftUI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		34B40A1425851B970096EC29 /* CardSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B40A1325851B970096EC29 /* CardSocial.swift */; };
+		34B40A17258528C80096EC29 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B40A16258528C80096EC29 /* Post.swift */; };
 		34B4B12524AB668100B092A8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4B12424AB668100B092A8 /* Card.swift */; };
 		34B4B12724AB6B0500B092A8 /* CardWithAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4B12624AB6B0500B092A8 /* CardWithAttachment.swift */; };
 		34B4B12924AB72B500B092A8 /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4B12824AB72B500B092A8 /* Stars.swift */; };
@@ -102,10 +115,23 @@
 		3461D3D5245C2036009D389E /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
 		3461D3D7245C20D0009D389E /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		3461D3DA245C219B009D389E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		346DFE082584F94B00449492 /* stories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
+		346DFE092584F98C00449492 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		346DFE0D2584FADA00449492 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
+		346DFE102584FAFC00449492 /* posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
+		346DFE132584FB3800449492 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		346DFE1E258503F600449492 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		349E4BD7241522990079BF04 /* ButtonPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPrimary.swift; sourceTree = "<group>"; };
 		349E4BD9241523A60079BF04 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		34AA9DA825850D180087798C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		34AD61DC240BD093005943F9 /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
+		34ADED262584B2F400A504F5 /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
+		34ADED2B2584B48100A504F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		34ADED2E2584B5B100A504F5 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		34ADED312584BB1300A504F5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		34B255A924081B3500599A4C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		34B40A1325851B970096EC29 /* CardSocial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSocial.swift; sourceTree = "<group>"; };
+		34B40A16258528C80096EC29 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		34B4B12424AB668100B092A8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		34B4B12624AB6B0500B092A8 /* CardWithAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithAttachment.swift; sourceTree = "<group>"; };
 		34B4B12824AB72B500B092A8 /* Stars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
@@ -146,12 +172,13 @@
 		3403A3002406B70F00D7B040 /* sketch-elements */ = {
 			isa = PBXGroup;
 			children = (
-				3403A31B240809CC00D7B040 /* Models */,
+				345AE3AF241A7ABD004EBE8C /* ContentView.swift */,
 				3403A3012406B70F00D7B040 /* AppDelegate.swift */,
 				3403A3032406B70F00D7B040 /* SceneDelegate.swift */,
-				345AE3AF241A7ABD004EBE8C /* ContentView.swift */,
-				349E4BD62415227E0079BF04 /* Elements */,
 				3445A79B240B03D70020561B /* Food */,
+				34ADED252584B22600A504F5 /* Social */,
+				349E4BD62415227E0079BF04 /* Elements */,
+				3403A31B240809CC00D7B040 /* Models */,
 				3403A3072406B71100D7B040 /* Assets.xcassets */,
 				3445A797240A80AF0020561B /* ColorPalette.xcassets */,
 				3403A30C2406B71100D7B040 /* LaunchScreen.storyboard */,
@@ -176,9 +203,14 @@
 				3461D3DA245C219B009D389E /* Extensions.swift */,
 				3403A32524080D4400D7B040 /* Data.swift */,
 				3403A32724080DBC00D7B040 /* Recipe.swift */,
+				346DFE092584F98C00449492 /* Story.swift */,
 				3403A31C240809E700D7B040 /* UserData.swift */,
 				344723C024ABB098003B9F50 /* TabItem.swift */,
 				3461D3D7245C20D0009D389E /* Restaurant.swift */,
+				34ADED2B2584B48100A504F5 /* Constants.swift */,
+				346DFE1E258503F600449492 /* Picture.swift */,
+				34AA9DA825850D180087798C /* User.swift */,
+				34B40A16258528C80096EC29 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +221,10 @@
 				3403A32224080C7700D7B040 /* recipes.json */,
 				3403A32124080C7600D7B040 /* restaurants.json */,
 				3445A7902408268B0020561B /* recipeCategories.json */,
+				346DFE082584F94B00449492 /* stories.json */,
+				346DFE0D2584FADA00449492 /* messages.json */,
+				346DFE102584FAFC00449492 /* posts.json */,
+				346DFE132584FB3800449492 /* users.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -214,6 +250,7 @@
 				3445A79E240B0C3F0020561B /* CardWithBackground.swift */,
 				34B4B12424AB668100B092A8 /* Card.swift */,
 				34B4B12624AB6B0500B092A8 /* CardWithAttachment.swift */,
+				34B40A1325851B970096EC29 /* CardSocial.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -275,8 +312,18 @@
 				344723CA24AC7B80003B9F50 /* SegmentedPicker.swift */,
 				344723CC24AC9613003B9F50 /* CollapsablePicker.swift */,
 				34FE0A2C25681474007D1B06 /* CountPicker.swift */,
+				34ADED312584BB1300A504F5 /* Profile.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		34ADED252584B22600A504F5 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				34ADED262584B2F400A504F5 /* Social.swift */,
+				34ADED2E2584B5B100A504F5 /* Timeline.swift */,
+			);
+			path = Social;
 			sourceTree = "<group>";
 		};
 		34B255A824081B3500599A4C /* Frameworks */ = {
@@ -351,11 +398,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				346DFE142584FB3800449492 /* users.json in Resources */,
 				3403A32424080C7700D7B040 /* recipes.json in Resources */,
 				3445A7912408268B0020561B /* recipeCategories.json in Resources */,
 				3445A798240A80AF0020561B /* ColorPalette.xcassets in Resources */,
 				3403A32324080C7700D7B040 /* restaurants.json in Resources */,
+				346DFE112584FAFC00449492 /* posts.json in Resources */,
 				3403A30E2406B71100D7B040 /* LaunchScreen.storyboard in Resources */,
+				346DFE1C2585038900449492 /* stories.json in Resources */,
+				346DFE0E2584FADA00449492 /* messages.json in Resources */,
 				3403A30B2406B71100D7B040 /* Preview Assets.xcassets in Resources */,
 				3403A3082406B71100D7B040 /* Assets.xcassets in Resources */,
 			);
@@ -376,28 +427,37 @@
 				345AE3AC241A7A8E004EBE8C /* ModalView.swift in Sources */,
 				3403A3022406B70F00D7B040 /* AppDelegate.swift in Sources */,
 				345AE3AD241A7A8E004EBE8C /* ModalAnchorView.swift in Sources */,
+				34ADED2C2584B48100A504F5 /* Constants.swift in Sources */,
+				34B40A17258528C80096EC29 /* Post.swift in Sources */,
 				34AD61DD240BD093005943F9 /* RecipeDetail.swift in Sources */,
 				34B4B12724AB6B0500B092A8 /* CardWithAttachment.swift in Sources */,
 				344723CB24AC7B80003B9F50 /* SegmentedPicker.swift in Sources */,
+				346DFE1F258503F600449492 /* Picture.swift in Sources */,
 				341D20DE241CDE2E00C706A2 /* TabBarModifier.swift in Sources */,
 				3445A79D240B043E0020561B /* RecipesList.swift in Sources */,
 				344723CD24AC9613003B9F50 /* CollapsablePicker.swift in Sources */,
 				3403A32624080D4400D7B040 /* Data.swift in Sources */,
+				34ADED322584BB1300A504F5 /* Profile.swift in Sources */,
 				344723BB24ABA93C003B9F50 /* IngredientsModal.swift in Sources */,
 				349E4BDA241523A60079BF04 /* Header.swift in Sources */,
+				34AA9DA925850D180087798C /* User.swift in Sources */,
 				34041A8E245313F800722D9A /* ModalHeader.swift in Sources */,
 				3445A79F240B0C3F0020561B /* CardWithBackground.swift in Sources */,
 				34DCE8C1240817CD00C4EE89 /* Food.swift in Sources */,
 				345D2E202458473000201DD0 /* TextTableRow.swift in Sources */,
 				344723C824ABC64A003B9F50 /* ButtonApplePay.swift in Sources */,
 				344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */,
+				34B40A1425851B970096EC29 /* CardSocial.swift in Sources */,
 				345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */,
 				34FE0A2D25681474007D1B06 /* CountPicker.swift in Sources */,
 				341D20DC241CDE0B00C706A2 /* NavigationBarModifier.swift in Sources */,
+				34ADED272584B2F400A504F5 /* Social.swift in Sources */,
 				3403A32824080DBC00D7B040 /* Recipe.swift in Sources */,
 				341D20DA241CDDCB00C706A2 /* ViewExtensions.swift in Sources */,
 				3403A3042406B70F00D7B040 /* SceneDelegate.swift in Sources */,
 				340A1981249BB0C900D49461 /* MapView.swift in Sources */,
+				34ADED2F2584B5B100A504F5 /* Timeline.swift in Sources */,
+				346DFE0A2584F98C00449492 /* Story.swift in Sources */,
 				344723B924ABA89E003B9F50 /* BackButton.swift in Sources */,
 				344723C124ABB098003B9F50 /* TabItem.swift in Sources */,
 				3403A31D240809E700D7B040 /* UserData.swift in Sources */,

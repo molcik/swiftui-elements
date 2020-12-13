@@ -14,6 +14,9 @@ import SwiftUI
 let recipesData: [Recipe] = load("recipes.json")
 let recipeCategoriesData: [Category] = load("recipeCategories.json")
 let restaurantsData: [Restaurant] = load("restaurants.json")
+let storiesData: [Story] = load("stories.json")
+let usersData: [User] = load("users.json")
+let postsData: [Post] = load("posts.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
@@ -70,9 +73,3 @@ final class ImageStore {
     }
 }
 
-
-struct Data_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}
