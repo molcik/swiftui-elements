@@ -7,10 +7,11 @@ iOS Food App Template is iOS SwiftUI starter kit based on [Sketch Elements](http
 
 # Roadmap
 - [x] Food
-- [ ] Social
+- [ ] Social (In Progress 1/7)
+- [ ] Travel
 - [ ] Music
 - [ ] Photography
-- [ ] Travel
+
 
 # Support me
 If you find this useful, consider supporting independent open-source development and buy me a coffee.
