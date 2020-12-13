@@ -59,6 +59,8 @@
 		3478533C258613200023A217 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478533B258613200023A217 /* Account.swift */; };
 		3478534025861EFF0023A217 /* SegmentedPickerCollapsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478533F25861EFF0023A217 /* SegmentedPickerCollapsed.swift */; };
 		3478534325861F7A0023A217 /* SizeAwareViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478534225861F7A0023A217 /* SizeAwareViewModifier.swift */; };
+		347853502586667E0023A217 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478534F2586667E0023A217 /* Travel.swift */; };
+		34785354258666ED0023A217 /* Guides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34785353258666ED0023A217 /* Guides.swift */; };
 		349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD7241522990079BF04 /* ButtonPrimary.swift */; };
 		349E4BDA241523A60079BF04 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD9241523A60079BF04 /* Header.swift */; };
 		34AA9DA925850D180087798C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AA9DA825850D180087798C /* User.swift */; };
@@ -132,6 +134,8 @@
 		3478533B258613200023A217 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		3478533F25861EFF0023A217 /* SegmentedPickerCollapsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerCollapsed.swift; sourceTree = "<group>"; };
 		3478534225861F7A0023A217 /* SizeAwareViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeAwareViewModifier.swift; sourceTree = "<group>"; };
+		3478534F2586667E0023A217 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		34785353258666ED0023A217 /* Guides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guides.swift; sourceTree = "<group>"; };
 		349E4BD7241522990079BF04 /* ButtonPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPrimary.swift; sourceTree = "<group>"; };
 		349E4BD9241523A60079BF04 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		34AA9DA825850D180087798C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -184,18 +188,19 @@
 		3403A3002406B70F00D7B040 /* sketch-elements */ = {
 			isa = PBXGroup;
 			children = (
-				345AE3AF241A7ABD004EBE8C /* ContentView.swift */,
 				3403A3012406B70F00D7B040 /* AppDelegate.swift */,
 				3403A3032406B70F00D7B040 /* SceneDelegate.swift */,
+				345AE3AF241A7ABD004EBE8C /* ContentView.swift */,
+				3478534E258666620023A217 /* Travel */,
 				3445A79B240B03D70020561B /* Food */,
 				34ADED252584B22600A504F5 /* Social */,
 				349E4BD62415227E0079BF04 /* Elements */,
 				3403A31B240809CC00D7B040 /* Models */,
+				3403A31E240809FE00D7B040 /* Data */,
 				3403A3072406B71100D7B040 /* Assets.xcassets */,
 				3445A797240A80AF0020561B /* ColorPalette.xcassets */,
 				3403A30C2406B71100D7B040 /* LaunchScreen.storyboard */,
 				3403A30F2406B71100D7B040 /* Info.plist */,
-				3403A31E240809FE00D7B040 /* Resources */,
 				3403A3092406B71100D7B040 /* Preview Content */,
 			);
 			path = "sketch-elements";
@@ -228,7 +233,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3403A31E240809FE00D7B040 /* Resources */ = {
+		3403A31E240809FE00D7B040 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				3403A32224080C7700D7B040 /* recipes.json */,
@@ -239,7 +244,7 @@
 				346DFE102584FAFC00449492 /* posts.json */,
 				346DFE132584FB3800449492 /* users.json */,
 			);
-			path = Resources;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		3445A79B240B03D70020561B /* Food */ = {
@@ -307,6 +312,15 @@
 				345AE3AA241A7A8E004EBE8C /* ModalManager.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		3478534E258666620023A217 /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				3478534F2586667E0023A217 /* Travel.swift */,
+				34785353258666ED0023A217 /* Guides.swift */,
+			);
+			path = Travel;
 			sourceTree = "<group>";
 		};
 		349E4BD62415227E0079BF04 /* Elements */ = {
@@ -451,12 +465,14 @@
 				34B4B12724AB6B0500B092A8 /* CardWithAttachment.swift in Sources */,
 				344723CB24AC7B80003B9F50 /* SegmentedPicker.swift in Sources */,
 				346DFE1F258503F600449492 /* Picture.swift in Sources */,
+				34785354258666ED0023A217 /* Guides.swift in Sources */,
 				341D20DE241CDE2E00C706A2 /* TabBarModifier.swift in Sources */,
 				3445A79D240B043E0020561B /* RecipesList.swift in Sources */,
 				344723CD24AC9613003B9F50 /* CollapsablePicker.swift in Sources */,
 				3403A32624080D4400D7B040 /* Data.swift in Sources */,
 				34ADED322584BB1300A504F5 /* Profile.swift in Sources */,
 				344723BB24ABA93C003B9F50 /* IngredientsModal.swift in Sources */,
+				347853502586667E0023A217 /* Travel.swift in Sources */,
 				349E4BDA241523A60079BF04 /* Header.swift in Sources */,
 				34AA9DA925850D180087798C /* User.swift in Sources */,
 				34785333258608AD0023A217 /* Messages.swift in Sources */,
