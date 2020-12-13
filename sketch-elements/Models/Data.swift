@@ -17,6 +17,7 @@ let restaurantsData: [Restaurant] = load("restaurants.json")
 let storiesData: [Story] = load("stories.json")
 let usersData: [User] = load("users.json")
 let postsData: [Post] = load("posts.json")
+let conversationsData: [Conversation] = load("conversations.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

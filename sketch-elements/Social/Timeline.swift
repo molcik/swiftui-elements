@@ -35,7 +35,9 @@ struct Timeline: View {
                         //) {
                         CardSocial(
                             user: users.first(where: { $0.id == post.user })!,
-                            post: post,
+                            contentText: post.caption,
+                            timestamp: post.timestamp,
+                            contentImage: post.picture,
                             commentPictures: post.comments.map({ (comment: String) -> Picture in
                                 return users.first { (user: User) -> Bool in
                                     return user.id == comment

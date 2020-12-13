@@ -13,6 +13,7 @@ struct Social: View {
     var stories:[Story] = storiesData
     var users:[User] = usersData
     var posts:[Post] = postsData
+    var conversations:[Conversation] = conversationsData
 
     
     var body: some View {
@@ -21,7 +22,7 @@ struct Social: View {
                 Text("Timeline")
                 Image(systemName: Constant.icon.doc)
             }
-            Timeline(stories: stories, users: users, posts: posts).tabItem {
+            Messages(conversations: conversations, users: users).tabItem {
                 Text("Messages")
                 Image(systemName: Constant.icon.envelope)
             }

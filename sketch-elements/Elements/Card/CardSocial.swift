@@ -12,8 +12,10 @@ import URLImage
 struct CardSocial: View {
     
     var user: User
-    var post: Post
-    var commentPictures: [Picture?]
+    var contentText: String
+    var timestamp: Double
+    var contentImage: Picture?
+    var commentPictures: [Picture?]?
     
     var body: some View {
         Card{
@@ -29,43 +31,47 @@ struct CardSocial: View {
                                 .opacity(0.6)
                     }
                     Spacer()
-                    Text("\(Date(timeIntervalSinceNow: TimeInterval(post.timestamp - Date().timeIntervalSince1970)).timeAgoDisplay())")
+                    Text("\(Date(timeIntervalSinceNow: TimeInterval(timestamp - Date().timeIntervalSince1970)).timeAgoDisplay())")
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .opacity(0.6)
                 }
                 
-                HStack{
-                    if(post.picture != nil) {
-                        URLImage(post.picture!.uri, content: {
+                HStack(){
+                    if(contentImage != nil) {
+                        URLImage(contentImage!.uri, content: {
                         $0.image
                             .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                        })
+                        }).padding(.horizontal, -20)
                     } else {
-                        Text(post.caption)
+                        Text(contentText)
+                        Spacer()
                     }
-                }.padding(.horizontal, -20)
+                }
+                
 
                 
                 HStack() {
-                    ForEach(commentPictures[..<(min(commentPictures.count,3))], id: \.self) { commentPicture in
-                        ZStack() {
-                            Circle()
-                                .frame(width: 32, height: 32, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .foregroundColor(Constant.color.bgDefault)
-                            Profile(size: 26, image: commentPicture!.uri)
-                        }.padding(.leading, commentPicture == commentPictures[0] ? 0 : -23.0)
+                    if (commentPictures != nil) {
+                        ForEach(commentPictures![..<(min(commentPictures!.count,3))], id: \.self) { commentPicture in
+                            ZStack() {
+                                Circle()
+                                    .frame(width: 32, height: 32, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .foregroundColor(Constant.color.bgDefault)
+                                Profile(size: 26, image: commentPicture!.uri)
+                            }.padding(.leading, commentPicture == commentPictures![0] ? 0 : -23.0)
+                        }
+                        Text("\(commentPictures!.count) comments")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .opacity(0.6)
+                        Spacer()
+                        Image(systemName: Constant.icon.heart)
+                            .font(.title)
+                            .foregroundColor(Constant.color.socialPrimary)
                     }
-                    Text("\(commentPictures.count) comments")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .opacity(0.6)
-                    Spacer()
-                    Image(systemName: Constant.icon.heart)
-                        .font(.title)
-                        .foregroundColor(Constant.color.socialPrimary)
                 }
                 
             }
@@ -79,7 +85,9 @@ struct CardSocial_Previews: PreviewProvider {
     static var previews: some View {
         CardSocial(
             user: usersData[0],
-            post: postsData[0],
+            contentText: usersData[0].caption,
+            timestamp: postsData[0].timestamp,
+            contentImage: postsData[0].picture,
             commentPictures: postsData[0].comments.map({ (comment: String) -> Picture in
                 return usersData.first { (user: User) -> Bool in
                     return user.id == comment
@@ -89,3 +97,16 @@ struct CardSocial_Previews: PreviewProvider {
         .environmentObject(UserData())
     }
 }
+
+
+struct CardMessages_Previews: PreviewProvider {
+    static var previews: some View {
+        CardSocial(
+            user: usersData[0],
+            contentText: conversationsData[2].messages[0].message,
+            timestamp: conversationsData[0].messages[0].timestamp
+        )
+        .environmentObject(UserData())
+    }
+}
+
