@@ -56,6 +56,9 @@
 		346DFE1F258503F600449492 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DFE1E258503F600449492 /* Picture.swift */; };
 		34785333258608AD0023A217 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34785332258608AD0023A217 /* Messages.swift */; };
 		34785336258609640023A217 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34785335258609640023A217 /* Conversation.swift */; };
+		3478533C258613200023A217 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478533B258613200023A217 /* Account.swift */; };
+		3478534025861EFF0023A217 /* SegmentedPickerCollapsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478533F25861EFF0023A217 /* SegmentedPickerCollapsed.swift */; };
+		3478534325861F7A0023A217 /* SizeAwareViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478534225861F7A0023A217 /* SizeAwareViewModifier.swift */; };
 		349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD7241522990079BF04 /* ButtonPrimary.swift */; };
 		349E4BDA241523A60079BF04 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD9241523A60079BF04 /* Header.swift */; };
 		34AA9DA925850D180087798C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AA9DA825850D180087798C /* User.swift */; };
@@ -126,6 +129,9 @@
 		347853302585F47F0023A217 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		34785332258608AD0023A217 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		34785335258609640023A217 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		3478533B258613200023A217 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		3478533F25861EFF0023A217 /* SegmentedPickerCollapsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerCollapsed.swift; sourceTree = "<group>"; };
+		3478534225861F7A0023A217 /* SizeAwareViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeAwareViewModifier.swift; sourceTree = "<group>"; };
 		349E4BD7241522990079BF04 /* ButtonPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPrimary.swift; sourceTree = "<group>"; };
 		349E4BD9241523A60079BF04 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		34AA9DA825850D180087798C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 			children = (
 				341D20DB241CDE0B00C706A2 /* NavigationBarModifier.swift */,
 				341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */,
+				3478534225861F7A0023A217 /* SizeAwareViewModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -320,6 +327,7 @@
 				344723CC24AC9613003B9F50 /* CollapsablePicker.swift */,
 				34FE0A2C25681474007D1B06 /* CountPicker.swift */,
 				34ADED312584BB1300A504F5 /* Profile.swift */,
+				3478533F25861EFF0023A217 /* SegmentedPickerCollapsed.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				34ADED262584B2F400A504F5 /* Social.swift */,
 				34ADED2E2584B5B100A504F5 /* Timeline.swift */,
 				34785332258608AD0023A217 /* Messages.swift */,
+				3478533B258613200023A217 /* Account.swift */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -457,7 +466,9 @@
 				345D2E202458473000201DD0 /* TextTableRow.swift in Sources */,
 				344723C824ABC64A003B9F50 /* ButtonApplePay.swift in Sources */,
 				344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */,
+				3478533C258613200023A217 /* Account.swift in Sources */,
 				34B40A1425851B970096EC29 /* CardSocial.swift in Sources */,
+				3478534025861EFF0023A217 /* SegmentedPickerCollapsed.swift in Sources */,
 				345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */,
 				34FE0A2D25681474007D1B06 /* CountPicker.swift in Sources */,
 				341D20DC241CDE0B00C706A2 /* NavigationBarModifier.swift in Sources */,
@@ -479,6 +490,7 @@
 				3403A31A2408099500D7B040 /* Recipes.swift in Sources */,
 				349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */,
 				344723BF24ABAC67003B9F50 /* TabBar.swift in Sources */,
+				3478534325861F7A0023A217 /* SizeAwareViewModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

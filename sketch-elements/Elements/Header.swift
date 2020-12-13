@@ -9,29 +9,20 @@
 import SwiftUI
 import URLImage
 
-struct Header: View {
+struct Header<Content: View>: View {
     
     var image: URL
-    var title: String?
-    var leftItem: AnyView?
-    var rightItem: AnyView?
+    var height: CGFloat
+    let content: Content
+    
+    init(image:URL, height: CGFloat, @ViewBuilder content: () -> Content) {
+        self.content = content()
+        self.image = image
+        self.height = height
+    }
     
     var body: some View {
-        VStack(){
-            HStack(){
-                leftItem
-                Spacer()
-                rightItem
-            }
-            
-            Spacer()
-            HStack(){
-                Text(title ?? "")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Spacer()
-            }
-        }
+        content
         .padding(.top)
         .padding(.all)
         .foregroundColor(.white)
@@ -43,6 +34,6 @@ struct Header: View {
                     .resizable(capInsets: .init(), resizingMode: .tile)
             }))
             .frame(maxWidth: .infinity)
-            .frame(height: 223)
+            .frame(height: height)
     }
 }

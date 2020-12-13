@@ -22,10 +22,17 @@ struct RecipeDetail: View {
     
     var body: some View {
         return VStack(spacing: 0){
-            Header(
-                image: recipe.picture.uri,
-                title: recipe.title
-            )
+            Header(image: recipe.picture.uri, height: 223) {
+                VStack(){
+                    Spacer()
+                    HStack(){
+                        Text(recipe.title)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                }
+            }
             TabBar(
                 [TabItem(name: "\(recipe.people) people", icon: "person.2.fill"),
                  TabItem(name: "\(recipe.minutes) minutes", icon: "clock.fill")]

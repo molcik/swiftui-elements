@@ -44,7 +44,7 @@ struct Profile: View {
                 if (disabled) {
                     Circle()
                         .frame(width: size, height: size)
-                        .foregroundColor(disabled ? Color.white.opacity(0.5) : Color.black.opacity(0))
+                        .foregroundColor(disabled ? Constant.color.bgDefault.opacity(0.7) : Color.black.opacity(0))
                 }
                 
                 

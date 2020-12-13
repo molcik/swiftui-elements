@@ -10,5 +10,6 @@ struct User: Hashable, Codable, Identifiable {
     var id: String
     var name: String
     var picture: Picture
+    var cover: Picture?
     var caption: String
 }

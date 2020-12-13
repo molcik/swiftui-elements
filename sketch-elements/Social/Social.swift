@@ -26,8 +26,10 @@ struct Social: View {
                 Text("Messages")
                 Image(systemName: Constant.icon.envelope)
             }
-            Timeline(stories: stories, users: users, posts: posts).tabItem {
-                Text("Profile")
+            Account(conversations: conversations, posts: posts.filter({ (post: Post) -> Bool in
+                return post.user == users[6].id
+            }), user: users[6], users: users).tabItem {
+                Text("Account")
                 Image(systemName: Constant.icon.person)
             }
         }

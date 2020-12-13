@@ -20,6 +20,7 @@ struct CardSocial: View {
     var body: some View {
         Card{
             VStack(){
+                
                 HStack() {
                     Profile(size: 40, image: user.picture.uri)
                     VStack(alignment: .leading) {
@@ -50,9 +51,7 @@ struct CardSocial: View {
                         Spacer()
                     }
                 }
-                
-
-                
+            
                 HStack() {
                     if (commentPictures != nil) {
                         ForEach(commentPictures![..<(min(commentPictures!.count,3))], id: \.self) { commentPicture in

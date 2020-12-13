@@ -21,10 +21,17 @@ struct RestaurantDetail: View {
     
     var body: some View {
         return VStack(spacing: 0){
-            Header(
-                image: restaurant.picture.uri,
-                title: restaurant.title
-            )
+            Header(image: restaurant.picture.uri, height: 223) {
+                VStack(){
+                    Spacer()
+                    HStack(){
+                        Text(restaurant.title)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                }
+            }
             TabBar([
                 TabItem(
                     name: String(repeating: "$",

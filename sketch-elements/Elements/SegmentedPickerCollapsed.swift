@@ -1,22 +1,22 @@
 //
-//  SegmentedPicker.swift
+//  SegmentedPickerCollapsed.swift
 //  sketch-elements
 //
-//  Created by Filip Molcik on 01/07/2020. Inspired by https://medium.com/better-programming/custom-ios-segmented-control-with-swiftui-473b386d0b51
+//  Created by Filip Molcik on 13/12/2020.
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
 import SwiftUI
 
 
-struct SegmentedPicker: View {
-    private static let activeSegmentColor: Color = Color("BrandPrimary")
-    private static let backgroundColor: Color = Color("BrandPrimary").opacity(0.2)
+struct SegmentedPickerCollapsed: View {
+    private static let activeSegmentColor: Color = Color("Contrast").opacity(0.8)
+    private static let backgroundColor: Color = Color("Default").opacity(0.5)
     private static let shadowColor: Color = Color.black.opacity(0.2)
-    private static let textColor: Color = Color("BrandPrimary")
-    private static let selectedTextColor: Color = Color(.white)
+    private static let textColor: Color = Color("Contrast")
+    private static let selectedTextColor: Color = Color("Default")
         
-    private static let segmentCornerRadius: CGFloat = 12
+    private static let segmentCornerRadius: CGFloat = 8
     private static let shadowRadius: CGFloat = 4
     private static let segmentXPadding: CGFloat = 8
     private static let segmentYPadding: CGFloat = 12
@@ -28,12 +28,12 @@ struct SegmentedPicker: View {
     // Rounded rectangle to denote active segment
     private var activeSegmentView: AnyView {
         return
-            RoundedRectangle(cornerRadius: SegmentedPicker.segmentCornerRadius)
-            .foregroundColor(SegmentedPicker.activeSegmentColor)
-            .shadow(color: SegmentedPicker.shadowColor, radius: SegmentedPicker.shadowRadius)
+            Rectangle()
+            .foregroundColor(SegmentedPickerCollapsed.activeSegmentColor)
+            .shadow(color: SegmentedPickerCollapsed.shadowColor, radius: SegmentedPickerCollapsed.shadowRadius)
                     .offset(x: computeActiveSegmentHorizontalOffset(width: segmentSize.width), y: 0)
                     .frame(width: segmentSize.width, height: segmentSize.height)
-                    .animation(Animation.linear(duration: SegmentedPicker.animationDuration))
+                    .animation(Animation.linear(duration: SegmentedPickerCollapsed.animationDuration))
                     .eraseToAnyView()
 
     }
@@ -51,20 +51,20 @@ struct SegmentedPicker: View {
         ZStack(alignment: .leading) {
             // activeSegmentView indicates the current selection
             self.activeSegmentView
-            HStack(spacing: SegmentedPicker.segmentXPadding) {
+            HStack(spacing: SegmentedPickerCollapsed.segmentXPadding) {
                 ForEach(0..<self.items.count, id: \.self) { index in
                     self.getSegmentView(for: index)
-                        .background(SegmentedPicker.backgroundColor)
-                        .clipShape(RoundedRectangle(cornerRadius: SegmentedPicker.segmentCornerRadius))
                 }
             }
         }
+        .background(SegmentedPickerCollapsed.backgroundColor)
+        .clipShape(RoundedRectangle(cornerRadius: SegmentedPickerCollapsed.segmentCornerRadius))
 
     }
     
     // Helper method to compute the offset based on the selected index
     private func computeActiveSegmentHorizontalOffset(width: CGFloat) -> CGFloat {
-        CGFloat(self.selection) * (width + SegmentedPicker.segmentXPadding)
+        CGFloat(self.selection) * (width + SegmentedPickerCollapsed.segmentXPadding)
     }
         
     // Gets text view for the segment
@@ -76,11 +76,11 @@ struct SegmentedPicker: View {
         return
             Text(self.items[index])
                 .fontWeight(.bold)
-                .foregroundColor(isSelected ? SegmentedPicker.selectedTextColor: SegmentedPicker.textColor)
+                .foregroundColor(isSelected ? SegmentedPickerCollapsed.selectedTextColor: SegmentedPickerCollapsed.textColor)
                 .lineLimit(1)
                 .frame(minWidth: 0, maxWidth: .infinity)
                 // Watch for the size of the
-                .padding(.vertical, SegmentedPicker.segmentYPadding)
+                .padding(.vertical, SegmentedPickerCollapsed.segmentYPadding)
                 .modifier(SizeAwareViewModifier(viewSize: self.$segmentSize))
                 .onTapGesture { self.onItemTap(index: index) }
                 .eraseToAnyView()
@@ -96,10 +96,12 @@ struct SegmentedPicker: View {
 
 }
 
-struct SegmentedPicker_Previews: PreviewProvider {
+struct SegmentedPickerCollapsed_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SegmentedPicker(items: ["19:00", "19:30", "20:00", "20:30"], selection: Binding.constant(1))
+            SegmentedPickerCollapsed(items: ["Posts", "Comments", "Likes"], selection: Binding.constant(0))
         }
+        .frame(height: 200)
+        .background(Color.green)
     }
 }

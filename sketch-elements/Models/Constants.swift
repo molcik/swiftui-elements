@@ -16,6 +16,7 @@ struct Constant {
         static let socialPrimary = Color("SocialPrimary")
         static let bgDefault = Color("Default")
         static let gray = Color("Gray")
+        static let contrast = Color("Contrast")
     }
     
     struct icon {
@@ -26,6 +27,7 @@ struct Constant {
         static let compose = "square.and.pencil"
         static let envelope = "envelope.fill"
         static let heart = "heart"
+        static let share = "square.and.arrow.up"
     }
     
 }
