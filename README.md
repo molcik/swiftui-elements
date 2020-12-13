@@ -6,12 +6,26 @@ iOS Food App Template is iOS SwiftUI starter kit based on [Sketch Elements](http
 ![ios-light](https://filipmolcik.com/wp-content/uploads/2020/07/iphonexspacegrey_landscape-2-300x300.png)
 
 # Roadmap
+
+## General
+- [x] Navigation
+- [x] Theming
+- [x] Dark mode
+- [x] Modal
+
+## Main Screens
 - [x] Food
-- [x] Social (In Progress 3/7)
+- [x] Social
 - [ ] Travel
 - [ ] Music
 - [ ] Photography
 
+## Support Screens
+- [x] Food
+- [ ] Social
+- [ ] Travel
+- [ ] Music
+- [ ] Photography
 
 # Support me
 If you find this useful, consider supporting independent open-source development and buy me a coffee.

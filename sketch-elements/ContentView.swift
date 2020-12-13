@@ -8,15 +8,51 @@
 
 import SwiftUI
 
+// NOTE: This is needed only to change the theme, you are free to remove it
+enum Theme: String, CaseIterable, Identifiable {
+    case food
+    case social
+    var id: String { self.rawValue }
+}
+
 struct ContentView: View {
     
     @EnvironmentObject var userData: UserData
     
+    // NOTE: This is needed only to change the theme, you are free to remove it
+    @State var selectedTheme = Theme.food
+    // NOTE END
+    
     var body: some View {
+                
         return ZStack {
-            // Food(categories: recipeCategoriesData)
-            Social(stories: storiesData, users: usersData)
+            
+
+            // NOTE: This is needed only to change the theme, you are free to remove the swicth and instead of it use ivoke the view directly
+            // Food()
+            // Social()
+            switch (selectedTheme) {
+                case Theme.food:
+                    Food()
+                case Theme.social:
+                    Social()
+            }
+            // NOTE END
+
             ModalAnchorView()
         }
+        
+        // NOTE: This is needed only to change the theme, you are free to remove it
+        .actionSheet(isPresented: Binding.constant(true)) {
+            
+            ActionSheet(title: Text("Change Theme"), message: Text("To invoke this menu again, you need to rebuild the app. You can also set the theme directly in ContentView.swift"), buttons: [
+                .default(Text("Social")) { self.selectedTheme = .social },
+                .default(Text("Food")) { self.selectedTheme = .food },
+                .cancel()
+            ])
+        }
+        // NOTE END
+
+        
     }
 }
