@@ -32,15 +32,16 @@ struct RestaurantDetail: View {
                     }
                 }
             }
-            TabBar([
+            TabBar(
+                content: [
                 TabItem(
                     name: String(repeating: "$",
-                                 count: restaurant.price.expensive), icon: "creditcard"),
+                                 count: restaurant.price!.expensive), icon: "creditcard"),
                 TabItem(
                     name: "\(restaurant.reviews) reviews",
                     customView: Stars(restaurant.ratings).eraseToAnyView()),
                 TabItem(
-                    name: "\(restaurant.openings.from) - \(restaurant.openings.to)",
+                    name: "\(restaurant.openings!.from) - \(restaurant.openings!.to)",
                     icon: "clock.fill")
             ])
             
@@ -58,7 +59,7 @@ struct RestaurantDetail: View {
                         ButtonPrimary( title: "Make reservation",action: self.modalManager.openModal)
                             .padding([.top, .leading, .trailing])
                         Card{
-                            Text(restaurant.description)
+                            Text(restaurant.description!)
                             .padding()
                         }
                     }

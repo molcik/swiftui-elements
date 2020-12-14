@@ -23,9 +23,9 @@ struct ReservationModal: View {
                     VStack(alignment: .leading) {
                         Text(restaurant.title)
                             .font(.largeTitle)
-                        Text(restaurant.address)
+                        Text(restaurant.address!)
                             .opacity(0.6)
-                        Text("\(restaurant.city), \(restaurant.country)")
+                        Text("\(restaurant.city!), \(restaurant.country!)")
                             .opacity(0.6)
                     }
                     Spacer()

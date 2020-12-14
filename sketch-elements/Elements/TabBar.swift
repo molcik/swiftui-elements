@@ -10,11 +10,9 @@ import SwiftUI
 
 struct TabBar: View {
     
+    var backgroundColor: Color = Constant.color.bgDefault
+    var foregroundColor: Color = Constant.color.tintColor
     var content: [TabItem]
-    
-    init(_ content: [TabItem]) {
-        self.content = content
-    }
     
     var body: some View {
         HStack () {
@@ -35,15 +33,15 @@ struct TabBar: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 64.0)
-        .background(Color("Default"))
-        .foregroundColor(Color("BrandPrimary"))
+        .background(backgroundColor)
+        .foregroundColor(foregroundColor)
     }
 }
 
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar([
+        TabBar(content: [
             TabItem(name: "$$", icon: "creditcard"),
             TabItem(name: "129 reviews", customView: Stars(3).eraseToAnyView()),
             TabItem(name: "$18:00 - 22:00", icon: "clock.fill")

@@ -34,18 +34,20 @@ struct RecipeDetail: View {
                 }
             }
             TabBar(
-                [TabItem(name: "\(recipe.people) people", icon: "person.2.fill"),
-                 TabItem(name: "\(recipe.minutes) minutes", icon: "clock.fill")]
+                content: [
+                    TabItem(name: "\(recipe.people) people", icon: "person.2.fill"),
+                    TabItem(name: "\(recipe.minutes) minutes", icon: "clock.fill")
+                ]
             )
             ScrollView(.vertical, showsIndicators: false) {
                 ButtonPrimary( title: "See Ingredients",action: self.modalManager.openModal)
                     .padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {
-                    ForEach(recipe.instructions) { instruction in
+                    ForEach(0..<recipe.instructions.count) { index in
                         TextTableRow(
-                            left: "\(self.recipe.instructions.firstIndex(of: instruction)! + 1)",
-                            divider: self.recipe.instructions.firstIndex(of: instruction)! < self.recipe.instructions.count,
-                            content: instruction
+                            left: "\(index + 1)",
+                            divider: index < self.recipe.instructions.count - 1,
+                            content: recipe.instructions[index]
                         )
                     }
                 }.padding([.top, .bottom])

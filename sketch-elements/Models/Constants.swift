@@ -6,12 +6,12 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
 
 struct Constant {
     
     struct color {
+        static let tintColor = Color("BrandPrimary")
         static let foodPrimary = Color("BrandPrimary")
         static let socialPrimary = Color("SocialPrimary")
         static let bgDefault = Color("Default")
@@ -29,6 +29,9 @@ struct Constant {
         static let envelope = "envelope.fill"
         static let heart = "heart"
         static let share = "square.and.arrow.up"
+        static let map = "map.fill"
+        static let clock = "clock.fill"
+        static let weather = "cloud.sun.fill"
     }
     
 }

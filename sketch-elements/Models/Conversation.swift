@@ -6,8 +6,6 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
-import SwiftUI
-
 struct Conversation: Hashable, Codable, Identifiable {
     var id: String
     var user: String

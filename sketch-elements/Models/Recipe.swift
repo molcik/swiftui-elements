@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import CoreLocation
 
 struct Recipe: Hashable, Codable, Identifiable {
     var id: String

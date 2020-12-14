@@ -10,17 +10,37 @@ import SwiftUI
 
 struct Guides: View {
     
-    var categories: [Category]
+    var guides: [Guide]
+    
     var body: some View {
         
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                ForEach(categories) { category in
-                    NavigationLink(
-                        destination: RecipesListView(category: category)
-                    ) {
-                        CardWithBackground(title: category.title, subTitle: category.subtitle, height: 300.0, pictureUrl: category.picture.uri, description: nil)
+                
+                // We need to iterate over every 3 items to display them in grid
+                ForEach(0..<guides.count / 3 + 1) { index in
+                
+                    let i1 = index * 3
+                    let i2 = index * 3 + 1
+                    let i3 = index * 3 + 2
+                    let count = guides.count
+                    
+                    // Row 2x1
+                    HStack(spacing: -8) {
+                        if (i1 < count) {
+                            GuideTile(guide: guides[i1], height: 150)
+                        }
+                        
+                        if (i2 < count) {
+                            GuideTile(guide: guides[i2], height: 150)
+                        }
                     }
+                    
+                    // Row 1x1
+                    if (i3 < count) {
+                        GuideTile(guide: guides[i3], height: 300)
+                    }
+                    
                 }
             }
             .background(Constant.color.gray)
@@ -31,9 +51,25 @@ struct Guides: View {
     }
 }
 
+struct GuideTile: View {
+    
+    var guide: Guide
+    var height: CGFloat
+    
+    var body: some View {
+        NavigationLink(
+            destination: GuideDetail(guide: guide)
+        ) {
+                CardWithBackground(title: guide.city, subTitle: guide.country, height: height, pictureUrl: guide.picture.uri, description: "\(guide.duration) days")
+            }
+
+    }
+}
+
+
 struct Guides_Previews: PreviewProvider {
     static var previews: some View {
-        Guides(categories: recipeCategoriesData)
+        Guides(guides: guidesData)
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }
