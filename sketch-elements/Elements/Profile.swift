@@ -21,7 +21,7 @@ struct Profile: View {
             ZStack {
                 if (add) {
                     ZStack {
-                        Image(systemName: "plus")
+                        Image(systemName: Constant.icon.plus)
                             .resizable()
                             .foregroundColor(Constant.color.socialPrimary)
                             .frame(width: size/2, height: size/2)

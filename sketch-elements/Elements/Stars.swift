@@ -13,13 +13,14 @@ struct Stars: View {
     
     var rating: Int
     var label: String
+    var color = Constant.color.tintColor
     var maximumRating = 5
-    var star = Image(systemName: "star.fill")
-    var color = Color("BrandPrimary")
+    var star = Image(systemName: Constant.icon.star)
     
-    init(_ rating: Int, label: String = "") {
+    init(_ rating: Int, label: String = "", color:Color = Constant.color.tintColor) {
         self.rating = rating
         self.label = label
+        self.color = color
     }
     
     var body: some View {
@@ -42,7 +43,7 @@ struct Stars: View {
 
 struct Stars_Previews: PreviewProvider {
     static var previews: some View {
-        Stars(4, label: "167 reviews")
+        Stars(4, label: "167 reviews", color: Color("TravelPrimary"))
     }
 }
 

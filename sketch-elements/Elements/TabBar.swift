@@ -22,7 +22,7 @@ struct TabBar: View {
                     if (tab.customView != nil) {
                         tab.customView
                     } else {
-                        Image(systemName: tab.icon ?? "circle")
+                        Image(systemName: tab.icon ?? Constant.icon.circle)
                     }
                     Text(tab.name)
                         .font(.caption)

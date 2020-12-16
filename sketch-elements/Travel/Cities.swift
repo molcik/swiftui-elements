@@ -19,7 +19,11 @@ struct Cities: View {
                 
                 // We need to iterate over every 3 items to display them in grid
                 ForEach(cities) { city in
-                    CardWithBackground(title: city.city, subTitle: city.country, height: 150, pictureUrl: city.picture.uri)
+                    NavigationLink(
+                        destination: CityDetail(city: city))
+                    {
+                        CardWithBackground(title: city.city, subTitle: city.country, height: 150, pictureUrl: city.picture.uri)
+                    }
                 }
             }
             .background(Constant.color.gray)

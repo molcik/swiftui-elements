@@ -13,13 +13,14 @@ struct ModalHeader: View {
     var action: () -> Void
     var title: String?
     var attachment: AnyView?
+    var tintColor: Color = Constant.color.tintColor
 
     var body: some View {
        
         VStack(alignment: .center){
             HStack(alignment: .center){
                   Button(action: action) {
-                      Image(systemName: "chevron.down")
+                    Image(systemName: Constant.icon.chevronDown)
                           .font(.system(size: 24.0, weight: .medium))
                   }
                 Spacer()
@@ -31,7 +32,7 @@ struct ModalHeader: View {
             .padding([.top, .horizontal])
             Divider()
         }
-        .foregroundColor(Color("BrandPrimary"))
+        .foregroundColor(tintColor)
     }
 }
 

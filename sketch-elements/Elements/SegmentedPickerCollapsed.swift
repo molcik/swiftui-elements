@@ -10,11 +10,11 @@ import SwiftUI
 
 
 struct SegmentedPickerCollapsed: View {
-    private static let activeSegmentColor: Color = Color("Contrast").opacity(0.8)
-    private static let backgroundColor: Color = Color("Default").opacity(0.5)
+    private static let activeSegmentColor: Color = Constant.color.contrast.opacity(0.8)
+    private static let backgroundColor: Color = Constant.color.bgDefault.opacity(0.5)
     private static let shadowColor: Color = Color.black.opacity(0.2)
-    private static let textColor: Color = Color("Contrast")
-    private static let selectedTextColor: Color = Color("Default")
+    private static let textColor: Color = Constant.color.contrast
+    private static let selectedTextColor: Color = Constant.color.bgDefault
         
     private static let segmentCornerRadius: CGFloat = 8
     private static let shadowRadius: CGFloat = 4

@@ -46,8 +46,13 @@ struct GuideDetail: View {
                     Rectangle()
                         .opacity(0)
                         .frame(height: 100)
-                    ButtonPrimary( title: "Book trip", action: self.modalManager.openModal, backgroundColor: Constant.color.travelPrimary)
-                        .padding([.top, .leading, .trailing])
+                    ButtonPrimary(
+                        action: self.modalManager.openModal,
+                        backgroundColor: Constant.color.travelPrimary
+                    ) {
+                        Text("Book trip")
+                            .font(.headline)
+                    }.padding([.top, .leading, .trailing])
                     VStack(alignment: .leading) {
                         ForEach(0..<guide.visits.count) { index in
                             TextTableRow(

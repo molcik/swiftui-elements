@@ -13,6 +13,7 @@ struct CheckBoxTableRow: View {
     var divider: Bool
     var content: String
     var description: String?
+    var tintColor: Color = Constant.color.tintColor
     @State var checked: Bool
     
     var body: some View {
@@ -20,11 +21,11 @@ struct CheckBoxTableRow: View {
             left: AnyView(
                 HStack(alignment: .center){
                     Circle()
-                        .fill(Color("BrandPrimary"))
+                        .fill(tintColor)
                         .opacity(checked ? 1 : 0)
                         .overlay(
                             Circle()
-                                .stroke(Color("BrandPrimary"), lineWidth: 2)
+                                .stroke(tintColor, lineWidth: 2)
                                 .opacity(checked ? 0 : 1)
                     )
                         .frame(width: 24, height: 24)

@@ -9,23 +9,33 @@
 import Foundation
 import SwiftUI
 
-struct ButtonPrimary: View {
+struct ButtonPrimary<Content: View>: View {
     
-    var title: String
     var action: () -> Void
-    var backgroundColor: Color?
-    var foregroundColor: Color?
-    var iconName: String?
+    var backgroundColor: Color = Constant.color.tintColor
+    var foregroundColor: Color = Color(.white)
+    
+    let content: Content
+    
+    init(
+        action: @escaping () -> Void,
+        backgroundColor: Color = Constant.color.tintColor,
+        foregroundColor: Color = Color(.white),
+        @ViewBuilder content: () -> Content
+    ) {
+        self.content = content()
+        self.action = action
+        self.backgroundColor = backgroundColor
+        self.foregroundColor = foregroundColor
+    }
     
     var body: some View {
         Button(action: action){
-            Image(systemName: iconName ?? "")
-            Text(title)
-                .font(.headline)
+            content
         }
         .frame(minWidth: 100, maxWidth: .infinity, minHeight: 44)
-        .background(backgroundColor ?? Color("BrandPrimary"))
-        .foregroundColor(foregroundColor ?? .white)
+        .background(backgroundColor)
+        .foregroundColor(foregroundColor)
         .cornerRadius(8)
     }
     
@@ -33,6 +43,10 @@ struct ButtonPrimary: View {
 
 struct ButtonPrimary_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonPrimary(title: "Test", action: {})
+        ButtonPrimary(action: {}) {
+            Image(Constant.icon.heart)
+            Text("Love it!")
+                .font(.headline)
+        }
     }
 }

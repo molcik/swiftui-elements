@@ -11,6 +11,8 @@ import SwiftUI
 struct RecipesListView: View {
     
     var category: Category
+    var tintColor = Constant.color.tintColor
+    var navigationBarDisplayMode = NavigationBarItem.TitleDisplayMode.large
     @EnvironmentObject private var userData: UserData
     
     var body: some View {
@@ -23,9 +25,9 @@ struct RecipesListView: View {
                 }
             }
         }
-        .navigationBarColor(UIColor(named: "BrandPrimary"))
-        .background(Color("Gray"))
-        .navigationBarTitle(Text(category.title), displayMode: .inline)
+        .navigationBarColor(tintColor.uiColor())
+        .background(Constant.color.gray)
+        .navigationBarTitle(Text(category.title), displayMode: navigationBarDisplayMode)
     }
 }
 

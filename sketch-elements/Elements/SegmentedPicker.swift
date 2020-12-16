@@ -10,30 +10,33 @@ import SwiftUI
 
 
 struct SegmentedPicker: View {
-    private static let activeSegmentColor: Color = Color("BrandPrimary")
-    private static let backgroundColor: Color = Color("BrandPrimary").opacity(0.2)
-    private static let shadowColor: Color = Color.black.opacity(0.2)
-    private static let textColor: Color = Color("BrandPrimary")
-    private static let selectedTextColor: Color = Color(.white)
-        
-    private static let segmentCornerRadius: CGFloat = 12
-    private static let shadowRadius: CGFloat = 4
-    private static let segmentXPadding: CGFloat = 8
-    private static let segmentYPadding: CGFloat = 12
     
-    private static let animationDuration: Double = 0.1
+    var tintColor: Color = Constant.color.tintColor
+    
+    private let activeSegmentColor: Color
+    private let backgroundColor: Color
+    private let textColor: Color
+    private let shadowColor: Color = Color.black.opacity(0.2)
+    private let selectedTextColor: Color = Color(.white)
+        
+    private let segmentCornerRadius: CGFloat = 12
+    private let shadowRadius: CGFloat = 4
+    private let segmentXPadding: CGFloat = 8
+    private let segmentYPadding: CGFloat = 12
+    
+    private let animationDuration: Double = 0.1
     
     // Stores the size of a segment, used to create the active segment rect
     @State private var segmentSize: CGSize = .zero
     // Rounded rectangle to denote active segment
     private var activeSegmentView: AnyView {
         return
-            RoundedRectangle(cornerRadius: SegmentedPicker.segmentCornerRadius)
-            .foregroundColor(SegmentedPicker.activeSegmentColor)
-            .shadow(color: SegmentedPicker.shadowColor, radius: SegmentedPicker.shadowRadius)
+            RoundedRectangle(cornerRadius: segmentCornerRadius)
+            .foregroundColor(activeSegmentColor)
+            .shadow(color: shadowColor, radius: shadowRadius)
                     .offset(x: computeActiveSegmentHorizontalOffset(width: segmentSize.width), y: 0)
                     .frame(width: segmentSize.width, height: segmentSize.height)
-                    .animation(Animation.linear(duration: SegmentedPicker.animationDuration))
+                    .animation(Animation.linear(duration: animationDuration))
                     .eraseToAnyView()
 
     }
@@ -41,7 +44,11 @@ struct SegmentedPicker: View {
     @Binding private var selection: Int
     private let items: [String]
     
-    init(items: [String], selection: Binding<Int>) {
+    init(items: [String], selection: Binding<Int>, tintColor: Color = Constant.color.tintColor) {
+        self.tintColor = tintColor
+        self.activeSegmentColor = tintColor
+        self.backgroundColor = tintColor.opacity(0.2)
+        self.textColor = tintColor
         self._selection = selection
         self.items = items
     }
@@ -51,11 +58,11 @@ struct SegmentedPicker: View {
         ZStack(alignment: .leading) {
             // activeSegmentView indicates the current selection
             self.activeSegmentView
-            HStack(spacing: SegmentedPicker.segmentXPadding) {
+            HStack(spacing: segmentXPadding) {
                 ForEach(0..<self.items.count, id: \.self) { index in
                     self.getSegmentView(for: index)
-                        .background(SegmentedPicker.backgroundColor)
-                        .clipShape(RoundedRectangle(cornerRadius: SegmentedPicker.segmentCornerRadius))
+                        .background(self.backgroundColor)
+                        .clipShape(RoundedRectangle(cornerRadius: segmentCornerRadius))
                 }
             }
         }
@@ -64,7 +71,7 @@ struct SegmentedPicker: View {
     
     // Helper method to compute the offset based on the selected index
     private func computeActiveSegmentHorizontalOffset(width: CGFloat) -> CGFloat {
-        CGFloat(self.selection) * (width + SegmentedPicker.segmentXPadding)
+        CGFloat(self.selection) * (width + segmentXPadding)
     }
         
     // Gets text view for the segment
@@ -76,11 +83,11 @@ struct SegmentedPicker: View {
         return
             Text(self.items[index])
                 .fontWeight(.bold)
-                .foregroundColor(isSelected ? SegmentedPicker.selectedTextColor: SegmentedPicker.textColor)
+                .foregroundColor(isSelected ? selectedTextColor: self.textColor)
                 .lineLimit(1)
                 .frame(minWidth: 0, maxWidth: .infinity)
                 // Watch for the size of the
-                .padding(.vertical, SegmentedPicker.segmentYPadding)
+                .padding(.vertical, segmentYPadding)
                 .modifier(SizeAwareViewModifier(viewSize: self.$segmentSize))
                 .onTapGesture { self.onItemTap(index: index) }
                 .eraseToAnyView()

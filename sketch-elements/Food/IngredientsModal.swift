@@ -29,10 +29,14 @@ struct IngredientsModal: View {
             Divider()
             HStack(){
                 ButtonPrimary(
-                    title: "Add to Reminders",
                     action: {
                         self.action()
-                })
+                    },
+                    backgroundColor: Constant.color.foodPrimary
+                ) {
+                    Text("Add to Reminders")
+                        .font(.headline)
+                }
             }
             .padding([.horizontal, .bottom], 24)
         }

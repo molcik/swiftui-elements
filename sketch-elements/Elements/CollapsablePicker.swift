@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct CollapsablePicker: View {
+    
+    var tintColor: Color = Constant.color.tintColor
+    
     @State private var pickerVisible = false
     @State private var date = Date()
     @State private var pickerReset = UUID()
@@ -24,14 +27,17 @@ struct CollapsablePicker: View {
         VStack {
             HStack {
                 ButtonPrimary(
-                    title: dateFormatter.string(from: date),
                     action: {
                         self.pickerVisible.toggle()
                     },
-                    backgroundColor: Color("BrandPrimary").opacity(0.2),
-                    foregroundColor: Color("BrandPrimary"),
-                    iconName: pickerVisible ? "chevron.up" : "chevron.down"
-                )
+                    backgroundColor: tintColor.opacity(0.2),
+                    foregroundColor: tintColor
+
+                ) {
+                    Image(pickerVisible ? Constant.icon.chevronUp : Constant.icon.chevronDown)
+                    Text("\(dateFormatter.string(from: date)))")
+                        .font(.headline)
+                }
             }
             if pickerVisible {
                 HStack {

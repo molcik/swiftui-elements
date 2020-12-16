@@ -29,7 +29,7 @@ struct Messages: View {
                     }
                 }
             }.background(Constant.color.gray)
-            .navigationBarColor(UIColor(named: "SocialPrimary"))
+            .navigationBarColor(Constant.color.socialPrimary.uiColor())
             .navigationBarTitle(Text("Messages"), displayMode: .large)
             .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white))
         }

@@ -35,13 +35,15 @@ struct RecipeDetail: View {
             }
             TabBar(
                 content: [
-                    TabItem(name: "\(recipe.people) people", icon: "person.2.fill"),
-                    TabItem(name: "\(recipe.minutes) minutes", icon: "clock.fill")
+                    TabItem(name: "\(recipe.people) people", icon: Constant.icon.person),
+                    TabItem(name: "\(recipe.minutes) minutes", icon: Constant.icon.clock)
                 ]
             )
             ScrollView(.vertical, showsIndicators: false) {
-                ButtonPrimary( title: "See Ingredients",action: self.modalManager.openModal)
-                    .padding([.top, .leading, .trailing])
+                ButtonPrimary(action: self.modalManager.openModal) {
+                        Text("See Ingredients")
+                            .font(.headline)
+                    }.padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {
                     ForEach(0..<recipe.instructions.count) { index in
                         TextTableRow(
@@ -52,17 +54,17 @@ struct RecipeDetail: View {
                     }
                 }.padding([.top, .bottom])
                     .frame(maxWidth: .infinity)
-                    .background(Color("Default"))
+                    .background(Constant.color.bgDefault)
                     .cornerRadius(8)
                     .padding([.leading, .bottom, .trailing])
                 Spacer()
             }
             .frame(maxWidth: .infinity)
         }
-        .background(Color("Gray"))
+        .background(Constant.color.gray)
         .edgesIgnoringSafeArea([.top])
         .navigationBarTitle("", displayMode: .large)
-        .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
+        .navigationBarItems(trailing: Image(systemName: Constant.icon.bookmark).foregroundColor(.white))
         .onAppear {
             self.modalManager.newModal(position: .closed) {
                 IngredientsModal(recipe: self.recipe, action: self.modalManager.closeModal)

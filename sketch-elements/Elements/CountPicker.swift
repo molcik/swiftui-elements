@@ -11,10 +11,13 @@ import Foundation
 import SwiftUI
 
 struct CountPicker: View {
-    @State var defaultValue = 0
+    
+    var label = ""
+    var tintColor: Color = Constant.color.tintColor
     var minValue = 0
     var maxValue = 12
-    var label = ""
+    @State var defaultValue = 0
+
     
     var body: some View {
         VStack {
@@ -23,7 +26,7 @@ struct CountPicker: View {
                     self.defaultValue += self.defaultValue > self.minValue ? -1 : 0
                 }) {
                         HStack {
-                            Image(systemName: "minus").font(Font.body.weight(.bold))
+                            Image(systemName: Constant.icon.minus).font(Font.body.weight(.bold))
                             Spacer()
                         }
 
@@ -38,13 +41,13 @@ struct CountPicker: View {
                 }) {
                     HStack {
                         Spacer()
-                        Image(systemName: "plus").font(Font.body.weight(.bold))
+                        Image(systemName: Constant.icon.plus).font(Font.body.weight(.bold))
                     }
                 }.padding()
             }
-            .foregroundColor(Color("BrandPrimary"))
+            .foregroundColor(tintColor)
             .frame(minWidth: 100, maxWidth: .infinity)
-            .background(Color("BrandPrimary").opacity(0.2))
+            .background(tintColor.opacity(0.2))
             .cornerRadius(8)
         }
     }

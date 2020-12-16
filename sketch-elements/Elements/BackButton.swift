@@ -14,7 +14,7 @@ struct BackButton: View {
     
     var body: some View {
         Button(action: action) {
-            Image(systemName: "chevron.left")
+            Image(systemName: Constant.icon.chevronBack)
                 .font(.system(size: 24.0, weight: .medium))
             Text(title)
                 .offset(x: -4)

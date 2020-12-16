@@ -13,11 +13,12 @@ struct ReservationModal: View {
     
     @State var selection: Int = 0
     var restaurant: Restaurant
+    var tintColor: Color = Constant.color.tintColor
     var action: () -> Void
     
     var body: some View {
         VStack(){
-            ModalHeader(action: self.action, title: "Reservation")
+            ModalHeader(action: self.action, title: "Reservation", tintColor: tintColor)
             ScrollView(.vertical){
                 HStack {
                     VStack(alignment: .leading) {
@@ -42,9 +43,9 @@ struct ReservationModal: View {
                 .padding([.leading, .trailing])
                 Divider()
                 VStack(spacing: 8) {
-                    CollapsablePicker()
-                    CountPicker(label: "people")
-                    SegmentedPicker(items: ["19:00", "19:30", "20:00", "20:30"], selection: self.$selection)
+                    CollapsablePicker(tintColor: tintColor)
+                    CountPicker(label: "people", tintColor: tintColor)
+                    SegmentedPicker(items: ["19:00", "19:30", "20:00", "20:30"], selection: self.$selection, tintColor: tintColor)
                     Spacer()
                 }.padding([.leading, .trailing])
             }

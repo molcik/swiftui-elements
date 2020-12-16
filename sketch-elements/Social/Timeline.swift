@@ -47,7 +47,7 @@ struct Timeline: View {
                     }
                 }
             }.background(Constant.color.gray)
-            .navigationBarColor(UIColor(named: "SocialPrimary"))
+            .navigationBarColor(Constant.color.socialPrimary.uiColor())
             .navigationBarTitle(Text("Timeline"), displayMode: .large)
             .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white))
         }

@@ -48,7 +48,7 @@ struct ContentView: View {
         // NOTE: This is needed only to change the theme, feel free to remove it
         .actionSheet(isPresented: Binding.constant(true)) {
             
-            ActionSheet(title: Text("Change Theme"), message: Text("To invoke this menu again, you need to rebuild the app. You can also set the theme directly in ContentView.swift"), buttons: [
+            ActionSheet(title: Text("Select Theme"), message: Text("To invoke this menu again, you need to rerun the app. You can also set the theme directly in ContentView.swift"), buttons: [
                 .default(Text("Social")) { self.selectedTheme = .social },
                 .default(Text("Travel")) { self.selectedTheme = .travel },
                 .default(Text("Food")) { self.selectedTheme = .food },

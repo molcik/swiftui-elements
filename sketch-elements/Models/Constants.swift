@@ -32,6 +32,16 @@ struct Constant {
         static let map = "map.fill"
         static let clock = "clock.fill"
         static let weather = "cloud.sun.fill"
+        static let bed = "bed.double.fill"
+        static let chevronUp = "chevron.up"
+        static let chevronDown = "chevron.down"
+        static let bookmark = "bookmark"
+        static let creditcard = "creditcard"
+        static let star = "star.fill"
+        static let chevronBack = "chevron.back"
+        static let circle = "circle"
+        static let minus = "minus"
+        static let plus = "plus"
     }
     
 }

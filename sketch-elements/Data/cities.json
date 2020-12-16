@@ -27,6 +27,20 @@
                 "location": {
                     "longitude": -74.008777,
                     "latitude": 40.712673
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -43,6 +57,20 @@
                 "location": {
                     "longitude": -73.997190,
                     "latitude": 40.713696
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -59,6 +87,20 @@
                 "location": {
                     "longitude": -74.010730,
                     "latitude": 40.712820
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -75,6 +117,20 @@
                 "location": {
                     "longitude": -74.004443,
                     "latitude": 40.715829
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             }
         ],
@@ -173,6 +229,20 @@
                 "location": {
                     "longitude": 2.353971,
                     "latitude": 48.859562
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -189,6 +259,20 @@
                 "location": {
                     "longitude": 2.348113,
                     "latitude": 48.854157
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -205,6 +289,20 @@
                 "location": {
                     "longitude": 2.347984,
                     "latitude": 48.859407
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -221,6 +319,20 @@
                 "location": {
                     "longitude": 2.339380,
                     "latitude": 48.856374
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             }
         ],
@@ -319,6 +431,20 @@
                 "location": {
                     "longitude": 151.211057,
                     "latitude": -33.867957
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -335,6 +461,20 @@
                 "location": {
                     "longitude": 151.205628,
                     "latitude": -33.869721
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -351,6 +491,20 @@
                 "location": {
                     "longitude": 151.209383,
                     "latitude": -33.865854
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -367,6 +521,20 @@
                 "location": {
                     "longitude": 151.210284,
                     "latitude": -33.866140
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             }
         ],
@@ -465,6 +633,20 @@
                 "location": {
                     "longitude": 12.317390,
                     "latitude": 45.436875
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -481,6 +663,20 @@
                 "location": {
                     "longitude": 12.321596,
                     "latitude": 45.437656
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -497,6 +693,20 @@
                 "location": {
                     "longitude": 12.327368,
                     "latitude": 45.436045
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             },
             {
@@ -513,6 +723,20 @@
                 "location": {
                     "longitude": 12.327690,
                     "latitude": 45.438306
+                },
+                "address": "Europaallee 1a",
+                "city": "Zürich",
+                "country": "Switzerland",
+                "description":
+                    "Our staff welcomes you at the venerable Building at the Europaplatz from the early mornings until late at night with healthy enjoyment from the Hiltl buffet. Freshly pressed juices, homemade iced teas & lemonades, delicious coffee & tea specialities and classic cocktails are served at the original post counter from the 1930ies. All the vegetarian and vegan delicacies can be enjoyed in-house or to-go at the train, tram, bus or in the classrooms.",
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "openings": {
+                    "from": "06:00",
+                    "to": "04:00"
                 }
             }
         ],

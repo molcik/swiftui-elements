@@ -12,11 +12,13 @@ import URLImage
 struct RestaurantDetail: View {
     
     let restaurant: Restaurant
+    var tintColor: Color = Constant.color.tintColor
     let gradient = LinearGradient(gradient: Gradient(colors: [.white, .clear]), startPoint: .top, endPoint: .bottom)
     @EnvironmentObject var modalManager: ModalManager
     
-    init(restaurant: Restaurant) {
+    init(restaurant: Restaurant, tintColor: Color = Constant.color.tintColor ) {
         self.restaurant = restaurant
+        self.tintColor = tintColor
     }
     
     var body: some View {
@@ -33,16 +35,17 @@ struct RestaurantDetail: View {
                 }
             }
             TabBar(
+                foregroundColor: tintColor,
                 content: [
                 TabItem(
                     name: String(repeating: "$",
-                                 count: restaurant.price!.expensive), icon: "creditcard"),
+                                 count: restaurant.price!.expensive), icon: Constant.icon.creditcard),
                 TabItem(
                     name: "\(restaurant.reviews) reviews",
-                    customView: Stars(restaurant.ratings).eraseToAnyView()),
+                    customView: Stars(restaurant.ratings, color: tintColor).eraseToAnyView()),
                 TabItem(
                     name: "\(restaurant.openings!.from) - \(restaurant.openings!.to)",
-                    icon: "clock.fill")
+                    icon: Constant.icon.clock)
             ])
             
             ZStack(alignment: .top) {
@@ -56,8 +59,10 @@ struct RestaurantDetail: View {
                         Rectangle()
                             .opacity(0)
                             .frame(height: 100)
-                        ButtonPrimary( title: "Make reservation",action: self.modalManager.openModal)
-                            .padding([.top, .leading, .trailing])
+                        ButtonPrimary(action: self.modalManager.openModal, backgroundColor: tintColor) {
+                                Text("Make reservation")
+                                    .font(.headline)
+                            }.padding([.top, .leading, .trailing])
                         Card{
                             Text(restaurant.description!)
                             .padding()
@@ -67,13 +72,13 @@ struct RestaurantDetail: View {
             }
             .frame(maxWidth: .infinity)
         }
-        .background(Color("Gray"))
+        .background(Constant.color.gray)
         .edgesIgnoringSafeArea([.top])
         .navigationBarTitle("", displayMode: .large)
-        .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
+        .navigationBarItems(trailing: Image(systemName: Constant.icon.bookmark).foregroundColor(.white))
         .onAppear {
             self.modalManager.newModal(position: .closed) {
-                ReservationModal(restaurant: self.restaurant, action: self.modalManager.closeModal)
+                ReservationModal(restaurant: self.restaurant, tintColor: tintColor, action: self.modalManager.closeModal)
             }
         }
     }

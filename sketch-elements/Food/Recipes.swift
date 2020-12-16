@@ -11,6 +11,8 @@ import SwiftUI
 struct Recipes: View {
     
     var categories: [Category]
+    var tintColor: Color = Constant.color.tintColor
+    
     var body: some View {
         
         NavigationView {
@@ -23,10 +25,10 @@ struct Recipes: View {
                     }
                 }
             }
-            .background(Color("Gray"))
-            .navigationBarColor(UIColor(named:"BrandPrimary"))
+            .background(Constant.color.gray)
+            .navigationBarColor(tintColor.uiColor())
             .navigationBarTitle(Text("Recipes"), displayMode: .large)
-            .navigationBarItems(trailing: Image(systemName: "magnifyingglass").foregroundColor(.white))
+            .navigationBarItems(trailing: Image(systemName: Constant.icon.magnifyingGlass).foregroundColor(.white))
         }
     }
 }

@@ -39,7 +39,7 @@ struct ModalView: View {
                         self.modal.position = .closed
                 }
                 ZStack(alignment: .top) {
-                    Color("Default")
+                    Constant.color.bgDefault
                     self.modal.content
                         .frame(height: UIScreen.main.bounds.height - (self.modal.position.offsetFromTop() + geometry.safeAreaInsets.top + self.dragState.translation.height))
                 }
