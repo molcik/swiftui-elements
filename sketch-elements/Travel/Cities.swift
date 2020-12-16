@@ -27,9 +27,9 @@ struct Cities: View {
                 }
             }
             .background(Constant.color.gray)
-            .navigationBarColor(UIColor(named:"TravelPrimary"))
-            .navigationBarTitle(Text("Guides"), displayMode: .large)
-            .navigationBarItems(trailing: Image(systemName: "magnifyingglass").foregroundColor(.white))
+            .navigationBarColor(Constant.color.travelPrimary.uiColor())
+            .navigationBarTitle(Text("Cities"), displayMode: .large)
+            .navigationBarItems(trailing: Image(systemName: Constant.icon.magnifyingGlass).foregroundColor(.white))
         }
     }
 }

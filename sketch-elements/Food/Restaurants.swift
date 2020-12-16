@@ -16,7 +16,7 @@ struct Restaurants: View {
     var body: some View {
         
         NavigationView {
-            RestaurantsList(restaurants: restaurants)
+            VenuesList(venues: restaurants, title: "Restaurants")
         }
     }
 }

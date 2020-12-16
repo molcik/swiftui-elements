@@ -8,21 +8,21 @@
 
 import CoreLocation
 
-struct Restaurant: Hashable, Codable, Identifiable {
+struct Restaurant: Place, Bookable {
     var id: String
     var title: String
     var subtitle: String
-    var featured: Bool?
+    var featured: Bool {false}
     var ratings: Int
     var reviews: Int
     var picture: Picture
     var location: Coordinates
-    var address: String?
-    var city: String?
-    var country: String?
-    var description: String?
-    var price: Price?
-    var openings: Openings?
+    var address: String
+    var city: String
+    var country: String
+    var description: String
+    var price: Price
+    var openings: Openings
     var locationCoordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(
             latitude: location.latitude,

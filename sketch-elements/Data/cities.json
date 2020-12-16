@@ -137,6 +137,8 @@
         "hotels": [
             {
                 "id": "beekman",
+                "country": "USA",
+                "city": "New York",
                 "title": "The Beekman, a Thompson Hotel",
                 "subtitle": "our pick",
                 "featured": true,
@@ -149,10 +151,18 @@
                 "location": {
                     "longitude": -74.006749,
                     "latitude": 40.711240
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Set in the Financial District, this posh hotel is a 3-minute walk from the Fulton Street subway station and a 14-minute walk from the iconic Brooklyn Bridge."
             },
             {
                 "id": "newyorkmarriot",
+                "country": "USA",
+                "city": "New York",
                 "title": "New York Marriott Downtown",
                 "subtitle": "Luxury",
                 "featured": false,
@@ -165,10 +175,18 @@
                 "location": {
                     "longitude": -74.014614,
                     "latitude": 40.709524
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Modern Downtown lodging offering warm rooms & suites, plus a burger joint, a bar & a fitness room."
             },
             {
                 "id": "wnewyork",
+                "country": "USA",
+                "city": "New York",
                 "title": "W New York - Downtown",
                 "subtitle": "Kitch",
                 "featured": false,
@@ -181,10 +199,18 @@
                 "location": {
                     "longitude": -74.013584,
                     "latitude": 40.709198
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Set among bars and restaurants in Lower Manhattan, this chic hotel is 7 minutes' walk from the One World Trade Center, a 4-minute walk from the Wall Street subway station, and 6 minutes on foot from the National September 11 Memorial & Museum."
             },
             {
                 "id": "andaz",
+                "country": "USA",
+                "city": "New York",
                 "title": "Andaz Wall Street",
                 "subtitle": "Kitch",
                 "featured": false,
@@ -197,7 +223,13 @@
                 "location": {
                     "longitude": -74.008037,
                     "latitude": 40.705075
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "This sleek high-rise hotel in the financial district is 2 blocks from the New York Stock Exchange, 7 blocks from South Street Seaport and 8 blocks from the World Trade Center."
             }
         ]
     },
@@ -339,6 +371,8 @@
         "hotels": [
             {
                 "id": "grandiose",
+                "country": "France",
+                "city": "Paris",
                 "title": "Hôtel Grandiose",
                 "subtitle": "our pick",
                 "featured": true,
@@ -351,10 +385,18 @@
                 "location": {
                     "longitude": 2.346311,
                     "latitude": 48.857741
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Inaugurated under Napoleon III, the InterContinental Paris le Grand is located in the heart of Paris, offering guests a magnificent view of the Opera Garnier."
             },
             {
                 "id": "grandparis",
+                "country": "France",
+                "city": "Paris",
                 "title": "Grand Paris Hôtel",
                 "subtitle": "Luxury",
                 "featured": false,
@@ -367,10 +409,18 @@
                 "location": {
                     "longitude": 2.346311,
                     "latitude": 48.857741
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Located in central Paris, this hotel is 100 metres from Gare de l’Est Train Station. It has a 24-hour front desk and offers guest rooms with satellite TV."
             },
             {
                 "id": "maisonbernadette",
+                "country": "France",
+                "city": "Paris",
                 "title": "Maison Bernadette",
                 "subtitle": "Kitch",
                 "featured": false,
@@ -383,11 +433,19 @@
                 "location": {
                     "longitude": 2.349808,
                     "latitude": 48.856614
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Set in the heart of the beautiful French Pyrenees in the rural village of Artalens, we are just 10 minutes drive from Argeles-Gazost."
             },
             {
                 "id": "rousseau",
                 "title": "Hôtel Rousseau",
+                "country": "France",
+                "city": "Paris",
                 "subtitle": "Kitch",
                 "featured": false,
                 "ratings": 5,
@@ -399,7 +457,13 @@
                 "location": {
                     "longitude": 2.343886,
                     "latitude": 48.858167
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Surrounded by shops and eateries, this sophisticated hotel is a 5-minute walk from both the Geneva train station and Lake Geneva, and 12 minutes on foot from St. Pierre Cathedral."
             }
         ]
     },
@@ -541,6 +605,8 @@
         "hotels": [
             {
                 "id": "westin",
+                "country": "Australia",
+                "city": "Sydney",
                 "title": "The Westin Sydney",
                 "subtitle": "our pick",
                 "featured": true,
@@ -553,10 +619,18 @@
                 "location": {
                     "longitude": 151.207752,
                     "latitude": -33.867814
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Posh lodging in an 1891 building, offering a striking modern restaurant set in an atrium."
             },
             {
                 "id": "grace",
+                "country": "Australia",
+                "city": "Sydney",
                 "title": "The Grace Hotel",
                 "subtitle": "Luxury",
                 "featured": false,
@@ -569,10 +643,18 @@
                 "location": {
                     "longitude": 151.205885,
                     "latitude": -33.868955
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Set in a 1920s Neo-Gothic building with an art deco interior, this traditional hotel is a 7-minute walk from Sea Life Sydney Aquarium and 2 km from Sydney Opera House."
             },
             {
                 "id": "travelodge",
+                "country": "Australia",
+                "city": "Sydney",
                 "title": "Travelodge Hotel Sydney Wynyard",
                 "subtitle": "Kitch",
                 "featured": false,
@@ -585,10 +667,18 @@
                 "location": {
                     "longitude": 151.205328,
                     "latitude": -33.865014
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Close to Wynyard Station, this straightforward hotel in a high-rise building is 2 km from both Sydney Harbour Bridge and Sydney Opera House."
             },
             {
                 "id": "marriott",
+                "country": "Australia",
+                "city": "Sydney",
                 "title": "Sydney Harbour Marriott Hotel at Circular Quay",
                 "subtitle": "Luxury",
                 "featured": false,
@@ -601,7 +691,13 @@
                 "location": {
                     "longitude": 151.209297,
                     "latitude": -33.862719
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "A 3-minute walk from Sydney Harbour, this polished hotel is also 1 km from Sydney Opera House and 12 km from Sydney Airport."
             }
         ]
     },
@@ -743,6 +839,8 @@
         "hotels": [
             {
                 "id": "allavitedorata",
+                "country": "Italy",
+                "city": "Venice",
                 "title": "Alla Vite Dorata",
                 "subtitle": "our pick",
                 "featured": true,
@@ -755,10 +853,18 @@
                 "location": {
                     "longitude": 12.324858,
                     "latitude": 45.440338
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Set along a Venetian canal, this charming inn with exposed brick walls is a 10-minute walk from the Rialto Bridge and a 14-minute walk from the Piazza San Marco public square."
             },
             {
                 "id": "anticopanada",
+                "country": "Italy",
+                "city": "Venice",
                 "title": "Antico Panada",
                 "subtitle": "Luxury",
                 "featured": false,
@@ -771,10 +877,18 @@
                 "location": {
                     "longitude": 12.324858,
                     "latitude": 45.440338
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Set in the San Marco district, this warm, 19th-century Venetian hotel is a 2-minute walk from St. Mark’s Square, a 7-minute walk from La Fenice and an 8-minute walk from the Rialto Bridge."
             },
             {
                 "id": "wellvenice",
+                "country": "Italy",
+                "city": "Venice",
                 "title": "WellVenice Grand Canal",
                 "subtitle": "Kitch",
                 "featured": false,
@@ -787,10 +901,18 @@
                 "location": {
                     "longitude": 12.326682,
                     "latitude": 45.438366
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Set within the San Polo district in Venice, WellVenice Grand Canal has air conditioning, a balcony, and sea views."
             },
             {
                 "id": "primaluce",
+                "country": "Italy",
+                "city": "Venice",
                 "title": "Primaluce",
                 "subtitle": "Kitch",
                 "featured": false,
@@ -803,7 +925,13 @@
                 "location": {
                     "longitude": 12.333140,
                     "latitude": 45.439450
-                }
+                },
+                "price": {
+                    "from": 21,
+                    "to": 40,
+                    "expensive": 2
+                },
+                "description": "Located in Venice, Primaluce features a garden. Well situated in the Dorsoduro district, the property is 180 m from Basilica dei Frari and a 15-minute walk from Rialto Bridge."
             }
         ]
     }

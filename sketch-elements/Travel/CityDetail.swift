@@ -12,7 +12,6 @@ import URLImage
 struct CityDetail: View {
     
     var city: City
-    @EnvironmentObject var modalManager: ModalManager
     @State var selection: Int? = nil
     
     var body: some View {
@@ -35,18 +34,18 @@ struct CityDetail: View {
                     
                     HStack(spacing: -8) {
                         NavigationLink(
-                            destination: RestaurantsList(restaurants: city.restaurants, tintColor: Constant.color.travelPrimary, navigationBarDisplayMode: NavigationBarItem.TitleDisplayMode.inline),
+                            destination: VenuesList(venues: city.restaurants, tintColor: Constant.color.travelPrimary, navigationBarDisplayMode: NavigationBarItem.TitleDisplayMode.inline, title: "Restaurants"),
                             tag: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/,
                             selection: $selection) {
-                                ButtonPrimary(
-                                    action: {self.selection = 1},
-                                    backgroundColor: Constant.color.travelPrimary
-                                ) {
-                                    Image(systemName: Constant.icon.house)
-                                }.padding([.top, .leading, .trailing])
-                            }
+                            ButtonPrimary(
+                                action: {self.selection = 1},
+                                backgroundColor: Constant.color.travelPrimary
+                            ) {
+                                Image(systemName: Constant.icon.house)
+                            }.padding([.top, .leading, .trailing])
+                        }
                         NavigationLink(
-                            destination: RestaurantsList(restaurants: city.restaurants),
+                            destination: VenuesList(venues: city.hotels, tintColor: Constant.color.travelPrimary, navigationBarDisplayMode: NavigationBarItem.TitleDisplayMode.inline, title: "Hotels"),
                             tag: 2,
                             selection: $selection) {
                             ButtonPrimary(
@@ -56,10 +55,10 @@ struct CityDetail: View {
                                 Image(systemName:Constant.icon.bed)
                             }
                             .padding([.top, .leading, .trailing])
-                            }
+                        }
                         
                     }
-
+                    
                     VStack(alignment: .leading) {
                         Card{
                             Text(city.description)
@@ -75,14 +74,9 @@ struct CityDetail: View {
         .edgesIgnoringSafeArea([.top])
         .navigationBarTitle("", displayMode: .large)
         .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
-        .onAppear {
-            self.modalManager.newModal(position: .closed) {
-                Text("Modal")
-                // IngredientsModal(recipe: self.recipe, action: self.modalManager.closeModal)
-            }
-        }
     }
 }
+
 
 struct CityDetail_Previews: PreviewProvider {
     static var previews: some View {

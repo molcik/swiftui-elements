@@ -44,9 +44,9 @@ struct Guides: View {
                 }
             }
             .background(Constant.color.gray)
-            .navigationBarColor(UIColor(named:"TravelPrimary"))
+            .navigationBarColor(Constant.color.travelPrimary.uiColor())
             .navigationBarTitle(Text("Guides"), displayMode: .large)
-            .navigationBarItems(trailing: Image(systemName: "magnifyingglass").foregroundColor(.white))
+            .navigationBarItems(trailing: Image(systemName: Constant.icon.magnifyingGlass).foregroundColor(.white))
         }
     }
 }

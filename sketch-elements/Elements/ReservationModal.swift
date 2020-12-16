@@ -12,26 +12,25 @@ import URLImage
 struct ReservationModal: View {
     
     @State var selection: Int = 0
-    var restaurant: Restaurant
+    var place: Bookable
+    var timeOptions: [String]?
     var tintColor: Color = Constant.color.tintColor
     var action: () -> Void
-    
+
     var body: some View {
         VStack(){
             ModalHeader(action: self.action, title: "Reservation", tintColor: tintColor)
             ScrollView(.vertical){
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(restaurant.title)
+                        Text(place.title)
                             .font(.largeTitle)
-                        Text(restaurant.address!)
-                            .opacity(0.6)
-                        Text("\(restaurant.city!), \(restaurant.country!)")
+                        Text("\(place.city), \(place.country)")
                             .opacity(0.6)
                     }
                     Spacer()
                     VStack(alignment: .trailing) {
-                        URLImage(restaurant.picture.uri, content:  {
+                        URLImage(place.picture.uri, content:  {
                             $0.image
                                 .renderingMode(.original)
                                 .resizable()
@@ -44,8 +43,10 @@ struct ReservationModal: View {
                 Divider()
                 VStack(spacing: 8) {
                     CollapsablePicker(tintColor: tintColor)
-                    CountPicker(label: "people", tintColor: tintColor)
-                    SegmentedPicker(items: ["19:00", "19:30", "20:00", "20:30"], selection: self.$selection, tintColor: tintColor)
+                    CountPicker(label: "people", tintColor: tintColor, defaultValue: 1)
+                    if (timeOptions != nil) {
+                        SegmentedPicker(items: timeOptions!, selection: self.$selection, tintColor: tintColor)
+                    }
                     Spacer()
                 }.padding([.leading, .trailing])
             }
@@ -61,8 +62,10 @@ struct ReservationModal: View {
 struct ReservationModal_Previews: PreviewProvider {
     static var previews: some View {
         ReservationModal(
-            restaurant: restaurantsData[0],
-            action: {}).environmentObject(UserData())
+            place: restaurantsData[0],
+            timeOptions: ["19:00", "19:30", "20:00", "20:30"],
+            action: {}).environmentObject(UserData()
+            )
         
     }
 }

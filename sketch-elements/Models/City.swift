@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct City: Hashable, Codable, Identifiable {
+struct City: Codable, Identifiable {
     var id: String
     var country: String
     var city: String
@@ -17,7 +17,7 @@ struct City: Hashable, Codable, Identifiable {
     var picture: Picture
     var location: Coordinates
     var restaurants: [Restaurant]
-    var hotels: [Restaurant] // TODO: Refactor to Place type
+    var hotels: [Hotel]
     var locationCoordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(
             latitude: location.latitude,

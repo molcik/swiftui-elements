@@ -13,6 +13,8 @@ struct GuideDetail: View {
     
     var guide: Guide
     let gradient = LinearGradient(gradient: Gradient(colors: [.white, .clear]), startPoint: .top, endPoint: .bottom)
+    var tintColor: Color = Constant.color.travelPrimary
+    @State var selection: Int = 0
     @EnvironmentObject var modalManager: ModalManager
     
     var body: some View {
@@ -48,7 +50,7 @@ struct GuideDetail: View {
                         .frame(height: 100)
                     ButtonPrimary(
                         action: self.modalManager.openModal,
-                        backgroundColor: Constant.color.travelPrimary
+                        backgroundColor: tintColor
                     ) {
                         Text("Book trip")
                             .font(.headline)
@@ -64,7 +66,7 @@ struct GuideDetail: View {
                         }
                     }.padding([.top, .bottom])
                         .frame(maxWidth: .infinity)
-                        .background(Color("Default"))
+                    .background(Constant.color.bgDefault)
                         .cornerRadius(8)
                         .padding([.leading, .bottom, .trailing])
                     Spacer()
@@ -72,14 +74,16 @@ struct GuideDetail: View {
             }.frame(maxWidth: .infinity)
 
         }
-        .background(Color("Gray"))
+        .background(Constant.color.gray)
         .edgesIgnoringSafeArea([.top])
         .navigationBarTitle("", displayMode: .large)
-        .navigationBarItems(trailing: Image(systemName: "bookmark").foregroundColor(.white))
+        .navigationBarItems(trailing: Image(systemName: Constant.icon.bookmark).foregroundColor(.white))
         .onAppear {
             self.modalManager.newModal(position: .closed) {
-                Text("Modal")
-                // IngredientsModal(recipe: self.recipe, action: self.modalManager.closeModal)
+                ReservationModal(
+                    place: self.guide,
+                    tintColor: tintColor,
+                    action: self.modalManager.closeModal)
             }
         }
     }

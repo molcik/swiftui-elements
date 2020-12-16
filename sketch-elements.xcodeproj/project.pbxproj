@@ -61,7 +61,11 @@
 		3478534325861F7A0023A217 /* SizeAwareViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478534225861F7A0023A217 /* SizeAwareViewModifier.swift */; };
 		347853502586667E0023A217 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478534F2586667E0023A217 /* Travel.swift */; };
 		34785354258666ED0023A217 /* Guides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34785353258666ED0023A217 /* Guides.swift */; };
-		3492B625258A09F2001D2094 /* RestaurantsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492B624258A09F2001D2094 /* RestaurantsList.swift */; };
+		3492B625258A09F2001D2094 /* VenuesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492B624258A09F2001D2094 /* VenuesList.swift */; };
+		349524C6258A30E70077F145 /* Reservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349524C5258A30E70077F145 /* Reservable.swift */; };
+		349524C9258A31E90077F145 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349524C8258A31E90077F145 /* Hotel.swift */; };
+		349524CC258A35BC0077F145 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349524CB258A35BC0077F145 /* Place.swift */; };
+		349524D2258A3F8C0077F145 /* HotelDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349524D1258A3F8C0077F145 /* HotelDetail.swift */; };
 		349A579D2587A78000277356 /* GuideDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A579C2587A78000277356 /* GuideDetail.swift */; };
 		349A57A52588C09200277356 /* CityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A57A42588C09200277356 /* CityDetail.swift */; };
 		349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E4BD7241522990079BF04 /* ButtonPrimary.swift */; };
@@ -145,7 +149,11 @@
 		3478534225861F7A0023A217 /* SizeAwareViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeAwareViewModifier.swift; sourceTree = "<group>"; };
 		3478534F2586667E0023A217 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		34785353258666ED0023A217 /* Guides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guides.swift; sourceTree = "<group>"; };
-		3492B624258A09F2001D2094 /* RestaurantsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsList.swift; sourceTree = "<group>"; };
+		3492B624258A09F2001D2094 /* VenuesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesList.swift; sourceTree = "<group>"; };
+		349524C5258A30E70077F145 /* Reservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservable.swift; sourceTree = "<group>"; };
+		349524C8258A31E90077F145 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		349524CB258A35BC0077F145 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		349524D1258A3F8C0077F145 /* HotelDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetail.swift; sourceTree = "<group>"; };
 		349A579C2587A78000277356 /* GuideDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideDetail.swift; sourceTree = "<group>"; };
 		349A57A42588C09200277356 /* CityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetail.swift; sourceTree = "<group>"; };
 		349E4BD7241522990079BF04 /* ButtonPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPrimary.swift; sourceTree = "<group>"; };
@@ -250,6 +258,9 @@
 				34F1215425875BAF00BBB7DB /* Guide.swift */,
 				34F1215725875BBC00BBB7DB /* City.swift */,
 				34F1215A258760C800BBB7DB /* Coordinates.swift */,
+				349524C5258A30E70077F145 /* Reservable.swift */,
+				349524C8258A31E90077F145 /* Hotel.swift */,
+				349524CB258A35BC0077F145 /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,11 +288,9 @@
 				3403A3192408099500D7B040 /* Recipes.swift */,
 				3445A79C240B043E0020561B /* RecipesList.swift */,
 				3461D3D5245C2036009D389E /* Restaurants.swift */,
-				3492B624258A09F2001D2094 /* RestaurantsList.swift */,
 				34AD61DC240BD093005943F9 /* RecipeDetail.swift */,
 				344723BA24ABA93C003B9F50 /* IngredientsModal.swift */,
 				344723BC24ABA9CD003B9F50 /* RestaurantDetail.swift */,
-				344723C524ABC37D003B9F50 /* ReservationModal.swift */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 				34F1215D2587962C00BBB7DB /* Cities.swift */,
 				349A579C2587A78000277356 /* GuideDetail.swift */,
 				349A57A42588C09200277356 /* CityDetail.swift */,
+				349524D1258A3F8C0077F145 /* HotelDetail.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -368,6 +378,8 @@
 				344723CC24AC9613003B9F50 /* CollapsablePicker.swift */,
 				34FE0A2C25681474007D1B06 /* CountPicker.swift */,
 				34ADED312584BB1300A504F5 /* Profile.swift */,
+				3492B624258A09F2001D2094 /* VenuesList.swift */,
+				344723C524ABC37D003B9F50 /* ReservationModal.swift */,
 				3478533F25861EFF0023A217 /* SegmentedPickerCollapsed.swift */,
 			);
 			path = Elements;
@@ -484,6 +496,7 @@
 				3461D3D6245C2036009D389E /* Restaurants.swift in Sources */,
 				345D2E24245857F700201DD0 /* CheckBoxTableRow.swift in Sources */,
 				3461D3DB245C219B009D389E /* Extensions.swift in Sources */,
+				349524C6258A30E70077F145 /* Reservable.swift in Sources */,
 				349A57A52588C09200277356 /* CityDetail.swift in Sources */,
 				345AE3AC241A7A8E004EBE8C /* ModalView.swift in Sources */,
 				3403A3022406B70F00D7B040 /* AppDelegate.swift in Sources */,
@@ -513,6 +526,7 @@
 				3445A79F240B0C3F0020561B /* CardWithBackground.swift in Sources */,
 				34DCE8C1240817CD00C4EE89 /* Food.swift in Sources */,
 				345D2E202458473000201DD0 /* TextTableRow.swift in Sources */,
+				349524D2258A3F8C0077F145 /* HotelDetail.swift in Sources */,
 				344723C824ABC64A003B9F50 /* ButtonApplePay.swift in Sources */,
 				344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */,
 				3478533C258613200023A217 /* Account.swift in Sources */,
@@ -531,13 +545,15 @@
 				34ADED2F2584B5B100A504F5 /* Timeline.swift in Sources */,
 				346DFE0A2584F98C00449492 /* Story.swift in Sources */,
 				344723B924ABA89E003B9F50 /* BackButton.swift in Sources */,
-				3492B625258A09F2001D2094 /* RestaurantsList.swift in Sources */,
+				3492B625258A09F2001D2094 /* VenuesList.swift in Sources */,
+				349524C9258A31E90077F145 /* Hotel.swift in Sources */,
 				344723C124ABB098003B9F50 /* TabItem.swift in Sources */,
 				3403A31D240809E700D7B040 /* UserData.swift in Sources */,
 				344723BD24ABA9CD003B9F50 /* RestaurantDetail.swift in Sources */,
 				34B4B12524AB668100B092A8 /* Card.swift in Sources */,
 				345AE3B0241A7ABD004EBE8C /* ContentView.swift in Sources */,
 				345AE3AB241A7A8E004EBE8C /* Modal.swift in Sources */,
+				349524CC258A35BC0077F145 /* Place.swift in Sources */,
 				345D2E1E2458413B00201DD0 /* TableRow.swift in Sources */,
 				3403A31A2408099500D7B040 /* Recipes.swift in Sources */,
 				349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */,

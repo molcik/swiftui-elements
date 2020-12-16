@@ -1,33 +1,33 @@
 //
-//  RestaurantDetail.swift
+//  HotelDetail.swift
 //  sketch-elements
 //
-//  Created by Filip Molcik on 30/06/2020.
+//  Created by Filip Molcik on 16.12.2020.
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
 import SwiftUI
 import URLImage
 
-struct RestaurantDetail: View {
+struct HotelDetail: View {
     
-    let restaurant: Restaurant
+    let hotel: Hotel
     var tintColor: Color = Constant.color.tintColor
     let gradient = LinearGradient(gradient: Gradient(colors: [.white, .clear]), startPoint: .top, endPoint: .bottom)
     @EnvironmentObject var modalManager: ModalManager
     
-    init(restaurant: Restaurant, tintColor: Color = Constant.color.tintColor ) {
-        self.restaurant = restaurant
+    init(hotel: Hotel, tintColor: Color = Constant.color.tintColor ) {
+        self.hotel = hotel
         self.tintColor = tintColor
     }
     
     var body: some View {
         return VStack(spacing: 0){
-            Header(image: restaurant.picture.uri, height: 223) {
+            Header(image: hotel.picture.uri, height: 223) {
                 VStack(){
                     Spacer()
                     HStack(){
-                        Text(restaurant.title)
+                        Text(hotel.title)
                             .font(.largeTitle)
                             .fontWeight(.bold)
                         Spacer()
@@ -37,35 +37,32 @@ struct RestaurantDetail: View {
             TabBar(
                 foregroundColor: tintColor,
                 content: [
-                TabItem(
-                    name: String(repeating: "$",
-                                 count: restaurant.price.expensive), icon: Constant.icon.creditcard),
-                TabItem(
-                    name: "\(restaurant.reviews) reviews",
-                    customView: Stars(restaurant.ratings, color: tintColor).eraseToAnyView()),
-                TabItem(
-                    name: "\(restaurant.openings.from) - \(restaurant.openings.to)",
-                    icon: Constant.icon.clock)
-            ])
+                    TabItem(
+                        name: String(repeating: "$",
+                                     count: hotel.price.expensive), icon: Constant.icon.creditcard),
+                    TabItem(
+                        name: "\(hotel.reviews) reviews",
+                        customView: Stars(hotel.ratings, color: tintColor).eraseToAnyView()),
+                ])
             
             ZStack(alignment: .top) {
-                MapView(coordinate: restaurant.locationCoordinate)
+                MapView(coordinate: hotel.locationCoordinate)
                     .frame(height: 180)
                     .mask(
                         gradient
-                )
+                    )
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing:0) {
                         Rectangle()
                             .opacity(0)
                             .frame(height: 100)
                         ButtonPrimary(action: self.modalManager.openModal, backgroundColor: tintColor) {
-                                Text("Make reservation")
-                                    .font(.headline)
-                            }.padding([.top, .leading, .trailing])
+                            Text("Make reservation")
+                                .font(.headline)
+                        }.padding([.top, .leading, .trailing])
                         Card{
-                            Text(restaurant.description)
-                            .padding()
+                            Text(hotel.description)
+                                .padding()
                         }
                     }
                 }
@@ -79,9 +76,9 @@ struct RestaurantDetail: View {
         .onAppear {
             self.modalManager.newModal(position: .closed) {
                 ReservationModal(
-                    place: self.restaurant,
+                    place: self.hotel,
                     timeOptions: ["19:00", "19:30", "20:00", "20:30"],
-
+                
                     tintColor: tintColor,
                     action: self.modalManager.closeModal)
             }
@@ -90,10 +87,11 @@ struct RestaurantDetail: View {
 }
 
 
-struct RestaurantDetail_Previews: PreviewProvider {
+struct HotelDetail_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantDetail(restaurant: restaurantsData[4])
+        HotelDetail(hotel: citiesData[0].hotels[0])
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }
 }
+
