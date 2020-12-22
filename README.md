@@ -1,6 +1,6 @@
 # iOS Sketch Elements
 
-iOS Food App Template is iOS SwiftUI starter kit based on [Sketch Elements](https://www.sketch.com/elements). More information and screenshots **[here](https://filipmolcik.com/free-ios-food-app-template-based-on-sketch-elements/)**.
+iOS Sketch Elements is iOS SwiftUI starter kit based on [Sketch Elements](https://www.sketch.com/elements). More information and screenshots **[here](https://filipmolcik.com/free-ios-food-app-template-based-on-sketch-elements/)**.
 
 ![ios-cover](https://filipmolcik.com/wp-content/uploads/2020/12/ios-app-template-based-on-sketch-elements-cover-1024x397.png)
 
