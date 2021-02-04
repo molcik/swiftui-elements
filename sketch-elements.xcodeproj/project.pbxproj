@@ -90,6 +90,19 @@
 		34F1215B258760C800BBB7DB /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F1215A258760C800BBB7DB /* Coordinates.swift */; };
 		34F1215E2587962C00BBB7DB /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F1215D2587962C00BBB7DB /* Cities.swift */; };
 		34FE0A2D25681474007D1B06 /* CountPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE0A2C25681474007D1B06 /* CountPicker.swift */; };
+		E6AF7A4C25CC58F9002F752E /* LibraryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A4725CC58F9002F752E /* LibraryDetail.swift */; };
+		E6AF7A4D25CC58F9002F752E /* Discovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A4825CC58F9002F752E /* Discovery.swift */; };
+		E6AF7A4E25CC58F9002F752E /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A4925CC58F9002F752E /* Music.swift */; };
+		E6AF7A4F25CC58F9002F752E /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A4A25CC58F9002F752E /* Library.swift */; };
+		E6AF7A5025CC58F9002F752E /* MusicAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A4B25CC58F9002F752E /* MusicAccount.swift */; };
+		E6AF7A5525CC5914002F752E /* me.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A5225CC5914002F752E /* me.json */; };
+		E6AF7A5625CC5914002F752E /* Albums in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A5325CC5914002F752E /* Albums */; };
+		E6AF7A5725CC5914002F752E /* albums.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A5425CC5914002F752E /* albums.json */; };
+		E6AF7A5B25CC596A002F752E /* CardPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5925CC596A002F752E /* CardPlaylist.swift */; };
+		E6AF7A5C25CC596A002F752E /* CardAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5A25CC596A002F752E /* CardAlbum.swift */; };
+		E6AF7A6125CC597C002F752E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5E25CC597C002F752E /* Album.swift */; };
+		E6AF7A6225CC597C002F752E /* MyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5F25CC597C002F752E /* MyAccount.swift */; };
+		E6AF7A6325CC597C002F752E /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A6025CC597C002F752E /* Playlist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +191,19 @@
 		34F1215A258760C800BBB7DB /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		34F1215D2587962C00BBB7DB /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		34FE0A2C25681474007D1B06 /* CountPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPicker.swift; sourceTree = "<group>"; };
+		E6AF7A4725CC58F9002F752E /* LibraryDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryDetail.swift; sourceTree = "<group>"; };
+		E6AF7A4825CC58F9002F752E /* Discovery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discovery.swift; sourceTree = "<group>"; };
+		E6AF7A4925CC58F9002F752E /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		E6AF7A4A25CC58F9002F752E /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		E6AF7A4B25CC58F9002F752E /* MusicAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAccount.swift; sourceTree = "<group>"; };
+		E6AF7A5225CC5914002F752E /* me.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = me.json; sourceTree = "<group>"; };
+		E6AF7A5325CC5914002F752E /* Albums */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Albums; sourceTree = "<group>"; };
+		E6AF7A5425CC5914002F752E /* albums.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = albums.json; sourceTree = "<group>"; };
+		E6AF7A5925CC596A002F752E /* CardPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPlaylist.swift; sourceTree = "<group>"; };
+		E6AF7A5A25CC596A002F752E /* CardAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAlbum.swift; sourceTree = "<group>"; };
+		E6AF7A5E25CC597C002F752E /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		E6AF7A5F25CC597C002F752E /* MyAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccount.swift; sourceTree = "<group>"; };
+		E6AF7A6025CC597C002F752E /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +245,7 @@
 				345AE3AF241A7ABD004EBE8C /* ContentView.swift */,
 				3478534E258666620023A217 /* Travel */,
 				3445A79B240B03D70020561B /* Food */,
+				E6AF7A4625CC58D4002F752E /* Music */,
 				34ADED252584B22600A504F5 /* Social */,
 				349E4BD62415227E0079BF04 /* Elements */,
 				3403A31B240809CC00D7B040 /* Models */,
@@ -261,6 +288,9 @@
 				349524C5258A30E70077F145 /* Reservable.swift */,
 				349524C8258A31E90077F145 /* Hotel.swift */,
 				349524CB258A35BC0077F145 /* Place.swift */,
+				E6AF7A5E25CC597C002F752E /* Album.swift */,
+				E6AF7A5F25CC597C002F752E /* MyAccount.swift */,
+				E6AF7A6025CC597C002F752E /* Playlist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +298,9 @@
 		3403A31E240809FE00D7B040 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E6AF7A5325CC5914002F752E /* Albums */,
+				E6AF7A5425CC5914002F752E /* albums.json */,
+				E6AF7A5225CC5914002F752E /* me.json */,
 				3403A32224080C7700D7B040 /* recipes.json */,
 				3403A32124080C7600D7B040 /* restaurants.json */,
 				3445A7902408268B0020561B /* recipeCategories.json */,
@@ -302,6 +335,8 @@
 				34B4B12424AB668100B092A8 /* Card.swift */,
 				34B4B12624AB6B0500B092A8 /* CardWithAttachment.swift */,
 				34B40A1325851B970096EC29 /* CardSocial.swift */,
+				E6AF7A5A25CC596A002F752E /* CardAlbum.swift */,
+				E6AF7A5925CC596A002F752E /* CardPlaylist.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -404,6 +439,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E6AF7A4625CC58D4002F752E /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				E6AF7A4825CC58F9002F752E /* Discovery.swift */,
+				E6AF7A4A25CC58F9002F752E /* Library.swift */,
+				E6AF7A4725CC58F9002F752E /* LibraryDetail.swift */,
+				E6AF7A4925CC58F9002F752E /* Music.swift */,
+				E6AF7A4B25CC58F9002F752E /* MusicAccount.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -473,10 +520,13 @@
 				3403A32424080C7700D7B040 /* recipes.json in Resources */,
 				3445A7912408268B0020561B /* recipeCategories.json in Resources */,
 				34F1215225875B2B00BBB7DB /* cities.json in Resources */,
+				E6AF7A5525CC5914002F752E /* me.json in Resources */,
 				3445A798240A80AF0020561B /* ColorPalette.xcassets in Resources */,
+				E6AF7A5725CC5914002F752E /* albums.json in Resources */,
 				3403A32324080C7700D7B040 /* restaurants.json in Resources */,
 				346DFE112584FAFC00449492 /* posts.json in Resources */,
 				3403A30E2406B71100D7B040 /* LaunchScreen.storyboard in Resources */,
+				E6AF7A5625CC5914002F752E /* Albums in Resources */,
 				346DFE1C2585038900449492 /* stories.json in Resources */,
 				346DFE0E2584FADA00449492 /* conversations.json in Resources */,
 				3403A30B2406B71100D7B040 /* Preview Assets.xcassets in Resources */,
@@ -493,6 +543,7 @@
 			files = (
 				3461D3D8245C20D0009D389E /* Restaurant.swift in Sources */,
 				34B4B12924AB72B500B092A8 /* Stars.swift in Sources */,
+				E6AF7A5025CC58F9002F752E /* MusicAccount.swift in Sources */,
 				3461D3D6245C2036009D389E /* Restaurants.swift in Sources */,
 				345D2E24245857F700201DD0 /* CheckBoxTableRow.swift in Sources */,
 				3461D3DB245C219B009D389E /* Extensions.swift in Sources */,
@@ -513,6 +564,8 @@
 				341D20DE241CDE2E00C706A2 /* TabBarModifier.swift in Sources */,
 				3445A79D240B043E0020561B /* RecipesList.swift in Sources */,
 				344723CD24AC9613003B9F50 /* CollapsablePicker.swift in Sources */,
+				E6AF7A6225CC597C002F752E /* MyAccount.swift in Sources */,
+				E6AF7A4E25CC58F9002F752E /* Music.swift in Sources */,
 				3403A32624080D4400D7B040 /* Data.swift in Sources */,
 				34ADED322584BB1300A504F5 /* Profile.swift in Sources */,
 				344723BB24ABA93C003B9F50 /* IngredientsModal.swift in Sources */,
@@ -528,6 +581,8 @@
 				345D2E202458473000201DD0 /* TextTableRow.swift in Sources */,
 				349524D2258A3F8C0077F145 /* HotelDetail.swift in Sources */,
 				344723C824ABC64A003B9F50 /* ButtonApplePay.swift in Sources */,
+				E6AF7A5C25CC596A002F752E /* CardAlbum.swift in Sources */,
+				E6AF7A5B25CC596A002F752E /* CardPlaylist.swift in Sources */,
 				344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */,
 				3478533C258613200023A217 /* Account.swift in Sources */,
 				34B40A1425851B970096EC29 /* CardSocial.swift in Sources */,
@@ -539,14 +594,18 @@
 				34ADED272584B2F400A504F5 /* Social.swift in Sources */,
 				3403A32824080DBC00D7B040 /* Recipe.swift in Sources */,
 				341D20DA241CDDCB00C706A2 /* ViewExtensions.swift in Sources */,
+				E6AF7A6325CC597C002F752E /* Playlist.swift in Sources */,
 				3403A3042406B70F00D7B040 /* SceneDelegate.swift in Sources */,
 				34F1215525875BAF00BBB7DB /* Guide.swift in Sources */,
 				340A1981249BB0C900D49461 /* MapView.swift in Sources */,
 				34ADED2F2584B5B100A504F5 /* Timeline.swift in Sources */,
+				E6AF7A4F25CC58F9002F752E /* Library.swift in Sources */,
 				346DFE0A2584F98C00449492 /* Story.swift in Sources */,
 				344723B924ABA89E003B9F50 /* BackButton.swift in Sources */,
+				E6AF7A6125CC597C002F752E /* Album.swift in Sources */,
 				3492B625258A09F2001D2094 /* VenuesList.swift in Sources */,
 				349524C9258A31E90077F145 /* Hotel.swift in Sources */,
+				E6AF7A4D25CC58F9002F752E /* Discovery.swift in Sources */,
 				344723C124ABB098003B9F50 /* TabItem.swift in Sources */,
 				3403A31D240809E700D7B040 /* UserData.swift in Sources */,
 				344723BD24ABA9CD003B9F50 /* RestaurantDetail.swift in Sources */,
@@ -556,6 +615,7 @@
 				349524CC258A35BC0077F145 /* Place.swift in Sources */,
 				345D2E1E2458413B00201DD0 /* TableRow.swift in Sources */,
 				3403A31A2408099500D7B040 /* Recipes.swift in Sources */,
+				E6AF7A4C25CC58F9002F752E /* LibraryDetail.swift in Sources */,
 				349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */,
 				344723BF24ABAC67003B9F50 /* TabBar.swift in Sources */,
 				3478534325861F7A0023A217 /* SizeAwareViewModifier.swift in Sources */,

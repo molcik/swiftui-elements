@@ -13,6 +13,7 @@ enum Theme: String, CaseIterable, Identifiable {
     case food
     case social
     case travel
+    case music
     var id: String { self.rawValue }
 }
 
@@ -39,6 +40,9 @@ struct ContentView: View {
                     Social()
                 case Theme.travel:
                     Travel()
+                case Theme.music:
+                    Music()
+            
             }
             // NOTE END
 
@@ -52,6 +56,7 @@ struct ContentView: View {
                 .default(Text("Social")) { self.selectedTheme = .social },
                 .default(Text("Travel")) { self.selectedTheme = .travel },
                 .default(Text("Food")) { self.selectedTheme = .food },
+                .default(Text("Music")) { self.selectedTheme = .music },
                 .cancel()
             ])
         }
