@@ -53,7 +53,13 @@ struct AlbumTile: View {
     
     
     var body: some View {
-        CardAlbum(name: album.name, artist: album.artist, height: height, pictureUrl: album.picture.uri)
+        NavigationLink(
+            destination: LibraryDetail(playlists: playlistData, songs: brotherData)
+        ){
+            CardAlbum(name: album.name, artist: album.artist, height: height, pictureUrl: album.picture.uri)
+        }
+        
+        
 
     }
 }

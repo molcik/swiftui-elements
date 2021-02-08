@@ -21,8 +21,8 @@ let conversationsData: [Conversation] = load("conversations.json")
 let citiesData: [City] = load("cities.json")
 let guidesData: [Guide] = load("guides.json")
 let playlistData: [Playlist] = load("albums.json")
+let brotherData: [Album] = load("brother.json")
 
-//let oneAlbumData:
 
 
 

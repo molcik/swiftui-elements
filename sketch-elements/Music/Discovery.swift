@@ -11,15 +11,15 @@ import SwiftUI
 
 struct Discovery: View {
     
-    var albums: [Playlist]
+    var playlists: [Playlist]
     
     var body: some View {
         
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 
-                CardPlaylist(title: "Little Victories", height: 400, pictureUrl: albums[0].picture.uri, description: "Jedna deska, Dve desky", albums: albums)
-                CardPlaylist(title: "Today's Hits", height: 400, pictureUrl: albums[1].picture.uri, description: "Lords, Shakira, Lady Gaga", albums: albums)
+                CardPlaylist(title: "Little Victories", height: 400, pictureUrl: playlists[0].picture.uri, description: "Jedna deska, Dve desky", albums: playlists)
+                CardPlaylist(title: "Today's Hits", height: 400, pictureUrl: playlists[1].picture.uri, description: "Lords, Shakira, Lady Gaga", albums: playlists)
                 
                 /*
                 //ForEach(playlists) {album in
@@ -52,12 +52,12 @@ struct Discovery: View {
 
 struct DiscoveryTile: View {
     
-    var album: Playlist
+    var playlists: Playlist
     var height: CGFloat
     
     
     var body: some View {
-        CardAlbum(name: album.name, artist: album.artist, height: height, pictureUrl: album.picture.uri)
+        CardAlbum(name: playlists.name, artist: playlists.artist, height: height, pictureUrl: playlists.picture.uri)
 
     }
 }
@@ -65,7 +65,7 @@ struct DiscoveryTile: View {
 
 struct Discovery_Previews: PreviewProvider {
     static var previews: some View {
-        Discovery(albums: playlistData)
+        Discovery(playlists: playlistData)
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }

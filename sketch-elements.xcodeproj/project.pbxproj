@@ -96,13 +96,27 @@
 		E6AF7A4F25CC58F9002F752E /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A4A25CC58F9002F752E /* Library.swift */; };
 		E6AF7A5025CC58F9002F752E /* MusicAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A4B25CC58F9002F752E /* MusicAccount.swift */; };
 		E6AF7A5525CC5914002F752E /* me.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A5225CC5914002F752E /* me.json */; };
-		E6AF7A5625CC5914002F752E /* Albums in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A5325CC5914002F752E /* Albums */; };
 		E6AF7A5725CC5914002F752E /* albums.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A5425CC5914002F752E /* albums.json */; };
 		E6AF7A5B25CC596A002F752E /* CardPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5925CC596A002F752E /* CardPlaylist.swift */; };
 		E6AF7A5C25CC596A002F752E /* CardAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5A25CC596A002F752E /* CardAlbum.swift */; };
-		E6AF7A6125CC597C002F752E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5E25CC597C002F752E /* Album.swift */; };
+		E6AF7A6125CC597C002F752E /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5E25CC597C002F752E /* Playlist.swift */; };
 		E6AF7A6225CC597C002F752E /* MyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5F25CC597C002F752E /* MyAccount.swift */; };
-		E6AF7A6325CC597C002F752E /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A6025CC597C002F752E /* Playlist.swift */; };
+		E6AF7A6325CC597C002F752E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A6025CC597C002F752E /* Album.swift */; };
+		E6AF7A6825CD2C6D002F752E /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A6725CD2C6D002F752E /* Song.swift */; };
+		E6AF7A6C25CD31DB002F752E /* MusicHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A6B25CD31DB002F752E /* MusicHeader.swift */; };
+		E6AF7A7C25CD4203002F752E /* in-colour.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7025CD4202002F752E /* in-colour.json */; };
+		E6AF7A7D25CD4203002F752E /* shakira.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7125CD4202002F752E /* shakira.json */; };
+		E6AF7A7E25CD4203002F752E /* where-we-were.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7225CD4202002F752E /* where-we-were.json */; };
+		E6AF7A7F25CD4203002F752E /* ibn-el-leil.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7325CD4202002F752E /* ibn-el-leil.json */; };
+		E6AF7A8025CD4203002F752E /* brother.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7425CD4202002F752E /* brother.json */; };
+		E6AF7A8125CD4203002F752E /* do-something-beautiful.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7525CD4203002F752E /* do-something-beautiful.json */; };
+		E6AF7A8225CD4203002F752E /* pyk.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7625CD4203002F752E /* pyk.json */; };
+		E6AF7A8325CD4203002F752E /* ribbons.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7725CD4203002F752E /* ribbons.json */; };
+		E6AF7A8425CD4203002F752E /* mountains.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7825CD4203002F752E /* mountains.json */; };
+		E6AF7A8525CD4203002F752E /* hearts-were-gold.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7925CD4203002F752E /* hearts-were-gold.json */; };
+		E6AF7A8625CD4203002F752E /* go-get-gone.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7A25CD4203002F752E /* go-get-gone.json */; };
+		E6AF7A8725CD4203002F752E /* melodrama.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7B25CD4203002F752E /* melodrama.json */; };
+		E6AF7A8D25CD89B3002F752E /* SongTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,13 +211,27 @@
 		E6AF7A4A25CC58F9002F752E /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		E6AF7A4B25CC58F9002F752E /* MusicAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAccount.swift; sourceTree = "<group>"; };
 		E6AF7A5225CC5914002F752E /* me.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = me.json; sourceTree = "<group>"; };
-		E6AF7A5325CC5914002F752E /* Albums */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Albums; sourceTree = "<group>"; };
 		E6AF7A5425CC5914002F752E /* albums.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = albums.json; sourceTree = "<group>"; };
 		E6AF7A5925CC596A002F752E /* CardPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPlaylist.swift; sourceTree = "<group>"; };
 		E6AF7A5A25CC596A002F752E /* CardAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAlbum.swift; sourceTree = "<group>"; };
-		E6AF7A5E25CC597C002F752E /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		E6AF7A5E25CC597C002F752E /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		E6AF7A5F25CC597C002F752E /* MyAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccount.swift; sourceTree = "<group>"; };
-		E6AF7A6025CC597C002F752E /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		E6AF7A6025CC597C002F752E /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		E6AF7A6725CD2C6D002F752E /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		E6AF7A6B25CD31DB002F752E /* MusicHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHeader.swift; sourceTree = "<group>"; };
+		E6AF7A7025CD4202002F752E /* in-colour.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "in-colour.json"; sourceTree = "<group>"; };
+		E6AF7A7125CD4202002F752E /* shakira.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shakira.json; sourceTree = "<group>"; };
+		E6AF7A7225CD4202002F752E /* where-we-were.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "where-we-were.json"; sourceTree = "<group>"; };
+		E6AF7A7325CD4202002F752E /* ibn-el-leil.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ibn-el-leil.json"; sourceTree = "<group>"; };
+		E6AF7A7425CD4202002F752E /* brother.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = brother.json; sourceTree = "<group>"; };
+		E6AF7A7525CD4203002F752E /* do-something-beautiful.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "do-something-beautiful.json"; sourceTree = "<group>"; };
+		E6AF7A7625CD4203002F752E /* pyk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pyk.json; sourceTree = "<group>"; };
+		E6AF7A7725CD4203002F752E /* ribbons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ribbons.json; sourceTree = "<group>"; };
+		E6AF7A7825CD4203002F752E /* mountains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mountains.json; sourceTree = "<group>"; };
+		E6AF7A7925CD4203002F752E /* hearts-were-gold.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hearts-were-gold.json"; sourceTree = "<group>"; };
+		E6AF7A7A25CD4203002F752E /* go-get-gone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "go-get-gone.json"; sourceTree = "<group>"; };
+		E6AF7A7B25CD4203002F752E /* melodrama.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = melodrama.json; sourceTree = "<group>"; };
+		E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,9 +316,10 @@
 				349524C5258A30E70077F145 /* Reservable.swift */,
 				349524C8258A31E90077F145 /* Hotel.swift */,
 				349524CB258A35BC0077F145 /* Place.swift */,
-				E6AF7A5E25CC597C002F752E /* Album.swift */,
+				E6AF7A5E25CC597C002F752E /* Playlist.swift */,
 				E6AF7A5F25CC597C002F752E /* MyAccount.swift */,
-				E6AF7A6025CC597C002F752E /* Playlist.swift */,
+				E6AF7A6025CC597C002F752E /* Album.swift */,
+				E6AF7A6725CD2C6D002F752E /* Song.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,7 +327,7 @@
 		3403A31E240809FE00D7B040 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				E6AF7A5325CC5914002F752E /* Albums */,
+				E6AF7A6F25CD41F2002F752E /* Album */,
 				E6AF7A5425CC5914002F752E /* albums.json */,
 				E6AF7A5225CC5914002F752E /* me.json */,
 				3403A32224080C7700D7B040 /* recipes.json */,
@@ -355,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				345D2E1D2458413B00201DD0 /* TableRow.swift */,
+				E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */,
 				345D2E1F2458473000201DD0 /* TextTableRow.swift */,
 				345D2E23245857F700201DD0 /* CheckBoxTableRow.swift */,
 			);
@@ -402,6 +432,7 @@
 				344723C224ABC040003B9F50 /* Card */,
 				344723C924ABCAC1003B9F50 /* Button */,
 				349E4BD9241523A60079BF04 /* Header.swift */,
+				E6AF7A6B25CD31DB002F752E /* MusicHeader.swift */,
 				341D20D9241CDDCB00C706A2 /* ViewExtensions.swift */,
 				344723C324ABC078003B9F50 /* Modifiers */,
 				344723C424ABC098003B9F50 /* Table */,
@@ -449,6 +480,25 @@
 				E6AF7A4B25CC58F9002F752E /* MusicAccount.swift */,
 			);
 			path = Music;
+			sourceTree = "<group>";
+		};
+		E6AF7A6F25CD41F2002F752E /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				E6AF7A7425CD4202002F752E /* brother.json */,
+				E6AF7A7525CD4203002F752E /* do-something-beautiful.json */,
+				E6AF7A7A25CD4203002F752E /* go-get-gone.json */,
+				E6AF7A7925CD4203002F752E /* hearts-were-gold.json */,
+				E6AF7A7325CD4202002F752E /* ibn-el-leil.json */,
+				E6AF7A7025CD4202002F752E /* in-colour.json */,
+				E6AF7A7B25CD4203002F752E /* melodrama.json */,
+				E6AF7A7825CD4203002F752E /* mountains.json */,
+				E6AF7A7625CD4203002F752E /* pyk.json */,
+				E6AF7A7725CD4203002F752E /* ribbons.json */,
+				E6AF7A7125CD4202002F752E /* shakira.json */,
+				E6AF7A7225CD4202002F752E /* where-we-were.json */,
+			);
+			path = Album;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,19 +568,30 @@
 				34F1214F25875B1700BBB7DB /* guides.json in Resources */,
 				346DFE142584FB3800449492 /* users.json in Resources */,
 				3403A32424080C7700D7B040 /* recipes.json in Resources */,
+				E6AF7A8125CD4203002F752E /* do-something-beautiful.json in Resources */,
 				3445A7912408268B0020561B /* recipeCategories.json in Resources */,
+				E6AF7A8325CD4203002F752E /* ribbons.json in Resources */,
 				34F1215225875B2B00BBB7DB /* cities.json in Resources */,
+				E6AF7A8225CD4203002F752E /* pyk.json in Resources */,
 				E6AF7A5525CC5914002F752E /* me.json in Resources */,
 				3445A798240A80AF0020561B /* ColorPalette.xcassets in Resources */,
 				E6AF7A5725CC5914002F752E /* albums.json in Resources */,
+				E6AF7A7D25CD4203002F752E /* shakira.json in Resources */,
+				E6AF7A8425CD4203002F752E /* mountains.json in Resources */,
 				3403A32324080C7700D7B040 /* restaurants.json in Resources */,
+				E6AF7A8025CD4203002F752E /* brother.json in Resources */,
+				E6AF7A7E25CD4203002F752E /* where-we-were.json in Resources */,
 				346DFE112584FAFC00449492 /* posts.json in Resources */,
 				3403A30E2406B71100D7B040 /* LaunchScreen.storyboard in Resources */,
-				E6AF7A5625CC5914002F752E /* Albums in Resources */,
 				346DFE1C2585038900449492 /* stories.json in Resources */,
 				346DFE0E2584FADA00449492 /* conversations.json in Resources */,
+				E6AF7A8525CD4203002F752E /* hearts-were-gold.json in Resources */,
 				3403A30B2406B71100D7B040 /* Preview Assets.xcassets in Resources */,
+				E6AF7A7F25CD4203002F752E /* ibn-el-leil.json in Resources */,
+				E6AF7A8725CD4203002F752E /* melodrama.json in Resources */,
+				E6AF7A7C25CD4203002F752E /* in-colour.json in Resources */,
 				3403A3082406B71100D7B040 /* Assets.xcassets in Resources */,
+				E6AF7A8625CD4203002F752E /* go-get-gone.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,15 +655,16 @@
 				34ADED272584B2F400A504F5 /* Social.swift in Sources */,
 				3403A32824080DBC00D7B040 /* Recipe.swift in Sources */,
 				341D20DA241CDDCB00C706A2 /* ViewExtensions.swift in Sources */,
-				E6AF7A6325CC597C002F752E /* Playlist.swift in Sources */,
+				E6AF7A6325CC597C002F752E /* Album.swift in Sources */,
 				3403A3042406B70F00D7B040 /* SceneDelegate.swift in Sources */,
 				34F1215525875BAF00BBB7DB /* Guide.swift in Sources */,
 				340A1981249BB0C900D49461 /* MapView.swift in Sources */,
+				E6AF7A8D25CD89B3002F752E /* SongTableRow.swift in Sources */,
 				34ADED2F2584B5B100A504F5 /* Timeline.swift in Sources */,
 				E6AF7A4F25CC58F9002F752E /* Library.swift in Sources */,
 				346DFE0A2584F98C00449492 /* Story.swift in Sources */,
 				344723B924ABA89E003B9F50 /* BackButton.swift in Sources */,
-				E6AF7A6125CC597C002F752E /* Album.swift in Sources */,
+				E6AF7A6125CC597C002F752E /* Playlist.swift in Sources */,
 				3492B625258A09F2001D2094 /* VenuesList.swift in Sources */,
 				349524C9258A31E90077F145 /* Hotel.swift in Sources */,
 				E6AF7A4D25CC58F9002F752E /* Discovery.swift in Sources */,
@@ -611,6 +673,7 @@
 				344723BD24ABA9CD003B9F50 /* RestaurantDetail.swift in Sources */,
 				34B4B12524AB668100B092A8 /* Card.swift in Sources */,
 				345AE3B0241A7ABD004EBE8C /* ContentView.swift in Sources */,
+				E6AF7A6C25CD31DB002F752E /* MusicHeader.swift in Sources */,
 				345AE3AB241A7A8E004EBE8C /* Modal.swift in Sources */,
 				349524CC258A35BC0077F145 /* Place.swift in Sources */,
 				345D2E1E2458413B00201DD0 /* TableRow.swift in Sources */,
@@ -618,6 +681,7 @@
 				E6AF7A4C25CC58F9002F752E /* LibraryDetail.swift in Sources */,
 				349E4BD8241522990079BF04 /* ButtonPrimary.swift in Sources */,
 				344723BF24ABAC67003B9F50 /* TabBar.swift in Sources */,
+				E6AF7A6825CD2C6D002F752E /* Song.swift in Sources */,
 				3478534325861F7A0023A217 /* SizeAwareViewModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

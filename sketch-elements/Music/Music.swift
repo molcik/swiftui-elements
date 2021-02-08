@@ -20,7 +20,7 @@ struct Music: View {
                 Text("Albums")
                 Image(systemName: "music.note")
             }
-            Discovery(albums: albums).tabItem {
+            Discovery(playlists: albums).tabItem {
                 Text("Discovery")
                 Image(systemName: Constant.icon.doc)
             }

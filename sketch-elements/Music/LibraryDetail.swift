@@ -8,42 +8,67 @@
 
 import Foundation
 import SwiftUI
+import URLImage
 
 struct LibraryDetail: View {
     
-    var albums: [Playlist]
+    var playlists: [Playlist]
+    var songs: [Album]
+    var musicColor = Constant.color.musicPrimary
+    var navigationBarDisplayMode = NavigationBarItem.TitleDisplayMode.inline
+    @State var vypinac = true
+    
     
     
     var body: some View {
-        
-        NavigationView {
+        return VStack(spacing: 10){
+            MusicHeader(image: playlists[0].picture.uri, height: 150)
+
             ScrollView(.vertical, showsIndicators: false) {
-                
-                //ForEach(playlists) {album in
-                ForEach(0..<albums.count / 2 + 1) { index in
-                    
-                    let i1 = index * 2
-                    let i2 = index * 2 + 1
-                    let count = albums.count
-                    
-                    HStack(spacing: -8){
-                        if (i1 < count) {
-                            //AlbumTile(album: playlists[i1], height: 180)
-                        }
-                        
-                        if (i2 < count) {
-                            //AlbumTile(album: playlists[i2], height: 180)
-                        }
-                        //AlbumTile(album: album, height: 150)
-                        //AlbumTile(album: album, height: 150)
+                /*HStack(){
+                    ButtonPrimary(action: vypinac.toggle()) {
+                            Text("Play")
+                                .font(.headline)
+                        }.padding([.top, .leading, .trailing])
+                    ButtonPrimary(action: vypinac.toggle()) {
+                            Text("Shuttle")
+                                .font(.headline)
+                        }.padding([.top, .leading, .trailing])
+                }*/
+                //ButtonPrimary(action: self.modalManager.openModal) {
+                  //      Text("See Ingredients")
+                    //        .font(.headline)
+                    //}.padding([.top, .leading, .trailing])
+                VStack(alignment: .leading) {
+                    ForEach(0..<songs.count) { index in
+                        SongTableRow(
+                            left: "\(index + 1)",
+                            divider: index < self.songs.count - 1,
+                            content: songs[index].name,
+                            //description: "Nazev Alba",
+                            right: Constant.icon.dots
+                        )
                     }
-                }
+                }.padding([.top, .bottom])
+                    .frame(maxWidth: .infinity)
+                    .background(Constant.color.bgDefault)
+                    .cornerRadius(8)
+                    .padding([.leading, .bottom, .trailing])
+                Spacer()
             }
-            .background(Constant.color.gray)
-            .navigationBarColor(Constant.color.musicPrimary.uiColor())
-            .navigationBarTitle(Text("Library"), displayMode: .large)
-            .navigationBarItems(trailing: Image(systemName: Constant.icon.magnifyingGlass).foregroundColor(.white))
+            .frame(maxWidth: .infinity)
         }
+        .accentColor(Constant.color.musicPrimary)
+        .padding(.top)
+        .background(Constant.color.gray)
+        .navigationBarTitle("", displayMode: navigationBarDisplayMode)
+        .navigationBarItems(trailing: Image(systemName: Constant.icon.share).foregroundColor(.white))
+        .navigationBarColor(musicColor.uiColor())
+        /*.onAppear {
+            self.modalManager.newModal(position: .closed) {
+                IngredientsModal(recipe: self.recipe, action: self.modalManager.closeModal)
+            }
+        } */
     }
 }
 
@@ -63,7 +88,7 @@ struct AlbumTile: View {
 
 struct LibraryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryDetail(albums: playlistData)
+        LibraryDetail(playlists: playlistData, songs: brotherData)
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }

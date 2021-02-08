@@ -94,7 +94,7 @@ struct CardPlaylist: View {
                                 .foregroundColor(.black)
                                 .frame(width: 50, height: 50)
                                 .opacity(0.6)
-                            Image(systemName: Constant.icon.playCircle)
+                            Image(systemName: Constant.icon.play)
                                 .scaleEffect(CGSize(width: 1.4, height: 1.4))
                                 
                         }

@@ -19,6 +19,8 @@ struct Constant {
         static let contrast = Color("Contrast")
         static let travelPrimary = Color("TravelPrimary")
         static let musicPrimary = Color("MusicPrimary")
+        static let white = Color("white")
+        static let musicButtonColor = Color("MusicButton")
     }
     
     struct icon {
@@ -43,7 +45,10 @@ struct Constant {
         static let circle = "circle"
         static let minus = "minus"
         static let plus = "plus"
-        static let playCircle = "play.fill"
+        static let play = "play.fill"
+        static let dots = "ellipsis"
+        static let shuffle = "shuffle"
+        
     }
     
 }
