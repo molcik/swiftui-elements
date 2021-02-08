@@ -55,8 +55,10 @@ struct MusicHeader: View {
                         Image(systemName: Constant.icon.play)
                             //.accentColor(Constant.color.musicPrimary)
                     }
-                    .padding([.leading, .trailing])
+                    //.padding([.leading, .trailing])
                     .padding(.bottom)
+                    .padding(.trailing)
+
                 //}
                 //NavigationLink(destination: nil) {
                     ButtonPrimary(
@@ -67,17 +69,18 @@ struct MusicHeader: View {
                         Image(systemName:Constant.icon.shuffle)
                             
                     }
-                    .padding([.leading, .trailing])
+                    .padding(.leading)
+                    //.padding([.leading, .trailing])
                     .padding(.bottom)
                 //}
                 
             }
-            .padding(.top)
+            .padding(.top, 5.0)
             //Spacer()
         }
         .frame(height: height)
         .frame(maxWidth: .infinity)
-        .padding(.bottom)
+        .padding(.bottom, 5.0)
         .padding(.horizontal)
         .foregroundColor(.white)
         .background(Constant.color.bgDefault)
