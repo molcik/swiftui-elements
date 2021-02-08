@@ -17,7 +17,7 @@ struct MusicHeader: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            HStack(alignment: .top){
+            HStack(alignment: .top, spacing: 0){
                 //Image(systemName: "play")
                 URLImage(image, content:  {
                     $0.image
@@ -26,15 +26,9 @@ struct MusicHeader: View {
                 })
                     .frame(width: 70, height: 70)
                     .cornerRadius(4)
-                /*Spacer()
-                    .background((
-                        URLImage(image, content:  {
-                            $0.image
-                                .renderingMode(.original)
-                                .resizable()
-                        })
-                    ))*/
-                VStack(alignment: .leading){
+                .padding(.all, 5.0)
+
+                VStack(alignment: .leading, spacing: 5){
                     Text("Nazev")
                         .foregroundColor(Color.black)
                         .fontWeight(.bold)
@@ -44,8 +38,10 @@ struct MusicHeader: View {
                         .foregroundColor(Color.gray)
                     Spacer()
                 }
-                .padding(.all)
+                .padding([.bottom, .horizontal])
+                .padding(.top, 5)
             }
+            .padding(.top)
             Divider()
                 .frame(maxWidth: .infinity)
                 //.padding(.bottom)
@@ -60,6 +56,7 @@ struct MusicHeader: View {
                             //.accentColor(Constant.color.musicPrimary)
                     }
                     .padding([.leading, .trailing])
+                    .padding(.bottom)
                 //}
                 //NavigationLink(destination: nil) {
                     ButtonPrimary(
@@ -71,6 +68,7 @@ struct MusicHeader: View {
                             
                     }
                     .padding([.leading, .trailing])
+                    .padding(.bottom)
                 //}
                 
             }

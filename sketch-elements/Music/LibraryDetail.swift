@@ -22,23 +22,9 @@ struct LibraryDetail: View {
     
     var body: some View {
         return VStack(spacing: 10){
-            MusicHeader(image: playlists[0].picture.uri, height: 150)
+            MusicHeader(image: playlists[0].picture.uri, height: 170)
 
             ScrollView(.vertical, showsIndicators: false) {
-                /*HStack(){
-                    ButtonPrimary(action: vypinac.toggle()) {
-                            Text("Play")
-                                .font(.headline)
-                        }.padding([.top, .leading, .trailing])
-                    ButtonPrimary(action: vypinac.toggle()) {
-                            Text("Shuttle")
-                                .font(.headline)
-                        }.padding([.top, .leading, .trailing])
-                }*/
-                //ButtonPrimary(action: self.modalManager.openModal) {
-                  //      Text("See Ingredients")
-                    //        .font(.headline)
-                    //}.padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {
                     ForEach(0..<songs.count) { index in
                         SongTableRow(
@@ -59,7 +45,7 @@ struct LibraryDetail: View {
             .frame(maxWidth: .infinity)
         }
         .accentColor(Constant.color.musicPrimary)
-        .padding(.top)
+        //.padding(.top)
         .background(Constant.color.gray)
         .navigationBarTitle("", displayMode: navigationBarDisplayMode)
         .navigationBarItems(trailing: Image(systemName: Constant.icon.share).foregroundColor(.white))
@@ -71,19 +57,6 @@ struct LibraryDetail: View {
         } */
     }
 }
-
-/*
-struct AlbumTile: View {
-    
-    var album: Album
-    var height: CGFloat
-    
-    
-    var body: some View {
-        CardAlbum(name: album.name, artist: album.artist, height: height, pictureUrl: album.picture.uri)
-
-    }
-} */
 
 
 struct LibraryDetail_Previews: PreviewProvider {
