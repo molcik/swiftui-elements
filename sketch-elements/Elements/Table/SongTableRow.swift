@@ -10,7 +10,8 @@ import SwiftUI
 
 struct SongTableRow: View {
     
-    var left: String
+    //var left: String
+    var left: AnyView
     var divider: Bool
     var content: String
     var description: String?
@@ -19,7 +20,8 @@ struct SongTableRow: View {
     
     var body: some View {
         TableRow(
-            left: AnyView(Text(left).foregroundColor(Color.gray)),
+            //left: AnyView(Text(left).foregroundColor(Color.gray)),
+            left: left,
             divider: divider,
             top: AnyView(Text(content)),
             bottom: description != nil ?
@@ -43,7 +45,7 @@ struct SongTableRow: View {
 struct SongTableRow_Previews: PreviewProvider {
     static var previews: some View {
             SongTableRow(
-                left: "left",
+                left: AnyView(Text("left").foregroundColor(Color.gray)),
                 divider: true,
                 content: "content",
                 description: "description",

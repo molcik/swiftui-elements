@@ -18,8 +18,16 @@ struct Discovery: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 
+                NavigationLink(
+                    destination: DiscoveryDetail(playlists: playlistData, songs: brotherData)
+                ){
                 CardPlaylist(title: "Little Victories", height: 400, pictureUrl: playlists[0].picture.uri, description: "Jedna deska, Dve desky", albums: playlists)
+                }
+                NavigationLink(
+                    destination: DiscoveryDetail(playlists: playlistData, songs: brotherData)
+                ){
                 CardPlaylist(title: "Today's Hits", height: 400, pictureUrl: playlists[1].picture.uri, description: "Lords, Shakira, Lady Gaga", albums: playlists)
+                }
                 
                 /*
                 //ForEach(playlists) {album in

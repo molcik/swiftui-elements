@@ -1,8 +1,8 @@
 //
-//  LibraryDetail.swift
+//  DiscoveryDetail.swift
 //  sketch-elements
 //
-//  Created by Oliver Jansta on 04/02/2021.
+//  Created by Oliver Jansta on 08/02/2021.
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import URLImage
 
-struct LibraryDetail: View {
+struct DiscoveryDetail: View {
     
     var playlists: [Playlist]
     var songs: [Album]
@@ -29,10 +29,17 @@ struct LibraryDetail: View {
                     ForEach(0..<songs.count) { index in
                         SongTableRow(
                             //left: "\(index + 1)",
-                            left: AnyView(Text("\(index + 1)").foregroundColor(Color.gray)),
+                            left: AnyView(URLImage(playlists[index].picture.uri, content:  {
+                                $0.image
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            })
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(4)),
                             divider: index < self.songs.count - 1,
                             content: songs[index].name,
-                            //description: "Nazev Alba",
+                            description: "Nazev Alba",
                             right: Constant.icon.dots
                         )
                     }
@@ -60,9 +67,9 @@ struct LibraryDetail: View {
 }
 
 
-struct LibraryDetail_Previews: PreviewProvider {
+struct DiscoveryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryDetail(playlists: playlistData, songs: brotherData)
+        DiscoveryDetail(playlists: playlistData, songs: brotherData)
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }

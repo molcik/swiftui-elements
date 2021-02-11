@@ -117,6 +117,7 @@
 		E6AF7A8625CD4203002F752E /* go-get-gone.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7A25CD4203002F752E /* go-get-gone.json */; };
 		E6AF7A8725CD4203002F752E /* melodrama.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7B25CD4203002F752E /* melodrama.json */; };
 		E6AF7A8D25CD89B3002F752E /* SongTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */; };
+		E6AF7A9025D1A977002F752E /* DiscoveryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A8F25D1A977002F752E /* DiscoveryDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -232,6 +233,7 @@
 		E6AF7A7A25CD4203002F752E /* go-get-gone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "go-get-gone.json"; sourceTree = "<group>"; };
 		E6AF7A7B25CD4203002F752E /* melodrama.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = melodrama.json; sourceTree = "<group>"; };
 		E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableRow.swift; sourceTree = "<group>"; };
+		E6AF7A8F25D1A977002F752E /* DiscoveryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +480,7 @@
 				E6AF7A4725CC58F9002F752E /* LibraryDetail.swift */,
 				E6AF7A4925CC58F9002F752E /* Music.swift */,
 				E6AF7A4B25CC58F9002F752E /* MusicAccount.swift */,
+				E6AF7A8F25D1A977002F752E /* DiscoveryDetail.swift */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */,
 				3478533C258613200023A217 /* Account.swift in Sources */,
 				34B40A1425851B970096EC29 /* CardSocial.swift in Sources */,
+				E6AF7A9025D1A977002F752E /* DiscoveryDetail.swift in Sources */,
 				3478534025861EFF0023A217 /* SegmentedPickerCollapsed.swift in Sources */,
 				345AE3AE241A7A8E004EBE8C /* ModalManager.swift in Sources */,
 				34FE0A2D25681474007D1B06 /* CountPicker.swift in Sources */,
