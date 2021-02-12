@@ -11,7 +11,10 @@ import URLImage
 
 struct MusicHeader: View {
     
-    var image: URL
+    var imageOne: URL
+    var imageTwo: URL?
+    var imageThree: URL?
+    var imageFour: URL?
     var height: CGFloat
     @State var selection: Int? = nil
     
@@ -19,14 +22,19 @@ struct MusicHeader: View {
         VStack(alignment: .leading){
             HStack(alignment: .top, spacing: 0){
                 //Image(systemName: "play")
-                URLImage(image, content:  {
-                    $0.image
-                        .renderingMode(.original)
-                        .resizable()
-                })
-                    .frame(width: 70, height: 70)
-                    .cornerRadius(4)
-                .padding(.all, 5.0)
+                if imageTwo != nil && imageThree != nil && imageFour != nil {
+                    CardFourPicture(height: 70, pictureOneUrl: imageOne, pictureTwoUrl: imageTwo ?? imageOne, pictureThreeUrl: imageThree ?? imageOne, pictureFourUrl: imageFour ?? imageOne, albums: playlistData)
+                }
+                else {
+                    URLImage(imageOne, content:  {
+                        $0.image
+                            .renderingMode(.original)
+                            .resizable()
+                    })
+                        .frame(width: 70, height: 70)
+                        .cornerRadius(4)
+                    .padding(.all, 5.0)
+                }
 
                 VStack(alignment: .leading, spacing: 5){
                     Text("Nazev")
@@ -89,7 +97,7 @@ struct MusicHeader: View {
 
 struct MusicHeader_Previews: PreviewProvider {
     static var previews: some View {
-        MusicHeader(image: playlistData[2].picture.uri, height: 150)
+        MusicHeader(imageOne: playlistData[2].picture.uri, height: 150)
             .environment(\.colorScheme, .light)
         //LibraryDetail(playlists: playlistData, songs: brotherData)
             

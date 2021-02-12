@@ -118,6 +118,7 @@
 		E6AF7A8725CD4203002F752E /* melodrama.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A7B25CD4203002F752E /* melodrama.json */; };
 		E6AF7A8D25CD89B3002F752E /* SongTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */; };
 		E6AF7A9025D1A977002F752E /* DiscoveryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A8F25D1A977002F752E /* DiscoveryDetail.swift */; };
+		E6AF7A9325D5AFD9002F752E /* CardFourPictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A9225D5AFD9002F752E /* CardFourPictures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +235,7 @@
 		E6AF7A7B25CD4203002F752E /* melodrama.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = melodrama.json; sourceTree = "<group>"; };
 		E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableRow.swift; sourceTree = "<group>"; };
 		E6AF7A8F25D1A977002F752E /* DiscoveryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetail.swift; sourceTree = "<group>"; };
+		E6AF7A9225D5AFD9002F752E /* CardFourPictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFourPictures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +370,7 @@
 				34B40A1325851B970096EC29 /* CardSocial.swift */,
 				E6AF7A5A25CC596A002F752E /* CardAlbum.swift */,
 				E6AF7A5925CC596A002F752E /* CardPlaylist.swift */,
+				E6AF7A9225D5AFD9002F752E /* CardFourPictures.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				349A57A52588C09200277356 /* CityDetail.swift in Sources */,
 				345AE3AC241A7A8E004EBE8C /* ModalView.swift in Sources */,
 				3403A3022406B70F00D7B040 /* AppDelegate.swift in Sources */,
+				E6AF7A9325D5AFD9002F752E /* CardFourPictures.swift in Sources */,
 				345AE3AD241A7A8E004EBE8C /* ModalAnchorView.swift in Sources */,
 				34ADED2C2584B48100A504F5 /* Constants.swift in Sources */,
 				34785336258609640023A217 /* Conversation.swift in Sources */,

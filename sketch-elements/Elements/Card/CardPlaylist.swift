@@ -108,7 +108,7 @@ struct CardPlaylist: View {
                 .foregroundColor(Color.white)
                 /*.background(
                     URLImage(pictureUrl, content:  {
-                        $0.image
+                        $0.imageOne
                             .renderingMode(.original)
                             .resizable()
                     })

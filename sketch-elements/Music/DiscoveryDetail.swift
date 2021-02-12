@@ -22,8 +22,8 @@ struct DiscoveryDetail: View {
     
     var body: some View {
         return VStack(spacing: 10){
-            MusicHeader(image: playlists[0].picture.uri, height: 170)
-
+            MusicHeader(imageOne: playlists[0].picture.uri, imageTwo: playlists[1].picture.uri, imageThree: playlists[2].picture.uri, imageFour: playlists[3].picture.uri, height: 170)
+            //MusicHeader(imageOne: playlistData[2].picture.uri, height: 170, fourImages: true)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
                     ForEach(0..<songs.count) { index in
@@ -52,7 +52,6 @@ struct DiscoveryDetail: View {
             }
             .frame(maxWidth: .infinity)
         }
-        .accentColor(Constant.color.musicPrimary)
         //.padding(.top)
         .background(Constant.color.gray)
         .navigationBarTitle("", displayMode: navigationBarDisplayMode)

@@ -34,6 +34,9 @@ struct SongTableRow: View {
             right: AnyView(
                 HStack(alignment: .center){
                     Image(systemName: right)
+                        
+                        //.accentColor(Constant.color.musicPrimary)
+                        .foregroundColor(Constant.color.musicPrimary)
                     //Image(Constant.icon.bed)
                     //Text("o o o") //Nevim sakra, jak tam narvat ten obrázek
 

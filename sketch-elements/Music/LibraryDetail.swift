@@ -22,7 +22,8 @@ struct LibraryDetail: View {
     
     var body: some View {
         return VStack(spacing: 10){
-            MusicHeader(image: playlists[0].picture.uri, height: 170)
+            MusicHeader(imageOne: playlists[0].picture.uri, height: 170)
+            //MusicHeader(imageOne: playlistData[2].picture.uri, height: 170, fourImages: false)
 
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
