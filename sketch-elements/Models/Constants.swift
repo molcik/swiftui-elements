@@ -48,6 +48,9 @@ struct Constant {
         static let play = "play.fill"
         static let dots = "ellipsis"
         static let shuffle = "shuffle"
+        static let forward = "forward.fill"
+        static let backward = "backward.fill"
+        static let repeatIcon = "repeat"
         
     }
     

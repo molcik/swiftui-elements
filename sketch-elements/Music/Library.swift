@@ -15,33 +15,36 @@ struct Library: View {
     
     var body: some View {
         
-        NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                
-                //ForEach(playlists) {album in
-                ForEach(0..<playlists.count / 2 + 1) { index in
+        VStack{
+            NavigationView {
+                ScrollView(.vertical, showsIndicators: false) {
                     
-                    let i1 = index * 2
-                    let i2 = index * 2 + 1
-                    let count = playlists.count
-                    
-                    HStack(spacing: -8){
-                        if (i1 < count) {
-                            AlbumTile(album: playlists[i1], height: 180)
-                        }
+                    //ForEach(playlists) {album in
+                    ForEach(0..<playlists.count / 2 + 1) { index in
                         
-                        if (i2 < count) {
-                            AlbumTile(album: playlists[i2], height: 180)
+                        let i1 = index * 2
+                        let i2 = index * 2 + 1
+                        let count = playlists.count
+                        
+                        HStack(spacing: -8){
+                            if (i1 < count) {
+                                AlbumTile(album: playlists[i1], height: 180)
+                            }
+                            
+                            if (i2 < count) {
+                                AlbumTile(album: playlists[i2], height: 180)
+                            }
+                            //AlbumTile(album: album, height: 150)
+                            //AlbumTile(album: album, height: 150)
                         }
-                        //AlbumTile(album: album, height: 150)
-                        //AlbumTile(album: album, height: 150)
                     }
                 }
+                .background(Constant.color.gray)
+                .navigationBarColor(Constant.color.musicPrimary.uiColor())
+                .navigationBarTitle(Text("Library"), displayMode: .large)
+                .navigationBarItems(trailing: Image(systemName: Constant.icon.magnifyingGlass).foregroundColor(.white))
             }
-            .background(Constant.color.gray)
-            .navigationBarColor(Constant.color.musicPrimary.uiColor())
-            .navigationBarTitle(Text("Library"), displayMode: .large)
-            .navigationBarItems(trailing: Image(systemName: Constant.icon.magnifyingGlass).foregroundColor(.white))
+            MiniPlayer(albums: playlistData)
         }
     }
 }

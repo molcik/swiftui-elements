@@ -14,6 +14,7 @@ struct Music: View {
     var cities:[City] = citiesData
     
     var body: some View {
+        MiniPlayer(albums: playlistData)
         TabView() {
             
             Library(playlists: albums).tabItem {
