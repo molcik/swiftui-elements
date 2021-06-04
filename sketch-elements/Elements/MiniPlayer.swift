@@ -13,6 +13,7 @@ import URLImage
 struct MiniPlayer: View {
     //var nevimCo = 12
     var albums: [Playlist]
+    @EnvironmentObject var modalManager: ModalManager
     
     
     var body: some View {
@@ -22,6 +23,10 @@ struct MiniPlayer: View {
                 .scaleEffect(CGSize(width: 1.4, height: 1.4))
                 
             //Text("Play/Pause")
+            
+            Button(action: self.modalManager.openModal) {
+            
+            
             Spacer()
             VStack{
                 Text("Nazev skladby")
@@ -30,6 +35,11 @@ struct MiniPlayer: View {
                     .font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
             }
             Spacer()
+            
+            }.padding([.top, .leading, .trailing])
+            
+            
+            
             //Image(systemName: Constant.icon.doc)
             URLImage(albums[0].picture.uri, content:  {
                 $0.image
@@ -42,7 +52,11 @@ struct MiniPlayer: View {
         .padding([.horizontal, .bottom], 10.0)
         //.background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.blue/*@END_MENU_TOKEN@*/)
         .foregroundColor(Constant.color.musicPrimary)
-        
+        .onAppear {
+            self.modalManager.newModal(position: .closed) {
+                PlayerModal(recipe: recipesData[0], action: self.modalManager.closeModal, albums: playlistData)
+            }
+        }
     }
     
 }

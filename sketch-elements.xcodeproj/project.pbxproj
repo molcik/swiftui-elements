@@ -122,6 +122,7 @@
 		E6AF7A8D25CD89B3002F752E /* SongTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */; };
 		E6AF7A9025D1A977002F752E /* DiscoveryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A8F25D1A977002F752E /* DiscoveryDetail.swift */; };
 		E6AF7A9325D5AFD9002F752E /* CardFourPictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A9225D5AFD9002F752E /* CardFourPictures.swift */; };
+		E6B32C5E2668F483001588A0 /* CardPictureModalPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B32C5D2668F483001588A0 /* CardPictureModalPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,6 +243,7 @@
 		E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableRow.swift; sourceTree = "<group>"; };
 		E6AF7A8F25D1A977002F752E /* DiscoveryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetail.swift; sourceTree = "<group>"; };
 		E6AF7A9225D5AFD9002F752E /* CardFourPictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFourPictures.swift; sourceTree = "<group>"; };
+		E6B32C5D2668F483001588A0 /* CardPictureModalPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPictureModalPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +379,7 @@
 				E6AF7A5A25CC596A002F752E /* CardAlbum.swift */,
 				E6AF7A5925CC596A002F752E /* CardPlaylist.swift */,
 				E6AF7A9225D5AFD9002F752E /* CardFourPictures.swift */,
+				E6B32C5D2668F483001588A0 /* CardPictureModalPlayer.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				3445A79D240B043E0020561B /* RecipesList.swift in Sources */,
 				344723CD24AC9613003B9F50 /* CollapsablePicker.swift in Sources */,
 				E6AF7A6225CC597C002F752E /* MyAccount.swift in Sources */,
+				E6B32C5E2668F483001588A0 /* CardPictureModalPlayer.swift in Sources */,
 				E6AF7A4E25CC58F9002F752E /* Music.swift in Sources */,
 				E64A8FFC25EE93D600C630E2 /* PlayerModal.swift in Sources */,
 				3403A32624080D4400D7B040 /* Data.swift in Sources */,

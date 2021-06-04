@@ -12,8 +12,10 @@ struct Music: View {
     
     var albums:[Playlist] = playlistData
     var cities:[City] = citiesData
+    @EnvironmentObject var modalManager: ModalManager
     
     var body: some View {
+
         MiniPlayer(albums: playlistData)
         TabView() {
             
@@ -32,6 +34,7 @@ struct Music: View {
         }
         .tabBarOpaque()
         .accentColor(Constant.color.musicPrimary)
+
     }
 }
 
@@ -40,3 +43,5 @@ struct Music_Previews: PreviewProvider {
         Music().environmentObject(UserData())
     }
 }
+
+

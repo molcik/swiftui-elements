@@ -17,6 +17,7 @@ struct PlayerModal: View {
     var action: () -> Void
     @State private var volume: Double = 30
     var albums: [Playlist]
+    //var playlists: [Playlist]
     
     var body: some View {
         VStack(){
@@ -26,10 +27,14 @@ struct PlayerModal: View {
 
                 //Text("Ahoj")
             }*/
+            CardPictureModalPlayer(height: 300.0,
+                                   pictureOneUrl: albums[1].picture.uri,
+                                   albums: playlistData)
+            /*
             Card {
                 Spacer()
                     .background(
-                        URLImage(albums[0].picture.uri, content:  {
+                        URLImage(albums[1].picture.uri, content:  {
                             $0.image
                                 .renderingMode(.original)
                                 .resizable()
@@ -37,7 +42,9 @@ struct PlayerModal: View {
                     )
             }
             .padding(.horizontal)
+            */
             
+            Spacer()
             
             /*ScrollView(.vertical){
                 ForEach(self.recipe.ingredients) {ingredient in
@@ -49,7 +56,10 @@ struct PlayerModal: View {
                     )
                 }
             }*/
-            Divider()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
             HStack(){
                 ButtonPlayer(
                     action: {Void.self},
@@ -59,7 +69,7 @@ struct PlayerModal: View {
                         //.accentColor(Constant.color.musicPrimary)
                 }
                 //.padding([.leading, .trailing])
-                Divider()
+                Spacer()
                 ButtonPlayer(
                     action: {Void.self},
                     foregroundColor: Constant.color.musicPrimary
@@ -68,7 +78,7 @@ struct PlayerModal: View {
                         //.accentColor(Constant.color.musicPrimary)
                 }
                 //.padding([.leading, .trailing])
-
+                Spacer()
                 ButtonPlayer(
                     action: {Void.self},
                     foregroundColor: Constant.color.musicPrimary
@@ -77,7 +87,7 @@ struct PlayerModal: View {
                         //.accentColor(Constant.color.musicPrimary)
                 }
                 //.padding([.leading, .trailing])
-                
+                Spacer()
                 ButtonPlayer(
                     action: {Void.self},
                     foregroundColor: Constant.color.musicPrimary
@@ -86,7 +96,7 @@ struct PlayerModal: View {
                         //.accentColor(Constant.color.musicPrimary)
                 }
                 //.padding([.leading, .trailing])
-                Divider()
+                Spacer()
                 ButtonPlayer(
                     action: {Void.self},
                     foregroundColor: Constant.color.musicPrimary
@@ -94,21 +104,27 @@ struct PlayerModal: View {
                     Image(systemName: Constant.icon.shuffle)
                         //.accentColor(Constant.color.musicPrimary)
                 }
-                //.padding([.leading, .trailing])
                 
+                
+                //.padding([.leading, .trailing])
+
+                //Spacer()
             }
-            Divider()
+            //Divider()
             
  
             VStack(){
+                Spacer()
                 Slider(value: $volume, in: 0...100)
+                    .foregroundColor(.blue)
                     .padding(.horizontal)
-                
-                Divider()
+                Spacer()
+                //Divider()
                 
                 Slider(value: $volume, in: 0...100)
-                    .padding(.horizontal)
+                    //.padding(.horizontal)
                     .accentColor(.orange)
+                Spacer()
             }
 
             
