@@ -90,6 +90,13 @@
 		34F1215B258760C800BBB7DB /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F1215A258760C800BBB7DB /* Coordinates.swift */; };
 		34F1215E2587962C00BBB7DB /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F1215D2587962C00BBB7DB /* Cities.swift */; };
 		34FE0A2D25681474007D1B06 /* CountPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE0A2C25681474007D1B06 /* CountPicker.swift */; };
+		DCE62CDB266A70FC0002CAD4 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD7266A70FC0002CAD4 /* Places.swift */; };
+		DCE62CDC266A70FC0002CAD4 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD8266A70FC0002CAD4 /* Photos.swift */; };
+		DCE62CDD266A70FC0002CAD4 /* Photography.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD9266A70FC0002CAD4 /* Photography.swift */; };
+		DCE62CDE266A70FC0002CAD4 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CDA266A70FC0002CAD4 /* Albums.swift */; };
+		DCE62CE0266A71280002CAD4 /* photos.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE62CDF266A71280002CAD4 /* photos.json */; };
+		DCE62CE3266A715C0002CAD4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CE1266A715C0002CAD4 /* Location.swift */; };
+		DCE62CE4266A715C0002CAD4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CE2266A715C0002CAD4 /* Photo.swift */; };
 		E609DE8B2657E9A0007A7DBA /* ButtonPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609DE8A2657E9A0007A7DBA /* ButtonPlayer.swift */; };
 		E64A8FFC25EE93D600C630E2 /* PlayerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A8FFB25EE93D600C630E2 /* PlayerModal.swift */; };
 		E64A900125EEA09200C630E2 /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A900025EEA09200C630E2 /* MiniPlayer.swift */; };
@@ -211,6 +218,13 @@
 		34F1215A258760C800BBB7DB /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		34F1215D2587962C00BBB7DB /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		34FE0A2C25681474007D1B06 /* CountPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPicker.swift; sourceTree = "<group>"; };
+		DCE62CD7266A70FC0002CAD4 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		DCE62CD8266A70FC0002CAD4 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		DCE62CD9266A70FC0002CAD4 /* Photography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photography.swift; sourceTree = "<group>"; };
+		DCE62CDA266A70FC0002CAD4 /* Albums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
+		DCE62CDF266A71280002CAD4 /* photos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = photos.json; sourceTree = "<group>"; };
+		DCE62CE1266A715C0002CAD4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		DCE62CE2266A715C0002CAD4 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		E609DE8A2657E9A0007A7DBA /* ButtonPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlayer.swift; sourceTree = "<group>"; };
 		E64A8FFB25EE93D600C630E2 /* PlayerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModal.swift; sourceTree = "<group>"; };
 		E64A900025EEA09200C630E2 /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
@@ -287,6 +301,7 @@
 				3445A79B240B03D70020561B /* Food */,
 				E6AF7A4625CC58D4002F752E /* Music */,
 				34ADED252584B22600A504F5 /* Social */,
+				DCE62CD6266A70FC0002CAD4 /* Photography */,
 				349E4BD62415227E0079BF04 /* Elements */,
 				3403A31B240809CC00D7B040 /* Models */,
 				3403A31E240809FE00D7B040 /* Data */,
@@ -318,6 +333,8 @@
 				344723C024ABB098003B9F50 /* TabItem.swift */,
 				3461D3D7245C20D0009D389E /* Restaurant.swift */,
 				34ADED2B2584B48100A504F5 /* Constants.swift */,
+				DCE62CE1266A715C0002CAD4 /* Location.swift */,
+				DCE62CE2266A715C0002CAD4 /* Photo.swift */,
 				346DFE1E258503F600449492 /* Picture.swift */,
 				34AA9DA825850D180087798C /* User.swift */,
 				34B40A16258528C80096EC29 /* Post.swift */,
@@ -349,6 +366,7 @@
 				346DFE0D2584FADA00449492 /* conversations.json */,
 				346DFE102584FAFC00449492 /* posts.json */,
 				346DFE132584FB3800449492 /* users.json */,
+				DCE62CDF266A71280002CAD4 /* photos.json */,
 				34F1214E25875B1700BBB7DB /* guides.json */,
 				34F1215125875B2B00BBB7DB /* cities.json */,
 			);
@@ -486,6 +504,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DCE62CD6266A70FC0002CAD4 /* Photography */ = {
+			isa = PBXGroup;
+			children = (
+				DCE62CD7266A70FC0002CAD4 /* Places.swift */,
+				DCE62CD8266A70FC0002CAD4 /* Photos.swift */,
+				DCE62CD9266A70FC0002CAD4 /* Photography.swift */,
+				DCE62CDA266A70FC0002CAD4 /* Albums.swift */,
+			);
+			name = Photography;
+			path = "sketch-elements/Photography";
+			sourceTree = SOURCE_ROOT;
+		};
 		E6AF7A4625CC58D4002F752E /* Music */ = {
 			isa = PBXGroup;
 			children = (
@@ -604,6 +634,7 @@
 				346DFE1C2585038900449492 /* stories.json in Resources */,
 				346DFE0E2584FADA00449492 /* conversations.json in Resources */,
 				E6AF7A8525CD4203002F752E /* hearts-were-gold.json in Resources */,
+				DCE62CE0266A71280002CAD4 /* photos.json in Resources */,
 				3403A30B2406B71100D7B040 /* Preview Assets.xcassets in Resources */,
 				E6AF7A7F25CD4203002F752E /* ibn-el-leil.json in Resources */,
 				E6AF7A8725CD4203002F752E /* melodrama.json in Resources */,
@@ -622,6 +653,7 @@
 			files = (
 				3461D3D8245C20D0009D389E /* Restaurant.swift in Sources */,
 				34B4B12924AB72B500B092A8 /* Stars.swift in Sources */,
+				DCE62CDC266A70FC0002CAD4 /* Photos.swift in Sources */,
 				E6AF7A5025CC58F9002F752E /* MusicAccount.swift in Sources */,
 				3461D3D6245C2036009D389E /* Restaurants.swift in Sources */,
 				345D2E24245857F700201DD0 /* CheckBoxTableRow.swift in Sources */,
@@ -633,10 +665,12 @@
 				E6AF7A9325D5AFD9002F752E /* CardFourPictures.swift in Sources */,
 				345AE3AD241A7A8E004EBE8C /* ModalAnchorView.swift in Sources */,
 				34ADED2C2584B48100A504F5 /* Constants.swift in Sources */,
+				DCE62CE3266A715C0002CAD4 /* Location.swift in Sources */,
 				34785336258609640023A217 /* Conversation.swift in Sources */,
 				34B40A17258528C80096EC29 /* Post.swift in Sources */,
 				34AD61DD240BD093005943F9 /* RecipeDetail.swift in Sources */,
 				34F1215E2587962C00BBB7DB /* Cities.swift in Sources */,
+				DCE62CDE266A70FC0002CAD4 /* Albums.swift in Sources */,
 				34B4B12724AB6B0500B092A8 /* CardWithAttachment.swift in Sources */,
 				344723CB24AC7B80003B9F50 /* SegmentedPicker.swift in Sources */,
 				346DFE1F258503F600449492 /* Picture.swift in Sources */,
@@ -654,6 +688,7 @@
 				349A579D2587A78000277356 /* GuideDetail.swift in Sources */,
 				347853502586667E0023A217 /* Travel.swift in Sources */,
 				34F1215825875BBC00BBB7DB /* City.swift in Sources */,
+				DCE62CDD266A70FC0002CAD4 /* Photography.swift in Sources */,
 				349E4BDA241523A60079BF04 /* Header.swift in Sources */,
 				34AA9DA925850D180087798C /* User.swift in Sources */,
 				34785333258608AD0023A217 /* Messages.swift in Sources */,
@@ -664,6 +699,7 @@
 				345D2E202458473000201DD0 /* TextTableRow.swift in Sources */,
 				349524D2258A3F8C0077F145 /* HotelDetail.swift in Sources */,
 				344723C824ABC64A003B9F50 /* ButtonApplePay.swift in Sources */,
+				DCE62CE4266A715C0002CAD4 /* Photo.swift in Sources */,
 				E6AF7A5C25CC596A002F752E /* CardAlbum.swift in Sources */,
 				E6AF7A5B25CC596A002F752E /* CardPlaylist.swift in Sources */,
 				344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */,
@@ -683,6 +719,7 @@
 				34F1215525875BAF00BBB7DB /* Guide.swift in Sources */,
 				340A1981249BB0C900D49461 /* MapView.swift in Sources */,
 				E6AF7A8D25CD89B3002F752E /* SongTableRow.swift in Sources */,
+				DCE62CDB266A70FC0002CAD4 /* Places.swift in Sources */,
 				34ADED2F2584B5B100A504F5 /* Timeline.swift in Sources */,
 				E6AF7A4F25CC58F9002F752E /* Library.swift in Sources */,
 				346DFE0A2584F98C00449492 /* Story.swift in Sources */,

@@ -21,6 +21,7 @@ struct Constant {
         static let musicPrimary = Color("MusicPrimary")
         static let white = Color("white")
         static let musicButtonColor = Color("MusicButton")
+        static let photographyPrimary = Color("PhotographyPrimary")
     }
     
     struct icon {
@@ -51,7 +52,9 @@ struct Constant {
         static let forward = "forward.fill"
         static let backward = "backward.fill"
         static let repeatIcon = "repeat"
-        
+        static let rectangles = "rectangle.fill.on.rectangle.fill"
+        static let rectangleStack = "rectangle.stack.fill"
+        static let camera = "camera.fill"
     }
     
 }
