@@ -7,13 +7,16 @@
 //
 
 import SwiftUI
+import MapKit
+
 struct Places: View {
 
     var tintColor: Color = Constant.color.tintColor
     
     var body: some View {
+            
+        MapView(coordinate: photographyData[0].locationCoordinate)
         
-      Text("places")
     }
 }
 

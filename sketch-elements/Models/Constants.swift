@@ -39,10 +39,12 @@ struct Constant {
         static let bed = "bed.double.fill"
         static let chevronUp = "chevron.up"
         static let chevronDown = "chevron.down"
+        static let chevronRight = "chevron.right"
+        static let chevronLeft = "chevron.left"
+        static let chevronBack = "chevron.back"
         static let bookmark = "bookmark"
         static let creditcard = "creditcard"
         static let star = "star.fill"
-        static let chevronBack = "chevron.back"
         static let circle = "circle"
         static let minus = "minus"
         static let plus = "plus"
@@ -55,6 +57,7 @@ struct Constant {
         static let rectangles = "rectangle.fill.on.rectangle.fill"
         static let rectangleStack = "rectangle.stack.fill"
         static let camera = "camera.fill"
+       
     }
     
 }

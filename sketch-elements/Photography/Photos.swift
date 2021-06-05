@@ -13,8 +13,7 @@ import URLImage
 struct Photos: View {
     
     var photos: [Photo]
-    var tintColor: Color = Constant.color.tintColor
-    
+
     var body: some View {
         NavigationView {
             
@@ -26,7 +25,7 @@ struct Photos: View {
                                 .resizable()
                                 .aspectRatio(1/1, contentMode: .fit)
                                 .border(Color.white, width: 4)
-                                .shadow(color: Color.init(red: 0, green: 0, blue: 0, opacity: 0.075), radius: 1, x: 0, y: 1)
+                                .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
                         })
                     }
                 }).padding(20)

@@ -8,6 +8,7 @@
 
 
 import Foundation
+import MapKit
 
 struct Photo: Hashable, Codable, Identifiable {
     var id: String
@@ -15,6 +16,13 @@ struct Photo: Hashable, Codable, Identifiable {
     var location: Location?
     var created_at: String
     var urls: Urls
+    var locationCoordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(
+            latitude: location?.position.latitude ?? 0,
+            longitude: location?.position.longitude ?? 0
+        )
+    }
+
 }
 
 struct Urls: Hashable, Codable {

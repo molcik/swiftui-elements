@@ -9,11 +9,22 @@
 import SwiftUI
 struct Albums: View {
     
-    var tintColor: Color = Constant.color.tintColor
+    let albums = groupBy(photographyData, {$0.album})
     
     var body: some View {
-        
-      Text("albums")
+       
+
+        NavigationView() {
+            ScrollView(.vertical, showsIndicators: false) {                ForEach(albums.keys.sorted(), id: \.self, content: { value in
+                    AlbumRow(albumName: value, numberOfPhotos: (albums[value]?.count)!, showcasedPhotos: Array((albums[value]?.prefix(3))!))
+                })
+            }
+            .frame(maxWidth: .infinity)
+            .background(Constant.color.gray)
+            .navigationBarColor(Constant.color.photographyPrimary.uiColor())
+            .navigationBarTitle(Text("Albums"), displayMode: .large)
+            .navigationBarItems(trailing: Image(systemName: Constant.icon.camera).foregroundColor(.white))
+        }
     }
 }
 
