@@ -507,9 +507,9 @@
 		DCE62CD6266A70FC0002CAD4 /* Photography */ = {
 			isa = PBXGroup;
 			children = (
-				DCE62CD7266A70FC0002CAD4 /* Places.swift */,
-				DCE62CD8266A70FC0002CAD4 /* Photos.swift */,
 				DCE62CD9266A70FC0002CAD4 /* Photography.swift */,
+				DCE62CD8266A70FC0002CAD4 /* Photos.swift */,
+				DCE62CD7266A70FC0002CAD4 /* Places.swift */,
 				DCE62CDA266A70FC0002CAD4 /* Albums.swift */,
 			);
 			name = Photography;
@@ -886,6 +886,7 @@
 				DEVELOPMENT_TEAM = T72Z79K27V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "sketch-elements/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -906,6 +907,7 @@
 				DEVELOPMENT_TEAM = T72Z79K27V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "sketch-elements/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

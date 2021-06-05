@@ -19,7 +19,7 @@ struct Places: View {
 
 struct Places_Previews: PreviewProvider {
     static var previews: some View {
-        Recipes(categories: recipeCategoriesData)
+        Places()
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }

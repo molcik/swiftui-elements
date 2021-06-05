@@ -19,7 +19,7 @@ struct Albums: View {
 
 struct Albums_Previews: PreviewProvider {
     static var previews: some View {
-        Recipes(categories: recipeCategoriesData)
+        Albums()
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }
