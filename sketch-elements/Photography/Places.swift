@@ -8,15 +8,29 @@
 
 import SwiftUI
 import MapKit
+import URLImage
 
 struct Places: View {
-
+    
     var tintColor: Color = Constant.color.tintColor
+    @State private var region = MKCoordinateRegion(center: photographyData[0].locationCoordinate, span: MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006))
+    
+    let places = groupBy(photographyData, {$0.location?.city})
+    
+    let pointsOfInterest: [Annotation] = createAnnotations(groupBy(photographyData, {$0.location?.city}))
     
     var body: some View {
-            
-        MapView(coordinate: photographyData[0].locationCoordinate)
         
+        
+        ZStack() {
+            
+            Map(coordinateRegion: $region, annotationItems: pointsOfInterest) { item in
+                MapAnnotation(coordinate: item.coordinate) {
+                    PhotoStack(numberOfPhotos: item.photos.count, showcasedPhotos: Array(item.photos.prefix(3)), hidden: region.span.latitudeDelta / 2 > 30)
+                        .frame(width: 100 - CGFloat(region.span.latitudeDelta / 2), height: 100 - CGFloat(region.span.longitudeDelta / 2), alignment: .center)
+                }
+            }
+        }
     }
 }
 
@@ -27,3 +41,23 @@ struct Places_Previews: PreviewProvider {
             .environment(\.colorScheme, .light)
     }
 }
+
+struct Annotation: Identifiable {
+    let id = UUID()
+    var photos: [Photo]
+    var coordinate: CLLocationCoordinate2D
+    
+}
+
+func createAnnotations(_ places: [String? : [Photo]]) -> [Annotation] {
+    var poi: [Annotation] = []
+    for place in Array(places.keys) {
+        poi.append(Annotation(photos: Array((places[place]?.prefix(3))!), coordinate: places[place]![0].locationCoordinate))
+    }
+    print("here")
+    return poi
+    
+}
+
+
+

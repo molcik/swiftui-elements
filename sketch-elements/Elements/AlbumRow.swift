@@ -20,9 +20,9 @@ struct AlbumRow: View {
         VStack(content: {
             ZStack(content: {
                 Rectangle()
-                    .frame(width: .infinity, height: 80)
                     .foregroundColor(.white)
                     .shadow(color: .black.opacity(0.075), radius: 3, x: 0, y: 1)
+                    .frame(height: 80)
                 HStack(alignment: .center, content: {
                     VStack(alignment: .leading, spacing: 2, content: {
                         Text(albumName)
