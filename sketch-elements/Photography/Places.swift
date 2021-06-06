@@ -13,7 +13,7 @@ import URLImage
 struct Places: View {
     
     var tintColor: Color = Constant.color.tintColor
-    @State private var region = MKCoordinateRegion(center: photographyData[0].locationCoordinate, span: MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006))
+    @State private var region = MKCoordinateRegion(center: photographyData[21].locationCoordinate, span: MKCoordinateSpan(latitudeDelta: 0.6, longitudeDelta: 0.6))
     
     let places = groupBy(photographyData, {$0.location?.city})
     
@@ -27,7 +27,7 @@ struct Places: View {
             Map(coordinateRegion: $region, annotationItems: pointsOfInterest) { item in
                 MapAnnotation(coordinate: item.coordinate) {
                     PhotoStack(numberOfPhotos: item.photos.count, showcasedPhotos: Array(item.photos.prefix(3)), hidden: region.span.latitudeDelta / 2 > 30)
-                        .frame(width: 100 - CGFloat(region.span.latitudeDelta / 2), height: 100 - CGFloat(region.span.longitudeDelta / 2), alignment: .center)
+                        .frame(width: 100 - CGFloat(region.span.latitudeDelta / 2), height: 100 - CGFloat(region.span.longitudeDelta / 1.5), alignment: .center)
                 }
             }
         }
@@ -54,7 +54,8 @@ func createAnnotations(_ places: [String? : [Photo]]) -> [Annotation] {
     for place in Array(places.keys) {
         poi.append(Annotation(photos: Array((places[place]?.prefix(3))!), coordinate: places[place]![0].locationCoordinate))
     }
-    print("here")
+
+    print(poi)
     return poi
     
 }
