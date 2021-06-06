@@ -9,13 +9,11 @@
 import SwiftUI
 
 struct Photography: View {
-    
     var photos: [Photo] = photographyData
-   // let albums: Any = Dictionary(grouping: photographyData, by: {$0.album})
-        
-    var body: some View {
+    // let albums: Any = Dictionary(grouping: photographyData, by: {$0.album})
 
-        TabView() {
+    var body: some View {
+        TabView {
             Photos(photos: photos).tabItem {
                 Text("Photos")
                 Image(systemName: Constant.icon.rectangles)
@@ -31,7 +29,6 @@ struct Photography: View {
         }
         .tabBarOpaque()
         .accentColor(Constant.color.photographyPrimary)
-        
     }
 }
 
@@ -40,5 +37,3 @@ struct PhotographyView_Previews: PreviewProvider {
         Photography().environmentObject(UserData())
     }
 }
-
-

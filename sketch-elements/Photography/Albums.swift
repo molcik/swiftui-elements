@@ -8,16 +8,13 @@
 
 import SwiftUI
 struct Albums: View {
-    
-    let albums = groupBy(photographyData, {$0.album})
-    
-    var body: some View {
-       
+    let albums = groupBy(photographyData) { $0.album }
 
-        NavigationView() {
-            ScrollView(.vertical, showsIndicators: false) {                ForEach(albums.keys.sorted(), id: \.self, content: { value in
-                    AlbumRow(albumName: value, numberOfPhotos: (albums[value]?.count)!, showcasedPhotos: Array((albums[value]?.prefix(3))!))
-                })
+    var body: some View {
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) { ForEach(albums.keys.sorted(), id: \.self, content: { value in
+                AlbumRow(albumName: value, numberOfPhotos: (albums[value]?.count)!, showcasedPhotos: Array((albums[value]?.prefix(3))!))
+            })
             }
             .frame(maxWidth: .infinity)
             .background(Constant.color.gray)

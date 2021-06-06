@@ -6,30 +6,32 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
-
 import SwiftUI
 import URLImage
 
 struct Photos: View {
-    
     var photos: [Photo]
-
+    @State private var isPresented = false
+    
     var body: some View {
         NavigationView {
-            
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 15, content: {
                     ForEach(photos, id: \.self) { photo in
-                        URLImage(photo.urls.regular, content: {
-                            $0.image
-                                .resizable()
-                                .aspectRatio(1/1, contentMode: .fit)
-                                .border(Color.white, width: 4)
-                                .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
-                        })
+                        NavigationLink(
+                            destination: PhotoDetail(photo: photo)
+                            
+                        ) {
+                            URLImage(photo.urls.regular) {
+                                $0.image
+                                    .resizable()
+                                    .aspectRatio(1 / 1, contentMode: .fit)
+                                    .border(Color.white, width: 4)
+                                    .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
+                            }
+                        }
                     }
                 }).padding(20)
-                
             }
             .frame(maxWidth: .infinity)
             .background(Constant.color.gray)
@@ -38,8 +40,6 @@ struct Photos: View {
             .navigationBarItems(trailing: Image(systemName: Constant.icon.camera).foregroundColor(.white))
         }
     }
-    
-    
 }
 
 struct Photos_Previews: PreviewProvider {

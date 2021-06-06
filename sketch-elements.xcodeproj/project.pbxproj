@@ -91,8 +91,8 @@
 		34F1215E2587962C00BBB7DB /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F1215D2587962C00BBB7DB /* Cities.swift */; };
 		34FE0A2D25681474007D1B06 /* CountPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE0A2C25681474007D1B06 /* CountPicker.swift */; };
 		DCAAB520266CB5870037A38E /* PhotoStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAB51F266CB5870037A38E /* PhotoStack.swift */; };
+		DCAAB524266CEC1F0037A38E /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAB523266CEC1F0037A38E /* PhotoDetail.swift */; };
 		DCE62CDB266A70FC0002CAD4 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD7266A70FC0002CAD4 /* Places.swift */; };
-		DCE62CDC266A70FC0002CAD4 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD8266A70FC0002CAD4 /* Photos.swift */; };
 		DCE62CDD266A70FC0002CAD4 /* Photography.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD9266A70FC0002CAD4 /* Photography.swift */; };
 		DCE62CDE266A70FC0002CAD4 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CDA266A70FC0002CAD4 /* Albums.swift */; };
 		DCE62CE0266A71280002CAD4 /* photos.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE62CDF266A71280002CAD4 /* photos.json */; };
@@ -100,6 +100,7 @@
 		DCE62CE4266A715C0002CAD4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CE2266A715C0002CAD4 /* Photo.swift */; };
 		DCE62CE6266C1F820002CAD4 /* AlbumRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CE5266C1F820002CAD4 /* AlbumRow.swift */; };
 		DCE62CE9266C38740002CAD4 /* GroupBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CE8266C38740002CAD4 /* GroupBy.swift */; };
+		DCFE391F266D6A1A0064FD56 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE391E266D6A1A0064FD56 /* Photos.swift */; };
 		E609DE8B2657E9A0007A7DBA /* ButtonPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609DE8A2657E9A0007A7DBA /* ButtonPlayer.swift */; };
 		E64A8FFC25EE93D600C630E2 /* PlayerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A8FFB25EE93D600C630E2 /* PlayerModal.swift */; };
 		E64A900125EEA09200C630E2 /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A900025EEA09200C630E2 /* MiniPlayer.swift */; };
@@ -222,8 +223,8 @@
 		34F1215D2587962C00BBB7DB /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		34FE0A2C25681474007D1B06 /* CountPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPicker.swift; sourceTree = "<group>"; };
 		DCAAB51F266CB5870037A38E /* PhotoStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStack.swift; sourceTree = "<group>"; };
+		DCAAB523266CEC1F0037A38E /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
 		DCE62CD7266A70FC0002CAD4 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
-		DCE62CD8266A70FC0002CAD4 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		DCE62CD9266A70FC0002CAD4 /* Photography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photography.swift; sourceTree = "<group>"; };
 		DCE62CDA266A70FC0002CAD4 /* Albums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 		DCE62CDF266A71280002CAD4 /* photos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = photos.json; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 		DCE62CE2266A715C0002CAD4 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		DCE62CE5266C1F820002CAD4 /* AlbumRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRow.swift; sourceTree = "<group>"; };
 		DCE62CE8266C38740002CAD4 /* GroupBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBy.swift; sourceTree = "<group>"; };
+		DCFE391E266D6A1A0064FD56 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		E609DE8A2657E9A0007A7DBA /* ButtonPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlayer.swift; sourceTree = "<group>"; };
 		E64A8FFB25EE93D600C630E2 /* PlayerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModal.swift; sourceTree = "<group>"; };
 		E64A900025EEA09200C630E2 /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
@@ -517,9 +519,10 @@
 			isa = PBXGroup;
 			children = (
 				DCE62CD9266A70FC0002CAD4 /* Photography.swift */,
-				DCE62CD8266A70FC0002CAD4 /* Photos.swift */,
 				DCE62CD7266A70FC0002CAD4 /* Places.swift */,
 				DCE62CDA266A70FC0002CAD4 /* Albums.swift */,
+				DCAAB523266CEC1F0037A38E /* PhotoDetail.swift */,
+				DCFE391E266D6A1A0064FD56 /* Photos.swift */,
 			);
 			name = Photography;
 			path = "sketch-elements/Photography";
@@ -670,7 +673,6 @@
 			files = (
 				3461D3D8245C20D0009D389E /* Restaurant.swift in Sources */,
 				34B4B12924AB72B500B092A8 /* Stars.swift in Sources */,
-				DCE62CDC266A70FC0002CAD4 /* Photos.swift in Sources */,
 				E6AF7A5025CC58F9002F752E /* MusicAccount.swift in Sources */,
 				3461D3D6245C2036009D389E /* Restaurants.swift in Sources */,
 				345D2E24245857F700201DD0 /* CheckBoxTableRow.swift in Sources */,
@@ -678,6 +680,7 @@
 				349524C6258A30E70077F145 /* Reservable.swift in Sources */,
 				349A57A52588C09200277356 /* CityDetail.swift in Sources */,
 				345AE3AC241A7A8E004EBE8C /* ModalView.swift in Sources */,
+				DCFE391F266D6A1A0064FD56 /* Photos.swift in Sources */,
 				3403A3022406B70F00D7B040 /* AppDelegate.swift in Sources */,
 				E6AF7A9325D5AFD9002F752E /* CardFourPictures.swift in Sources */,
 				345AE3AD241A7A8E004EBE8C /* ModalAnchorView.swift in Sources */,
@@ -703,6 +706,7 @@
 				34ADED322584BB1300A504F5 /* Profile.swift in Sources */,
 				344723BB24ABA93C003B9F50 /* IngredientsModal.swift in Sources */,
 				349A579D2587A78000277356 /* GuideDetail.swift in Sources */,
+				DCAAB524266CEC1F0037A38E /* PhotoDetail.swift in Sources */,
 				347853502586667E0023A217 /* Travel.swift in Sources */,
 				34F1215825875BBC00BBB7DB /* City.swift in Sources */,
 				DCE62CDD266A70FC0002CAD4 /* Photography.swift in Sources */,

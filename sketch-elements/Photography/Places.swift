@@ -6,24 +6,20 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 import URLImage
 
 struct Places: View {
-    
     var tintColor: Color = Constant.color.tintColor
     @State private var region = MKCoordinateRegion(center: photographyData[21].locationCoordinate, span: MKCoordinateSpan(latitudeDelta: 0.6, longitudeDelta: 0.6))
-    
-    let places = groupBy(photographyData, {$0.location?.city})
-    
-    let pointsOfInterest: [Annotation] = createAnnotations(groupBy(photographyData, {$0.location?.city}))
-    
+
+    let places = groupBy(photographyData) { $0.location?.city }
+
+    let pointsOfInterest: [Annotation] = createAnnotations(groupBy(photographyData) { $0.location?.city })
+
     var body: some View {
-        
-        
-        ZStack() {
-            
+        ZStack {
             Map(coordinateRegion: $region, annotationItems: pointsOfInterest) { item in
                 MapAnnotation(coordinate: item.coordinate) {
                     PhotoStack(numberOfPhotos: item.photos.count, showcasedPhotos: Array(item.photos.prefix(3)), hidden: region.span.latitudeDelta / 2 > 30)
@@ -46,19 +42,12 @@ struct Annotation: Identifiable {
     let id = UUID()
     var photos: [Photo]
     var coordinate: CLLocationCoordinate2D
-    
 }
 
-func createAnnotations(_ places: [String? : [Photo]]) -> [Annotation] {
+func createAnnotations(_ places: [String?: [Photo]]) -> [Annotation] {
     var poi: [Annotation] = []
     for place in Array(places.keys) {
         poi.append(Annotation(photos: Array((places[place]?.prefix(3))!), coordinate: places[place]![0].locationCoordinate))
     }
-
-    print(poi)
     return poi
-    
 }
-
-
-
