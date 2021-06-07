@@ -57,7 +57,8 @@ struct Constant {
         static let rectangles = "rectangle.fill.on.rectangle.fill"
         static let rectangleStack = "rectangle.stack.fill"
         static let camera = "camera.fill"
-       
+        static let crop = "crop"
+        static let options = "slider.horizontal.3"
     }
     
 }

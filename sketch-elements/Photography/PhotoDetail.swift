@@ -14,20 +14,34 @@ struct PhotoDetail: View {
     var photo: Photo
 
     var body: some View {
-        ZStack(alignment: .top) {
-            URLImage(photo.urls.full) {
+        NavigationView {
+            VStack {
+                Spacer()
+                HStack {
+                    Image(systemName: Constant.icon.options)
+                    Spacer()
+                    Image(systemName: Constant.icon.crop)
+                }.padding()
+                    .foregroundColor(.white)
+            }.background(URLImage(photo.urls.full) {
                 $0.image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
-            }
-            .ignoresSafeArea()
-            .navigationBarItems(
-                trailing:
-                Image(systemName: Constant.icon.bookmark).foregroundColor(.white)
-            )
-            .navigationTitle(Text((photo.location?.city ?? photo.location?.country) ?? "No location"))
-            .navigationBarTitleDisplayMode(.inline)
+            })
+                .navigationBarItems(
+                    leading:
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: Constant.icon.chevronLeft).foregroundColor(.white)
+                        Text("Photos")
+                    },
+                    trailing:
+                    Image(systemName: Constant.icon.bookmark).foregroundColor(.white)
+                )
+                .navigationTitle(Text((photo.location?.city ?? photo.location?.country) ?? "No location"))
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

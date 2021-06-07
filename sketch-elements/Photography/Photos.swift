@@ -12,32 +12,44 @@ import URLImage
 struct Photos: View {
     var photos: [Photo]
     @State private var isPresented = false
-    
+    @State private var showCaptureImageView = false
+    @State private var selectedPhoto: Photo? = nil
+    @State var image: Image? = nil
+
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 15, content: {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 15) {
                     ForEach(photos, id: \.self) { photo in
-                        NavigationLink(
-                            destination: PhotoDetail(photo: photo)
-                            
-                        ) {
-                            URLImage(photo.urls.regular) {
-                                $0.image
-                                    .resizable()
-                                    .aspectRatio(1 / 1, contentMode: .fit)
-                                    .border(Color.white, width: 4)
-                                    .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
-                            }
+                        URLImage(photo.urls.regular) {
+                            $0.image
+                                .resizable()
+                                .aspectRatio(1 / 1, contentMode: .fit)
+                                .border(Color.white, width: 4)
+                                .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
+
+                        }.onTapGesture {
+                            isPresented.toggle()
+                            self.selectedPhoto = photo
                         }
                     }
-                }).padding(20)
+                }
+                .padding(20)
+                .fullScreenCover(item: self.$selectedPhoto) { selectedPhoto in
+                    PhotoDetail(photo: selectedPhoto)
+                }
             }
+
             .frame(maxWidth: .infinity)
             .background(Constant.color.gray)
             .navigationBarColor(Constant.color.photographyPrimary.uiColor())
             .navigationBarTitle(Text("Photos"), displayMode: .large)
-            .navigationBarItems(trailing: Image(systemName: Constant.icon.camera).foregroundColor(.white))
+            .navigationBarItems(trailing:
+                Image(systemName: Constant.icon.camera)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        showCaptureImageView.toggle()
+                    })
         }
     }
 }
