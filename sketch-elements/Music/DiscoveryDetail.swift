@@ -11,32 +11,29 @@ import SwiftUI
 import URLImage
 
 struct DiscoveryDetail: View {
-    
     var playlists: [Playlist]
     var songs: [Album]
     var musicColor = Constant.color.musicPrimary
     var navigationBarDisplayMode = NavigationBarItem.TitleDisplayMode.inline
     @State var vypinac = true
-    
-    
-    
+
     var body: some View {
-        return VStack(spacing: 10){
+        return VStack(spacing: 10) {
             MusicHeader(imageOne: playlists[0].picture.uri, imageTwo: playlists[1].picture.uri, imageThree: playlists[2].picture.uri, imageFour: playlists[3].picture.uri, height: 170)
-            //MusicHeader(imageOne: playlistData[2].picture.uri, height: 170, fourImages: true)
+            // MusicHeader(imageOne: playlistData[2].picture.uri, height: 170, fourImages: true)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
-                    ForEach(0..<songs.count) { index in
+                    ForEach(0 ..< songs.count) { index in
                         SongTableRow(
-                            //left: "\(index + 1)",
-                            left: AnyView(URLImage(playlists[index].picture.uri, content:  {
-                                $0.image
+                            // left: "\(index + 1)",
+                            left: AnyView(URLImage(playlists[index].picture.uri, content: { image in
+                                image
                                     .renderingMode(.original)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                             })
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(4)),
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(4)),
                             divider: index < self.songs.count - 1,
                             content: songs[index].name,
                             description: "Nazev Alba",
@@ -52,19 +49,18 @@ struct DiscoveryDetail: View {
             }
             .frame(maxWidth: .infinity)
         }
-        //.padding(.top)
+        // .padding(.top)
         .background(Constant.color.gray)
         .navigationBarTitle("", displayMode: navigationBarDisplayMode)
         .navigationBarItems(trailing: Image(systemName: Constant.icon.share).foregroundColor(.white))
         .navigationBarColor(musicColor.uiColor())
-        /*.onAppear {
-            self.modalManager.newModal(position: .closed) {
-                IngredientsModal(recipe: self.recipe, action: self.modalManager.closeModal)
-            }
-        } */
+        /* .onAppear {
+             self.modalManager.newModal(position: .closed) {
+                 IngredientsModal(recipe: self.recipe, action: self.modalManager.closeModal)
+             }
+         } */
     }
 }
-
 
 struct DiscoveryDetail_Previews: PreviewProvider {
     static var previews: some View {

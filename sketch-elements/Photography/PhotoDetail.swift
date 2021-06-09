@@ -31,7 +31,7 @@ struct PhotoDetail: View {
                     .foregroundColor(.white)
             }
             .fullScreenCover(isPresented: $filterViewPresented, onDismiss: {}, content: {
-                FilterView(photoUrl: photo.urls.full)
+                FilterView(photoUrls: photo.urls)
             })
             .fullScreenCover(isPresented: $cropViewPresented, onDismiss: {}, content: {
                 Text("hi")

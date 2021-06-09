@@ -42,7 +42,7 @@ struct MiniPlayer: View {
             
             //Image(systemName: Constant.icon.doc)
             URLImage(albums[0].picture.uri, content:  {
-                $0.image
+                image in image
                     .renderingMode(.original)
                     .resizable()
             }).frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

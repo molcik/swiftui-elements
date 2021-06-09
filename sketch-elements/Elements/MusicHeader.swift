@@ -26,8 +26,8 @@ struct MusicHeader: View {
                     CardFourPicture(height: 70, pictureOneUrl: imageOne, pictureTwoUrl: imageTwo ?? imageOne, pictureThreeUrl: imageThree ?? imageOne, pictureFourUrl: imageFour ?? imageOne, albums: playlistData)
                 }
                 else {
-                    URLImage(imageOne, content:  {
-                        $0.image
+                    URLImage(imageOne, content:  { image in
+                            image
                             .renderingMode(.original)
                             .resizable()
                     })

@@ -10,7 +10,6 @@ import SwiftUI
 import URLImage
 
 struct CardFourPicture: View {
-    
     var height: CGFloat
     var pictureOneUrl: URL
     var pictureTwoUrl: URL
@@ -19,49 +18,48 @@ struct CardFourPicture: View {
     let largeConfig = UIImage.SymbolConfiguration(scale: .medium)
     var albums: [Playlist]
 
-    
     var body: some View {
-        Card{
-            VStack(spacing: 0){
-                HStack(){
+        Card {
+            VStack(spacing: 0) {
+                HStack {
                     Spacer()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .frame(width: height/2, height: height/2 )
-                        .foregroundColor(Color.white)       .background(
-                            URLImage(pictureOneUrl, content:  {
-                                $0.image
+                        .frame(width: height/2, height: height/2)
+                        .foregroundColor(Color.white).background(
+                            URLImage(pictureOneUrl, content: { image in
+                                image
                                     .renderingMode(.original)
                                     .resizable()
                             })
                         )
                     Spacer()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .frame(width: height/2, height: height/2 )
-                        .foregroundColor(Color.white)       .background(
-                            URLImage(pictureTwoUrl, content:  {
-                                $0.image
+                        .frame(width: height/2, height: height/2)
+                        .foregroundColor(Color.white).background(
+                            URLImage(pictureTwoUrl, content: { image in
+                                image
                                     .renderingMode(.original)
                                     .resizable()
                             })
                         )
                 }
-                HStack(){
+                HStack {
                     Spacer()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .frame(width: height/2, height: height/2 )
-                        .foregroundColor(Color.white)       .background(
-                            URLImage(pictureThreeUrl, content:  {
-                                $0.image
+                        .frame(width: height/2, height: height/2)
+                        .foregroundColor(Color.white).background(
+                            URLImage(pictureThreeUrl, content: { image in
+                                image
                                     .renderingMode(.original)
                                     .resizable()
                             })
                         )
                     Spacer()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .frame(width: height/2, height: height/2 )
-                        .foregroundColor(Color.white)       .background(
-                            URLImage(pictureFourUrl, content:  {
-                                $0.image
+                        .frame(width: height/2, height: height/2)
+                        .foregroundColor(Color.white).background(
+                            URLImage(pictureFourUrl, content: { image in
+                                image
                                     .renderingMode(.original)
                                     .resizable()
                             })
@@ -72,9 +70,8 @@ struct CardFourPicture: View {
             .cornerRadius(4)
         }
         .frame(width: height, height: height)
-            }
-        }
-
+    }
+}
 
 struct CardFourPicture_Previews: PreviewProvider {
     static var previews: some View {
@@ -86,7 +83,6 @@ struct CardFourPicture_Previews: PreviewProvider {
             pictureFourUrl: recipesData[3].picture.uri,
             albums: playlistData
         )
-            .environmentObject(UserData())
+        .environmentObject(UserData())
     }
 }
-

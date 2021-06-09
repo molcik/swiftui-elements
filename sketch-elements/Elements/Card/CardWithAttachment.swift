@@ -31,8 +31,8 @@ struct CardWithAttachment: View {
                 }
                 Spacer()
                 VStack(alignment: .trailing){
-                    URLImage(pictureUrl, content:  {
-                        $0.image
+                    URLImage(pictureUrl, content:  { image in
+                        image
                             .renderingMode(.original)
                             .resizable()
                     })

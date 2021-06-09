@@ -40,8 +40,8 @@ struct CardSocial: View {
                 
                 HStack(){
                     if(contentImage != nil) {
-                        URLImage(contentImage!.uri, content: {
-                        $0.image
+                        URLImage(contentImage!.uri, content: { image in
+                            image
                             .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fit)

@@ -14,8 +14,8 @@ struct PhotoPreview: View {
     @Environment(\.colorScheme) var colorScheme
    
     var body: some View {
-        URLImage(url) {
-            $0.image
+        URLImage(url) { image in
+            image
                 .resizable()
                 .aspectRatio(1 / 1, contentMode: .fit)
                 .border(colorScheme == .dark ? Color.init(red: 0.15, green: 0.15, blue: 0.15) : Color.white, width: 4)

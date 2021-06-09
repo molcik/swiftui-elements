@@ -13,18 +13,15 @@ import URLImage
 
 struct FilterView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.urlImageService) var service: URLImageService
     @State private var currentFilter = CIFilter.sepiaTone()
-    var photoUrl: URL
+    var photoUrls: Urls
     @State var image: Image? = nil
-
 
     let context = CIContext()
 
-   
-
     var body: some View {
         VStack(spacing: 0) {
-            
             // If there's an image with a filter, display it. Else display the original
             if image != nil {
                 image!
@@ -33,20 +30,21 @@ struct FilterView: View {
                     .frame(height: 600)
                     .ignoresSafeArea()
             } else {
-                Image(uiImage: UIImage(data: try! Data(contentsOf: photoUrl))!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(height: 600)
-                    .ignoresSafeArea()
+                URLImage(photoUrls.full) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: 600)
+                        .ignoresSafeArea()
+                }
             }
-               
-            
+
             ZStack(alignment: .top) {
                 Rectangle()
                     .foregroundColor(.white)
                     .frame(height: 300, alignment: .bottom)
                     .cornerRadius(25, antialiased: true)
-                    .padding(.top, -15)
+                    .padding(.top, -25)
 
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
@@ -66,14 +64,25 @@ struct FilterView: View {
                     .foregroundColor(Constant.color.photographyPrimary)
                 }
             }
-
             .ignoresSafeArea()
         }
-        
     }
-    
+
     func loadImage() {
-        let inputuiImage: UIImage? = UIImage(data: try! Data(contentsOf: photoUrl))
+        //let myImage = URLImage(photoUrls.full) { return $0.cgImage }
+
+        var myimage: CIImage? = nil
+        let inputuiImage = service.remoteImagePublisher(photoUrls.full, identifier: "")
+            .tryMap { image in  image.cgImage }
+            .catch { _ in
+                return nil
+            }
+            .sink { image in
+                myimage = image
+            }
+        
+        //let inputuiImage: UIImage? = URLImage(photoUrls.full)
+        // let inputuiImage: UIImage? = UIImage(data: try! Data(contentsOf: photoUrls.small))
 
         guard let inputImage = inputuiImage else { return }
 
@@ -81,7 +90,7 @@ struct FilterView: View {
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
         applyProcessing()
     }
-    
+
     func applyProcessing() {
         currentFilter.intensity = Float(1)
 
@@ -96,6 +105,6 @@ struct FilterView: View {
 
 struct FilterView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterView(photoUrl: photographyData[7].urls.full)
+        FilterView(photoUrls: photographyData[7].urls)
     }
 }

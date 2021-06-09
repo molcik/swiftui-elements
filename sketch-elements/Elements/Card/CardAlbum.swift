@@ -10,34 +10,31 @@ import SwiftUI
 import URLImage
 
 struct CardAlbum: View {
-    
     var name: String
     var artist: String
     var height: CGFloat
     var pictureUrl: URL
 
-
-    
     var body: some View {
-        Card{
-            VStack(){
+        Card {
+            VStack {
                 Spacer()
-                .padding(.all)
-                .frame(maxWidth: .infinity)
-                .frame(height: height)
-                .foregroundColor(Color.white)
-                .background(
-                    URLImage(pictureUrl, content:  {
-                        $0.image
-                            .renderingMode(.original)
-                            .resizable()
-                    })
-                )
-                VStack(alignment: .leading){
-                    HStack(){
-                        VStack(alignment: .leading){
+                    .padding(.all)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: height)
+                    .foregroundColor(Color.white)
+                    .background(
+                        URLImage(pictureUrl, content: { image in
+                            image
+                                .renderingMode(.original)
+                                .resizable()
+                        })
+                    )
+                VStack(alignment: .leading) {
+                    HStack {
+                        VStack(alignment: .leading) {
                             Text(name)
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/)
                                 .font(.headline)
                                 .padding(.horizontal)
                                 .frame(height: height/5)
@@ -48,10 +45,10 @@ struct CardAlbum: View {
                                 .padding(.horizontal)
                                 .padding(.bottom)
                                 .frame(height: height/5)
-                            //Spacer()
+                            // Spacer()
                         }
                         Spacer()
-                    }   
+                    }
                 }
             }
         }
@@ -61,6 +58,5 @@ struct CardAlbum: View {
 struct CardAlbum_Previews: PreviewProvider {
     static var previews: some View {
         CardAlbum(name: playlistData[0].name, artist: playlistData[0].artist, height: 200, pictureUrl: playlistData[0].picture.uri).environmentObject(UserData())
-        
     }
 }

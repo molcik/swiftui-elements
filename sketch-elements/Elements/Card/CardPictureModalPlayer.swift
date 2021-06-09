@@ -24,8 +24,8 @@ struct CardPictureModalPlayer: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .frame(width: height, height: height )
                     .foregroundColor(Color.white)       .background(
-                        URLImage(pictureOneUrl, content:  {
-                            $0.image
+                        URLImage(pictureOneUrl, content: { image in
+                            image
                                 .renderingMode(.original)
                                 .resizable()
                         })

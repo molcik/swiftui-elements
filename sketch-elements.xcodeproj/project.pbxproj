@@ -24,7 +24,6 @@
 		341D20DC241CDE0B00C706A2 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D20DB241CDE0B00C706A2 /* NavigationBarModifier.swift */; };
 		341D20DE241CDE2E00C706A2 /* TabBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D20DD241CDE2E00C706A2 /* TabBarModifier.swift */; };
 		3445A7912408268B0020561B /* recipeCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = 3445A7902408268B0020561B /* recipeCategories.json */; };
-		3445A796240839DE0020561B /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3445A795240839DE0020561B /* URLImage */; };
 		3445A798240A80AF0020561B /* ColorPalette.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3445A797240A80AF0020561B /* ColorPalette.xcassets */; };
 		3445A79D240B043E0020561B /* RecipesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445A79C240B043E0020561B /* RecipesList.swift */; };
 		3445A79F240B0C3F0020561B /* CardWithBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445A79E240B0C3F0020561B /* CardWithBackground.swift */; };
@@ -92,6 +91,8 @@
 		34FE0A2D25681474007D1B06 /* CountPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE0A2C25681474007D1B06 /* CountPicker.swift */; };
 		DC32455F2670061A00FC86ED /* PhotoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32455E2670061A00FC86ED /* PhotoPreview.swift */; };
 		DC3245632670D27A00FC86ED /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3245622670D27A00FC86ED /* FilterView.swift */; };
+		DC3245692671650C00FC86ED /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = DC3245682671650C00FC86ED /* URLImageStore */; };
+		DC32456B2671650C00FC86ED /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = DC32456A2671650C00FC86ED /* URLImage */; };
 		DCAAB520266CB5870037A38E /* PhotoStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAB51F266CB5870037A38E /* PhotoStack.swift */; };
 		DCAAB524266CEC1F0037A38E /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAB523266CEC1F0037A38E /* PhotoDetail.swift */; };
 		DCE62CDB266A70FC0002CAD4 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD7266A70FC0002CAD4 /* Places.swift */; };
@@ -283,7 +284,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3445A796240839DE0020561B /* URLImage in Frameworks */,
+				DC3245692671650C00FC86ED /* URLImageStore in Frameworks */,
+				DC32456B2671650C00FC86ED /* URLImage in Frameworks */,
 				34B255AA24081B3500599A4C /* SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,7 +603,8 @@
 			);
 			name = "sketch-elements";
 			packageProductDependencies = (
-				3445A795240839DE0020561B /* URLImage */,
+				DC3245682671650C00FC86ED /* URLImageStore */,
+				DC32456A2671650C00FC86ED /* URLImage */,
 			);
 			productName = "sketch-elements";
 			productReference = 3403A2FE2406B70F00D7B040 /* sketch-elements.app */;
@@ -632,7 +635,7 @@
 			);
 			mainGroup = 3403A2F52406B70F00D7B040;
 			packageReferences = (
-				3445A794240839DE0020561B /* XCRemoteSwiftPackageReference "url-image" */,
+				DC3245672671650C00FC86ED /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 3403A2FF2406B70F00D7B040 /* Products */;
 			projectDirPath = "";
@@ -987,20 +990,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3445A794240839DE0020561B /* XCRemoteSwiftPackageReference "url-image" */ = {
+		DC3245672671650C00FC86ED /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.10;
+				minimumVersion = 3.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3445A795240839DE0020561B /* URLImage */ = {
+		DC3245682671650C00FC86ED /* URLImageStore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3445A794240839DE0020561B /* XCRemoteSwiftPackageReference "url-image" */;
+			package = DC3245672671650C00FC86ED /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+		DC32456A2671650C00FC86ED /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC3245672671650C00FC86ED /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */
