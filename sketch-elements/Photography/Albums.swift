@@ -9,6 +9,8 @@
 import SwiftUI
 struct Albums: View {
     let albums = groupBy(photographyData) { $0.album }
+    @State private var showPicker = false
+    @State var inputImage: UIImage? = nil
 
     var body: some View {
         NavigationView {
@@ -20,8 +22,18 @@ struct Albums: View {
             .background(Constant.color.gray)
             .navigationBarColor(Constant.color.photographyPrimary.uiColor())
             .navigationBarTitle(Text("Albums"), displayMode: .large)
-            .navigationBarItems(trailing: Image(systemName: Constant.icon.camera).foregroundColor(.white))
+            .navigationBarItems(trailing: Image(systemName: Constant.icon.camera).foregroundColor(.white).onTapGesture {
+                showPicker.toggle()
+            })
+            .fullScreenCover(isPresented: $showPicker, onDismiss: loadImage) {
+                PhotoPicker(image: $inputImage)
+            }
         }
+    }
+
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        self.inputImage = inputImage
     }
 }
 

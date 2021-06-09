@@ -10,7 +10,6 @@ import SwiftUI
 
 struct Photography: View {
     var photos: [Photo] = photographyData
-    // let albums: Any = Dictionary(grouping: photographyData, by: {$0.album})
 
     var body: some View {
         TabView {

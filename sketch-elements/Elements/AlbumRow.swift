@@ -11,21 +11,23 @@ import SwiftUI
 import URLImage
 
 struct AlbumRow: View {
-    
+    @Environment(\.colorScheme) var colorScheme
+    @State private var selectedPhoto: Photo? = nil
+    @State private var isPresented = false
     var albumName: String
     var numberOfPhotos: Int
     var showcasedPhotos: [Photo]
-
     var body: some View {
         VStack(content: {
             ZStack(content: {
                 Rectangle()
-                    .foregroundColor(.white)
+                    .foregroundColor(colorScheme == .dark ? .init(red: 0.15, green: 0.15, blue: 0.15) : .white)
                     .shadow(color: .black.opacity(0.075), radius: 3, x: 0, y: 1)
                     .frame(height: 80)
                 HStack(alignment: .center, content: {
                     VStack(alignment: .leading, spacing: 2, content: {
                         Text(albumName)
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
                             .font(.title3).bold()
                         Text("\(numberOfPhotos) photos")
                             .foregroundColor(.gray).font(.caption)
@@ -34,30 +36,32 @@ struct AlbumRow: View {
                     Image(systemName: Constant.icon.chevronRight)
                         .foregroundColor(.gray)
                 })
-                .padding(.horizontal, 20)
+                    .padding(.horizontal, 20)
+                    .fullScreenCover(item: self.$selectedPhoto) { selectedPhoto in
+                        PhotoDetail(photo: selectedPhoto)
+                    }
             })
-            
+
             HStack(content: {
                 ForEach(showcasedPhotos, id: \.self, content: { photo in
-                    URLImage(photo.urls.regular, content: {
-                        $0.image
-                            .resizable()
-                            .aspectRatio(1/1, contentMode: .fit)
-                            .border(Color.white, width: 4)
-                            .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
-                    })
+                    PhotoPreview(url: photo.urls.regular)
+                        .onTapGesture {
+                            isPresented.toggle()
+                            self.selectedPhoto = photo
+                        }
                 })
+
             })
-            .padding(.vertical, 10)
-            .padding(.horizontal, 20)
+                .padding(.vertical, 10)
+                .padding(.horizontal, 20)
         })
     }
-    
-    
 }
 
 struct AlbumRow_Previews: PreviewProvider {
     static var previews: some View {
         AlbumRow(albumName: "Portraits", numberOfPhotos: 30, showcasedPhotos: Array(photographyData.prefix(3)))
+            .environmentObject(UserData())
+            .environment(\.colorScheme, .dark)
     }
 }

@@ -26,6 +26,7 @@ struct Places: View {
                         .frame(width: 100 - CGFloat(region.span.latitudeDelta / 2), height: 100 - CGFloat(region.span.longitudeDelta / 1.5), alignment: .center)
                 }
             }.ignoresSafeArea()
+            .navigationBarHidden(true)
         }
     }
 }

@@ -11,31 +11,27 @@ import URLImage
 
 struct Photos: View {
     var photos: [Photo]
+    @Environment(\.colorScheme) var colorScheme
+    
     @State private var isPresented = false
-    @State private var showCaptureImageView = false
+    @State private var showPicker = false
     @State private var selectedPhoto: Photo? = nil
-    @State var image: Image? = nil
+    @State var inputImage: UIImage? = nil
 
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 15) {
                     ForEach(photos, id: \.self) { photo in
-                        URLImage(photo.urls.regular) {
-                            $0.image
-                                .resizable()
-                                .aspectRatio(1 / 1, contentMode: .fit)
-                                .border(Color.white, width: 4)
-                                .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
-
-                        }.onTapGesture {
+                        PhotoPreview(url: photo.urls.regular)
+                            .onTapGesture {
                             isPresented.toggle()
                             self.selectedPhoto = photo
                         }
                     }
                 }
                 .padding(20)
-                .fullScreenCover(item: self.$selectedPhoto) { selectedPhoto in
+                .fullScreenCover(item: $selectedPhoto) { selectedPhoto in
                     PhotoDetail(photo: selectedPhoto)
                 }
             }
@@ -48,9 +44,18 @@ struct Photos: View {
                 Image(systemName: Constant.icon.camera)
                     .foregroundColor(.white)
                     .onTapGesture {
-                        showCaptureImageView.toggle()
+                        showPicker.toggle()
                     })
+            .fullScreenCover(isPresented: $showPicker, onDismiss: loadImage) {
+                PhotoPicker(image: $inputImage)
+        
+            }
         }
+    }
+
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        self.inputImage = inputImage
     }
 }
 

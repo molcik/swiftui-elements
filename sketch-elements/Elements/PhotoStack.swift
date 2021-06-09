@@ -11,7 +11,8 @@ import SwiftUI
 import URLImage
 
 struct PhotoStack: View {
-  
+    @Environment(\.colorScheme) var colorScheme
+    
     var numberOfPhotos: Int
     var showcasedPhotos: [Photo]
     var hidden: Bool
@@ -25,7 +26,7 @@ struct PhotoStack: View {
                     $0.image
                         .resizable()
                         .aspectRatio(1/1, contentMode: .fit)
-                        .border(Color.white, width: 4)
+                        .border((colorScheme == .dark ? Color.gray : Color.white), width: hidden ? 1 : 4)
                         .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
                         .rotationEffect(.init(degrees: Double(rotations[i])))
                       

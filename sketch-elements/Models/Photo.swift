@@ -29,5 +29,5 @@ struct Urls: Hashable, Codable {
     var full: URL
     var regular: URL
     var small: URL
-    var preview: URL
+    var preview: String
 }
