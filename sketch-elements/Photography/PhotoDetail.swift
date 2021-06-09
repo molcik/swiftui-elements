@@ -14,7 +14,6 @@ struct PhotoDetail: View {
     var photo: Photo
     @State private var filterViewPresented = false
     @State private var cropViewPresented = false
-    @State private var viewPresented: String? = nil
 
     var body: some View {
         NavigationView {
@@ -31,7 +30,10 @@ struct PhotoDetail: View {
                 }.padding()
                     .foregroundColor(.white)
             }
-            .fullScreenCover(item: $viewPresented, onDismiss: {}, content: {view in
+            .fullScreenCover(isPresented: $filterViewPresented, onDismiss: {}, content: {
+                FilterView(photoUrl: photo.urls.full)
+            })
+            .fullScreenCover(isPresented: $cropViewPresented, onDismiss: {}, content: {
                 Text("hi")
             })
             .background(URLImage(photo.urls.full) {
