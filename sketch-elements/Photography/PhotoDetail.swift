@@ -36,8 +36,8 @@ struct PhotoDetail: View {
             .fullScreenCover(isPresented: $cropViewPresented, onDismiss: {}, content: {
                 Text("hi")
             })
-            .background(URLImage(photo.urls.full) {
-                $0.image
+            .background(URLImage(photo.urls.full) { image in
+                image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()

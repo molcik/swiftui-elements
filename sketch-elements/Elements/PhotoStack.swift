@@ -18,20 +18,18 @@ struct PhotoStack: View {
     var hidden: Bool
     let rotations = [0, 8, -11]
     var body: some View {
-        
         ZStack(alignment: .bottom, content: {
-            
             ForEach(showcasedPhotos.indices, id: \.self) { i in
-                URLImage(showcasedPhotos[i].urls.small, content: {
-                    $0.image
+                URLImage(showcasedPhotos[i].urls.small, content: { image in
+                    image
                         .resizable()
-                        .aspectRatio(1/1, contentMode: .fit)
-                        .border((colorScheme == .dark ? Color.gray : Color.white), width: hidden ? 1 : 4)
+                        .aspectRatio(1 / 1, contentMode: .fit)
+                        .border(colorScheme == .dark ? Color.gray : Color.white, width: hidden ? 1 : 4)
                         .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
                         .rotationEffect(.init(degrees: Double(rotations[i])))
                       
                 })
-                .zIndex(Double(999 - i))
+                    .zIndex(Double(999 - i))
             }
             ZStack(alignment: .top, content: {
                 Rectangle()
@@ -43,19 +41,17 @@ struct PhotoStack: View {
                     .foregroundColor(Constant.color.photographyPrimary)
                     .font(.callout)
             })
-            .zIndex(Double(1000))
-            .opacity(hidden ? 0 : 1)
-            
+                .zIndex(Double(1000))
+                .opacity(hidden ? 0 : 1)
             
         })
     }
-    
 }
+
 struct PhotoStack_Previews: PreviewProvider {
     static var previews: some View {
         PhotoStack(numberOfPhotos: 30, showcasedPhotos: Array(photographyData.prefix(3)), hidden: false)
-            .environmentObject(UserData()) 
+            .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }
 }
-

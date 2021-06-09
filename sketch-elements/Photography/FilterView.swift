@@ -6,6 +6,7 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
+import Combine
 import CoreImage
 import CoreImage.CIFilterBuiltins
 import SwiftUI
@@ -48,7 +49,9 @@ struct FilterView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
-                        Image(systemName: Constant.icon.chevronDown).padding(.horizontal)
+                        Image(systemName: Constant.icon.chevronDown).padding(.horizontal).onTapGesture {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                         Spacer()
                         Text("Filters")
                             .bold()
@@ -62,6 +65,16 @@ struct FilterView: View {
                         .padding(.horizontal)
                     }
                     .foregroundColor(Constant.color.photographyPrimary)
+                    Divider().padding(.vertical)
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            Text("hi")
+                            Text("hi")
+                            Text("hi")
+                            Text("hi")
+                        }
+                    }
                 }
             }
             .ignoresSafeArea()
@@ -69,26 +82,26 @@ struct FilterView: View {
     }
 
     func loadImage() {
-        //let myImage = URLImage(photoUrls.full) { return $0.cgImage }
+        var myCGImage: CGImage?
 
-        var myimage: CIImage? = nil
-        let inputuiImage = service.remoteImagePublisher(photoUrls.full, identifier: "")
-            .tryMap { image in  image.cgImage }
+        let cancellable = service.remoteImagePublisher(photoUrls.full, identifier: "image")
+            .tryMap {
+                $0.cgImage
+            }
             .catch { _ in
-                return nil
+                Just(nil)
             }
             .sink { image in
-                myimage = image
+                print("sink")
+                myCGImage = image
+                print(image!)
             }
-        
-        //let inputuiImage: UIImage? = URLImage(photoUrls.full)
-        // let inputuiImage: UIImage? = UIImage(data: try! Data(contentsOf: photoUrls.small))
 
-        guard let inputImage = inputuiImage else { return }
-
-        let beginImage = CIImage(image: inputImage)
-        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-        applyProcessing()
+        if let image = myCGImage {
+            let beginImage = CIImage(cgImage: image)
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            applyProcessing()
+        }
     }
 
     func applyProcessing() {
