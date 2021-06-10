@@ -46,6 +46,8 @@ struct Constant {
         static let minus = "minus"
         static let plus = "plus"
         static let play = "play.fill"
+        static let pause = "pause.fill"
+        static let playPause = "playpause.fill"
         static let dots = "ellipsis"
         static let shuffle = "shuffle"
         static let forward = "forward.fill"
