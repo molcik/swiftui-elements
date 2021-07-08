@@ -18,9 +18,10 @@ struct FilterView: View {
     @State private var currentFilter = CIFilter.sepiaTone()
     var photoUrls: Urls
     @State var image: Image? = nil
-
+    @State var isLoaded = false
     let context = CIContext()
 
+    let availableFilters: [CIFilter] = [.sepiaTone(), .colorMonochrome(), .photoEffectNoir(), .photoEffectFade(), .photoEffectTonal(), .photoEffectChrome()]
     var body: some View {
         VStack(spacing: 0) {
             // If there's an image with a filter, display it. Else display the original
@@ -31,7 +32,7 @@ struct FilterView: View {
                     .frame(height: 600)
                     .ignoresSafeArea()
             } else {
-                URLImage(photoUrls.full) { image in
+                URLImage(photoUrls.regular) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -57,7 +58,7 @@ struct FilterView: View {
                             .bold()
                         Spacer()
                         Button(action: {
-                            loadImage()
+                            processImage()
                         }) {
                             Text("Save")
                                 .bold()
@@ -69,10 +70,9 @@ struct FilterView: View {
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            Text("hi")
-                            Text("hi")
-                            Text("hi")
-                            Text("hi")
+                            ForEach(availableFilters, id: \.self) { filter in
+                                
+                            }
                         }
                     }
                 }
@@ -81,27 +81,27 @@ struct FilterView: View {
         }
     }
 
-    func loadImage() {
-        var myCGImage: CGImage?
+    
+    
+    func processImage() {
+//        var myCGImage: CGImage?
+//        let cancellable = service.remoteImagePublisher(photoUrls.full, identifier: "image")
+//            .tryMap {
+//                $0.cgImage
+//            }
+//            .catch { _ in
+//                Just(nil)
+//            }
+//            .sink { image in
+//                print("sink")
+//                myCGImage = image
+//                print(image!)
+//            }
 
-        let cancellable = service.remoteImagePublisher(photoUrls.full, identifier: "image")
-            .tryMap {
-                $0.cgImage
-            }
-            .catch { _ in
-                Just(nil)
-            }
-            .sink { image in
-                print("sink")
-                myCGImage = image
-                print(image!)
-            }
-
-        if let image = myCGImage {
-            let beginImage = CIImage(cgImage: image)
+            let beginImage = CIImage(data: try! Data(contentsOf: photoUrls.full))
             currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
             applyProcessing()
-        }
+        
     }
 
     func applyProcessing() {
