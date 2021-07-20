@@ -103,6 +103,8 @@
 		DCE62CE4266A715C0002CAD4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CE2266A715C0002CAD4 /* Photo.swift */; };
 		DCE62CE6266C1F820002CAD4 /* AlbumRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CE5266C1F820002CAD4 /* AlbumRow.swift */; };
 		DCE62CE9266C38740002CAD4 /* GroupBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CE8266C38740002CAD4 /* GroupBy.swift */; };
+		DCF4A841269EF03100C00A0B /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4A840269EF03100C00A0B /* EditView.swift */; };
+		DCF4A84426A05EB800C00A0B /* Mantis in Frameworks */ = {isa = PBXBuildFile; productRef = DCF4A84326A05EB800C00A0B /* Mantis */; };
 		DCFE391F266D6A1A0064FD56 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE391E266D6A1A0064FD56 /* Photos.swift */; };
 		DCFE3921266E72730064FD56 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE3920266E72730064FD56 /* CameraView.swift */; };
 		DCFE3926266F63070064FD56 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE3925266F63070064FD56 /* PhotoPicker.swift */; };
@@ -240,6 +242,7 @@
 		DCE62CE2266A715C0002CAD4 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		DCE62CE5266C1F820002CAD4 /* AlbumRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRow.swift; sourceTree = "<group>"; };
 		DCE62CE8266C38740002CAD4 /* GroupBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBy.swift; sourceTree = "<group>"; };
+		DCF4A840269EF03100C00A0B /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		DCFE391E266D6A1A0064FD56 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		DCFE3920266E72730064FD56 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		DCFE3925266F63070064FD56 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
@@ -286,6 +289,7 @@
 			files = (
 				DC3245692671650C00FC86ED /* URLImageStore in Frameworks */,
 				DC32456B2671650C00FC86ED /* URLImage in Frameworks */,
+				DCF4A84426A05EB800C00A0B /* Mantis in Frameworks */,
 				34B255AA24081B3500599A4C /* SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +544,7 @@
 				DCE62CDA266A70FC0002CAD4 /* Albums.swift */,
 				DCAAB523266CEC1F0037A38E /* PhotoDetail.swift */,
 				DC3245622670D27A00FC86ED /* FilterView.swift */,
+				DCF4A840269EF03100C00A0B /* EditView.swift */,
 			);
 			name = Photography;
 			path = "sketch-elements/Photography";
@@ -605,6 +610,7 @@
 			packageProductDependencies = (
 				DC3245682671650C00FC86ED /* URLImageStore */,
 				DC32456A2671650C00FC86ED /* URLImage */,
+				DCF4A84326A05EB800C00A0B /* Mantis */,
 			);
 			productName = "sketch-elements";
 			productReference = 3403A2FE2406B70F00D7B040 /* sketch-elements.app */;
@@ -636,6 +642,7 @@
 			mainGroup = 3403A2F52406B70F00D7B040;
 			packageReferences = (
 				DC3245672671650C00FC86ED /* XCRemoteSwiftPackageReference "url-image" */,
+				DCF4A84226A05EB800C00A0B /* XCRemoteSwiftPackageReference "Mantis" */,
 			);
 			productRefGroup = 3403A2FF2406B70F00D7B040 /* Products */;
 			projectDirPath = "";
@@ -757,6 +764,7 @@
 				34ADED272584B2F400A504F5 /* Social.swift in Sources */,
 				3403A32824080DBC00D7B040 /* Recipe.swift in Sources */,
 				341D20DA241CDDCB00C706A2 /* ViewExtensions.swift in Sources */,
+				DCF4A841269EF03100C00A0B /* EditView.swift in Sources */,
 				E6AF7A6325CC597C002F752E /* Album.swift in Sources */,
 				3403A3042406B70F00D7B040 /* SceneDelegate.swift in Sources */,
 				34F1215525875BAF00BBB7DB /* Guide.swift in Sources */,
@@ -999,6 +1007,14 @@
 				minimumVersion = 3.1.0;
 			};
 		};
+		DCF4A84226A05EB800C00A0B /* XCRemoteSwiftPackageReference "Mantis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/guoyingtao/Mantis";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1011,6 +1027,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC3245672671650C00FC86ED /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
+		};
+		DCF4A84326A05EB800C00A0B /* Mantis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCF4A84226A05EB800C00A0B /* XCRemoteSwiftPackageReference "Mantis" */;
+			productName = Mantis;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

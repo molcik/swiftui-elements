@@ -14,67 +14,90 @@ import URLImage
 
 struct FilterView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Environment(\.urlImageService) var service: URLImageService
     @State private var currentFilter: CIFilter? = nil
     var photoUrls: Urls
     @State var image: Image? = nil
     @State var isLoaded = false
     let context = CIContext()
-
     let availableFilters: [CIFilter] = [.sepiaTone(), .colorMonochrome(), .photoEffectNoir(), .photoEffectFade(), .photoEffectTonal(), .photoEffectChrome()]
+
     var body: some View {
         VStack(spacing: 0) {
-            if currentFilter != nil {
-                URLImage(photoUrls.regular) { image in
-                    image
-                        .applyFilter(currentFilter!, url: photoUrls.regular)?
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 600)
-                        .ignoresSafeArea()
+            
+            URLImage(photoUrls.small) {
+                // This view is displayed before download starts
+                EmptyView()
+            } inProgress: { _ in
+                Rectangle()
+                    .foregroundColor(.white)
+                    .frame(width: 100, height: 100)
+                    .frame(height: 600)
+                    .ignoresSafeArea()
+            } failure: { error, retry in
+                // Display error and retry button
+                VStack {
+                    Text(error.localizedDescription)
+                    Button("Retry", action: retry)
                 }
-            } else {
-                URLImage(photoUrls.regular) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 600)
-                        .ignoresSafeArea()
-                }
+            } content: { image in
+                image
+                    .applyFilter(currentFilter, url: photoUrls.small, image: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 600)
+                    .ignoresSafeArea()
             }
-
             ZStack(alignment: .top) {
                 Rectangle()
                     .foregroundColor(.white)
-                    .frame(height: 300, alignment: .bottom)
+                    .frame(height: 300, alignment: .leading)
                     .cornerRadius(25, antialiased: true)
                     .padding(.top, -25)
-
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
-                        Image(systemName: Constant.icon.chevronDown).padding(.horizontal).onTapGesture {
-                            presentationMode.wrappedValue.dismiss()
-                        }
+                        Image(systemName: Constant.icon.chevronDown)
+                            .padding(.horizontal).onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }
                         Spacer()
                         Text("Filters")
                             .bold()
                         Spacer()
-                        Button(action: {}) {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
                             Text("Save")
                                 .bold()
                         }
                         .padding(.horizontal)
                     }
+                    .zIndex(2)
                     .foregroundColor(Constant.color.photographyPrimary)
                     Divider().padding(.vertical)
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(alignment: .center, spacing: 5) {
                             ForEach(availableFilters.indices, id: \.self) { i in
-                                
-                                URLImage(photoUrls.small) { image in
+
+                                URLImage(photoUrls.small) {
+                                    // This view is displayed before download starts
+                                    EmptyView()
+                                } inProgress: { _ in
+                                    
+                                    Rectangle()
+                                        .frame(width: 100, height: 100)
+                                        .foregroundColor(.gray.opacity(0.3))
+                                        .border(Color.white, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                                        .padding()
+                                } failure: { error, retry in
+                                    // Display error and retry button
+                                    VStack {
+                                        Text(error.localizedDescription)
+                                        Button("Retry", action: retry)
+                                    }
+                                } content: { image in
                                     image
-                                        .applyFilter(availableFilters[i], url: photoUrls.small)?
+                                        .applyFilter(availableFilters[i], url: photoUrls.small, image: image)
                                         .resizable()
                                         .frame(width: 100, height: 100)
                                         .aspectRatio(contentMode: .fill)
@@ -91,6 +114,11 @@ struct FilterView: View {
             }
             .ignoresSafeArea()
         }
+      
+    }
+
+    func getUIImageDataFromURL(_ url: URL) -> UIImage {
+        return UIImage(data: try! Data(contentsOf: url))!
     }
 }
 
@@ -101,29 +129,28 @@ struct FilterView_Previews: PreviewProvider {
 }
 
 extension Image {
-    func applyFilter(_ filter: CIFilter, url: URL) -> Image? {
-        if let image = processImage(url, filter: filter) {
+    func applyFilter(_ filter: CIFilter?, url: URL, image: Image) -> Image {
+        guard filter !== nil else {
             return image
-        } else {
-            return nil
         }
+        return processImage(url, filter: filter!)
     }
 
-    private func processImage(_ image: URL, filter: CIFilter) -> Image? {
+    private func processImage(_ image: URL, filter: CIFilter) -> Image {
         let beginImage = CIImage(data: try! Data(contentsOf: image))
+        let uiImage = UIImage(ciImage: beginImage!)
+
         filter.setValue(beginImage, forKey: kCIInputImageKey)
 
-        if filter.conforms(to: CIFilterProtocol.self) {
-            filter.setValue(10, forKey: kCIInputIntensityKey)
+        guard let outputImage = filter.outputImage else {
+            return Image(uiImage: uiImage)
         }
-
-        guard let outputImage = filter.outputImage else { return nil }
 
         if let cgimg = CIContext().createCGImage(outputImage, from: outputImage.extent) {
             let uiImage = UIImage(cgImage: cgimg)
             return Image(uiImage: uiImage)
         } else {
-            return nil
+            return Image(uiImage: uiImage)
         }
     }
 }

@@ -34,7 +34,7 @@ struct PhotoDetail: View {
                 FilterView(photoUrls: photo.urls)
             })
             .fullScreenCover(isPresented: $cropViewPresented, onDismiss: {}, content: {
-                Text("hi")
+                EditView(photoUrls: photo.urls)
             })
             .background(URLImage(photo.urls.full) { image in
                 image

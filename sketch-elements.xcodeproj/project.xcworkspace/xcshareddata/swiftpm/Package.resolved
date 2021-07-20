@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Mantis",
+        "repositoryURL": "https://github.com/guoyingtao/Mantis",
+        "state": {
+          "branch": null,
+          "revision": "0ee3df9d0aa9209a01d4a2ea49fce70d6398d49d",
+          "version": "1.7.1"
+        }
+      },
+      {
         "package": "URLImage",
         "repositoryURL": "https://github.com/dmytro-anokhin/url-image",
         "state": {

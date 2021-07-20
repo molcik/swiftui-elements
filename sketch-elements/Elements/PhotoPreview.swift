@@ -12,9 +12,23 @@ import URLImage
 struct PhotoPreview: View {
     var url: URL
     @Environment(\.colorScheme) var colorScheme
-   
+
     var body: some View {
-        URLImage(url) { image in
+        URLImage(url) {
+            EmptyView()
+        } inProgress: { _ in
+            Rectangle()
+                .border(colorScheme == .dark ? Color.init(red: 0.15, green: 0.15, blue: 0.15) : Color.white, width: 4)
+                .aspectRatio(1 / 1, contentMode: .fit)
+                .foregroundColor(.gray.opacity(0.3))
+                .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
+        } failure: { error, retry in
+            // Display error and retry button
+            VStack {
+                Text(error.localizedDescription)
+                Button("Retry", action: retry)
+            }
+        } content: { image in
             image
                 .resizable()
                 .aspectRatio(1 / 1, contentMode: .fit)
