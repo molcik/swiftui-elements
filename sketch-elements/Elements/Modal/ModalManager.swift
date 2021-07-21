@@ -16,8 +16,8 @@ class ModalManager: ObservableObject {
         modal = Modal(position: position, content: AnyView(content()))
     }
     
-    func openModal() {
-        modal.position = .partiallyRevealed
+    func openModal(position: ModalState) {
+        modal.position = position
     }
     
     func closeModal() {

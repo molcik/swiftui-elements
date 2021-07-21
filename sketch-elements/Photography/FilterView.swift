@@ -23,16 +23,19 @@ struct FilterView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            
             URLImage(photoUrls.small) {
                 // This view is displayed before download starts
                 EmptyView()
             } inProgress: { _ in
-                Rectangle()
-                    .foregroundColor(.white)
-                    .frame(width: 100, height: 100)
-                    .frame(height: 600)
-                    .ignoresSafeArea()
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .frame(width: 100, height: 100)
+                        .frame(height: 600)
+                        .ignoresSafeArea()
+
+                    ActivityIndicator()
+                }
             } failure: { error, retry in
                 // Display error and retry button
                 VStack {
@@ -83,12 +86,15 @@ struct FilterView: View {
                                     // This view is displayed before download starts
                                     EmptyView()
                                 } inProgress: { _ in
+                                    ZStack {
+                                        Rectangle()
+                                            .frame(width: 100, height: 100)
+                                            .foregroundColor(.gray.opacity(0.3))
+                                            .border(Color.white, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                                            .padding()
+                                        ActivityIndicator()
+                                    }
                                     
-                                    Rectangle()
-                                        .frame(width: 100, height: 100)
-                                        .foregroundColor(.gray.opacity(0.3))
-                                        .border(Color.white, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                                        .padding()
                                 } failure: { error, retry in
                                     // Display error and retry button
                                     VStack {
@@ -114,7 +120,6 @@ struct FilterView: View {
             }
             .ignoresSafeArea()
         }
-      
     }
 
     func getUIImageDataFromURL(_ url: URL) -> UIImage {

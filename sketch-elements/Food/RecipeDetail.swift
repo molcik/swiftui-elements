@@ -40,7 +40,7 @@ struct RecipeDetail: View {
                 ]
             )
             ScrollView(.vertical, showsIndicators: false) {
-                ButtonPrimary(action: self.modalManager.openModal) {
+                ButtonPrimary(action: {self.modalManager.openModal(position: .partiallyRevealed)}) {
                         Text("See Ingredients")
                             .font(.headline)
                     }.padding([.top, .leading, .trailing])

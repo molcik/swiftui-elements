@@ -17,11 +17,14 @@ struct PhotoPreview: View {
         URLImage(url) {
             EmptyView()
         } inProgress: { _ in
-            Rectangle()
-                .border(colorScheme == .dark ? Color.init(red: 0.15, green: 0.15, blue: 0.15) : Color.white, width: 4)
-                .aspectRatio(1 / 1, contentMode: .fit)
-                .foregroundColor(.gray.opacity(0.3))
-                .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
+            ZStack {
+                Rectangle()
+                    .border(colorScheme == .dark ? Color(red: 0.15, green: 0.15, blue: 0.15) : Color.white, width: 4)
+                    .aspectRatio(1 / 1, contentMode: .fit)
+                    .foregroundColor(.gray.opacity(0.3))
+                    .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
+                ActivityIndicator()
+            }
         } failure: { error, retry in
             // Display error and retry button
             VStack {
@@ -32,7 +35,7 @@ struct PhotoPreview: View {
             image
                 .resizable()
                 .aspectRatio(1 / 1, contentMode: .fit)
-                .border(colorScheme == .dark ? Color.init(red: 0.15, green: 0.15, blue: 0.15) : Color.white, width: 4)
+                .border(colorScheme == .dark ? Color(red: 0.15, green: 0.15, blue: 0.15) : Color.white, width: 4)
                 .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
         }
     }

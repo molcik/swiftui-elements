@@ -24,7 +24,7 @@ struct MiniPlayer: View {
                 
             //Text("Play/Pause")
             
-            Button(action: self.modalManager.openModal) {
+            Button(action: {self.modalManager.openModal(position: .partiallyRevealed)}) {
             
             
             Spacer()

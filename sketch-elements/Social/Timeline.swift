@@ -9,47 +9,55 @@
 import SwiftUI
 
 struct Timeline: View {
-    
     var stories: [Story]
     var users: [User]
     var posts: [Post]
+    @State var isPresented = false
+    @EnvironmentObject var modalManager: ModalManager
     var body: some View {
-        
         NavigationView {
-            VStack {
-                ScrollView(.horizontal, showsIndicators:false) {
-                    HStack(spacing: 16) {
-                        Profile(image: nil, add: true)
-                        ForEach(stories) { story in
-                            Profile(image: users.first(where: { $0.id == story.user })!.picture.uri, disabled: story.seen, notification: !story.seen)
+            ZStack {
+                VStack {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 16) {
+                            Profile(image: nil, add: true)
+                            ForEach(stories) { story in
+                                Profile(image: users.first(where: { $0.id == story.user })!.picture.uri, disabled: story.seen, notification: !story.seen)
+                            }
+                        }
+                        .padding([.leading, .trailing])
+                    }
+                    .frame(height: 80)
+                    .background(Constant.color.bgDefault)
+                    ScrollView(.vertical, showsIndicators: false) {
+                        ForEach(posts) { post in
+                            // NavigationLink(
+                            //    destination: RecipesListView(category: category)
+                            // ) {
+                            CardSocial(
+                                user: users.first(where: { $0.id == post.user })!,
+                                contentText: post.caption,
+                                timestamp: post.timestamp,
+                                contentImage: post.picture,
+                                commentPictures: post.comments.map { (comment: String) -> Picture in
+                                    users.first { (user: User) -> Bool in
+                                        user.id == comment
+                                    }!.picture
+                                }
+                            )
                         }
                     }
-                    .padding([.leading, .trailing])
+                }.background(Constant.color.gray)
+                    .navigationBarColor(Constant.color.socialPrimary.uiColor())
+                    .navigationBarTitle(Text("Timeline"), displayMode: .large)
+                    .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white).onTapGesture(perform: { self.modalManager.openModal(position: .halfRevealed)
+                    }))
+            }
+            ModalAnchorView().onAppear {
+                self.modalManager.newModal(position: .closed) {
+                    NewPost()
                 }
-                .frame(height: 80)
-                .background(Constant.color.bgDefault)
-                ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(posts) { post in
-                        //NavigationLink(
-                        //    destination: RecipesListView(category: category)
-                        //) {
-                        CardSocial(
-                            user: users.first(where: { $0.id == post.user })!,
-                            contentText: post.caption,
-                            timestamp: post.timestamp,
-                            contentImage: post.picture,
-                            commentPictures: post.comments.map({ (comment: String) -> Picture in
-                                return users.first { (user: User) -> Bool in
-                                    return user.id == comment
-                                }!.picture
-                            })
-                        )
-                    }
-                }
-            }.background(Constant.color.gray)
-            .navigationBarColor(Constant.color.socialPrimary.uiColor())
-            .navigationBarTitle(Text("Timeline"), displayMode: .large)
-            .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white))
+            }
         }
     }
 }
