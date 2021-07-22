@@ -10,27 +10,27 @@ import SwiftUI
 
 struct Music: View {
     
-    var albums:[Playlist] = playlistData
-    var cities:[City] = citiesData
+    var albums: [Album] = musicData
+    var cities: [City] = citiesData
     @EnvironmentObject var modalManager: ModalManager
     
     var body: some View {
 
-        MiniPlayer(albums: playlistData)
+//        MiniPlayer()
         TabView() {
             
-            Library(playlists: albums).tabItem {
-                Text("Albums")
-                Image(systemName: "music.note")
+            Library(albums: albums).tabItem {
+                Text("Library")
+                Image(systemName: Constant.icon.note)
             }
-            Discovery(playlists: albums).tabItem {
-                Text("Discovery")
-                Image(systemName: Constant.icon.doc)
-            }
-            MusicAccount(user: usersData[9], playlists: playlistData).tabItem {  
-                Text("Account")
-                Image(systemName: "person.fill")
-            }
+//            Discovery(playlists: albums).tabItem {
+//                Text("Discovery")
+//                Image(systemName: Constant.icon.doc)
+//            }
+//            MusicAccount(user: usersData[9], playlists: playlistData).tabItem {
+//                Text("Account")
+//                Image(systemName: Constant.icon.person)
+//            }
         }
         .tabBarOpaque()
         .accentColor(Constant.color.musicPrimary)

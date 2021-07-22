@@ -132,30 +132,3 @@ struct FilterView_Previews: PreviewProvider {
         FilterView(photoUrls: photographyData[7].urls)
     }
 }
-
-extension Image {
-    func applyFilter(_ filter: CIFilter?, url: URL, image: Image) -> Image {
-        guard filter !== nil else {
-            return image
-        }
-        return processImage(url, filter: filter!)
-    }
-
-    private func processImage(_ image: URL, filter: CIFilter) -> Image {
-        let beginImage = CIImage(data: try! Data(contentsOf: image))
-        let uiImage = UIImage(ciImage: beginImage!)
-
-        filter.setValue(beginImage, forKey: kCIInputImageKey)
-
-        guard let outputImage = filter.outputImage else {
-            return Image(uiImage: uiImage)
-        }
-
-        if let cgimg = CIContext().createCGImage(outputImage, from: outputImage.extent) {
-            let uiImage = UIImage(cgImage: cgimg)
-            return Image(uiImage: uiImage)
-        } else {
-            return Image(uiImage: uiImage)
-        }
-    }
-}

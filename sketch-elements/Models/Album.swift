@@ -8,12 +8,15 @@
 
 import Foundation
 
-struct Album: Hashable, Codable, Identifiable {
-    //var id: ObjectIdentifier
-    //Codable
-    
+
+struct Album: Hashable, Codable {
     var id: String
     var name: String
+    var artist: String
+    var picture: Picture
+}
+
+struct Picture: Hashable, Codable {
     var uri: URL
-    
+    var preview: String
 }

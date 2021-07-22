@@ -10,10 +10,9 @@ import SwiftUI
 import URLImage
 
 struct CardAlbum: View {
-    var name: String
-    var artist: String
-    var height: CGFloat
-    var pictureUrl: URL
+    var album: Album
+
+    let height: CGFloat = 150
 
     var body: some View {
         Card {
@@ -24,7 +23,7 @@ struct CardAlbum: View {
                     .frame(height: height)
                     .foregroundColor(Color.white)
                     .background(
-                        URLImage(pictureUrl, content: { image in
+                        URLImage(album.picture.uri, content: { image in
                             image
                                 .renderingMode(.original)
                                 .resizable()
@@ -33,18 +32,18 @@ struct CardAlbum: View {
                 VStack(alignment: .leading) {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(name)
+                            Text(album.name)
                                 .fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/)
                                 .font(.headline)
                                 .padding(.horizontal)
-                                .frame(height: height/5)
-                            Text(artist)
+                                .frame(height: height / 5)
+                            Text(album.artist)
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                                 .opacity(0.6)
                                 .padding(.horizontal)
                                 .padding(.bottom)
-                                .frame(height: height/5)
+                                .frame(height: height / 5)
                             // Spacer()
                         }
                         Spacer()
@@ -57,6 +56,6 @@ struct CardAlbum: View {
 
 struct CardAlbum_Previews: PreviewProvider {
     static var previews: some View {
-        CardAlbum(name: playlistData[0].name, artist: playlistData[0].artist, height: 200, pictureUrl: playlistData[0].picture.uri).environmentObject(UserData())
+        CardAlbum(album: musicData[0])
     }
 }

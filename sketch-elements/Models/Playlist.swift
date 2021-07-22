@@ -10,8 +10,5 @@ import Foundation
 
 struct Playlist: Hashable, Codable, Identifiable {
     var id: String
-    var name: String
-    var artist: String
-    var picture: Picture
-    
+    var Albums: [Album]
 }
