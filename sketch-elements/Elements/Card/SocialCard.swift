@@ -9,7 +9,7 @@
 import SwiftUI
 import URLImage
 
-struct CardSocial: View {
+struct SocialCard: View {
     
     var user: User
     var contentText: String
@@ -82,7 +82,7 @@ struct CardSocial: View {
 
 struct CardSocial_Previews: PreviewProvider {
     static var previews: some View {
-        CardSocial(
+        SocialCard(
             user: usersData[0],
             contentText: usersData[0].caption,
             timestamp: postsData[0].timestamp,
@@ -100,7 +100,7 @@ struct CardSocial_Previews: PreviewProvider {
 
 struct CardMessages_Previews: PreviewProvider {
     static var previews: some View {
-        CardSocial(
+        SocialCard(
             user: usersData[0],
             contentText: conversationsData[2].messages[0].message,
             timestamp: conversationsData[0].messages[0].timestamp

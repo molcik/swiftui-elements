@@ -9,7 +9,7 @@
 import SwiftUI
 import URLImage
 
-struct CardAlbum: View {
+struct AlbumCard: View {
     var album: Album
 
     let height: CGFloat = 150
@@ -33,7 +33,7 @@ struct CardAlbum: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text(album.name)
-                                .fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
                                 .font(.headline)
                                 .padding(.horizontal)
                                 .frame(height: height / 5)
@@ -44,7 +44,6 @@ struct CardAlbum: View {
                                 .padding(.horizontal)
                                 .padding(.bottom)
                                 .frame(height: height / 5)
-                            // Spacer()
                         }
                         Spacer()
                     }
@@ -56,6 +55,6 @@ struct CardAlbum: View {
 
 struct CardAlbum_Previews: PreviewProvider {
     static var previews: some View {
-        CardAlbum(album: musicData[0])
+        AlbumCard(album: musicData[0])
     }
 }

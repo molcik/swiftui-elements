@@ -21,7 +21,7 @@ struct Messages: View {
                         //NavigationLink(
                         //    destination: RecipesListView(category: category)
                         //) {
-                        CardSocial(
+                        SocialCard(
                             user: users.first(where: { $0.id == conversation.user })!,
                             contentText: conversation.messages[0].message,
                             timestamp: conversation.messages[0].timestamp

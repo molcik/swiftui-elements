@@ -75,7 +75,7 @@
 		34ADED2F2584B5B100A504F5 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADED2E2584B5B100A504F5 /* Timeline.swift */; };
 		34ADED322584BB1300A504F5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADED312584BB1300A504F5 /* Profile.swift */; };
 		34B255AA24081B3500599A4C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B255A924081B3500599A4C /* SwiftUI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		34B40A1425851B970096EC29 /* CardSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B40A1325851B970096EC29 /* CardSocial.swift */; };
+		34B40A1425851B970096EC29 /* SocialCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B40A1325851B970096EC29 /* SocialCard.swift */; };
 		34B40A17258528C80096EC29 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B40A16258528C80096EC29 /* Post.swift */; };
 		34B4B12524AB668100B092A8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4B12424AB668100B092A8 /* Card.swift */; };
 		34B4B12724AB6B0500B092A8 /* CardWithAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4B12624AB6B0500B092A8 /* CardWithAttachment.swift */; };
@@ -96,6 +96,7 @@
 		DCA90EAA26A87204006880A5 /* Albums in Resources */ = {isa = PBXBuildFile; fileRef = DCA90EA926A87204006880A5 /* Albums */; };
 		DCA90EAC26A8800B006880A5 /* albums.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA90EAB26A8800B006880A5 /* albums.json */; };
 		DCA90EB026AAAB51006880A5 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA90EAF26AAAB51006880A5 /* Picture.swift */; };
+		DCA90EB226AAB6D4006880A5 /* getAlbumSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA90EB126AAB6D4006880A5 /* getAlbumSongs.swift */; };
 		DCAAB520266CB5870037A38E /* PhotoStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAB51F266CB5870037A38E /* PhotoStack.swift */; };
 		DCAAB524266CEC1F0037A38E /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAB523266CEC1F0037A38E /* PhotoDetail.swift */; };
 		DCE62CDB266A70FC0002CAD4 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD7266A70FC0002CAD4 /* Places.swift */; };
@@ -122,14 +123,14 @@
 		E6AF7A5025CC58F9002F752E /* MusicAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A4B25CC58F9002F752E /* MusicAccount.swift */; };
 		E6AF7A5525CC5914002F752E /* me.json in Resources */ = {isa = PBXBuildFile; fileRef = E6AF7A5225CC5914002F752E /* me.json */; };
 		E6AF7A5B25CC596A002F752E /* PlaylistCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5925CC596A002F752E /* PlaylistCard.swift */; };
-		E6AF7A5C25CC596A002F752E /* CardAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5A25CC596A002F752E /* CardAlbum.swift */; };
+		E6AF7A5C25CC596A002F752E /* AlbumCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5A25CC596A002F752E /* AlbumCard.swift */; };
 		E6AF7A6125CC597C002F752E /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5E25CC597C002F752E /* Playlist.swift */; };
 		E6AF7A6225CC597C002F752E /* MyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A5F25CC597C002F752E /* MyAccount.swift */; };
 		E6AF7A6325CC597C002F752E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A6025CC597C002F752E /* Album.swift */; };
 		E6AF7A6C25CD31DB002F752E /* MusicHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A6B25CD31DB002F752E /* MusicHeader.swift */; };
 		E6AF7A8D25CD89B3002F752E /* SongTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */; };
 		E6AF7A9025D1A977002F752E /* PlaylistDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF7A8F25D1A977002F752E /* PlaylistDetail.swift */; };
-		E6B32C5E2668F483001588A0 /* CardPictureModalPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B32C5D2668F483001588A0 /* CardPictureModalPlayer.swift */; };
+		E6B32C5E2668F483001588A0 /* ModalPlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B32C5D2668F483001588A0 /* ModalPlayerCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -204,7 +205,7 @@
 		34ADED2E2584B5B100A504F5 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		34ADED312584BB1300A504F5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		34B255A924081B3500599A4C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		34B40A1325851B970096EC29 /* CardSocial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSocial.swift; sourceTree = "<group>"; };
+		34B40A1325851B970096EC29 /* SocialCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCard.swift; sourceTree = "<group>"; };
 		34B40A16258528C80096EC29 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		34B4B12424AB668100B092A8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		34B4B12624AB6B0500B092A8 /* CardWithAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithAttachment.swift; sourceTree = "<group>"; };
@@ -223,6 +224,7 @@
 		DCA90EA926A87204006880A5 /* Albums */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Albums; sourceTree = "<group>"; };
 		DCA90EAB26A8800B006880A5 /* albums.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = albums.json; sourceTree = "<group>"; };
 		DCA90EAF26AAAB51006880A5 /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		DCA90EB126AAB6D4006880A5 /* getAlbumSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getAlbumSongs.swift; sourceTree = "<group>"; };
 		DCAAB51F266CB5870037A38E /* PhotoStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStack.swift; sourceTree = "<group>"; };
 		DCAAB523266CEC1F0037A38E /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
 		DCE62CD7266A70FC0002CAD4 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
@@ -248,14 +250,14 @@
 		E6AF7A4B25CC58F9002F752E /* MusicAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAccount.swift; sourceTree = "<group>"; };
 		E6AF7A5225CC5914002F752E /* me.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = me.json; sourceTree = "<group>"; };
 		E6AF7A5925CC596A002F752E /* PlaylistCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistCard.swift; sourceTree = "<group>"; };
-		E6AF7A5A25CC596A002F752E /* CardAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAlbum.swift; sourceTree = "<group>"; };
+		E6AF7A5A25CC596A002F752E /* AlbumCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCard.swift; sourceTree = "<group>"; };
 		E6AF7A5E25CC597C002F752E /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		E6AF7A5F25CC597C002F752E /* MyAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccount.swift; sourceTree = "<group>"; };
 		E6AF7A6025CC597C002F752E /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		E6AF7A6B25CD31DB002F752E /* MusicHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHeader.swift; sourceTree = "<group>"; };
 		E6AF7A8C25CD89B3002F752E /* SongTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableRow.swift; sourceTree = "<group>"; };
 		E6AF7A8F25D1A977002F752E /* PlaylistDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetail.swift; sourceTree = "<group>"; };
-		E6B32C5D2668F483001588A0 /* CardPictureModalPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPictureModalPlayer.swift; sourceTree = "<group>"; };
+		E6B32C5D2668F483001588A0 /* ModalPlayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPlayerCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,10 +395,10 @@
 				3445A79E240B0C3F0020561B /* CardWithBackground.swift */,
 				34B4B12424AB668100B092A8 /* Card.swift */,
 				34B4B12624AB6B0500B092A8 /* CardWithAttachment.swift */,
-				34B40A1325851B970096EC29 /* CardSocial.swift */,
-				E6AF7A5A25CC596A002F752E /* CardAlbum.swift */,
+				34B40A1325851B970096EC29 /* SocialCard.swift */,
+				E6AF7A5A25CC596A002F752E /* AlbumCard.swift */,
 				E6AF7A5925CC596A002F752E /* PlaylistCard.swift */,
-				E6B32C5D2668F483001588A0 /* CardPictureModalPlayer.swift */,
+				E6B32C5D2668F483001588A0 /* ModalPlayerCard.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -529,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				DCE62CE8266C38740002CAD4 /* GroupBy.swift */,
+				DCA90EB126AAB6D4006880A5 /* getAlbumSongs.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				34AD61DD240BD093005943F9 /* RecipeDetail.swift in Sources */,
 				34F1215E2587962C00BBB7DB /* Cities.swift in Sources */,
 				DCE62CDE266A70FC0002CAD4 /* Albums.swift in Sources */,
+				DCA90EB226AAB6D4006880A5 /* getAlbumSongs.swift in Sources */,
 				34B4B12724AB6B0500B092A8 /* CardWithAttachment.swift in Sources */,
 				344723CB24AC7B80003B9F50 /* SegmentedPicker.swift in Sources */,
 				34785354258666ED0023A217 /* Guides.swift in Sources */,
@@ -670,7 +674,7 @@
 				3445A79D240B043E0020561B /* RecipesList.swift in Sources */,
 				344723CD24AC9613003B9F50 /* CollapsablePicker.swift in Sources */,
 				E6AF7A6225CC597C002F752E /* MyAccount.swift in Sources */,
-				E6B32C5E2668F483001588A0 /* CardPictureModalPlayer.swift in Sources */,
+				E6B32C5E2668F483001588A0 /* ModalPlayerCard.swift in Sources */,
 				E6AF7A4E25CC58F9002F752E /* Music.swift in Sources */,
 				E64A8FFC25EE93D600C630E2 /* PlayerModal.swift in Sources */,
 				3403A32624080D4400D7B040 /* Data.swift in Sources */,
@@ -693,11 +697,11 @@
 				349524D2258A3F8C0077F145 /* HotelDetail.swift in Sources */,
 				344723C824ABC64A003B9F50 /* ButtonApplePay.swift in Sources */,
 				DCE62CE4266A715C0002CAD4 /* Photo.swift in Sources */,
-				E6AF7A5C25CC596A002F752E /* CardAlbum.swift in Sources */,
+				E6AF7A5C25CC596A002F752E /* AlbumCard.swift in Sources */,
 				E6AF7A5B25CC596A002F752E /* PlaylistCard.swift in Sources */,
 				344723C624ABC37D003B9F50 /* ReservationModal.swift in Sources */,
 				3478533C258613200023A217 /* Account.swift in Sources */,
-				34B40A1425851B970096EC29 /* CardSocial.swift in Sources */,
+				34B40A1425851B970096EC29 /* SocialCard.swift in Sources */,
 				DCFE3926266F63070064FD56 /* PhotoPicker.swift in Sources */,
 				E6AF7A9025D1A977002F752E /* PlaylistDetail.swift in Sources */,
 				3478534025861EFF0023A217 /* SegmentedPickerCollapsed.swift in Sources */,

@@ -34,7 +34,7 @@ struct Timeline: View {
                             // NavigationLink(
                             //    destination: RecipesListView(category: category)
                             // ) {
-                            CardSocial(
+                            SocialCard(
                                 user: users.first(where: { $0.id == post.user })!,
                                 contentText: post.caption,
                                 timestamp: post.timestamp,
@@ -50,7 +50,7 @@ struct Timeline: View {
                 }.background(Constant.color.gray)
                     .navigationBarColor(Constant.color.socialPrimary.uiColor())
                     .navigationBarTitle(Text("Timeline"), displayMode: .large)
-                    .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white).onTapGesture(perform: { self.modalManager.openModal(position: .halfRevealed)
+                    .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white).onTapGesture(perform: { self.modalManager.openModal(position: .partiallyRevealed)
                     }))
             }
             ModalAnchorView().onAppear {

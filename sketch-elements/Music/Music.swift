@@ -16,7 +16,6 @@ struct Music: View {
     
     var body: some View {
 
-//        MiniPlayer()
         TabView() {
             
             Library(albums: albums).tabItem {

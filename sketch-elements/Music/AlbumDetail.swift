@@ -15,7 +15,7 @@ struct AlbumDetail: View {
     var songs: [Song]
     init(_ album: Album) {
         self.album = album
-        songs = load("Albums/" + album.id + ".json")
+        songs = getAlbumSongs(album)
     }
 
     var body: some View {

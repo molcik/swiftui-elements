@@ -32,7 +32,7 @@ struct Library: View {
                 .navigationBarTitle(Text("Library"), displayMode: .large)
                 .navigationBarItems(trailing: Image(systemName: Constant.icon.magnifyingGlass).foregroundColor(.white))
             }
-//            MiniPlayer(albums: musicData)
+            MiniPlayer(albums: albums)
         }
     }
 }
@@ -44,7 +44,7 @@ struct AlbumTile: View {
         NavigationLink(
             destination: AlbumDetail(album)
         ) {
-            CardAlbum(album: album)
+            AlbumCard(album: album)
         }
     }
 }
