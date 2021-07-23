@@ -23,14 +23,14 @@ struct Music: View {
                 Text("Library")
                 Image(systemName: Constant.icon.note)
             }
-//            Discovery(playlists: albums).tabItem {
-//                Text("Discovery")
-//                Image(systemName: Constant.icon.doc)
-//            }
-//            MusicAccount(user: usersData[9], playlists: playlistData).tabItem {
-//                Text("Account")
-//                Image(systemName: Constant.icon.person)
-//            }
+            Discovery(albums: albums).tabItem {
+                Text("Discovery")
+                Image(systemName: Constant.icon.doc)
+            }
+            MusicAccount(user: usersData[9]).tabItem {
+                Text("Account")
+                Image(systemName: Constant.icon.person)
+            }
         }
         .tabBarOpaque()
         .accentColor(Constant.color.musicPrimary)

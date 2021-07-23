@@ -16,7 +16,7 @@ struct Album: Hashable, Codable {
     var picture: Picture
 }
 
-struct Picture: Hashable, Codable {
+struct Song: Hashable, Codable {
+    var name: String
     var uri: URL
-    var preview: String
 }

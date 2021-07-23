@@ -9,50 +9,40 @@
 import SwiftUI
 
 struct SongTableRow: View {
-    
-    //var left: String
     var left: AnyView
     var divider: Bool
     var content: String
     var description: String?
     var right: String
 
-    
     var body: some View {
         TableRow(
-            //left: AnyView(Text(left).foregroundColor(Color.gray)),
             left: left,
             divider: divider,
             top: AnyView(Text(content)),
             bottom: description != nil ?
                 AnyView(Text(description ?? "")
                     .font(.footnote)
-                    .foregroundColor(Color.gray)):
-                AnyView(EmptyView()) ,
-            //right: AnyView(EmptyView())
-            //right: AnyView(Image(right ?? "pencil"))
-            right: AnyView(
-                HStack(alignment: .center){
-                    Image(systemName: right)
-                        
-                        //.accentColor(Constant.color.musicPrimary)
-                        .foregroundColor(Constant.color.musicPrimary)
-                    //Image(Constant.icon.bed)
-                    //Text("o o o") //Nevim sakra, jak tam narvat ten obrázek
+                    .foregroundColor(Color.gray)) :
+                AnyView(EmptyView()),
 
-            })
+            right: AnyView(
+                HStack(alignment: .center) {
+                    Image(systemName: right)
+                        .foregroundColor(Constant.color.musicPrimary)
+                })
         )
     }
 }
 
 struct SongTableRow_Previews: PreviewProvider {
     static var previews: some View {
-            SongTableRow(
-                left: AnyView(Text("left").foregroundColor(Color.gray)),
-                divider: true,
-                content: "content",
-                description: "description",
-                right: "Constant.icon.dots"
-            )
+        SongTableRow(
+            left: AnyView(Text("left").foregroundColor(Color.gray)),
+            divider: true,
+            content: "content",
+            description: "description",
+            right: Constant.icon.dots
+        )
     }
 }

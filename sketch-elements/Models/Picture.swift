@@ -9,6 +9,6 @@
 import SwiftUI
 
 struct Picture: Hashable, Codable {
-    let uri: URL
-    // var preview: NSData
+    var uri: URL
+    var preview: String?
 }

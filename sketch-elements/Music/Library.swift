@@ -18,12 +18,12 @@ struct Library: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     ForEach(albums.indices) { i in
                         HStack(spacing: -8) {
-                            AlbumTile(album: albums[i])
-                            if i % 2 == 0 {
-                                AlbumTile(album: albums[i+1])
+                            if i % 2 != 1 {
+                                AlbumTile(album: albums[i])
                             }
-                          
-                    
+                            if i % 2 == 0 {
+                                AlbumTile(album: albums[i + 1])
+                            }
                         }
                     }
                 }
@@ -42,7 +42,7 @@ struct AlbumTile: View {
 
     var body: some View {
         NavigationLink(
-            destination: EmptyView() // LibraryDetail(playlists: playlistData, songs: brotherData)
+            destination: AlbumDetail(album)
         ) {
             CardAlbum(album: album)
         }
