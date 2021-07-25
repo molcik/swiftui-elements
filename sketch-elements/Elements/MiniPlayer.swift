@@ -11,15 +11,12 @@ import SwiftUI
 import URLImage
 
 struct MiniPlayer: View {
-    var albums: [Album]
     @EnvironmentObject var modalManager: ModalManager
-    var shownSong: Song
+    
+    var song: Song
 
-    init(albums: [Album]) {
-        self.albums = albums
-
-        let songs = getAlbumSongs(albums[0])
-        self.shownSong = songs[0]
+    init(song: Song) {
+        self.song = song
     }
 
     var body: some View {
@@ -31,16 +28,16 @@ struct MiniPlayer: View {
             Button(action: { self.modalManager.openModal(position: .partiallyRevealed) }) {
                 Spacer()
                 VStack {
-                    Text(shownSong.name)
+                    Text(song.name)
                         .font(.headline)
-                    Text(albums[0].artist)
+                    Text(song.album!.artist)
                         .font(.subheadline)
                 }
                 Spacer()
 
-            }.padding([.top, .leading, .trailing])
+            }.padding([.top])
 
-            URLImage(albums[0].picture.uri, content: {
+            URLImage((song.album?.picture.uri)!, content: {
                 image in image
                     .renderingMode(.original)
                     .resizable()
@@ -49,9 +46,10 @@ struct MiniPlayer: View {
         }
         .padding([.horizontal, .bottom], 10.0)
         .foregroundColor(Constant.color.musicPrimary)
+        .background(Color.white)
         .onAppear {
             self.modalManager.newModal(position: .closed) {
-                PlayerModal(action: self.modalManager.closeModal, albums: musicData)
+                PlayerModal(action: self.modalManager.closeModal, song: getAlbumSongs(musicData[0])[0])
             }
         }
     }
@@ -59,6 +57,6 @@ struct MiniPlayer: View {
 
 struct MiniPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        MiniPlayer(albums: musicData)
+        MiniPlayer(song: getAlbumSongs(musicData[0])[0])
     }
 }

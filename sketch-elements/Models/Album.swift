@@ -19,4 +19,5 @@ struct Album: Hashable, Codable {
 struct Song: Hashable, Codable {
     var name: String
     var uri: URL
+    var album: Album?
 }

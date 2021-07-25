@@ -13,9 +13,12 @@ import URLImage
 struct AlbumDetail: View {
     var album: Album
     var songs: [Song]
-    init(_ album: Album) {
+    @Binding var selectedSong: Song?
+
+    init(_ album: Album, selectedSong: Binding<Song?>) {
         self.album = album
         songs = getAlbumSongs(album)
+        self._selectedSong = selectedSong
     }
 
     var body: some View {
@@ -29,7 +32,9 @@ struct AlbumDetail: View {
                             divider: index < self.songs.count - 1,
                             content: songs[index].name,
                             right: Constant.icon.dots
-                        )
+                        ).onTapGesture {
+                            selectedSong = songs[index]
+                        }
                     }
                 }.padding([.top, .bottom])
                     .frame(maxWidth: .infinity)
@@ -50,7 +55,7 @@ struct AlbumDetail: View {
 
 struct LibraryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        AlbumDetail(musicData[0])
+        AlbumDetail(musicData[0], selectedSong:.constant(getAlbumSongs(musicData[0])[0]))
             .environmentObject(UserData())
             .environment(\.colorScheme, .light)
     }

@@ -12,7 +12,6 @@ import URLImage
 struct ModalPlayerCard: View {
     var height: CGFloat = 300
     let largeConfig = UIImage.SymbolConfiguration(scale: .medium)
-    var albums: [Album]
     var image: URL
 
     var body: some View {
@@ -39,7 +38,6 @@ struct ModalPlayerCard: View {
 struct ModalPlayerCard_Previews: PreviewProvider {
     static var previews: some View {
         ModalPlayerCard(
-            albums: musicData,
             image: musicData[0].picture.uri
         )
         .environmentObject(UserData())

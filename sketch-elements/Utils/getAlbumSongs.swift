@@ -11,5 +11,9 @@ import Foundation
 func getAlbumSongs(_ album: Album) -> [Song] {
     let songs: [Song] = load("Albums/" + album.id + ".json")
 
-    return songs
+    let songsWithAlbum = songs.map { song in
+        return Song.init(name: song.name, uri: song.uri, album: album)
+    }
+    return songsWithAlbum
 }
+
