@@ -37,7 +37,7 @@ struct Library: View {
                 }
 
                 if selectedSong != nil {
-                    MiniPlayer(song: selectedSong!)
+                    MiniPlayer(song: $selectedSong)
                 }
             }
         }

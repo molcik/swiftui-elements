@@ -8,10 +8,12 @@
 
 import SwiftUI
 
-struct CustomSlider: View {
+struct SongProgressSlider: View {
 
-    @Binding var percentage: Float // or some value binded
-
+    @Binding var seconds: Int // or some value binded
+    var songTime: Int
+    var color: Color
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -19,20 +21,21 @@ struct CustomSlider: View {
                     .foregroundColor(.gray.opacity(0.06))
 
                 Rectangle()
-                    .foregroundColor(.accentColor)
-                    .frame(width: geometry.size.width * CGFloat(self.percentage / 100))
+                    .foregroundColor(color)
+                    .frame(width: geometry.size.width * CGFloat(self.seconds / songTime))
             }
             .cornerRadius(12, antialiased: true)
             .gesture(DragGesture(minimumDistance: 0)
                 .onChanged({ value in
-                    self.percentage = min(max(0, Float(value.location.x / geometry.size.width * 100)), 100)
+                    self.seconds = Int(min(max(0, Float(value.location.x / geometry.size.width * CGFloat(songTime))), Float(songTime)))
                 }))
         }
     }
 }
-struct Slider_Previews: PreviewProvider {
+
+struct SongProgressSlider_Previews: PreviewProvider {
     static var previews: some View {
-        CustomSlider(percentage: .constant(20))
+        SongProgressSlider(seconds: .constant(20), songTime: 120, color: .accentColor)
             .frame(width: 200, height: 10)
     }
 }

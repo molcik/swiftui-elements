@@ -13,11 +13,7 @@ import URLImage
 struct MiniPlayer: View {
     @EnvironmentObject var modalManager: ModalManager
     
-    var song: Song
-
-    init(song: Song) {
-        self.song = song
-    }
+    @Binding var song: Song?
 
     var body: some View {
         HStack {
@@ -28,16 +24,16 @@ struct MiniPlayer: View {
             Button(action: { self.modalManager.openModal(position: .partiallyRevealed) }) {
                 Spacer()
                 VStack {
-                    Text(song.name)
+                    Text(song!.name)
                         .font(.headline)
-                    Text(song.album!.artist)
+                    Text(song!.album!.artist)
                         .font(.subheadline)
                 }
                 Spacer()
 
             }.padding([.top])
 
-            URLImage((song.album?.picture.uri)!, content: {
+            URLImage(song!.album!.picture.uri, content: {
                 image in image
                     .renderingMode(.original)
                     .resizable()
@@ -49,7 +45,7 @@ struct MiniPlayer: View {
         .background(Color.white)
         .onAppear {
             self.modalManager.newModal(position: .closed) {
-                PlayerModal(action: self.modalManager.closeModal, song: getAlbumSongs(musicData[0])[0])
+                PlayerModal(action: self.modalManager.closeModal, song: $song)
             }
         }
     }
@@ -57,6 +53,6 @@ struct MiniPlayer: View {
 
 struct MiniPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        MiniPlayer(song: getAlbumSongs(musicData[0])[0])
+        MiniPlayer(song: .constant(getAlbumSongs(musicData[0])[0]))
     }
 }

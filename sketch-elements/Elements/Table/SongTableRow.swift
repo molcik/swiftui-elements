@@ -14,24 +14,30 @@ struct SongTableRow: View {
     var content: String
     var description: String?
     var right: String
+    var action: () -> Void
 
     var body: some View {
-        TableRow(
-            left: left,
-            divider: divider,
-            top: AnyView(Text(content)),
-            bottom: description != nil ?
-                AnyView(Text(description ?? "")
-                    .font(.footnote)
-                    .foregroundColor(Color.gray)) :
-                AnyView(EmptyView()),
+        VStack {
+            TableRow(
+                left: left,
+                divider: divider,
+                top: AnyView(Text(content)),
+                bottom: description != nil ?
+                    AnyView(Text(description ?? "")
+                        .font(.footnote)
+                        .foregroundColor(Color.gray)) :
+                    AnyView(EmptyView()),
 
-            right: AnyView(
-                HStack(alignment: .center) {
-                    Image(systemName: right)
-                        .foregroundColor(Constant.color.musicPrimary)
-                })
-        )
+                right: AnyView(
+                    HStack(alignment: .center) {
+                        Image(systemName: right)
+                            .foregroundColor(Constant.color.musicPrimary)
+                    })
+            )
+        }
+        .background(Color.white)
+        .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+        .onTapGesture(perform: action)
     }
 }
 
@@ -42,7 +48,8 @@ struct SongTableRow_Previews: PreviewProvider {
             divider: true,
             content: "content",
             description: "description",
-            right: Constant.icon.dots
+            right: Constant.icon.dots,
+            action: {}
         )
     }
 }
