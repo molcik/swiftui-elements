@@ -28,7 +28,7 @@ struct AlbumRow: View {
                     VStack(alignment: .leading, spacing: 2, content: {
                         Text(albumName)
                             .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .font(.title3).bold()
+                            .font(.system(size: 22)).bold()
                         Text("\(numberOfPhotos) photos")
                             .foregroundColor(.gray).font(.caption)
                     })
@@ -37,7 +37,7 @@ struct AlbumRow: View {
                         .foregroundColor(.gray)
                 })
                     .padding(.horizontal, 20)
-                    .fullScreenCover(item: self.$selectedPhoto) { selectedPhoto in
+                    .sheet(item: self.$selectedPhoto) { selectedPhoto in
                         PhotoDetail(photo: selectedPhoto)
                     }
             })

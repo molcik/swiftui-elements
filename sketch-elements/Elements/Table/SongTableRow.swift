@@ -14,7 +14,6 @@ struct SongTableRow: View {
     var content: String
     var description: String?
     var right: String
-    var action: () -> Void
 
     var body: some View {
         VStack {
@@ -37,7 +36,6 @@ struct SongTableRow: View {
         }
         .background(Color.white)
         .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
-        .onTapGesture(perform: action)
     }
 }
 
@@ -48,8 +46,7 @@ struct SongTableRow_Previews: PreviewProvider {
             divider: true,
             content: "content",
             description: "description",
-            right: Constant.icon.dots,
-            action: {}
+            right: Constant.icon.dots
         )
     }
 }

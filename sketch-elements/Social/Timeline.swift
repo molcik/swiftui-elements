@@ -14,6 +14,7 @@ struct Timeline: View {
     var posts: [Post]
     @State var isPresented = false
     @EnvironmentObject var modalManager: ModalManager
+    @State var selectedStory: Story? = nil
     var body: some View {
         NavigationView {
             ZStack {
@@ -22,11 +23,18 @@ struct Timeline: View {
                         HStack(spacing: 16) {
                             Profile(image: nil, add: true)
                             ForEach(stories) { story in
-                                Profile(image: users.first(where: { $0.id == story.user })!.picture.uri, disabled: story.seen, notification: !story.seen)
+                                Profile(image: users.first(where: { $0.id == story.user })!.picture.uri, disabled: story.seen, notification: !story.seen).onTapGesture {
+                                    isPresented.toggle()
+                                    self.selectedStory = story
+                                }
                             }
                         }
                         .padding([.leading, .trailing])
                     }
+                    .sheet(item: $selectedStory, content: { story in
+                        StoryView(story: story)
+
+                    })
                     .frame(height: 80)
                     .background(Constant.color.bgDefault)
                     ScrollView(.vertical, showsIndicators: false) {

@@ -9,29 +9,27 @@
 import SwiftUI
 
 struct Messages: View {
-    
     var conversations: [Conversation]
     var users: [User]
     var body: some View {
-        
         NavigationView {
             VStack {
                 ScrollView(.vertical, showsIndicators: false) {
                     ForEach(conversations) { conversation in
-                        //NavigationLink(
-                        //    destination: RecipesListView(category: category)
-                        //) {
-                        SocialCard(
-                            user: users.first(where: { $0.id == conversation.user })!,
-                            contentText: conversation.messages[0].message,
-                            timestamp: conversation.messages[0].timestamp
-                        )
+                        NavigationLink(destination: Chat(conversation: conversation)) {
+                            SocialCard(
+                                user: users.first(where: { $0.id == conversation.user })!,
+                                contentText: conversation.messages[0].message,
+                                timestamp: conversation.messages[0].timestamp
+                            )
+                            .foregroundColor(Color.black)
+                        }
                     }
                 }
-            }.background(Constant.color.gray)
-            .navigationBarColor(Constant.color.socialPrimary.uiColor())
-            .navigationBarTitle(Text("Messages"), displayMode: .large)
-            .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white))
+            }
+                .navigationBarColor(Constant.color.socialPrimary.uiColor())
+                .navigationBarTitle(Text("Messages"), displayMode: .large)
+                .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white))
         }
     }
 }
@@ -43,4 +41,3 @@ struct Messages_Previews: PreviewProvider {
             .environment(\.colorScheme, .light)
     }
 }
-

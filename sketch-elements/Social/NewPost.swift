@@ -11,10 +11,11 @@ import SwiftUI
 struct NewPost: View {
     @EnvironmentObject var modalManager: ModalManager
     @State private var fullText: String = ""
+    @State var selection: Int = 0
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 0) {
-                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+                HStack(alignment: .center) {
                     Image(systemName: Constant.icon.chevronDown)
                         .padding(.horizontal).onTapGesture {
                             modalManager.closeModal()
@@ -36,9 +37,24 @@ struct NewPost: View {
                 .padding()
                 Divider()
             }
-            TextEditor(text: $fullText).padding()
-            
+            SegmentedPickerCollapsed(items: ["Text", "Photo"], selection: $selection, backgroundColor: Constant.color.socialPrimary.opacity(0.5), activeColor: Constant.color.socialPrimary.opacity(0.8), textColor: Color.white)
+                .padding()
+            TextView()
+                .padding()
         }
+    }
+}
+
+struct TextView: UIViewRepresentable {
+    typealias UIViewType = UITextView
+    var configuration = { (_: UIViewType) in }
+
+    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIViewType {
+        UIViewType()
+    }
+
+    func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<Self>) {
+        configuration(uiView)
     }
 }
 

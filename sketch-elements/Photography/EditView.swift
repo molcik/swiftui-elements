@@ -21,7 +21,7 @@ struct EditView: View {
         ImageCropper(image: UIImage(data: try! Data(contentsOf: photoUrls.regular))!,
                      cropShapeType: $cropShapeType,
                      presetFixedRatioType: $presetFixedRatioType)
-            .ignoresSafeArea()
+            .edgesIgnoringSafeArea(.all)
     }
         
     func reset() {

@@ -32,7 +32,7 @@ struct FilterView: View {
                         .foregroundColor(.white)
                         .frame(width: 100, height: 100)
                         .frame(height: 600)
-                        .ignoresSafeArea()
+                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/ .all/*@END_MENU_TOKEN@*/)
 
                     ActivityIndicator()
                 }
@@ -48,7 +48,7 @@ struct FilterView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 600)
-                    .ignoresSafeArea()
+                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/ .all/*@END_MENU_TOKEN@*/)
             }
             ZStack(alignment: .top) {
                 Rectangle()
@@ -94,7 +94,7 @@ struct FilterView: View {
                                             .padding()
                                         ActivityIndicator()
                                     }
-                                    
+
                                 } failure: { error, retry in
                                     // Display error and retry button
                                     VStack {
@@ -107,7 +107,7 @@ struct FilterView: View {
                                         .resizable()
                                         .frame(width: 100, height: 100)
                                         .aspectRatio(contentMode: .fill)
-                                        .ignoresSafeArea()
+                                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                                         .padding()
                                         .onTapGesture {
                                             self.currentFilter = availableFilters[i]
@@ -118,7 +118,8 @@ struct FilterView: View {
                     }
                 }
             }
-            .ignoresSafeArea()
+            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+
         }
     }
 

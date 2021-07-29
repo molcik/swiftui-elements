@@ -42,7 +42,7 @@ struct GuideDetail: View {
                     .frame(height: 180)
                     .mask(gradient)
 
-                ScrollView(.vertical, showsIndicators: false) {
+                ScrollView() {
                     Rectangle()
                         .opacity(0)
                         .frame(height: 100)

@@ -10,6 +10,7 @@ import AVKit
 import SwiftUI
 import UIKit
 import URLImage
+import Combine
 
 struct PlayerModal: View {
     var action: () -> Void
@@ -100,7 +101,7 @@ struct PlayerModal: View {
                     .onAppear {
                         playSong()
                     }
-                    .onChange(of: song, perform: { _ in
+                    .onReceive(Just(song), perform: { _ in
 
                         // reset audioPlayer
                         if self.audioPlayer != nil {

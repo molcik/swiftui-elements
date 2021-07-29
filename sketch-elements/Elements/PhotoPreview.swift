@@ -20,8 +20,8 @@ struct PhotoPreview: View {
             ZStack {
                 Rectangle()
                     .border(colorScheme == .dark ? Color(red: 0.15, green: 0.15, blue: 0.15) : Color.white, width: 4)
-                    .aspectRatio(1 / 1, contentMode: .fit)
                     .foregroundColor(.gray.opacity(0.3))
+                    .frame(width: 100, height: 100)
                     .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
                 ActivityIndicator()
             }
@@ -33,8 +33,10 @@ struct PhotoPreview: View {
             }
         } content: { image in
             image
+                .renderingMode(.original)
                 .resizable()
-                .aspectRatio(1 / 1, contentMode: .fit)
+                .frame(width: 100, height: 100)
+                .aspectRatio(contentMode: .fit)
                 .border(colorScheme == .dark ? Color(red: 0.15, green: 0.15, blue: 0.15) : Color.white, width: 4)
                 .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
         }
@@ -43,6 +45,6 @@ struct PhotoPreview: View {
 
 struct Photo_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoPreview(url: photographyData[0].urls.regular)
+        PhotoPreview(url: photographyData[4].urls.regular)
     }
 }

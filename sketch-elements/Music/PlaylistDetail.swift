@@ -41,8 +41,7 @@ struct PlaylistDetail: View {
                                 divider: i < playlist.Albums.count - 1,
                                 content: playlist.Albums[i].name,
                                 description: playlist.Albums[i].artist,
-                                right: Constant.icon.dots,
-                                action: {}
+                                right: Constant.icon.dots
                             )
                         }
                     }

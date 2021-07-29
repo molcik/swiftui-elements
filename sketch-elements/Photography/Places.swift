@@ -20,13 +20,18 @@ struct Places: View {
 
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $region, annotationItems: pointsOfInterest) { item in
-                MapAnnotation(coordinate: item.coordinate) {
-                    PhotoStack(numberOfPhotos: item.photos.count, showcasedPhotos: Array(item.photos.prefix(3)), hidden: region.span.latitudeDelta / 2 > 30)
-                        .frame(width: 100 - CGFloat(region.span.latitudeDelta / 2), height: 100 - CGFloat(region.span.longitudeDelta / 1.5), alignment: .center)
-                }
-            }.ignoresSafeArea()
-            .navigationBarHidden(true)
+            
+            if #available(iOS 14.0, *) {
+                Map(coordinateRegion: $region, annotationItems: pointsOfInterest) { item in
+                    MapAnnotation(coordinate: item.coordinate) {
+                        PhotoStack(numberOfPhotos: item.photos.count, showcasedPhotos: Array(item.photos.prefix(3)), hidden: region.span.latitudeDelta / 2 > 30)
+                            .frame(width: 100 - CGFloat(region.span.latitudeDelta / 2), height: 100 - CGFloat(region.span.longitudeDelta / 1.5), alignment: .center)
+                    }
+                }.ignoresSafeArea()
+                .navigationBarHidden(true)
+            } else {
+              Text("This view requires iOS 14.0 and later. Update your system in Settings.")
+            }
         }
     }
 }

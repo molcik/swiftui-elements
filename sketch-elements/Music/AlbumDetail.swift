@@ -31,9 +31,10 @@ struct AlbumDetail: View {
                             left: AnyView(Text("\(index + 1)").foregroundColor(Color.gray)),
                             divider: index < self.songs.count - 1,
                             content: songs[index].name,
-                            right: Constant.icon.dots,
-                            action: { selectedSong = songs[index] }
-                        )
+                            right: Constant.icon.dots
+                        ).onTapGesture {
+                            selectedSong = songs[index]
+                        }
                     }
                 }.padding([.top, .bottom])
                     .frame(maxWidth: .infinity)

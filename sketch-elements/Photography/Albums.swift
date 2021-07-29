@@ -25,7 +25,7 @@ struct Albums: View {
             .navigationBarItems(trailing: Image(systemName: Constant.icon.camera).foregroundColor(.white).onTapGesture {
                 showPicker.toggle()
             })
-            .fullScreenCover(isPresented: $showPicker, onDismiss: loadImage) {
+            .sheet(isPresented: $showPicker, onDismiss: loadImage) {
                 PhotoPicker(image: $inputImage)
             }
         }

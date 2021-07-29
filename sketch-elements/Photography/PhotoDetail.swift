@@ -30,17 +30,17 @@ struct PhotoDetail: View {
                 }.padding()
                     .foregroundColor(.white)
             }
-            .fullScreenCover(isPresented: $filterViewPresented, onDismiss: {}, content: {
+            .sheet(isPresented: $filterViewPresented, onDismiss: {}, content: {
                 FilterView(photoUrls: photo.urls)
             })
-            .fullScreenCover(isPresented: $cropViewPresented, onDismiss: {}, content: {
+            .sheet(isPresented: $cropViewPresented, onDismiss: {}, content: {
                 EditView(photoUrls: photo.urls)
             })
             .background(URLImage(photo.urls.full) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea()
+                    .edgesIgnoringSafeArea(.all)
             })
 
             .navigationBarItems(
@@ -54,8 +54,7 @@ struct PhotoDetail: View {
                 trailing:
                 Image(systemName: Constant.icon.bookmark).foregroundColor(.white)
             )
-            .navigationTitle(Text((photo.location?.city ?? photo.location?.country) ?? "No location"))
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle(Text((photo.location?.city ?? photo.location?.country) ?? "No location"), displayMode: .inline)
         }
     }
 }
