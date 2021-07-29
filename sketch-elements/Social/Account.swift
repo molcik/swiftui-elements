@@ -48,7 +48,7 @@ struct Account: View {
                         //NavigationLink(
                         //    destination: RecipesListView(category: category)
                         //) {
-                        CardSocial(
+                        SocialCard(
                             user: user,
                             contentText: post.caption,
                             timestamp: post.timestamp,

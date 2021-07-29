@@ -10,7 +10,6 @@ import SwiftUI
 import URLImage
 
 struct ReservationModal: View {
-    
     @State var selection: Int = 0
     var place: Bookable
     var timeOptions: [String]?
@@ -18,9 +17,9 @@ struct ReservationModal: View {
     var action: () -> Void
 
     var body: some View {
-        VStack(){
+        VStack {
             ModalHeader(action: self.action, title: "Reservation", tintColor: tintColor)
-            ScrollView(.vertical){
+            ScrollView(.vertical) {
                 HStack {
                     VStack(alignment: .leading) {
                         Text(place.title)
@@ -30,8 +29,8 @@ struct ReservationModal: View {
                     }
                     Spacer()
                     VStack(alignment: .trailing) {
-                        URLImage(place.picture.uri, content:  {
-                            $0.image
+                        URLImage(place.picture.uri, content: { image in
+                            image
                                 .renderingMode(.original)
                                 .resizable()
                         })
@@ -44,7 +43,7 @@ struct ReservationModal: View {
                 VStack(spacing: 8) {
                     CollapsablePicker(tintColor: tintColor)
                     CountPicker(label: "people", tintColor: tintColor, defaultValue: 1)
-                    if (timeOptions != nil) {
+                    if timeOptions != nil {
                         SegmentedPicker(items: timeOptions!, selection: self.$selection, tintColor: tintColor)
                     }
                     Spacer()
@@ -58,14 +57,12 @@ struct ReservationModal: View {
     }
 }
 
-
 struct ReservationModal_Previews: PreviewProvider {
     static var previews: some View {
         ReservationModal(
             place: restaurantsData[0],
             timeOptions: ["19:00", "19:30", "20:00", "20:30"],
             action: {}).environmentObject(UserData()
-            )
-        
+        )
     }
 }

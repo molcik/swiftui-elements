@@ -13,6 +13,8 @@ enum Theme: String, CaseIterable, Identifiable {
     case food
     case social
     case travel
+    case music
+    case photography
     var id: String { self.rawValue }
 }
 
@@ -29,7 +31,7 @@ struct ContentView: View {
         return ZStack {
             
 
-            // NOTE: This is needed only to change the theme, feel free to remove the swicth and instead of it use ivoke the view directly
+            // NOTE: This is needed only to change the theme, feel free to remove the swicth and instead of it use invoke the view directly
             // Food()
             // Social()
             switch (selectedTheme) {
@@ -39,6 +41,11 @@ struct ContentView: View {
                     Social()
                 case Theme.travel:
                     Travel()
+                case Theme.photography:
+                    Photography()
+                case Theme.music:
+                    Music()
+            
             }
             // NOTE END
 
@@ -48,10 +55,12 @@ struct ContentView: View {
         // NOTE: This is needed only to change the theme, feel free to remove it
         .actionSheet(isPresented: Binding.constant(true)) {
             
-            ActionSheet(title: Text("Select Theme"), message: Text("To invoke this menu again, you need to rerun the app. You can also set the theme directly in ContentView.swift"), buttons: [
+            ActionSheet(title: Text("Select a Theme"), message: Text("To invoke this menu again, you need to rerun the app. You can also set the theme directly in ContentView.swift"), buttons: [
                 .default(Text("Social")) { self.selectedTheme = .social },
                 .default(Text("Travel")) { self.selectedTheme = .travel },
                 .default(Text("Food")) { self.selectedTheme = .food },
+                .default(Text("Music")) { self.selectedTheme = .music },
+                .default(Text("Photography")) {self.selectedTheme = .photography},
                 .cancel()
             ])
         }

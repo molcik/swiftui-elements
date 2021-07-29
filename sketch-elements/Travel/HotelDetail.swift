@@ -56,7 +56,7 @@ struct HotelDetail: View {
                         Rectangle()
                             .opacity(0)
                             .frame(height: 100)
-                        ButtonPrimary(action: self.modalManager.openModal, backgroundColor: tintColor) {
+                        ButtonPrimary(action: {self.modalManager.openModal(position: .partiallyRevealed)}, backgroundColor: tintColor) {
                             Text("Make reservation")
                                 .font(.headline)
                         }.padding([.top, .leading, .trailing])

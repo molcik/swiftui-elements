@@ -10,19 +10,18 @@ import SwiftUI
 import URLImage
 
 struct GuideDetail: View {
-    
     var guide: Guide
     let gradient = LinearGradient(gradient: Gradient(colors: [.white, .clear]), startPoint: .top, endPoint: .bottom)
     var tintColor: Color = Constant.color.travelPrimary
     @State var selection: Int = 0
     @EnvironmentObject var modalManager: ModalManager
-    
+
     var body: some View {
-        return VStack(spacing: 0){
+        return VStack(spacing: 0) {
             Header(image: guide.picture.uri, height: 223) {
-                VStack(){
+                VStack {
                     Spacer()
-                    HStack(){
+                    HStack {
                         Text(guide.city)
                             .font(.largeTitle)
                             .fontWeight(.bold)
@@ -37,26 +36,25 @@ struct GuideDetail: View {
                     TabItem(name: "Temperate", icon: Constant.icon.weather)
                 ]
             )
-            
-            ZStack(alignment: .top) {
 
+            ZStack(alignment: .top) {
                 MapView(coordinate: guide.locationCoordinate)
                     .frame(height: 180)
                     .mask(gradient)
-                
-                ScrollView(.vertical, showsIndicators: false) {
+
+                ScrollView() {
                     Rectangle()
                         .opacity(0)
                         .frame(height: 100)
                     ButtonPrimary(
-                        action: self.modalManager.openModal,
+                        action: { self.modalManager.openModal(position: .partiallyRevealed) },
                         backgroundColor: tintColor
                     ) {
                         Text("Book trip")
                             .font(.headline)
                     }.padding([.top, .leading, .trailing])
                     VStack(alignment: .leading) {
-                        ForEach(0..<guide.visits.count) { index in
+                        ForEach(0 ..< guide.visits.count) { index in
                             TextTableRow(
                                 left: "\(index + 1)",
                                 divider: index < self.guide.visits.count - 1,
@@ -66,13 +64,12 @@ struct GuideDetail: View {
                         }
                     }.padding([.top, .bottom])
                         .frame(maxWidth: .infinity)
-                    .background(Constant.color.bgDefault)
+                        .background(Constant.color.bgDefault)
                         .cornerRadius(8)
                         .padding([.leading, .bottom, .trailing])
                     Spacer()
                 }
             }.frame(maxWidth: .infinity)
-
         }
         .background(Constant.color.gray)
         .edgesIgnoringSafeArea([.top])
@@ -83,7 +80,8 @@ struct GuideDetail: View {
                 ReservationModal(
                     place: self.guide,
                     tintColor: tintColor,
-                    action: self.modalManager.closeModal)
+                    action: self.modalManager.closeModal
+                )
             }
         }
     }
@@ -96,4 +94,3 @@ struct GuideDetail_Previews: PreviewProvider {
             .environment(\.colorScheme, .light)
     }
 }
-
