@@ -7,18 +7,18 @@
 //
 
 import Combine
+import FullScreenModal
 import SwiftUI
-import URLImage
 
 struct Photos: View {
     var photos: [Photo]
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
 
     @State private var isPresented = false
     @State private var showPicker = false
-    @State private var selectedPhoto: Photo? = nil
     @State var inputImage: UIImage? = nil
-
+    @State var selectedPhoto: Photo? = nil
     @State var photoIndex = 0
 
     var body: some View {
@@ -29,18 +29,17 @@ struct Photos: View {
                         ForEach(0 ..< 3, id: \.self) { column in
                             if self.photoIndex < photos.count {
                                 PhotoPreview(url: photos[row * 3 + column].urls.regular)
-                                   .onTapGesture {
-                                       isPresented.toggle()
-                                       self.selectedPhoto = photos[row * 3 + column]
-                                   }
+                                    .onTapGesture {
+                                        modalState.displayContent.send(
+                                            PhotoDetail(photo: photos[row * 3 + column])
+                                                .anyView
+                                        )
+                                    }
                             }
                         }
                     }
                 }
                 .padding(20)
-                .sheet(item: $selectedPhoto) { selectedPhoto in
-                    PhotoDetail(photo: selectedPhoto)
-                }
             }
 
             .frame(maxWidth: .infinity)

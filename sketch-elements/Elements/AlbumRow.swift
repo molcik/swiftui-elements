@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftUI
-import URLImage
 
 struct AlbumRow: View {
     @Environment(\.colorScheme) var colorScheme

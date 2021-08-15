@@ -6,20 +6,19 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct CardWithAttachment: View {
-    
     var title: String
     var subTitle: String?
     var pictureUrl: URL
     var attachment: AnyView?
-    
+
     var body: some View {
-        Card{
-            HStack(){
-                VStack(alignment: .leading){
+        Card {
+            HStack {
+                VStack(alignment: .leading) {
                     Text(title)
                         .font(.headline)
                         .fontWeight(.bold)
@@ -30,17 +29,15 @@ struct CardWithAttachment: View {
                     attachment
                 }
                 Spacer()
-                VStack(alignment: .trailing){
-                    URLImage(pictureUrl, content:  { image in
-                        image
-                            .renderingMode(.original)
-                            .resizable()
-                    })
+                VStack(alignment: .trailing) {
+                    WebImage(url: pictureUrl)
+                        .renderingMode(.original)
+                        .resizable()
                         .frame(width: 110, height: 70)
                         .cornerRadius(4)
                 }
             }
-            .frame(height:70)
+            .frame(height: 70)
             .foregroundColor(Constant.color.contrast)
             .padding()
         }

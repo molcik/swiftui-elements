@@ -6,33 +6,29 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
-
 struct Chat: View {
     var conversation: Conversation
     let users = usersData
     var body: some View {
         NavigationView {
-            
-                GeometryReader { g in
-                   
-                    ZStack(alignment: .top) {
-                        Color.black.opacity(0.04).edgesIgnoringSafeArea(.all)
-                        ScrollView(.vertical, showsIndicators: false) {
+            GeometryReader { g in
+
+                ZStack(alignment: .top) {
+                    Color.black.opacity(0.04).edgesIgnoringSafeArea(.all)
+                    ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 20) {
                             ForEach(conversation.messages) { message in
                                 HStack {
                                     if !message.me {
                                         let user = users.first(where: { $0.id == conversation.user })!
-                                        URLImage(user.picture.uri) { image in
-                                            image
-                                                .renderingMode(.original)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: g.size.width * 0.2, height: 50)
-                                                .clipShape(Circle())
-                                        }
+                                        WebImage(url: user.picture.uri)
+                                            .resizable()
+                                            .indicator(.activity)
+                                            .scaledToFit()
+                                            .frame(width: g.size.width * 0.2, height: 50)
+                                            .clipShape(Circle())
                                     }
                                     ZStack {
                                         Rectangle()
@@ -47,14 +43,13 @@ struct Chat: View {
 
                                     if message.me {
                                         let user = users.first(where: { $0.id == usersData[6].id })!
-                                        URLImage(user.picture.uri) { image in
-                                            image
-                                                .renderingMode(.original)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: g.size.width * 0.2, height: 50)
-                                                .clipShape(Circle())
-                                        }
+                                        WebImage(url: user.picture.uri)
+                                            .resizable()
+                                            .indicator(.activity)
+                                            .scaledToFit()
+                                            
+                                            .frame(width: g.size.width * 0.2, height: 50)
+                                            .clipShape(Circle())
                                     }
                                 }
                             }
@@ -62,7 +57,6 @@ struct Chat: View {
                     }
                 }
             }
-            
         }
         .padding(.top, -75)
         .navigationBarColor(Constant.color.socialPrimary.uiColor())

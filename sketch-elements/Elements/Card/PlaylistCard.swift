@@ -6,8 +6,8 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct PlaylistCard: View {
     var playlist: Playlist
@@ -28,11 +28,10 @@ struct PlaylistCard: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 .frame(height: height/2)
                                 .foregroundColor(Color.white).background(
-                                    URLImage(album.picture.uri, content: { image in
-                                        image
-                                            .renderingMode(.original)
-                                            .resizable()
-                                    })
+                                    WebImage(url: album.picture.uri)
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .indicator(.activity)
                                 )
                         }
                     }
@@ -42,11 +41,10 @@ struct PlaylistCard: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 .frame(height: height/2)
                                 .foregroundColor(Color.white).background(
-                                    URLImage(album.picture.uri, content: { image in
-                                        image
-                                            .renderingMode(.original)
-                                            .resizable()
-                                    })
+                                    WebImage(url: album.picture.uri)
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .indicator(.activity)
                                 )
                         }
                     }

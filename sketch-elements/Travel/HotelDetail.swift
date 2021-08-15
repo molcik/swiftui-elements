@@ -7,26 +7,24 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct HotelDetail: View {
-    
     let hotel: Hotel
     var tintColor: Color = Constant.color.tintColor
     let gradient = LinearGradient(gradient: Gradient(colors: [.white, .clear]), startPoint: .top, endPoint: .bottom)
     @EnvironmentObject var modalManager: ModalManager
-    
-    init(hotel: Hotel, tintColor: Color = Constant.color.tintColor ) {
+
+    init(hotel: Hotel, tintColor: Color = Constant.color.tintColor) {
         self.hotel = hotel
         self.tintColor = tintColor
     }
-    
+
     var body: some View {
-        return VStack(spacing: 0){
+        return VStack(spacing: 0) {
             Header(image: hotel.picture.uri, height: 223) {
-                VStack(){
+                VStack {
                     Spacer()
-                    HStack(){
+                    HStack {
                         Text(hotel.title)
                             .font(.largeTitle)
                             .fontWeight(.bold)
@@ -44,7 +42,7 @@ struct HotelDetail: View {
                         name: "\(hotel.reviews) reviews",
                         customView: Stars(hotel.ratings, color: tintColor).eraseToAnyView()),
                 ])
-            
+
             ZStack(alignment: .top) {
                 MapView(coordinate: hotel.locationCoordinate)
                     .frame(height: 180)
@@ -52,15 +50,15 @@ struct HotelDetail: View {
                         gradient
                     )
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing:0) {
+                    VStack(spacing: 0) {
                         Rectangle()
                             .opacity(0)
                             .frame(height: 100)
-                        ButtonPrimary(action: {self.modalManager.openModal(position: .partiallyRevealed)}, backgroundColor: tintColor) {
+                        ButtonPrimary(action: { self.modalManager.openModal(position: .partiallyRevealed) }, backgroundColor: tintColor) {
                             Text("Make reservation")
                                 .font(.headline)
                         }.padding([.top, .leading, .trailing])
-                        Card{
+                        Card {
                             Text(hotel.description)
                                 .padding()
                         }
@@ -78,14 +76,13 @@ struct HotelDetail: View {
                 ReservationModal(
                     place: self.hotel,
                     timeOptions: ["19:00", "19:30", "20:00", "20:30"],
-                
+
                     tintColor: tintColor,
                     action: self.modalManager.closeModal)
             }
         }
     }
 }
-
 
 struct HotelDetail_Previews: PreviewProvider {
     static var previews: some View {
@@ -94,4 +91,3 @@ struct HotelDetail_Previews: PreviewProvider {
             .environment(\.colorScheme, .light)
     }
 }
-

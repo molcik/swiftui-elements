@@ -6,8 +6,8 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct Profile: View {
     var size: CGFloat = 50.0
@@ -30,12 +30,10 @@ struct Profile: View {
                 .clipShape(Circle())
                     
             } else {
-                URLImage(image!, content: { image in
-                    image
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                })
+                WebImage(url: image!)
+                    .resizable()
+                    .indicator(.activity)
+                    .scaledToFill()
                     .frame(width: size, height: size)
                     .clipShape(Circle())
             }

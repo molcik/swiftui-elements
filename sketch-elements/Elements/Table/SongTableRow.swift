@@ -35,7 +35,7 @@ struct SongTableRow: View {
             )
         }
         .background(Color.white)
-        .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+        .animation(.easeIn)
     }
 }
 

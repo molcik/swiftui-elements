@@ -6,8 +6,12 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import Combine
 import Foundation
+import FullScreenModal
+import SDWebImageSwiftUI
 import SwiftUI
+import SwiftOnoneSupport
 
 extension String: Identifiable {
     public var id: String {
@@ -24,9 +28,7 @@ extension Date {
 }
 
 extension Color {
- 
     func uiColor() -> UIColor {
-
         if #available(iOS 14.0, *) {
             return UIColor(self)
         }
@@ -36,8 +38,7 @@ extension Color {
     }
 
     private func components() -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-
-        let scanner = Scanner(string: self.description.trimmingCharacters(in: CharacterSet.alphanumerics.inverted))
+        let scanner = Scanner(string: description.trimmingCharacters(in: CharacterSet.alphanumerics.inverted))
         var hexNumber: UInt64 = 0
         var r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0, a: CGFloat = 0.0
 
@@ -49,32 +50,5 @@ extension Color {
             a = CGFloat(hexNumber & 0x000000ff) / 255
         }
         return (r, g, b, a)
-    }
-}
-
-extension Image {
-    func applyFilter(_ filter: CIFilter?, url: URL, image: Image) -> Image {
-        guard filter !== nil else {
-            return image
-        }
-        return processImage(url, filter: filter!)
-    }
-
-    private func processImage(_ image: URL, filter: CIFilter) -> Image {
-        let beginImage = CIImage(data: try! Data(contentsOf: image))
-        let uiImage = UIImage(ciImage: beginImage!)
-
-        filter.setValue(beginImage, forKey: kCIInputImageKey)
-
-        guard let outputImage = filter.outputImage else {
-            return Image(uiImage: uiImage)
-        }
-
-        if let cgimg = CIContext().createCGImage(outputImage, from: outputImage.extent) {
-            let uiImage = UIImage(cgImage: cgimg)
-            return Image(uiImage: uiImage)
-        } else {
-            return Image(uiImage: uiImage)
-        }
     }
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct ReservationModal: View {
     @State var selection: Int = 0
@@ -29,11 +29,10 @@ struct ReservationModal: View {
                     }
                     Spacer()
                     VStack(alignment: .trailing) {
-                        URLImage(place.picture.uri, content: { image in
-                            image
-                                .renderingMode(.original)
-                                .resizable()
-                        })
+                        WebImage(url: place.picture.uri)
+                            .renderingMode(.original)
+                            .resizable()
+                            .indicator(.activity)
                             .frame(width: 140, height: 100)
                             .cornerRadius(6)
                     }

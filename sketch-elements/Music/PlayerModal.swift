@@ -7,10 +7,9 @@
 //
 
 import AVKit
+import Combine
 import SwiftUI
 import UIKit
-import URLImage
-import Combine
 
 struct PlayerModal: View {
     var action: () -> Void

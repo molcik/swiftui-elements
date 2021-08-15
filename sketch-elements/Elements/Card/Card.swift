@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct Card<Content: View>: View {
     

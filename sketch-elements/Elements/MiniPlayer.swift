@@ -7,12 +7,12 @@
 //
 
 import Foundation
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct MiniPlayer: View {
     @EnvironmentObject var modalManager: ModalManager
-    
+
     @Binding var song: Song?
 
     var body: some View {
@@ -33,11 +33,11 @@ struct MiniPlayer: View {
 
             }.padding([.top])
 
-            URLImage(song!.album!.picture.uri, content: {
-                image in image
-                    .renderingMode(.original)
-                    .resizable()
-            }).frame(width: 50, height: 50, alignment: .center)
+            WebImage(url: song!.album!.picture.uri)
+                .renderingMode(.original)
+                .resizable()
+                .indicator(.activity)
+                .frame(width: 50, height: 50, alignment: .center)
                 .cornerRadius(3)
         }
         .padding([.horizontal, .bottom], 10.0)

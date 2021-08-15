@@ -6,55 +6,58 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
+import FullScreenModal
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct PhotoDetail: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
     var photo: Photo
     @State private var filterViewPresented = false
     @State private var cropViewPresented = false
 
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(alignment: .leading) {
                 Spacer()
                 HStack {
                     Image(systemName: Constant.icon.options).onTapGesture {
-                        filterViewPresented.toggle()
+                        modalState.displayContent.send(
+                            FilterView(photoUrls: photo.urls)
+                                .anyView
+                        )
                     }
                     Spacer()
                     Image(systemName: Constant.icon.crop).onTapGesture {
-                        cropViewPresented.toggle()
+                        modalState.displayContent.send(
+                            EditView(photoUrls: photo.urls).anyView
+                        )
                     }
                 }.padding()
                     .foregroundColor(.white)
-            }
-            .sheet(isPresented: $filterViewPresented, onDismiss: {}, content: {
-                FilterView(photoUrls: photo.urls)
-            })
-            .sheet(isPresented: $cropViewPresented, onDismiss: {}, content: {
-                EditView(photoUrls: photo.urls)
-            })
-            .background(URLImage(photo.urls.full) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-            })
 
-            .navigationBarItems(
-                leading:
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: Constant.icon.chevronLeft).foregroundColor(.white)
-                    Text("Photos")
-                },
-                trailing:
-                Image(systemName: Constant.icon.bookmark).foregroundColor(.white)
-            )
-            .navigationBarTitle(Text((photo.location?.city ?? photo.location?.country) ?? "No location"), displayMode: .inline)
+            }.padding(.bottom)
+
+                .background(WebImage(url: photo.urls.full)
+                    .resizable()
+                    .indicator(.activity)
+                    .aspectRatio(contentMode: .fill)
+                    .scaledToFill()
+                    .frame(alignment: .leading)
+                ).edgesIgnoringSafeArea(.all)
+
+                .navigationBarItems(
+                    leading:
+                    Button(action: {
+                        modalState.close.send()
+                    }) {
+                        Image(systemName: Constant.icon.chevronLeft).foregroundColor(.white)
+                        Text("Photos")
+                    },
+                    trailing:
+                    Image(systemName: Constant.icon.bookmark).foregroundColor(.white)
+                )
+                .navigationBarTitle(Text((photo.location?.city ?? photo.location?.country) ?? "No location"), displayMode: .inline)
         }
     }
 }

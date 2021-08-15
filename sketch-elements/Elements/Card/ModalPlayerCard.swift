@@ -6,8 +6,8 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct ModalPlayerCard: View {
     var height: CGFloat = 300
@@ -21,11 +21,10 @@ struct ModalPlayerCard: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .frame(width: height, height: height)
                     .foregroundColor(Color.white).background(
-                        URLImage(image, content: { image in
-                            image
-                                .renderingMode(.original)
-                                .resizable()
-                        })
+                        WebImage(url: image)
+                            .renderingMode(.original)
+                            .resizable()
+                            .indicator(.activity)
                     )
             }
             .frame(width: height, height: height)

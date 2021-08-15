@@ -6,8 +6,8 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct MusicHeader: View {
     var height: CGFloat
@@ -40,11 +40,10 @@ struct MusicHeader: View {
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     .frame(width: height/2, height: height/2)
                                     .foregroundColor(Color.white).background(
-                                        URLImage(url, content: { image in
-                                            image
-                                                .renderingMode(.original)
-                                                .resizable()
-                                        })
+                                        WebImage(url: url)
+                                            .renderingMode(.original)
+                                            .resizable()
+                                            .indicator(.activity)
                                     )
                             }
                         }
@@ -56,11 +55,10 @@ struct MusicHeader: View {
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     .frame(width: height/2, height: height/2)
                                     .foregroundColor(Color.white).background(
-                                        URLImage(url, content: { image in
-                                            image
-                                                .renderingMode(.original)
-                                                .resizable()
-                                        })
+                                        WebImage(url: url)
+                                            .renderingMode(.original)
+                                            .resizable()
+                                            .indicator(.activity)
                                     )
                             }
                         }
@@ -79,11 +77,10 @@ struct MusicHeader: View {
                 }
 
                 if album != nil {
-                    URLImage(album!.picture.uri, content: { image in
-                        image
-                            .renderingMode(.original)
-                            .resizable()
-                    })
+                    WebImage(url: album!.picture.uri)
+                        .renderingMode(.original)
+                        .resizable()
+                        .indicator(.activity)
                         .frame(width: 70, height: 70)
                         .cornerRadius(4)
                         .padding(.all, 5.0)

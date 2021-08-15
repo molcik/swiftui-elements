@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "FullScreenModal",
+        "repositoryURL": "git@github.com:tamasdancsi/ios-full-screen-modal.git",
+        "state": {
+          "branch": "main",
+          "revision": "68bbd1e9716e0907008e068b851d50bb6f6e23ba",
+          "version": null
+        }
+      },
+      {
         "package": "Mantis",
         "repositoryURL": "https://github.com/guoyingtao/Mantis",
         "state": {
@@ -11,12 +20,21 @@
         }
       },
       {
-        "package": "URLImage",
-        "repositoryURL": "https://github.com/dmytro-anokhin/url-image",
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "a55b6597f6ce67dfbdc136ecfb8c8436b14ca41d",
-          "version": "3.1.0"
+          "revision": "76dd4b49110b8624317fc128e7fa0d8a252018bc",
+          "version": "5.11.1"
+        }
+      },
+      {
+        "package": "SDWebImageSwiftUI",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImageSwiftUI",
+        "state": {
+          "branch": null,
+          "revision": "cd8625b7cf11a97698e180d28bb7d5d357196678",
+          "version": "2.0.2"
         }
       }
     ]

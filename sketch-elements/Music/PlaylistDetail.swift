@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct PlaylistDetail: View {
     var playlist: Playlist
@@ -30,12 +30,12 @@ struct PlaylistDetail: View {
                     ForEach(playlist.Albums.indices) { i in
                         NavigationLink(destination: AlbumDetail(playlist.Albums[i], selectedSong: .constant(nil))) {
                             SongTableRow(
-                                left: AnyView(URLImage(playlist.Albums[i].picture.uri, content: { image in
-                                    image
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                })
+                                left: AnyView(WebImage(url: playlist.Albums[i].picture.uri)
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .indicator(.activity)
+                                    .scaledToFill()
+
                                     .frame(width: 50, height: 50)
                                     .cornerRadius(4)),
                                 divider: i < playlist.Albums.count - 1,

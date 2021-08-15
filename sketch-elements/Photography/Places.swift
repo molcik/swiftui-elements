@@ -8,7 +8,6 @@
 
 import MapKit
 import SwiftUI
-import URLImage
 
 struct Places: View {
     var tintColor: Color = Constant.color.tintColor

@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftUI
-import URLImage
 
 struct AlbumDetail: View {
     var album: Album

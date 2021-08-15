@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct PhotoStack: View {
     @Environment(\.colorScheme) var colorScheme
@@ -20,15 +20,12 @@ struct PhotoStack: View {
     var body: some View {
         ZStack(alignment: .bottom, content: {
             ForEach(showcasedPhotos.indices, id: \.self) { i in
-                URLImage(showcasedPhotos[i].urls.small, content: { image in
-                    image
-                        .resizable()
-                        .aspectRatio(1 / 1, contentMode: .fit)
-                        .border(colorScheme == .dark ? Color.gray : Color.white, width: hidden ? 1 : 4)
-                        .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
-                        .rotationEffect(.init(degrees: Double(rotations[i])))
-
-                })
+                WebImage(url: showcasedPhotos[i].urls.small)
+                    .resizable()
+                    .indicator(.activity)
+                    .scaledToFit()
+                    .shadow(color: .black.opacity(0.075), radius: 1, x: 0, y: 1)
+                    .rotationEffect(.init(degrees: Double(rotations[i])))
                     .zIndex(Double(999 - i))
             }
             ZStack(alignment: .top, content: {

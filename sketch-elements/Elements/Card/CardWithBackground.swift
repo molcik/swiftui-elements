@@ -6,8 +6,8 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct CardWithBackground: View {
     var title: String
@@ -45,11 +45,10 @@ struct CardWithBackground: View {
             .frame(height: height)
             .foregroundColor(Color.white)
             .background(
-                URLImage(pictureUrl, content: { image in
-                    image
-                        .renderingMode(.original)
-                        .resizable()
-                })
+                WebImage(url: pictureUrl)
+                    .resizable()
+                    .renderingMode(.original)
+                    .indicator(.activity)
             )
         }
     }

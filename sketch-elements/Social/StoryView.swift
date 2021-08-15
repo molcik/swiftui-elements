@@ -6,8 +6,8 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct StoryView: View {
     var story: Story
@@ -35,12 +35,13 @@ struct StoryView: View {
             .padding(.leading, 30)
             .foregroundColor(.white)
             Spacer()
-        }.background(URLImage(story.picture.uri) { image in
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
-        }).edgesIgnoringSafeArea(.all)
+        }.background(
+            WebImage(url: story.picture.uri)
+            .resizable()
+            .indicator(.activity)
+            .scaledToFill()
+            .edgesIgnoringSafeArea(.all)
+        ).edgesIgnoringSafeArea(.all)
     }
 }
 

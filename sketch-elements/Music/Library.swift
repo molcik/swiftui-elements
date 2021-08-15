@@ -12,7 +12,7 @@ import SwiftUI
 struct Library: View {
     var albums: [Album]
 
-    @State var selectedSong: Song? = nil
+    @State var selectedSong: Song? = nil 
 
     var body: some View {
         ZStack {

@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct Stars: View {
     

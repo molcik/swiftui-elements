@@ -9,122 +9,105 @@
 import Combine
 import CoreImage
 import CoreImage.CIFilterBuiltins
+import FullScreenModal
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct FilterView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
+
     @State private var currentFilter: CIFilter? = nil
     var photoUrls: Urls
     @State var image: Image? = nil
     @State var isLoaded = false
     let context = CIContext()
+
     let availableFilters: [CIFilter] = [.sepiaTone(), .colorMonochrome(), .photoEffectNoir(), .photoEffectFade(), .photoEffectTonal(), .photoEffectChrome()]
 
     var body: some View {
-        VStack(spacing: 0) {
-            URLImage(photoUrls.small) {
-                // This view is displayed before download starts
-                EmptyView()
-            } inProgress: { _ in
-                ZStack {
+        GeometryReader { g in
+            VStack(spacing: 0) {
+                WebImage(url: photoUrls.full, context: [.imageTransformer: SDImageFilterTransformer(filter: currentFilter ?? CIFilter.noiseReduction())])
+                    .resizable()
+
+                    .placeholder {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.white)
+                                .frame(height: 600)
+                                .edgesIgnoringSafeArea(.all)
+                        }
+                    }
+                    .indicator(.activity)
+                    .scaledToFill()
+                    .frame(width: g.size.width, height: g.safeAreaInsets.bottom > 0 ? g.size.height * 0.83 : g.size.height * 0.7)
+                    .clipped()
+                    .zIndex(0)
+
+                ZStack(alignment: .top) {
                     Rectangle()
                         .foregroundColor(.white)
-                        .frame(width: 100, height: 100)
-                        .frame(height: 600)
-                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/ .all/*@END_MENU_TOKEN@*/)
+                        .frame(height: 300, alignment: .center)
+                        .cornerRadius(30, antialiased: true)
+                        .padding(.top, -25)
 
-                    ActivityIndicator()
-                }
-            } failure: { error, retry in
-                // Display error and retry button
-                VStack {
-                    Text(error.localizedDescription)
-                    Button("Retry", action: retry)
-                }
-            } content: { image in
-                image
-                    .applyFilter(currentFilter, url: photoUrls.small, image: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(height: 600)
-                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/ .all/*@END_MENU_TOKEN@*/)
-            }
-            ZStack(alignment: .top) {
-                Rectangle()
-                    .foregroundColor(.white)
-                    .frame(height: 300, alignment: .leading)
-                    .cornerRadius(25, antialiased: true)
-                    .padding(.top, -25)
-                VStack(alignment: .leading, spacing: 0) {
-                    HStack {
-                        Image(systemName: Constant.icon.chevronDown)
-                            .padding(.horizontal).onTapGesture {
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                        Spacer()
-                        Text("Filters")
-                            .bold()
-                        Spacer()
-                        Button(action: {
-                            presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Text("Save")
+                        .zIndex(200)
+                    VStack(alignment: .leading, spacing: 0) {
+                        HStack {
+                            Image(systemName: Constant.icon.chevronDown)
+                                .padding(.horizontal)
+                                .onTapGesture {
+                                    modalState.close.send()
+                                }
+                            Spacer()
+                            Text("Filters")
                                 .bold()
+                            Spacer()
+                            Button(
+                                action: {
+                                    modalState.close.send()
+                                }) {
+                                    Text("Save")
+                                        .bold()
+                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
-                    }
-                    .zIndex(2)
-                    .foregroundColor(Constant.color.photographyPrimary)
-                    Divider().padding(.vertical)
+                        .foregroundColor(Constant.color.photographyPrimary)
+                        Divider().padding(.vertical)
 
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(alignment: .center, spacing: 5) {
-                            ForEach(availableFilters.indices, id: \.self) { i in
-
-                                URLImage(photoUrls.small) {
-                                    // This view is displayed before download starts
-                                    EmptyView()
-                                } inProgress: { _ in
-                                    ZStack {
-                                        Rectangle()
-                                            .frame(width: 100, height: 100)
-                                            .foregroundColor(.gray.opacity(0.3))
-                                            .border(Color.white, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                                            .padding()
-                                        ActivityIndicator()
-                                    }
-
-                                } failure: { error, retry in
-                                    // Display error and retry button
-                                    VStack {
-                                        Text(error.localizedDescription)
-                                        Button("Retry", action: retry)
-                                    }
-                                } content: { image in
-                                    image
-                                        .applyFilter(availableFilters[i], url: photoUrls.small, image: image)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(alignment: .center, spacing: 5) {
+                                ForEach(availableFilters.indices, id: \.self) { i in
+                                    WebImage(url: photoUrls.small, context: [.imageTransformer: SDImageFilterTransformer(filter: availableFilters[i])])
                                         .resizable()
+                                        .placeholder {
+                                            ZStack {
+                                                Rectangle()
+                                                    .frame(width: 100, height: 100)
+                                                    .foregroundColor(.gray.opacity(0.3))
+                                                    .border(Color.white, width: 1)
+                                                    .padding()
+                                            }
+                                        }
+
+                                        .indicator(.activity)
                                         .frame(width: 100, height: 100)
                                         .aspectRatio(contentMode: .fill)
-                                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                        .edgesIgnoringSafeArea(.all)
                                         .padding()
                                         .onTapGesture {
                                             self.currentFilter = availableFilters[i]
                                         }
                                 }
-                            }
+                            }.padding(.horizontal)
                         }
                     }
+
+                    .zIndex(999)
                 }
-            }
-            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-
+            }  .edgesIgnoringSafeArea(.all)
+          
         }
-    }
-
-    func getUIImageDataFromURL(_ url: URL) -> UIImage {
-        return UIImage(data: try! Data(contentsOf: url))!
     }
 }
 

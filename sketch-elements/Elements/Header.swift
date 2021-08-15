@@ -6,8 +6,8 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct Header<Content: View>: View {
     var image: URL
@@ -27,11 +27,11 @@ struct Header<Content: View>: View {
             .foregroundColor(.white)
             .background(LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.3), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom))
             .background(
-                URLImage(image, content: { image in
-                    image
-                        .renderingMode(.original)
-                        .resizable(capInsets: .init(), resizingMode: .tile)
-                }))
+                WebImage(url: image)
+                    .renderingMode(.original)
+                    .resizable(capInsets: .init(), resizingMode: .tile)
+                    .indicator(.activity)
+            )
             .frame(maxWidth: .infinity)
             .frame(height: height)
     }

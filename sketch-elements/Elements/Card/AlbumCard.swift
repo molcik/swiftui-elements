@@ -6,8 +6,8 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct AlbumCard: View {
     var album: Album
@@ -23,11 +23,10 @@ struct AlbumCard: View {
                     .frame(height: height)
                     .foregroundColor(Color.white)
                     .background(
-                        URLImage(album.picture.uri, content: { image in
-                            image
-                                .renderingMode(.original)
-                                .resizable()
-                        })
+                        WebImage(url: album.picture.uri)
+                            .renderingMode(.original)
+                            .resizable()
+                            .indicator(.activity)
                     )
                 VStack(alignment: .leading) {
                     HStack {
