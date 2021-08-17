@@ -8,10 +8,12 @@
 
 import SDWebImageSwiftUI
 import SwiftUI
+import FullScreenModal
 
 struct StoryView: View {
     var story: Story
     var user: User
+    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
     init(story: Story) {
         self.story = story
         self.user = usersData.first(where: { $0.id == story.user })!
@@ -19,9 +21,18 @@ struct StoryView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HStack(alignment: .top) {
+        
+            HStack(alignment: .center) {
+                Image(systemName: Constant.icon.close)
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .padding(.trailing)
+                    .onTapGesture {
+                        modalState.close.send()
+                    }
                 Profile(size: 40, image: user.picture.uri)
                 VStack(alignment: .leading) {
+                   
                     Text("\(user.name)")
                         .fontWeight(.bold)
                     Text("@\(user.id)")

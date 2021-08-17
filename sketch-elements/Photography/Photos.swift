@@ -50,11 +50,10 @@ struct Photos: View {
                 Image(systemName: Constant.icon.camera)
                     .foregroundColor(.white)
                     .onTapGesture {
-                        showPicker.toggle()
+                        modalState.displayContent.send(
+                            PhotoPicker(image: $inputImage).anyView
+                        )
                     })
-            .sheet(isPresented: $showPicker, onDismiss: loadImage) {
-                PhotoPicker(image: $inputImage)
-            }
         }
     }
 

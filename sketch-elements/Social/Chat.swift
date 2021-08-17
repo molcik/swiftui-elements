@@ -11,10 +11,10 @@ import SwiftUI
 struct Chat: View {
     var conversation: Conversation
     let users = usersData
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
             GeometryReader { g in
-
                 ZStack(alignment: .top) {
                     Color.black.opacity(0.04).edgesIgnoringSafeArea(.all)
                     ScrollView(.vertical, showsIndicators: false) {
@@ -33,7 +33,7 @@ struct Chat: View {
                                     ZStack {
                                         Rectangle()
                                             .frame(width: g.size.width * 0.7, height: 75)
-                                            .foregroundColor(.white)
+                                            .foregroundColor(colorScheme == .dark ? .gray.opacity(0.25) : .white)
                                             .cornerRadius(12, antialiased: true)
                                             .shadow(color: .black.opacity(0.06), radius: 1, x: 0, y: 5)
                                             .padding(.leading, message.me ? 30 : 0)
@@ -47,7 +47,6 @@ struct Chat: View {
                                             .resizable()
                                             .indicator(.activity)
                                             .scaledToFit()
-                                            
                                             .frame(width: g.size.width * 0.2, height: 50)
                                             .clipShape(Circle())
                                     }
@@ -67,6 +66,6 @@ struct Chat: View {
 
 struct Chat_Previews: PreviewProvider {
     static var previews: some View {
-        Chat(conversation: conversationsData[1])
+        Chat(conversation: conversationsData[1]).colorScheme(.dark)
     }
 }

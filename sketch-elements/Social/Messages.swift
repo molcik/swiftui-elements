@@ -11,6 +11,7 @@ import SwiftUI
 struct Messages: View {
     var conversations: [Conversation]
     var users: [User]
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
             VStack {
@@ -22,7 +23,7 @@ struct Messages: View {
                                 contentText: conversation.messages[0].message,
                                 timestamp: conversation.messages[0].timestamp
                             )
-                            .foregroundColor(Color.black)
+                            .foregroundColor(colorScheme == .dark ? .white : .black )
                         }
                     }
                 }
@@ -38,6 +39,6 @@ struct Messages_Previews: PreviewProvider {
     static var previews: some View {
         Messages(conversations: conversationsData, users: usersData)
             .environmentObject(UserData())
-            .environment(\.colorScheme, .light)
+            .environment(\.colorScheme, .dark)
     }
 }

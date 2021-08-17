@@ -15,7 +15,8 @@ import SwiftUI
 
 struct FilterView: View {
     @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
-
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     @State private var currentFilter: CIFilter? = nil
     var photoUrls: Urls
     @State var image: Image? = nil
@@ -46,11 +47,10 @@ struct FilterView: View {
 
                 ZStack(alignment: .top) {
                     Rectangle()
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                         .frame(height: 300, alignment: .center)
                         .cornerRadius(30, antialiased: true)
                         .padding(.top, -25)
-
                         .zIndex(200)
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
@@ -85,7 +85,7 @@ struct FilterView: View {
                                                 Rectangle()
                                                     .frame(width: 100, height: 100)
                                                     .foregroundColor(.gray.opacity(0.3))
-                                                    .border(Color.white, width: 1)
+                                                    .border(colorScheme == .dark ? Color.gray : Color.white, width: 1)
                                                     .padding()
                                             }
                                         }
@@ -94,6 +94,7 @@ struct FilterView: View {
                                         .frame(width: 100, height: 100)
                                         .aspectRatio(contentMode: .fill)
                                         .edgesIgnoringSafeArea(.all)
+                                        .border(colorScheme == .dark ? Color.gray : Color.white, width: 1)
                                         .padding()
                                         .onTapGesture {
                                             self.currentFilter = availableFilters[i]
@@ -113,6 +114,6 @@ struct FilterView: View {
 
 struct FilterView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterView(photoUrls: photographyData[7].urls)
+        FilterView(photoUrls: photographyData[7].urls).colorScheme(.dark)
     }
 }

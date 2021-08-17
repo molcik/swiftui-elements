@@ -6,6 +6,7 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import FullScreenModal
 import SwiftUI
 
 struct Timeline: View {
@@ -15,6 +16,8 @@ struct Timeline: View {
     @State var isPresented = false
     @EnvironmentObject var modalManager: ModalManager
     @State var selectedStory: Story? = nil
+    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -24,24 +27,18 @@ struct Timeline: View {
                             Profile(image: nil, add: true)
                             ForEach(stories) { story in
                                 Profile(image: users.first(where: { $0.id == story.user })!.picture.uri, disabled: story.seen, notification: !story.seen).onTapGesture {
-                                    isPresented.toggle()
-                                    self.selectedStory = story
+                                    modalState.displayContent.send(
+                                        StoryView(story: story).anyView
+                                    )
                                 }
                             }
                         }
                         .padding([.leading, .trailing])
                     }
-                    .sheet(item: $selectedStory, content: { story in
-                        StoryView(story: story)
-
-                    })
                     .frame(height: 80)
                     .background(Constant.color.bgDefault)
                     ScrollView(.vertical, showsIndicators: false) {
                         ForEach(posts) { post in
-                            // NavigationLink(
-                            //    destination: RecipesListView(category: category)
-                            // ) {
                             SocialCard(
                                 user: users.first(where: { $0.id == post.user })!,
                                 contentText: post.caption,
@@ -55,11 +52,12 @@ struct Timeline: View {
                             )
                         }
                     }
-                }.background(Constant.color.gray)
-                    .navigationBarColor(Constant.color.socialPrimary.uiColor())
-                    .navigationBarTitle(Text("Timeline"), displayMode: .large)
-                    .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white).onTapGesture(perform: { self.modalManager.openModal(position: .partiallyRevealed)
-                    }))
+                }
+                .background(Constant.color.gray)
+                .navigationBarColor(Constant.color.socialPrimary.uiColor())
+                .navigationBarTitle(Text("Timeline"), displayMode: .large)
+                .navigationBarItems(trailing: Image(systemName: Constant.icon.compose).foregroundColor(.white).onTapGesture(perform: { self.modalManager.openModal(position: .partiallyRevealed)
+                }))
             }
             ModalAnchorView().onAppear {
                 self.modalManager.newModal(position: .closed) {
@@ -74,6 +72,7 @@ struct Timeline_Previews: PreviewProvider {
     static var previews: some View {
         Timeline(stories: storiesData, users: usersData, posts: postsData)
             .environmentObject(UserData())
-            .environment(\.colorScheme, .light)
+            .environment(\.colorScheme, .dark)
+            .environmentObject(ModalManager())
     }
 }

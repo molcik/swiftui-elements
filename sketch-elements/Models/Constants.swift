@@ -62,6 +62,7 @@ struct Constant {
         static let crop = "crop"
         static let options = "slider.horizontal.3"
         static let note = "music.note"
+        static let close = "xmark"
     }
     
 }

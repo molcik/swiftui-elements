@@ -25,6 +25,7 @@ struct Places: View {
                     MapAnnotation(coordinate: item.coordinate) {
                         PhotoStack(numberOfPhotos: item.photos.count, showcasedPhotos: Array(item.photos.prefix(3)), hidden: region.span.latitudeDelta / 2 > 30)
                             .frame(width: 100 - CGFloat(region.span.latitudeDelta / 2), height: 100 - CGFloat(region.span.longitudeDelta / 1.5), alignment: .center)
+                            .clipped()
                     }
                 }.ignoresSafeArea()
                 .navigationBarHidden(true)
