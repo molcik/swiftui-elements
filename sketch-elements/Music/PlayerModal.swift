@@ -16,7 +16,6 @@ struct PlayerModal: View {
     @State private var seconds: Float = 0
     @State var songTime: Float = 1
     @State var audioPlayer = AVPlayer()
-    @State var isPlaying: Bool = true
     @Binding var modalState: ModalState
     @ObservedObject var viewModel: MusicViewModel
 
@@ -44,16 +43,18 @@ struct PlayerModal: View {
                     Spacer()
 
                     ButtonPlayer(action: {
-                                     if !isPlaying {
+                                     if !viewModel.isPlaying() {
+                                         viewModel.play()
                                          self.audioPlayer.play()
                                      }
                                      else {
+                                         viewModel.pause()
                                          self.audioPlayer.pause()
                                      }
-                                     isPlaying.toggle()
+
                                  },
                                  foregroundColor: Constant.color.musicPrimary) {
-                        Image(systemName: isPlaying ? Constant.icon.pause : Constant.icon.play)
+                        Image(systemName: viewModel.isPlaying() ? Constant.icon.pause : Constant.icon.play)
                     }
 
                     Spacer()
@@ -100,20 +101,20 @@ struct PlayerModal: View {
             .onReceive(viewModel.$song, perform: { _ in
                 print(self.viewModel.song.name)
                 self.audioPlayer.seek(to: CMTime.zero)
+                playSong()
             })
         }
-     
-        .onAppear {
-            playSong()
-        }
-       
     }
 
     func playSong() {
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
         let song = Bundle.main.url(forResource: "Hearts Were Gold", withExtension: "mp3")
         self.audioPlayer.replaceCurrentItem(with: AVPlayerItem(url: song!))
-        self.audioPlayer.play()
+
+        // This is here so it doesn't start playing right at the start of the app
+        if self.viewModel.isPlaying() {
+            self.audioPlayer.play()
+        }
 
         let timeScale = CMTimeScale(NSEC_PER_SEC)
         let time = CMTime(seconds: 1, preferredTimescale: timeScale)

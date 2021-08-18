@@ -31,7 +31,8 @@ struct AlbumDetail: View {
                             content: songs[index].name,
                             right: Constant.icon.dots
                         ).onTapGesture {
-                            viewModel.changePublishedPropertyValue(newSong: songs[index])
+                            viewModel.changeSong(newSong: songs[index])
+                            viewModel.play()
                         }
                     }
                 }.padding([.top, .bottom])

@@ -17,9 +17,17 @@ struct MiniPlayer: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Image(systemName: Constant.icon.play)
+            Image(systemName: viewModel.isPlaying() ? Constant.icon.pause : Constant.icon.play)
                 .frame(width: 50, height: 50, alignment: .center)
                 .scaleEffect(CGSize(width: 1.4, height: 1.4))
+                .onTapGesture {
+                    
+                    if (viewModel.isPlaying()) {
+                        viewModel.pause()
+                    } else {
+                        viewModel.play()
+                    }
+                }
 
             Button(action: { self.modalManager.openModal(position: .partiallyRevealed) }) {
                 Spacer()
