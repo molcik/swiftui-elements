@@ -65,12 +65,12 @@ struct MusicHeader: View {
                     }
                     VStack(alignment: .leading, spacing: 5) {
                         Text(playlist!.title)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Constant.color.contrast)
                             .fontWeight(.bold)
                             .font(.headline)
                         Text(playlist!.description)
                             .font(.subheadline)
-                            .foregroundColor(Color.gray)
+                            .foregroundColor(Constant.color.contrast)
                         Spacer()
                     }.padding([.bottom, .horizontal])
                         .padding(.top, 5)
@@ -87,7 +87,7 @@ struct MusicHeader: View {
 
                     VStack(alignment: .leading, spacing: 5) {
                         Text(album!.name)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Constant.color.contrast)
                             .fontWeight(.bold)
                             .font(.headline)
                         Text(album!.artist)
@@ -130,7 +130,6 @@ struct MusicHeader: View {
         .frame(maxWidth: .infinity)
         .padding(.bottom, 5.0)
         .padding(.horizontal)
-        .foregroundColor(.white)
         .background(Constant.color.bgDefault)
     }
 }
@@ -138,6 +137,6 @@ struct MusicHeader: View {
 struct MusicHeader_Previews: PreviewProvider {
     static var previews: some View {
         MusicHeader(album: musicData[0])
-            .environment(\.colorScheme, .light)
+            .environment(\.colorScheme, .dark)
     }
 }

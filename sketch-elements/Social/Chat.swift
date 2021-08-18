@@ -11,7 +11,6 @@ import SwiftUI
 struct Chat: View {
     var conversation: Conversation
     let users = usersData
-    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
             GeometryReader { g in
@@ -33,7 +32,7 @@ struct Chat: View {
                                     ZStack {
                                         Rectangle()
                                             .frame(width: g.size.width * 0.7, height: 75)
-                                            .foregroundColor(colorScheme == .dark ? .gray.opacity(0.25) : .white)
+                                            .foregroundColor(Constant.color.bgDefault)
                                             .cornerRadius(12, antialiased: true)
                                             .shadow(color: .black.opacity(0.06), radius: 1, x: 0, y: 5)
                                             .padding(.leading, message.me ? 30 : 0)

@@ -56,6 +56,6 @@ struct LibraryDetail_Previews: PreviewProvider {
     static var previews: some View {
         AlbumDetail(musicData[0], selectedSong: .constant(getAlbumSongs(musicData[0])[0]))
             .environmentObject(UserData())
-            .environment(\.colorScheme, .light)
+            .environment(\.colorScheme, .dark)
     }
 }

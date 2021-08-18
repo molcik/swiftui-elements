@@ -10,8 +10,10 @@ import SwiftUI
 
 struct NewPost: View {
     @EnvironmentObject var modalManager: ModalManager
-    @State private var fullText: String = ""
+    @State var fullText: String = ""
     @State var selection: Int = 0
+
+   
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 0) {
@@ -39,7 +41,10 @@ struct NewPost: View {
             }
             SegmentedPickerCollapsed(items: ["Text", "Photo"], selection: $selection, backgroundColor: Constant.color.socialPrimary.opacity(0.5), activeColor: Constant.color.socialPrimary.opacity(0.8), textColor: Color.white)
                 .padding()
-            TextView()
+            TextView() {
+                $0.backgroundColor = Constant.color.bgDefault.uiColor()
+                $0.endEditing(modalManager.modal.position == .closed)
+            }
                 .padding()
         }
     }
@@ -61,5 +66,6 @@ struct TextView: UIViewRepresentable {
 struct NewPost_Previews: PreviewProvider {
     static var previews: some View {
         NewPost()
+            .colorScheme(.dark)
     }
 }

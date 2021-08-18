@@ -16,7 +16,7 @@ struct MiniPlayer: View {
     @Binding var song: Song?
 
     var body: some View {
-        HStack {
+        HStack(alignment: .center) {
             Image(systemName: Constant.icon.play)
                 .frame(width: 50, height: 50, alignment: .center)
                 .scaleEffect(CGSize(width: 1.4, height: 1.4))
@@ -30,9 +30,7 @@ struct MiniPlayer: View {
                         .font(.subheadline)
                 }
                 Spacer()
-
-            }.padding([.top])
-
+            }
             WebImage(url: song!.album!.picture.uri)
                 .renderingMode(.original)
                 .resizable()
@@ -40,9 +38,9 @@ struct MiniPlayer: View {
                 .frame(width: 50, height: 50, alignment: .center)
                 .cornerRadius(3)
         }
-        .padding([.horizontal, .bottom], 10.0)
+        .padding(10.0)
         .foregroundColor(Constant.color.musicPrimary)
-        .background(Color.white)
+        .background(Constant.color.bgDefault)
         .onAppear {
             self.modalManager.newModal(position: .closed) {
                 PlayerModal(action: self.modalManager.closeModal, song: $song)
@@ -53,6 +51,6 @@ struct MiniPlayer: View {
 
 struct MiniPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        MiniPlayer(song: .constant(getAlbumSongs(musicData[0])[0]))
+        MiniPlayer(song: .constant(getAlbumSongs(musicData[0])[0])).colorScheme(.dark)
     }
 }

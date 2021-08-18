@@ -14,7 +14,8 @@ struct SongTableRow: View {
     var content: String
     var description: String?
     var right: String
-
+    @Environment(\.colorScheme) var colorScheme
+    @State var tap = false
     var body: some View {
         VStack {
             TableRow(
@@ -34,7 +35,7 @@ struct SongTableRow: View {
                     })
             )
         }
-        .background(Color.white)
+        .background(Constant.color.bgDefault)
         .animation(.easeIn)
     }
 }
@@ -48,5 +49,6 @@ struct SongTableRow_Previews: PreviewProvider {
             description: "description",
             right: Constant.icon.dots
         )
+        .environment(\.colorScheme, .dark)
     }
 }

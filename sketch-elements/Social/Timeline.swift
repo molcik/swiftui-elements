@@ -24,7 +24,9 @@ struct Timeline: View {
                 VStack {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 16) {
-                            Profile(image: nil, add: true)
+                            Profile(image: nil, add: true).onTapGesture {
+                                self.modalManager.openModal(position: .partiallyRevealed)
+                            }
                             ForEach(stories) { story in
                                 Profile(image: users.first(where: { $0.id == story.user })!.picture.uri, disabled: story.seen, notification: !story.seen).onTapGesture {
                                     modalState.displayContent.send(
