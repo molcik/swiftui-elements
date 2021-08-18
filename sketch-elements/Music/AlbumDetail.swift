@@ -12,12 +12,11 @@ import SwiftUI
 struct AlbumDetail: View {
     var album: Album
     var songs: [Song]
-    @Binding var selectedSong: Song?
+    @EnvironmentObject var viewModel: MusicViewModel
 
-    init(_ album: Album, selectedSong: Binding<Song?>) {
+    init(_ album: Album) {
         self.album = album
         songs = getAlbumSongs(album)
-        _selectedSong = selectedSong
     }
 
     var body: some View {
@@ -32,7 +31,7 @@ struct AlbumDetail: View {
                             content: songs[index].name,
                             right: Constant.icon.dots
                         ).onTapGesture {
-                            selectedSong = songs[index]
+                            viewModel.changePublishedPropertyValue(newSong: songs[index])
                         }
                     }
                 }.padding([.top, .bottom])
@@ -54,7 +53,7 @@ struct AlbumDetail: View {
 
 struct LibraryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        AlbumDetail(musicData[0], selectedSong: .constant(getAlbumSongs(musicData[0])[0]))
+        AlbumDetail(musicData[0])
             .environmentObject(UserData())
             .environment(\.colorScheme, .dark)
     }

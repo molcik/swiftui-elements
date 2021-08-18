@@ -15,15 +15,15 @@ struct PlayerModal: View {
     var action: () -> Void
     @State private var seconds: Float = 0
     @State var songTime: Float = 1
-    @Binding var song: Song?
-    @State var audioPlayer: AVPlayer!
+    @State var audioPlayer = AVPlayer()
     @State var isPlaying: Bool = true
+    @Binding var modalState: ModalState
+    @ObservedObject var viewModel: MusicViewModel
 
     var body: some View {
         VStack {
-            ModalHeader(action: self.action, title: song!.name, attachment: AnyView(_fromValue: Constant.icon.dots), tintColor: Constant.color.musicPrimary)
-
-            ModalPlayerCard(image: song!.album!.picture.uri).padding(.top)
+            ModalHeader(action: self.action, title: viewModel.song.name, attachment: AnyView(_fromValue: Constant.icon.dots), tintColor: Constant.color.musicPrimary)
+            ModalPlayerCard(image: viewModel.song.album!.picture.uri).padding(.top)
             VStack {
                 Spacer(minLength: 35)
 
@@ -79,7 +79,6 @@ struct PlayerModal: View {
                             ZStack(alignment: .leading) {
                                 Rectangle()
                                     .foregroundColor(.gray.opacity(0.06))
-
                                 Rectangle()
                                     .foregroundColor(Constant.color.musicPrimary)
                                     .frame(width: geometry.size.width * CGFloat(self.seconds / songTime))
@@ -97,26 +96,25 @@ struct PlayerModal: View {
                     Spacer()
                 }.padding([.horizontal, .top])
                     .padding(20)
-                    .onAppear {
-                        playSong()
-                    }
-                    .onReceive(Just(song), perform: { _ in
-
-                        // reset audioPlayer
-                        if self.audioPlayer != nil {
-                            self.audioPlayer.replaceCurrentItem(with: nil)
-                        }
-                        seconds = 0
-                        playSong()
-                    })
             }
+            .onReceive(viewModel.$song, perform: { _ in
+                print(self.viewModel.song.name)
+                self.audioPlayer.seek(to: CMTime.zero)
+            })
         }
+     
+        .onAppear {
+            playSong()
+        }
+       
     }
 
     func playSong() {
-        self.audioPlayer = AVPlayer(url: self.song!.uri)
-
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        let song = Bundle.main.url(forResource: "Hearts Were Gold", withExtension: "mp3")
+        self.audioPlayer.replaceCurrentItem(with: AVPlayerItem(url: song!))
         self.audioPlayer.play()
+
         let timeScale = CMTimeScale(NSEC_PER_SEC)
         let time = CMTime(seconds: 1, preferredTimescale: timeScale)
         self.audioPlayer.addPeriodicTimeObserver(forInterval: time, queue: .main) { time in
@@ -128,6 +126,6 @@ struct PlayerModal: View {
 
 struct PlayerModal_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerModal(action: {}, song: .constant(getAlbumSongs(musicData[0])[0])).environmentObject(UserData())
+        PlayerModal(action: {}, modalState: .constant(ModalState.closed), viewModel: MusicViewModel()).environmentObject(UserData())
     }
 }

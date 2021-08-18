@@ -28,7 +28,7 @@ struct PlaylistDetail: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
                     ForEach(playlist.Albums.indices) { i in
-                        NavigationLink(destination: AlbumDetail(playlist.Albums[i], selectedSong: .constant(nil))) {
+                        NavigationLink(destination: AlbumDetail(playlist.Albums[i])) {
                             SongTableRow(
                                 left: AnyView(WebImage(url: playlist.Albums[i].picture.uri)
                                     .renderingMode(.original)

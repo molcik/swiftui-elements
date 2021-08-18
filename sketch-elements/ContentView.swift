@@ -21,7 +21,7 @@ enum Theme: String, CaseIterable, Identifiable {
 struct ContentView: View {
     
     @EnvironmentObject var userData: UserData
-    
+    @EnvironmentObject var viewModel: MusicViewModel
     // NOTE: This is needed only to change the theme, feel free to remove it
     @State var selectedTheme = Theme.food
     // NOTE END

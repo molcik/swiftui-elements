@@ -11,8 +11,7 @@ import SwiftUI
 
 struct Library: View {
     var albums: [Album]
-
-    @State var selectedSong: Song? = nil 
+    @EnvironmentObject var viewModel: MusicViewModel
 
     var body: some View {
         ZStack {
@@ -22,10 +21,10 @@ struct Library: View {
                         ForEach(albums.indices) { i in
                             HStack(spacing: -8) {
                                 if i % 2 != 1 {
-                                    AlbumTile(album: albums[i], selectedSong: $selectedSong)
+                                    AlbumTile(album: albums[i])
                                 }
                                 if i % 2 == 0 {
-                                    AlbumTile(album: albums[i + 1], selectedSong: $selectedSong)
+                                    AlbumTile(album: albums[i + 1])
                                 }
                             }
                         }
@@ -35,10 +34,6 @@ struct Library: View {
                     .navigationBarTitle(Text("Library"), displayMode: .large)
                     .navigationBarItems(trailing: Image(systemName: Constant.icon.magnifyingGlass).foregroundColor(.white))
                 }
-
-                if selectedSong != nil {
-                    MiniPlayer(song: $selectedSong)
-                }
             }
         }
     }
@@ -46,11 +41,11 @@ struct Library: View {
 
 struct AlbumTile: View {
     var album: Album
-    @Binding var selectedSong: Song?
+    @EnvironmentObject var viewModel: MusicViewModel
 
     var body: some View {
         NavigationLink(
-            destination: AlbumDetail(album, selectedSong: $selectedSong)
+            destination: AlbumDetail(album)
         ) {
             AlbumCard(album: album)
         }

@@ -90,6 +90,7 @@
 		34FE0A2D25681474007D1B06 /* CountPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE0A2C25681474007D1B06 /* CountPicker.swift */; };
 		DC32455F2670061A00FC86ED /* PhotoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32455E2670061A00FC86ED /* PhotoPreview.swift */; };
 		DC3245632670D27A00FC86ED /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3245622670D27A00FC86ED /* FilterView.swift */; };
+		DC4B165026CD6AE7009EDB54 /* Hearts Were Gold.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC4B164F26CD6AE7009EDB54 /* Hearts Were Gold.mp3 */; };
 		DC680ACB26C67ADF0015778C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DC680ACA26C67ADF0015778C /* SDWebImageSwiftUI */; };
 		DC680AD126C689270015778C /* FullScreenModal in Frameworks */ = {isa = PBXBuildFile; productRef = DC680AD026C689270015778C /* FullScreenModal */; };
 		DCA90EA626A70EEB006880A5 /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA90EA526A70EEB006880A5 /* NewPost.swift */; };
@@ -104,6 +105,7 @@
 		DCAAD9DF26AEB5B600B8B334 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAD9DE26AEB5B500B8B334 /* Chat.swift */; };
 		DCAAD9E326B2CB7900B8B334 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAD9E226B2CB7900B8B334 /* StoryView.swift */; };
 		DCAAD9E526B2EFA600B8B334 /* StoryComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAD9E426B2EFA600B8B334 /* StoryComments.swift */; };
+		DCBB266626CDA723006C5E3C /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB266526CDA723006C5E3C /* MusicViewModel.swift */; };
 		DCE62CDB266A70FC0002CAD4 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD7266A70FC0002CAD4 /* Places.swift */; };
 		DCE62CDD266A70FC0002CAD4 /* Photography.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD9266A70FC0002CAD4 /* Photography.swift */; };
 		DCE62CDE266A70FC0002CAD4 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CDA266A70FC0002CAD4 /* Albums.swift */; };
@@ -224,6 +226,7 @@
 		34FE0A2C25681474007D1B06 /* CountPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPicker.swift; sourceTree = "<group>"; };
 		DC32455E2670061A00FC86ED /* PhotoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreview.swift; sourceTree = "<group>"; };
 		DC3245622670D27A00FC86ED /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		DC4B164F26CD6AE7009EDB54 /* Hearts Were Gold.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hearts Were Gold.mp3"; sourceTree = "<group>"; };
 		DCA90EA526A70EEB006880A5 /* NewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
 		DCA90EA926A87204006880A5 /* Albums */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Albums; sourceTree = "<group>"; };
 		DCA90EAB26A8800B006880A5 /* albums.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = albums.json; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 		DCAAD9DE26AEB5B500B8B334 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		DCAAD9E226B2CB7900B8B334 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		DCAAD9E426B2EFA600B8B334 /* StoryComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryComments.swift; sourceTree = "<group>"; };
+		DCBB266526CDA723006C5E3C /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
 		DCE62CD7266A70FC0002CAD4 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		DCE62CD9266A70FC0002CAD4 /* Photography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photography.swift; sourceTree = "<group>"; };
 		DCE62CDA266A70FC0002CAD4 /* Albums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
@@ -313,10 +317,12 @@
 				34ADED252584B22600A504F5 /* Social */,
 				DCE62CD6266A70FC0002CAD4 /* Photography */,
 				349E4BD62415227E0079BF04 /* Elements */,
+				DCBB266426CDA709006C5E3C /* ViewModels */,
 				3403A31B240809CC00D7B040 /* Models */,
 				3403A31E240809FE00D7B040 /* Data */,
 				DCE62CE7266C38510002CAD4 /* Utils */,
 				3403A3072406B71100D7B040 /* Assets.xcassets */,
+				DC4B164F26CD6AE7009EDB54 /* Hearts Were Gold.mp3 */,
 				3445A797240A80AF0020561B /* ColorPalette.xcassets */,
 				3403A30C2406B71100D7B040 /* LaunchScreen.storyboard */,
 				3403A30F2406B71100D7B040 /* Info.plist */,
@@ -523,6 +529,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DCBB266426CDA709006C5E3C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DCBB266526CDA723006C5E3C /* MusicViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DCE62CD6266A70FC0002CAD4 /* Photography */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +644,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4B165026CD6AE7009EDB54 /* Hearts Were Gold.mp3 in Resources */,
 				DCA90EAC26A8800B006880A5 /* albums.json in Resources */,
 				34F1214F25875B1700BBB7DB /* guides.json in Resources */,
 				346DFE142584FB3800449492 /* users.json in Resources */,
@@ -741,6 +756,7 @@
 				DCE62CE9266C38740002CAD4 /* GroupBy.swift in Sources */,
 				346DFE0A2584F98C00449492 /* Story.swift in Sources */,
 				344723B924ABA89E003B9F50 /* BackButton.swift in Sources */,
+				DCBB266626CDA723006C5E3C /* MusicViewModel.swift in Sources */,
 				E6AF7A6125CC597C002F752E /* Playlist.swift in Sources */,
 				3492B625258A09F2001D2094 /* VenuesList.swift in Sources */,
 				349524C9258A31E90077F145 /* Hotel.swift in Sources */,

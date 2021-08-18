@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .fullScreenModalHandling()
             .environmentObject(ModalManager())
             .environmentObject(UserData())
-         
+            .environmentObject(MusicViewModel())
 
         
         // Use a UIHostingController as window root view controller.

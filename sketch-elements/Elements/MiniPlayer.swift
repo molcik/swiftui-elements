@@ -6,14 +6,14 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
+import Combine
 import Foundation
 import SDWebImageSwiftUI
 import SwiftUI
 
 struct MiniPlayer: View {
     @EnvironmentObject var modalManager: ModalManager
-
-    @Binding var song: Song?
+    @EnvironmentObject var viewModel: MusicViewModel
 
     var body: some View {
         HStack(alignment: .center) {
@@ -24,14 +24,15 @@ struct MiniPlayer: View {
             Button(action: { self.modalManager.openModal(position: .partiallyRevealed) }) {
                 Spacer()
                 VStack {
-                    Text(song!.name)
+                    Text(viewModel.song.name)
                         .font(.headline)
-                    Text(song!.album!.artist)
+                    Text(viewModel.song.album!.artist)
                         .font(.subheadline)
                 }
                 Spacer()
             }
-            WebImage(url: song!.album!.picture.uri)
+
+            WebImage(url: viewModel.song.album!.picture.uri)
                 .renderingMode(.original)
                 .resizable()
                 .indicator(.activity)
@@ -41,16 +42,16 @@ struct MiniPlayer: View {
         .padding(10.0)
         .foregroundColor(Constant.color.musicPrimary)
         .background(Constant.color.bgDefault)
-        .onAppear {
-            self.modalManager.newModal(position: .closed) {
-                PlayerModal(action: self.modalManager.closeModal, song: $song)
-            }
-        }
+//        .onAppear {
+//            self.modalManager.newModal(position: .closed) {
+//                PlayerModal(action: self.modalManager.closeModal, modalState: $modalManager.modal.position, viewModel: viewModel)
+//            }
+//        }
     }
 }
 
 struct MiniPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        MiniPlayer(song: .constant(getAlbumSongs(musicData[0])[0])).colorScheme(.dark)
+        MiniPlayer().colorScheme(.dark)
     }
 }
