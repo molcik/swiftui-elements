@@ -42,11 +42,11 @@ struct MiniPlayer: View {
         .padding(10.0)
         .foregroundColor(Constant.color.musicPrimary)
         .background(Constant.color.bgDefault)
-//        .onAppear {
-//            self.modalManager.newModal(position: .closed) {
-//                PlayerModal(action: self.modalManager.closeModal, modalState: $modalManager.modal.position, viewModel: viewModel)
-//            }
-//        }
+        .onAppear {
+            self.modalManager.newModal(position: .closed) {
+                PlayerModal(action: self.modalManager.closeModal, modalState: $modalManager.modal.position, viewModel: viewModel)
+            }
+        }
     }
 }
 
