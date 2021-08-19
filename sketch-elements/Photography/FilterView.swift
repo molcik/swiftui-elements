@@ -91,8 +91,9 @@ struct FilterView: View {
                                         }
 
                                         .indicator(.activity)
-                                        .frame(width: 100, height: 100)
-                                        .aspectRatio(contentMode: .fill)
+                                        .scaledToFill()
+                                        .frame(width: 100, height: 100, alignment: .center)
+                                        .clipped()
                                         .edgesIgnoringSafeArea(.all)
                                         .border(colorScheme == .dark ? Color.gray : Color.white, width: 1)
                                         .padding()
