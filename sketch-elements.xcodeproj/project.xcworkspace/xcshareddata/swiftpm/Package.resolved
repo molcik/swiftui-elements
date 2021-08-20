@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "FullScreenModal",
-        "repositoryURL": "https://github.com/tamasdancsi/ios-full-screen-modal",
-        "state": {
-          "branch": null,
-          "revision": "4eb288d864cb78e6588e10125b00ad9f5935cc65",
-          "version": "1.0.0"
-        }
-      },
-      {
         "package": "Mantis",
         "repositoryURL": "https://github.com/guoyingtao/Mantis",
         "state": {

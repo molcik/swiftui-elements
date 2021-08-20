@@ -11,6 +11,7 @@ import SwiftUI
 
 struct AlbumRow: View {
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
     @State private var selectedPhoto: Photo? = nil
     @State private var isPresented = false
     var albumName: String
@@ -36,17 +37,15 @@ struct AlbumRow: View {
                         .foregroundColor(.gray)
                 })
                     .padding(.horizontal, 20)
-                    .sheet(item: self.$selectedPhoto) { selectedPhoto in
-                        PhotoDetail(photo: selectedPhoto)
-                    }
             })
 
             HStack(content: {
                 ForEach(showcasedPhotos, id: \.self, content: { photo in
                     PhotoPreview(url: photo.urls.regular)
                         .onTapGesture {
-                            isPresented.toggle()
-                            self.selectedPhoto = photo
+                            modalState.displayContent.send(
+                                PhotoDetail(photo: photo).anyView
+                            )
                         }
                 })
 

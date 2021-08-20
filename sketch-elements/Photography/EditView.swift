@@ -8,7 +8,6 @@
 
 import Mantis
 import SwiftUI
-import FullScreenModal
 
 struct EditView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -42,7 +41,7 @@ struct ImageCropper: UIViewControllerRepresentable {
     @Binding var cropShapeType: Mantis.CropShapeType
     @Binding var presetFixedRatioType: Mantis.PresetFixedRatioType
     
-    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
+    @Environment(\.innerFullScreenModalState) var innerModalState: FullScreenModalState
     
     class Coordinator: CropViewControllerDelegate {
         var parent: ImageCropper
@@ -54,11 +53,11 @@ struct ImageCropper: UIViewControllerRepresentable {
         func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation) {
             parent.image = cropped
             print("transformation is \(transformation)")
-            parent.modalState.close.send()
+            parent.innerModalState.close.send()
         }
         
         func cropViewControllerDidCancel(_ cropViewController: CropViewController, original: UIImage) {
-            parent.modalState.close.send()
+            parent.innerModalState.close.send()
         }
         
         func cropViewControllerDidFailToCrop(_ cropViewController: CropViewController, original: UIImage) {}

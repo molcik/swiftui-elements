@@ -6,12 +6,12 @@
 //  Copyright © 2021 Filip Molcik. All rights reserved.
 //
 
-import FullScreenModal
 import SDWebImageSwiftUI
 import SwiftUI
 
 struct PhotoDetail: View {
     @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
+    @Environment(\.innerFullScreenModalState) var innerModalState: FullScreenModalState
     var photo: Photo
     @State private var filterViewPresented = false
     @State private var cropViewPresented = false
@@ -22,14 +22,14 @@ struct PhotoDetail: View {
                 Spacer()
                 HStack {
                     Image(systemName: Constant.icon.options).onTapGesture {
-                        modalState.displayContent.send(
+                        innerModalState.displayContent.send(
                             FilterView(photoUrls: photo.urls)
                                 .anyView
                         )
                     }
                     Spacer()
                     Image(systemName: Constant.icon.crop).onTapGesture {
-                        modalState.displayContent.send(
+                        innerModalState.displayContent.send(
                             EditView(photoUrls: photo.urls).anyView
                         )
                     }

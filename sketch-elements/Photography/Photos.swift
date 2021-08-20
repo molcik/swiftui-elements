@@ -7,14 +7,12 @@
 //
 
 import Combine
-import FullScreenModal
 import SwiftUI
 
 struct Photos: View {
     var photos: [Photo]
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
-
+    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState    
     @State private var isPresented = false
     @State private var showPicker = false
     @State var inputImage: UIImage? = nil

@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import FullScreenModal
 
 struct Albums: View {
     let albums = groupBy(photographyData) { $0.album }
@@ -26,13 +25,10 @@ struct Albums: View {
             .navigationBarColor(Constant.color.photographyPrimary.uiColor())
             .navigationBarTitle(Text("Albums"), displayMode: .large)
             .navigationBarItems(trailing: Image(systemName: Constant.icon.camera).foregroundColor(.white).onTapGesture {
-                showPicker.toggle()
-            })
-            .onTapGesture {
                 modalState.displayContent.send(
                     PhotoPicker(image: $inputImage).anyView
                 )
-            }
+            })
         }
     }
 

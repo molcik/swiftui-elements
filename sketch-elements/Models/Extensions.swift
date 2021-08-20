@@ -8,7 +8,6 @@
 
 import Combine
 import Foundation
-import FullScreenModal
 import SDWebImageSwiftUI
 import SwiftUI
 import SwiftOnoneSupport

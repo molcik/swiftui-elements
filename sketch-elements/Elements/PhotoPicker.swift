@@ -1,6 +1,6 @@
 import PhotosUI
 import SwiftUI
-import FullScreenModal
+
 struct PhotoPicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
@@ -9,8 +9,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
 
-        
-        //Simulator doesn't have a camera
+        // Simulator doesn't have a camera
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.sourceType = .camera
         }
@@ -33,13 +32,16 @@ struct PhotoPicker: UIViewControllerRepresentable {
         init(_ parent: PhotoPicker) {
             self.parent = parent
         }
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let uiImage = info[.originalImage] as? UIImage {
                 parent.image = uiImage
             }
             parent.modalState.close.send()
-            print("hi!!")
         }
         
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            parent.modalState.close.send()
+        }
     }
 }

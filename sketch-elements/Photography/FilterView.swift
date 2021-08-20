@@ -9,12 +9,11 @@
 import Combine
 import CoreImage
 import CoreImage.CIFilterBuiltins
-import FullScreenModal
 import SDWebImageSwiftUI
 import SwiftUI
 
 struct FilterView: View {
-    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
+    @Environment(\.innerFullScreenModalState) var innerModalState: FullScreenModalState
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     @State private var currentFilter: CIFilter? = nil
@@ -30,7 +29,6 @@ struct FilterView: View {
             VStack(spacing: 0) {
                 WebImage(url: photoUrls.full, context: [.imageTransformer: SDImageFilterTransformer(filter: currentFilter ?? CIFilter.noiseReduction())])
                     .resizable()
-
                     .placeholder {
                         ZStack {
                             Rectangle()
@@ -44,7 +42,6 @@ struct FilterView: View {
                     .frame(width: g.size.width, height: g.safeAreaInsets.bottom > 0 ? g.size.height * 0.83 : g.size.height * 0.7)
                     .clipped()
                     .zIndex(0)
-
                 ZStack(alignment: .top) {
                     Rectangle()
                         .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
@@ -57,7 +54,7 @@ struct FilterView: View {
                             Image(systemName: Constant.icon.chevronDown)
                                 .padding(.horizontal)
                                 .onTapGesture {
-                                    modalState.close.send()
+                                    innerModalState.close.send()
                                 }
                             Spacer()
                             Text("Filters")
@@ -65,7 +62,7 @@ struct FilterView: View {
                             Spacer()
                             Button(
                                 action: {
-                                    modalState.close.send()
+                                    innerModalState.close.send()
                                 }) {
                                     Text("Save")
                                         .bold()

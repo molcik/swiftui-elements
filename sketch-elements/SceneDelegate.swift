@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftUI
-import FullScreenModal
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

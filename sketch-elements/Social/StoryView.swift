@@ -8,7 +8,6 @@
 
 import SDWebImageSwiftUI
 import SwiftUI
-import FullScreenModal
 
 struct StoryView: View {
     var story: Story

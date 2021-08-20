@@ -6,7 +6,6 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
-import FullScreenModal
 import SwiftUI
 
 struct Timeline: View {
