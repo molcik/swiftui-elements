@@ -1,9 +1,9 @@
 import PhotosUI
 import SwiftUI
-
+import FullScreenModal
 struct PhotoPicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
@@ -29,7 +29,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
      
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         private let parent: PhotoPicker
-       
+   
         init(_ parent: PhotoPicker) {
             self.parent = parent
         }
@@ -37,7 +37,8 @@ struct PhotoPicker: UIViewControllerRepresentable {
             if let uiImage = info[.originalImage] as? UIImage {
                 parent.image = uiImage
             }
-            parent.presentationMode.wrappedValue.dismiss()
+            parent.modalState.close.send()
+            print("hi!!")
         }
         
     }

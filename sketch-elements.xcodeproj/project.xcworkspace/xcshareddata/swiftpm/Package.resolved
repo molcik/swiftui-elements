@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "FullScreenModal",
-        "repositoryURL": "git@github.com:tamasdancsi/ios-full-screen-modal.git",
+        "repositoryURL": "https://github.com/tamasdancsi/ios-full-screen-modal",
         "state": {
-          "branch": "main",
-          "revision": "68bbd1e9716e0907008e068b851d50bb6f6e23ba",
-          "version": null
+          "branch": null,
+          "revision": "4eb288d864cb78e6588e10125b00ad9f5935cc65",
+          "version": "1.0.0"
         }
       },
       {

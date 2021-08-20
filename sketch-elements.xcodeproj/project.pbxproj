@@ -92,7 +92,6 @@
 		DC3245632670D27A00FC86ED /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3245622670D27A00FC86ED /* FilterView.swift */; };
 		DC4B165026CD6AE7009EDB54 /* Hearts Were Gold.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC4B164F26CD6AE7009EDB54 /* Hearts Were Gold.mp3 */; };
 		DC680ACB26C67ADF0015778C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DC680ACA26C67ADF0015778C /* SDWebImageSwiftUI */; };
-		DC680AD126C689270015778C /* FullScreenModal in Frameworks */ = {isa = PBXBuildFile; productRef = DC680AD026C689270015778C /* FullScreenModal */; };
 		DCA90EA626A70EEB006880A5 /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA90EA526A70EEB006880A5 /* NewPost.swift */; };
 		DCA90EAA26A87204006880A5 /* Albums in Resources */ = {isa = PBXBuildFile; fileRef = DCA90EA926A87204006880A5 /* Albums */; };
 		DCA90EAC26A8800B006880A5 /* albums.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA90EAB26A8800B006880A5 /* albums.json */; };
@@ -106,6 +105,7 @@
 		DCAAD9E326B2CB7900B8B334 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAD9E226B2CB7900B8B334 /* StoryView.swift */; };
 		DCAAD9E526B2EFA600B8B334 /* StoryComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAD9E426B2EFA600B8B334 /* StoryComments.swift */; };
 		DCBB266626CDA723006C5E3C /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB266526CDA723006C5E3C /* MusicViewModel.swift */; };
+		DCBB266926CFE75C006C5E3C /* FullScreenModal in Frameworks */ = {isa = PBXBuildFile; productRef = DCBB266826CFE75C006C5E3C /* FullScreenModal */; };
 		DCE62CDB266A70FC0002CAD4 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD7266A70FC0002CAD4 /* Places.swift */; };
 		DCE62CDD266A70FC0002CAD4 /* Photography.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CD9266A70FC0002CAD4 /* Photography.swift */; };
 		DCE62CDE266A70FC0002CAD4 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE62CDA266A70FC0002CAD4 /* Albums.swift */; };
@@ -280,7 +280,7 @@
 				DC680ACB26C67ADF0015778C /* SDWebImageSwiftUI in Frameworks */,
 				DCF4A84426A05EB800C00A0B /* Mantis in Frameworks */,
 				34B255AA24081B3500599A4C /* SwiftUI.framework in Frameworks */,
-				DC680AD126C689270015778C /* FullScreenModal in Frameworks */,
+				DCBB266926CFE75C006C5E3C /* FullScreenModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,7 +595,7 @@
 			packageProductDependencies = (
 				DCF4A84326A05EB800C00A0B /* Mantis */,
 				DC680ACA26C67ADF0015778C /* SDWebImageSwiftUI */,
-				DC680AD026C689270015778C /* FullScreenModal */,
+				DCBB266826CFE75C006C5E3C /* FullScreenModal */,
 			);
 			productName = "sketch-elements";
 			productReference = 3403A2FE2406B70F00D7B040 /* sketch-elements.app */;
@@ -628,7 +628,7 @@
 			packageReferences = (
 				DCF4A84226A05EB800C00A0B /* XCRemoteSwiftPackageReference "Mantis" */,
 				DC680AC926C67ADF0015778C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				DC680ACF26C689270015778C /* XCRemoteSwiftPackageReference "ios-full-screen-modal" */,
+				DCBB266726CFE75C006C5E3C /* XCRemoteSwiftPackageReference "ios-full-screen-modal" */,
 			);
 			productRefGroup = 3403A2FF2406B70F00D7B040 /* Products */;
 			projectDirPath = "";
@@ -988,12 +988,12 @@
 				version = 2.0.2;
 			};
 		};
-		DC680ACF26C689270015778C /* XCRemoteSwiftPackageReference "ios-full-screen-modal" */ = {
+		DCBB266726CFE75C006C5E3C /* XCRemoteSwiftPackageReference "ios-full-screen-modal" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:tamasdancsi/ios-full-screen-modal.git";
+			repositoryURL = "https://github.com/tamasdancsi/ios-full-screen-modal";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		DCF4A84226A05EB800C00A0B /* XCRemoteSwiftPackageReference "Mantis" */ = {
@@ -1012,9 +1012,9 @@
 			package = DC680AC926C67ADF0015778C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
-		DC680AD026C689270015778C /* FullScreenModal */ = {
+		DCBB266826CFE75C006C5E3C /* FullScreenModal */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC680ACF26C689270015778C /* XCRemoteSwiftPackageReference "ios-full-screen-modal" */;
+			package = DCBB266726CFE75C006C5E3C /* XCRemoteSwiftPackageReference "ios-full-screen-modal" */;
 			productName = FullScreenModal;
 		};
 		DCF4A84326A05EB800C00A0B /* Mantis */ = {

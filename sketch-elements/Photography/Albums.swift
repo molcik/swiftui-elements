@@ -7,10 +7,13 @@
 //
 
 import SwiftUI
+import FullScreenModal
+
 struct Albums: View {
     let albums = groupBy(photographyData) { $0.album }
     @State private var showPicker = false
     @State var inputImage: UIImage? = nil
+    @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
 
     var body: some View {
         NavigationView {
@@ -25,8 +28,10 @@ struct Albums: View {
             .navigationBarItems(trailing: Image(systemName: Constant.icon.camera).foregroundColor(.white).onTapGesture {
                 showPicker.toggle()
             })
-            .sheet(isPresented: $showPicker, onDismiss: loadImage) {
-                PhotoPicker(image: $inputImage)
+            .onTapGesture {
+                modalState.displayContent.send(
+                    PhotoPicker(image: $inputImage).anyView
+                )
             }
         }
     }
