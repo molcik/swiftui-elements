@@ -10,23 +10,21 @@ import SwiftUI
 
 class MusicViewModel: ObservableObject {
     @Published var song = getAlbumSongs(musicData[0])[0]
-    @Published private var isPlaying_ = false
+    @Published var isPlaying = false
+    
     func changeSong(newSong: Song) {
         song = newSong
     }
     
-    
-     func play() {
-         isPlaying_ = true
-     }
+    func play() {
+        isPlaying = true
+    }
      
-     func pause() {
-        isPlaying_ = false
-     }
+    func pause() {
+        isPlaying = false
+    }
      
-     func isPlaying() -> Bool {
-        isPlaying_
-     }
-    
+    func isMusicPlaying() -> Bool {
+        isPlaying
+    }
 }
-

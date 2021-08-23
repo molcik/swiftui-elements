@@ -9,7 +9,6 @@ struct FullScreenModalWrapper<Content: View>: View {
     @Environment(\.innerFullScreenModalState) private var innerModalState: FullScreenModalState
     @State private var showModal = false
     @State private var showInnerModal = false
-
     @State private var modalContent: AnyView? = nil
     @State private var innerModalContent: AnyView? = nil
 

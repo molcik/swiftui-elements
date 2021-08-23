@@ -13,6 +13,7 @@ struct StoryView: View {
     var story: Story
     var user: User
     @Environment(\.fullScreenModalState) var modalState: FullScreenModalState
+    @EnvironmentObject var modalManager: ModalManager
     init(story: Story) {
         self.story = story
         self.user = usersData.first(where: { $0.id == story.user })!
@@ -20,7 +21,6 @@ struct StoryView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-        
             HStack(alignment: .center) {
                 Image(systemName: Constant.icon.close)
                     .resizable()
@@ -31,13 +31,16 @@ struct StoryView: View {
                     }
                 Profile(size: 40, image: user.picture.uri)
                 VStack(alignment: .leading) {
-                   
                     Text("\(user.name)")
                         .fontWeight(.bold)
                     Text("@\(user.id)")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .opacity(0.6)
+
+                    Text("here").onTapGesture {
+                        self.modalManager.openModal(position: .partiallyRevealed)
+                    }
                 }
                 Spacer()
             }
@@ -47,11 +50,17 @@ struct StoryView: View {
             Spacer()
         }.background(
             WebImage(url: story.picture.uri)
-            .resizable()
-            .indicator(.activity)
-            .scaledToFill()
-            .edgesIgnoringSafeArea(.all)
+                .resizable()
+                .indicator(.activity)
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
         ).edgesIgnoringSafeArea(.all)
+        
+        ModalAnchorView().onAppear {
+            self.modalManager.newModal(position: .closed) {
+                StoryComments()
+            }
+        }
     }
 }
 

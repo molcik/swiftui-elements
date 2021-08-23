@@ -43,7 +43,7 @@ struct PlayerModal: View {
                     Spacer()
 
                     ButtonPlayer(action: {
-                                     if !viewModel.isPlaying() {
+                                     if !viewModel.isMusicPlaying() {
                                          viewModel.play()
                                          self.audioPlayer.play()
                                      }
@@ -54,7 +54,7 @@ struct PlayerModal: View {
 
                                  },
                                  foregroundColor: Constant.color.musicPrimary) {
-                        Image(systemName: viewModel.isPlaying() ? Constant.icon.pause : Constant.icon.play)
+                        Image(systemName: viewModel.isMusicPlaying() ? Constant.icon.pause : Constant.icon.play)
                     }
 
                     Spacer()
@@ -99,20 +99,29 @@ struct PlayerModal: View {
                     .padding(20)
             }
             .onReceive(viewModel.$song, perform: { _ in
-                print(self.viewModel.song.name)
                 self.audioPlayer.seek(to: CMTime.zero)
                 playSong()
+
+            })
+            .onReceive(viewModel.$isPlaying, perform: { isPlaying in
+                if isPlaying {
+                    self.audioPlayer.play()
+                } else {
+                    self.audioPlayer.pause()
+                }
             })
         }
     }
 
     func playSong() {
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-        let song = Bundle.main.url(forResource: "Hearts Were Gold", withExtension: "mp3")
-        self.audioPlayer.replaceCurrentItem(with: AVPlayerItem(url: song!))
+//        let song = Bundle.main.url(forResource: "Hearts Were Gold", withExtension: "mp3")
+//        self.audioPlayer.replaceCurrentItem(with: AVPlayerItem(url: song!))
+        self.audioPlayer.pause()
+        self.audioPlayer.replaceCurrentItem(with: AVPlayerItem(url: self.viewModel.song.uri))
 
-        // This is here so it doesn't start playing right at the start of the app
-        if self.viewModel.isPlaying() {
+        // This is here so music doesn't start playing right at the start of the app
+        if self.viewModel.isMusicPlaying() {
             self.audioPlayer.play()
         }
 
