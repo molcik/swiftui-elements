@@ -17,6 +17,7 @@ struct FullScreenModalWrapper<Content: View>: View {
     var body: some View {
         ZStack {
             content()
+                .zIndex(0)
             if showModal {
                 modalContent
                     .edgesIgnoringSafeArea(.all)
@@ -26,26 +27,32 @@ struct FullScreenModalWrapper<Content: View>: View {
             if showInnerModal {
                 innerModalContent
                     .edgesIgnoringSafeArea(.all)
-                    .zIndex(1)
+                    .zIndex(2)
                     .transition(.move(edge: .bottom)).animation(.default)
             }
         }
         .onReceive(modalState.displayContent) {
-            showModal = true
-            modalContent = $0
+            if !showModal {
+                showModal = true
+                modalContent = $0
+            }
         }
         .onReceive(modalState.close) { _ in
-            showModal = false
-            modalContent = nil
+            DispatchQueue.main.async {
+                showModal = false
+                modalContent = nil
+            }
+            
         }
-
         .onReceive(innerModalState.displayContent) {
-            showInnerModal = true
-            innerModalContent = $0
+            if showInnerModal == false {
+                showInnerModal = true
+                innerModalContent = $0
+            }
         }
         .onReceive(innerModalState.close) {
-            showInnerModal = false
             innerModalContent = nil
+            showInnerModal = false
         }
     }
 }

@@ -50,8 +50,8 @@ struct ReservationModal: View {
             }
             HStack {
                 ButtonApplePay().frame(height: 44)
-                    .padding(.bottom)
-            }.padding()
+                    .padding(.bottom, 50)
+            }.padding(30)
         }
     }
 }
