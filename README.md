@@ -15,15 +15,15 @@ iOS Sketch Elements is iOS SwiftUI starter kit based on [Sketch Elements](https:
 - [x] Food
 - [x] Social
 - [x] Travel
-- [x] Music (in full version)
-- [x] Photography (in full version)
+- [x] Music [(in full version only)](https://ioselements.com)
+- [x] Photography [(in full version only)](https://ioselements.com)
 
 ## Support Screens
 - [x] Food
-- [x] Social (in full vversion)
+- [x] Social [(in full version only)](https://ioselements.com)
 - [x] Travel
-- [x] Music (in full version)
-- [x] Photography (in full version)
+- [x] Music [(in full version only)](https://ioselements.com)
+- [x] Photography [(in full version only)](https://ioselements.com)
 
 # Support me
 If you find this useful, consider supporting independent open-source development and buy me a coffee.
