@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
+options: "96247b5800e7f086ec11ef30026e9c05"
+build_time: [1628232025, 503107000]
+inputs:
+  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Dependencies/Sources/FileIndex/Common/Bundle+Extensions.swift": [1628231692, 595469840]
+  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Dependencies/Sources/FileIndex/File.swift": [1628231692, 595711880]
+  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Dependencies/Sources/FileIndex/FileIndex.swift": [1628231692, 595983058]

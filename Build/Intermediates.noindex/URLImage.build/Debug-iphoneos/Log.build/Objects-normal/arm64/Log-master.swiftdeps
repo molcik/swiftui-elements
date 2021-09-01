@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
+options: "bc07b4c1ff29e5b7deace5a553da08a6"
+build_time: [1628232020, 739770000]
+inputs:
+  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Dependencies/Sources/Log/Log.swift": [1628231692, 596839523]

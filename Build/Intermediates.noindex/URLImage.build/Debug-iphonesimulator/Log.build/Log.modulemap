@@ -1,0 +1,4 @@
+module Log {
+header "Log-Swift.h"
+export *
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Cocoa</string>
+	<string>CommonCrypto</string>
+	<string>SDWebImageSwiftUI</string>
+	<string>SDWebImageMapKit</string>
+	<string>CoreLocation</string>
+	<string>ImageIO</string>
+	<string>objc</string>
+	<string>PhotosUI</string>
+	<string>Mantis</string>
+	<string>SDWebImageWebPCoder</string>
+	<string>Accelerate</string>
+	<string>CoreData</string>
+	<string>MobileCoreServices</string>
+	<string>PassKit</string>
+	<string>sys</string>
+	<string>MantisTests</string>
+	<string>CoreImage</string>
+	<string>CoreServices</string>
+	<string>AVKit</string>
+	<string>SwiftUI</string>
+	<string>SDWebImage</string>
+	<string>libkern</string>
+	<string>ViewInspector</string>
+	<string>PackageDescription</string>
+	<string>MapKit</string>
+	<string>CoreVideo</string>
+	<string>SDWebImageSVGCoder</string>
+	<string>WatchKit</string>
+	<string>Foundation</string>
+	<string>mach</string>
+	<string>QuartzCore</string>
+	<string>XCTest</string>
+	<string>AppKit</string>
+	<string>os</string>
+	<string>SwiftOnoneSupport</string>
+	<string>Expecta</string>
+	<string>Combine</string>
+	<string>SDWebImagePDFCoder</string>
+	<string>CoreGraphics</string>
+	<string>KVOController</string>
+	<string>UIKit</string>
+</array>
+</plist>

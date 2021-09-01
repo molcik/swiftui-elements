@@ -1,0 +1,28 @@
+dependencies: \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDAnimatedImageView+WebCache.m \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDAnimatedImageView+WebCache.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDAnimatedImageView.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDWebImageCompat.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/usr/include/mach-o/dyld.modulemap \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDAnimatedImage.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDImageCoder.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/NSData+ImageContentType.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDAnimatedImagePlayer.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDWebImageManager.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDWebImageOperation.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDImageCacheDefine.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDWebImageDefine.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDImageLoader.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDImageTransformer.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/UIImage+Transform.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDWebImageCacheKeyFilter.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDWebImageCacheSerializer.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDWebImageOptionsProcessor.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/UIView+WebCache.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDWebImageTransition.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDImageCache.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDImageCacheConfig.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDMemoryCache.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDDiskCache.h \
+  /Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/Core/SDWebImageIndicator.h

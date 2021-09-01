@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "23A8C125B0BAD53CE5E241A6DE2E6FD6EA11A602",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DC507AECD102F207B5A66587E498638D72829A9D" : 0,
+    "BFB2B4172044EB6B58A800127FB545AC3D4F6C84" : 0,
+    "23A8C125B0BAD53CE5E241A6DE2E6FD6EA11A602" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E35BB22E-A9EC-4DF0-B363-86B998CACFE0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DC507AECD102F207B5A66587E498638D72829A9D" : "sketch-elements\/DerivedData\/sketch-elements\/SourcePackages\/checkouts\/url-image\/",
+    "BFB2B4172044EB6B58A800127FB545AC3D4F6C84" : "sketch-elements\/DerivedData\/sketch-elements\/SourcePackages\/checkouts\/Mantis\/",
+    "23A8C125B0BAD53CE5E241A6DE2E6FD6EA11A602" : "sketch-elements\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "sketch-elements",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "sketch-elements.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git@gitlab.com:com.molcik\/sketch-elements-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "23A8C125B0BAD53CE5E241A6DE2E6FD6EA11A602"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/filipmolcik\/Documents\/sketch-elements\/DerivedData\/sketch-elements\/SourcePackages\/repositories\/Mantis-bc336171",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BFB2B4172044EB6B58A800127FB545AC3D4F6C84"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/filipmolcik\/Documents\/sketch-elements\/DerivedData\/sketch-elements\/SourcePackages\/repositories\/url-image-6d6b2515",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DC507AECD102F207B5A66587E498638D72829A9D"
+    }
+  ]
+}
