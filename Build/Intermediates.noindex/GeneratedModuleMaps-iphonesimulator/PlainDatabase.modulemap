@@ -1,4 +1,0 @@
-module PlainDatabase {
-header "PlainDatabase-Swift.h"
-export *
-}

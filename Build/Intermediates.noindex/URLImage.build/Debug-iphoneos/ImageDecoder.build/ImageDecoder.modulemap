@@ -1,4 +1,0 @@
-module ImageDecoder {
-header "ImageDecoder-Swift.h"
-export *
-}

@@ -1,4 +1,0 @@
-module Mantis {
-header "Mantis-Swift.h"
-export *
-}

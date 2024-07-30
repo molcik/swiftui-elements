@@ -1,4 +1,0 @@
-module Model {
-header "Model-Swift.h"
-export *
-}

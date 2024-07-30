@@ -1,4 +1,0 @@
-module SDWebImageSwiftUI {
-header "SDWebImageSwiftUI-Swift.h"
-export *
-}

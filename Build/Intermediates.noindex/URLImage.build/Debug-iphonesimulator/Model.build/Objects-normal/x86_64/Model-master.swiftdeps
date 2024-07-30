@@ -1,9 +1,0 @@
-version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
-options: "84ce798a42b0189a83cf4b6619961da2"
-build_time: [1628231823, 544888000]
-inputs:
-  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Dependencies/Sources/Model/FileManager+Extensions.swift": [1628231692, 597181577]
-  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Dependencies/Sources/Model/ImageInfo.swift": [1628231692, 597403840]
-  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Dependencies/Sources/Model/TransientImage+ImageDecoder.swift": [1628231692, 597682961]
-  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Dependencies/Sources/Model/TransientImage.swift": [1628231692, 597948420]
-  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Dependencies/Sources/Model/URLImageError.swift": [1628231692, 598263812]

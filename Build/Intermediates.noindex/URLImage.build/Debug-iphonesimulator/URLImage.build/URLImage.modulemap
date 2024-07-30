@@ -1,4 +1,0 @@
-module URLImage {
-header "URLImage-Swift.h"
-export *
-}

@@ -1,4 +1,0 @@
-module SDWebImage {
-umbrella header "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/SDWebImage/SDWebImage/include/SDWebImage/SDWebImage.h"
-export *
-}

@@ -1,4 +1,0 @@
-module URLImageStore {
-header "URLImageStore-Swift.h"
-export *
-}
