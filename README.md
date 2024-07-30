@@ -14,6 +14,7 @@ The following is the list of screens provided by this template.
 - [x] Theming
 - [x] Dark mode
 - [x] Modal
+- [x] Lazy Loading (Images)
 
 ## Themes
 - [x] Food
