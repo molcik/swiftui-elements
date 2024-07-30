@@ -4,7 +4,6 @@ iOS Template is an iOS SwiftUI starter kit based on [Sketch Elements](https://ww
 
 ![ios-cover](https://filipmolcik.com/wp-content/uploads/2020/12/ios-app-template-based-on-sketch-elements-cover-1024x397.png)
 
-
 ## Overview
 This section of the documentation describes the props and examples for all the components from iOS SwiftUI Template based on [Sketch Elements](https://www.sketch.com/elements). Please take some time to explore all of the components.
 The following is the list of screens provided by this template.
@@ -30,7 +29,9 @@ After downloading the files just unzip it and open Xcode. From the welcome windo
 ## Usage
 
 The best way to use this project is to create your custom folder in the project root e.g. MyApp With default user story. I will copy past here Travel.swift content to simulate it. Then in ContentView.swift delete or comment out all the unnecessary lines you don’t want to use. Here is minimal example.
-￼
+
+![xcode-entrypoint](https://filipmolcik.com/wp-content/uploads/2024/07/Screenshot-2024-07-30-at-16.23.45.png)
+
 Now you should be able to run your project.
 
 ## Customization
