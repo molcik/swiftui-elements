@@ -203,11 +203,6 @@ There are 3 modifiers that can be used across the project.
 ## Dependencies
 The whole project uses only modern Swift Page Manager and is not dependent on any other managers as is CocoaPods etc. These Swift packages are managed from the Project view in the Swift Packages tab.
 ￼
-Below is a list of all dependencies. 
-
-### URLImage 0.9.10
-`URLImage` is a SwiftUI view that displays an image downloaded from the provided URL. `URLImage` allows you to download remote images and cache them locally, both in memory and on disk.
-
 
 ## Help
 Even with the great documentation, you're likely to get stuck at some point. If you've encountered a bug with this iOS Template, please [post an issue](https://github.com/molcik/swiftui-elements/issues/new) and one of our maintainers will happily reach out to you. No question's too silly to ask but we recommend checking the documentation and [existing issues](https://github.com/molcik/ios-sketch-elements/issues) before opening and a new one.
