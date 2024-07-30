@@ -1,12 +1,12 @@
-# iOS SwiftUI Elements
+# iOS Template (Boilerplate)
 
-iOS Sketch Elements is an iOS SwiftUI starter kit based on [Sketch Elements](https://www.sketch.com/elements). 
+iOS Template is an iOS SwiftUI starter kit based on [Sketch Elements](https://www.sketch.com/elements). 
 
 ![ios-cover](https://filipmolcik.com/wp-content/uploads/2020/12/ios-app-template-based-on-sketch-elements-cover-1024x397.png)
 
 
 ## Overview
-This section of the documentation describes the props and examples for all the components from iOS SwiftUI Elements based on [Sketch Elements](https://www.sketch.com/elements). Please take some time to explore all of the components.
+This section of the documentation describes the props and examples for all the components from iOS SwiftUI Template based on [Sketch Elements](https://www.sketch.com/elements). Please take some time to explore all of the components.
 The following is the list of screens provided by this template.
 
 ## General
@@ -203,14 +203,14 @@ There are 3 modifiers that can be used across the project.
 ## Dependencies
 The whole project uses only modern Swift Page Manager and is not dependent on any other managers as is CocoaPods etc. These Swift packages are managed from the Project view in the Swift Packages tab.
 ￼
-Below is a list of all dependencies used by iOS Elements. 
+Below is a list of all dependencies. 
 
 ### URLImage 0.9.10
 `URLImage` is a SwiftUI view that displays an image downloaded from the provided URL. `URLImage` allows you to download remote images and cache them locally, both in memory and on disk.
 
 
 ## Help
-Even with the great documentation, you're likely to get stuck at some point. If you've encountered a bug with iOS Elements, please [post an issue](https://github.com/molcik/swiftui-elements/issues/new) and one of our maintainers will happily reach out to you. No question's too silly to ask but we recommend checking the documentation and [existing issues](https://github.com/molcik/ios-sketch-elements/issues) before opening and a new one.
+Even with the great documentation, you're likely to get stuck at some point. If you've encountered a bug with this iOS Template, please [post an issue](https://github.com/molcik/swiftui-elements/issues/new) and one of our maintainers will happily reach out to you. No question's too silly to ask but we recommend checking the documentation and [existing issues](https://github.com/molcik/ios-sketch-elements/issues) before opening and a new one.
 
 # Support me
 If you find this useful, consider supporting independent open-source development and buy me a coffee.
