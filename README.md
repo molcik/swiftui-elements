@@ -188,8 +188,9 @@ Here is the list of all reusable components.
 ### Modifiers
 Modifiers can be used through extension API defined in Elements/ViewExtensions.swift. For TabBarModifier it is:
 
-```swift         TabView() {
-		Text(“Tab 1”)
+```swift
+TabView() {
+	Text(“Tab 1”)
 	}
         .tabBarOpaque()
 ```
