@@ -1,4 +1,4 @@
-# iOS Sketch Elements
+# iOS SwiftUI Elements
 
 iOS Sketch Elements is iOS SwiftUI starter kit based on [Sketch Elements](https://www.sketch.com/elements). 
 
