@@ -1,4 +1,4 @@
-# iOS Template (Boilerplate)
+# SwiftUI Elements - iOS Template/Boilerplate
 
 iOS Template is an iOS SwiftUI starter kit based on [Sketch Elements](https://www.sketch.com/elements). 
 
