@@ -1,7 +1,6 @@
 # iOS Sketch Elements
 
-iOS Sketch Elements is iOS SwiftUI starter kit based on [Sketch Elements](https://www.sketch.com/elements). More information and full version on [ioselements.com](https://ioselements.com)
-![ios-cover](https://filipmolcik.com/wp-content/uploads/2020/12/ios-app-template-based-on-sketch-elements-cover-1024x397.png)
+iOS Sketch Elements is iOS SwiftUI starter kit based on [Sketch Elements](https://www.sketch.com/elements). 
 
 # Roadmap
 
@@ -15,15 +14,15 @@ iOS Sketch Elements is iOS SwiftUI starter kit based on [Sketch Elements](https:
 - [x] Food
 - [x] Social
 - [x] Travel
-- [x] Music [(in full version only)](https://ioselements.com)
-- [x] Photography [(in full version only)](https://ioselements.com)
+- [x] Music
+- [x] Photography
 
 ## Support Screens
 - [x] Food
-- [x] Social [(in full version only)](https://ioselements.com)
+- [x] Social
 - [x] Travel
-- [x] Music [(in full version only)](https://ioselements.com)
-- [x] Photography [(in full version only)](https://ioselements.com)
+- [x] Music
+- [x] Photography
 
 # Support me
 If you find this useful, consider supporting independent open-source development and buy me a coffee.
