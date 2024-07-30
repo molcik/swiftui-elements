@@ -9,19 +9,17 @@
 import SwiftUI
 
 class ModalManager: ObservableObject {
+    @Published var modal = Modal(position: .closed, content: nil)
     
-    @Published var modal: Modal = Modal(position: .closed, content: nil)
-    
-    func newModal<Content: View>(position: ModalState, @ViewBuilder content: () -> Content ) {
+    func newModal<Content: View>(position: ModalState, @ViewBuilder content: () -> Content) {
         modal = Modal(position: position, content: AnyView(content()))
     }
     
-    func openModal() {
-        modal.position = .partiallyRevealed
+    func openModal(position: ModalState) {
+        modal.position = position
     }
     
     func closeModal() {
         modal.position = .closed
     }
-    
 }

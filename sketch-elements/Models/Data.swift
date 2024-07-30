@@ -20,6 +20,11 @@ let postsData: [Post] = load("posts.json")
 let conversationsData: [Conversation] = load("conversations.json")
 let citiesData: [City] = load("cities.json")
 let guidesData: [Guide] = load("guides.json")
+let musicData: [Album] = load("albums.json")
+let photographyData: [Photo] = load("photos.json")
+
+
+
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

@@ -27,6 +27,10 @@ struct TableRow: View {
                  Spacer()
                 right.padding(.horizontal)
             }
+       
+           
+            .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+          
             divider ? Divider() : nil
         }
     }

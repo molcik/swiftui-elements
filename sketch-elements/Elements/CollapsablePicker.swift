@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct CollapsablePicker: View {
-    
     var tintColor: Color = Constant.color.tintColor
     
     @State private var pickerVisible = false
@@ -22,7 +21,6 @@ struct CollapsablePicker: View {
         return formatter
     }
     
-    
     var body: some View {
         VStack {
             HStack {
@@ -34,8 +32,8 @@ struct CollapsablePicker: View {
                     foregroundColor: tintColor
 
                 ) {
-                    Image(pickerVisible ? Constant.icon.chevronUp : Constant.icon.chevronDown)
-                    Text("\(dateFormatter.string(from: date)))")
+                    Image(systemName: pickerVisible ? Constant.icon.chevronUp : Constant.icon.chevronDown)
+                    Text("\(dateFormatter.string(from: date))")
                         .font(.headline)
                 }
             }
@@ -47,14 +45,13 @@ struct CollapsablePicker: View {
                         displayedComponents: .date,
                         label: { Text("Date") }
                     )
-                        .labelsHidden()
-                    }
+                    .labelsHidden()
                 }
             }
         }
     }
+}
     
-
 struct Picker_Previews: PreviewProvider {
     static var previews: some View {
         CollapsablePicker()

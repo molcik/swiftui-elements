@@ -1,0 +1,99 @@
+Target dependency graph (25 targets)
+Mantis in Mantis
+Mantis in Mantis, depends on:
+Mantis in Mantis (explicit)
+Log in URLImage
+DownloadManager in URLImage, depends on:
+Log in URLImage (explicit)
+PlainDatabase in URLImage
+ImageDecoder in URLImage
+Model in URLImage, depends on:
+ImageDecoder in URLImage (explicit)
+FileIndex in URLImage, depends on:
+PlainDatabase in URLImage (explicit)
+Log in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+Model in URLImage (explicit)
+URLImage in URLImage, depends on:
+Log in URLImage (explicit)
+DownloadManager in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+PlainDatabase in URLImage (explicit)
+Model in URLImage (explicit)
+FileIndex in URLImage (explicit)
+URLImage in URLImage, depends on:
+URLImage in URLImage (explicit)
+Log in URLImage (explicit)
+DownloadManager in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+PlainDatabase in URLImage (explicit)
+Model in URLImage (explicit)
+FileIndex in URLImage (explicit)
+URLImageStore in URLImage, depends on:
+Log in URLImage (explicit)
+DownloadManager in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+PlainDatabase in URLImage (explicit)
+Model in URLImage (explicit)
+FileIndex in URLImage (explicit)
+URLImage in URLImage (explicit)
+URLImageStore in URLImage, depends on:
+URLImageStore in URLImage (explicit)
+Log in URLImage (explicit)
+DownloadManager in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+PlainDatabase in URLImage (explicit)
+Model in URLImage (explicit)
+FileIndex in URLImage (explicit)
+URLImage in URLImage (explicit)
+Log in URLImage
+DownloadManager in URLImage, depends on:
+Log in URLImage (explicit)
+ImageDecoder in URLImage
+PlainDatabase in URLImage
+Model in URLImage, depends on:
+ImageDecoder in URLImage (explicit)
+FileIndex in URLImage, depends on:
+PlainDatabase in URLImage (explicit)
+Log in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+Model in URLImage (explicit)
+URLImage in URLImage, depends on:
+Log in URLImage (explicit)
+DownloadManager in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+PlainDatabase in URLImage (explicit)
+Model in URLImage (explicit)
+FileIndex in URLImage (explicit)
+URLImageStore in URLImage, depends on:
+Log in URLImage (explicit)
+DownloadManager in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+PlainDatabase in URLImage (explicit)
+Model in URLImage (explicit)
+FileIndex in URLImage (explicit)
+URLImage in URLImage (explicit)
+URLImageStore in URLImage, depends on:
+URLImageStore in URLImage (explicit)
+Log in URLImage (explicit)
+DownloadManager in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+PlainDatabase in URLImage (explicit)
+Model in URLImage (explicit)
+FileIndex in URLImage (explicit)
+URLImage in URLImage (explicit)
+URLImage in URLImage, depends on:
+URLImage in URLImage (explicit)
+Log in URLImage (explicit)
+DownloadManager in URLImage (explicit)
+ImageDecoder in URLImage (explicit)
+PlainDatabase in URLImage (explicit)
+Model in URLImage (explicit)
+FileIndex in URLImage (explicit)
+Mantis in Mantis
+Mantis in Mantis, depends on:
+Mantis in Mantis (explicit)
+sketch-elements in sketch-elements, depends on:
+URLImageStore in URLImage (explicit)
+URLImage in URLImage (explicit)
+Mantis in Mantis (explicit)

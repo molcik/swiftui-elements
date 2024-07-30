@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
+options: "52b06e5a4d800a022f937b61202260d4"
+build_time: [1628231828, 314026000]
+inputs:
+  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Sources/URLImageStore/URLImageFileStore.swift": [1628231692, 615050679]
+  "/Users/filipmolcik/Documents/sketch-elements/DerivedData/sketch-elements/SourcePackages/checkouts/url-image/Sources/URLImageStore/URLImageInMemoryStore.swift": [1628231692, 615271251]

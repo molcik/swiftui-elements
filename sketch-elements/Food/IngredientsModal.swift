@@ -36,8 +36,10 @@ struct IngredientsModal: View {
                 ) {
                     Text("Add to Reminders")
                         .font(.headline)
+                       
                 }
             }
+            .padding(.bottom, 50)
             .padding([.horizontal, .bottom], 24)
         }
     }

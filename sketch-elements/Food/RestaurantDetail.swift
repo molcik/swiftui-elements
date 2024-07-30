@@ -7,26 +7,24 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct RestaurantDetail: View {
-    
     let restaurant: Restaurant
     var tintColor: Color = Constant.color.tintColor
     let gradient = LinearGradient(gradient: Gradient(colors: [.white, .clear]), startPoint: .top, endPoint: .bottom)
     @EnvironmentObject var modalManager: ModalManager
-    
-    init(restaurant: Restaurant, tintColor: Color = Constant.color.tintColor ) {
+
+    init(restaurant: Restaurant, tintColor: Color = Constant.color.tintColor) {
         self.restaurant = restaurant
         self.tintColor = tintColor
     }
-    
+
     var body: some View {
-        return VStack(spacing: 0){
+        return VStack(spacing: 0) {
             Header(image: restaurant.picture.uri, height: 223) {
-                VStack(){
+                VStack {
                     Spacer()
-                    HStack(){
+                    HStack {
                         Text(restaurant.title)
                             .font(.largeTitle)
                             .fontWeight(.bold)
@@ -37,35 +35,35 @@ struct RestaurantDetail: View {
             TabBar(
                 foregroundColor: tintColor,
                 content: [
-                TabItem(
-                    name: String(repeating: "$",
-                                 count: restaurant.price.expensive), icon: Constant.icon.creditcard),
-                TabItem(
-                    name: "\(restaurant.reviews) reviews",
-                    customView: Stars(restaurant.ratings, color: tintColor).eraseToAnyView()),
-                TabItem(
-                    name: "\(restaurant.openings.from) - \(restaurant.openings.to)",
-                    icon: Constant.icon.clock)
-            ])
-            
+                    TabItem(
+                        name: String(repeating: "$",
+                                     count: restaurant.price.expensive), icon: Constant.icon.creditcard),
+                    TabItem(
+                        name: "\(restaurant.reviews) reviews",
+                        customView: Stars(restaurant.ratings, color: tintColor).eraseToAnyView()),
+                    TabItem(
+                        name: "\(restaurant.openings.from) - \(restaurant.openings.to)",
+                        icon: Constant.icon.clock)
+                ])
+
             ZStack(alignment: .top) {
                 MapView(coordinate: restaurant.locationCoordinate)
                     .frame(height: 180)
                     .mask(
                         gradient
-                )
+                    )
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing:0) {
+                    VStack(spacing: 0) {
                         Rectangle()
                             .opacity(0)
                             .frame(height: 100)
-                        ButtonPrimary(action: self.modalManager.openModal, backgroundColor: tintColor) {
-                                Text("Make reservation")
-                                    .font(.headline)
-                            }.padding([.top, .leading, .trailing])
-                        Card{
+                        ButtonPrimary(action: { self.modalManager.openModal(position: .partiallyRevealed) }, backgroundColor: tintColor) {
+                            Text("Make reservation")
+                                .font(.headline)
+                        }.padding([.top, .leading, .trailing])
+                        Card {
                             Text(restaurant.description)
-                            .padding()
+                                .padding()
                         }
                     }
                 }
@@ -88,7 +86,6 @@ struct RestaurantDetail: View {
         }
     }
 }
-
 
 struct RestaurantDetail_Previews: PreviewProvider {
     static var previews: some View {

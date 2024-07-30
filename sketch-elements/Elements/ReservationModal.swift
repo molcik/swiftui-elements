@@ -6,11 +6,10 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
-import URLImage
 
 struct ReservationModal: View {
-    
     @State var selection: Int = 0
     var place: Bookable
     var timeOptions: [String]?
@@ -18,9 +17,9 @@ struct ReservationModal: View {
     var action: () -> Void
 
     var body: some View {
-        VStack(){
+        VStack {
             ModalHeader(action: self.action, title: "Reservation", tintColor: tintColor)
-            ScrollView(.vertical){
+            ScrollView(.vertical) {
                 HStack {
                     VStack(alignment: .leading) {
                         Text(place.title)
@@ -30,11 +29,10 @@ struct ReservationModal: View {
                     }
                     Spacer()
                     VStack(alignment: .trailing) {
-                        URLImage(place.picture.uri, content:  {
-                            $0.image
-                                .renderingMode(.original)
-                                .resizable()
-                        })
+                        WebImage(url: place.picture.uri)
+                            .renderingMode(.original)
+                            .resizable()
+                            .indicator(.activity)
                             .frame(width: 140, height: 100)
                             .cornerRadius(6)
                     }
@@ -44,7 +42,7 @@ struct ReservationModal: View {
                 VStack(spacing: 8) {
                     CollapsablePicker(tintColor: tintColor)
                     CountPicker(label: "people", tintColor: tintColor, defaultValue: 1)
-                    if (timeOptions != nil) {
+                    if timeOptions != nil {
                         SegmentedPicker(items: timeOptions!, selection: self.$selection, tintColor: tintColor)
                     }
                     Spacer()
@@ -52,12 +50,11 @@ struct ReservationModal: View {
             }
             HStack {
                 ButtonApplePay().frame(height: 44)
-                    .padding(.bottom)
-            }.padding()
+                    .padding(.bottom, 50)
+            }.padding(30)
         }
     }
 }
-
 
 struct ReservationModal_Previews: PreviewProvider {
     static var previews: some View {
@@ -65,7 +62,6 @@ struct ReservationModal_Previews: PreviewProvider {
             place: restaurantsData[0],
             timeOptions: ["19:00", "19:30", "20:00", "20:30"],
             action: {}).environmentObject(UserData()
-            )
-        
+        )
     }
 }

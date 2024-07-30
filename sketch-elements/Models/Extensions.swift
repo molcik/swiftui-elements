@@ -6,8 +6,11 @@
 //  Copyright © 2020 Filip Molcik. All rights reserved.
 //
 
+import Combine
 import Foundation
+import SDWebImageSwiftUI
 import SwiftUI
+import SwiftOnoneSupport
 
 extension String: Identifiable {
     public var id: String {
@@ -24,9 +27,7 @@ extension Date {
 }
 
 extension Color {
- 
     func uiColor() -> UIColor {
-
         if #available(iOS 14.0, *) {
             return UIColor(self)
         }
@@ -36,8 +37,7 @@ extension Color {
     }
 
     private func components() -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-
-        let scanner = Scanner(string: self.description.trimmingCharacters(in: CharacterSet.alphanumerics.inverted))
+        let scanner = Scanner(string: description.trimmingCharacters(in: CharacterSet.alphanumerics.inverted))
         var hexNumber: UInt64 = 0
         var r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0, a: CGFloat = 0.0
 

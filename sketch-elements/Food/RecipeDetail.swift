@@ -7,25 +7,23 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct RecipeDetail: View {
-    
     var recipe: Recipe
     var category: String
     @EnvironmentObject var modalManager: ModalManager
-    
+
     init(recipe: Recipe, category: String) {
         self.recipe = recipe
         self.category = category
     }
-    
+
     var body: some View {
-        return VStack(spacing: 0){
+        return VStack(spacing: 0) {
             Header(image: recipe.picture.uri, height: 223) {
-                VStack(){
+                VStack {
                     Spacer()
-                    HStack(){
+                    HStack {
                         Text(recipe.title)
                             .font(.largeTitle)
                             .fontWeight(.bold)
@@ -40,12 +38,12 @@ struct RecipeDetail: View {
                 ]
             )
             ScrollView(.vertical, showsIndicators: false) {
-                ButtonPrimary(action: self.modalManager.openModal) {
-                        Text("See Ingredients")
-                            .font(.headline)
-                    }.padding([.top, .leading, .trailing])
+                ButtonPrimary(action: { self.modalManager.openModal(position: .partiallyRevealed) }) {
+                    Text("See Ingredients")
+                        .font(.headline)
+                }.padding([.top, .leading, .trailing])
                 VStack(alignment: .leading) {
-                    ForEach(0..<recipe.instructions.count) { index in
+                    ForEach(0 ..< recipe.instructions.count) { index in
                         TextTableRow(
                             left: "\(index + 1)",
                             divider: index < self.recipe.instructions.count - 1,

@@ -1,0 +1,4 @@
+module DownloadManager {
+header "DownloadManager-Swift.h"
+export *
+}

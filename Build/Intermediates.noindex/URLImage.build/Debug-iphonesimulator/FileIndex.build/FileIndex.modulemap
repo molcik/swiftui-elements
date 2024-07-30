@@ -1,0 +1,4 @@
+module FileIndex {
+header "FileIndex-Swift.h"
+export *
+}
