@@ -215,7 +215,4 @@ If you find this useful, consider supporting independent open-source development
 
 [![buy me a coffee](https://filipmolcik.com/wp-content/uploads/2020/07/BUY-ME-A-COFFEE.png)](https://www.buymeacoffee.com/p9IDjxX)
 
-# Screenshots
-
-![ios-screenshots](https://filipmolcik.com/wp-content/uploads/2020/12/screencapture-filipmolcik-ios-app-template-based-on-sketch-elements-2020-12-17-10_01_41.png)
 
